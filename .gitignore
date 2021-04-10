@@ -1,0 +1,20 @@
+# project
+_site
+.sass-cache
+.vagrant
+
+# general
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+#personal
+assets/pdf/cv_form.cls
+assets/pdf/CV.aux
+assets/pdf/CV.log
+assets/pdf/CV.synctex.gz
+assets/pdf/CV.tex
+
+Gemfile.lock
+
+beautiful-jekyll-theme-*.gem

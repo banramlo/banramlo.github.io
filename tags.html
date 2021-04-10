@@ -1,0 +1,63 @@
+---
+layout: page
+title: 'Tags'
+permalink: /tags.html
+---
+<p id="tags">
+    Loading
+</p>
+
+<script language = "javascript">
+    var toWrite = document.getElementById("tags");
+    var updateString = "";
+    var cnt = 0;
+
+    var Connect = new XMLHttpRequest();
+    // Define which file to open and
+    // send the request.
+    Connect.open("GET", "info.xml", false);
+    Connect.setRequestHeader("Content-Type", "text/xml");
+    Connect.send(null);
+    var listUp = Connect.responseXML.children[0];
+
+    var tagCount = {}
+    var tagColor = {}
+    for(var i = 0; i < listUp.childElementCount; ++i){
+        var tags = listUp.children[i].children[3].innerHTML.split(',');
+        for(var j = 0; j < tags.length - 1; ++j){
+            var tag = tags[j].trim();
+            if(tag in tagCount)
+                ++tagCount[tag];
+            else
+                tagCount[tag] = 1;
+        }
+        cnt += 1;
+    }
+    var min = Infinity;
+    var max = 1;
+    for(var tag in tagCount){
+        if(tagCount[tag] < min)
+            min = tagCount[tag];
+        if(tagCount[tag] > max)
+            max = tagCount[tag];
+    }
+    if(max == min){
+        for(var tag in tagCount){
+            tagCount[tag] = 8;
+            tagColor[tag] = "#000000";
+        }
+    }
+    else{
+        for(var tag in tagCount){
+            tagColor[tag] = 200 - 200 * (tagCount[tag] - min) / (max - min);
+            tagColor[tag] = "rgb(" + tagColor[tag] + "," + tagColor[tag] + "," + tagColor[tag] + ")";
+            tagCount[tag] = 30 * (tagCount[tag] - min) / (max - min) + 30;
+        }
+    }
+
+
+    for(var key in tagCount){
+        updateString +=  "<a style=\"font-size:" + tagCount[key] + "px; padding-right:1em; color:" + tagColor[key] + "\" href = https://banramlo.github.io/tags_Select?" + key + "><u>" + key + "</u></a>\t";
+    }
+    toWrite.innerHTML = updateString;
+</script>

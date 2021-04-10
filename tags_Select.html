@@ -1,0 +1,109 @@
+---
+layout: default
+title: Tag lists
+permalink: /tags_Select.html
+---
+<p id="search">
+    Loading
+</p>
+<p id="search">
+</p>
+<p id="pages" style="text-align:center;"></p>
+
+<script language = "javascript">
+    var page = 0;
+    var searchList = [];
+
+    var months = [
+    'Jan','Feb','Mar','Apr','May','Jun',
+    'Jul','Aug','Sep','Oct','Nov','Dec'
+    ]
+        
+    var toWrite = document.getElementById("search");
+    var url = decodeURI(window.location.href);
+    var params = url.split('?');
+    page = 0;
+    searchList = [];
+    
+    if((params.length) != 2){
+        updateString += "Invalid tag request<br>\n";
+        toWrite.innerHTML = updateString;
+    }
+    else{
+        var target = params[1];
+        if(target != ""){
+            var cnt = 1;
+            var Connect = new XMLHttpRequest();
+            // Define which file to open and
+            // send the request.
+            Connect.open("GET", "info.xml", false);
+            Connect.setRequestHeader("Content-Type", "text/xml");
+            Connect.send(null);
+            var listUp = Connect.responseXML.children[0];
+
+            var updateString = "";
+            for(var i = 0; i < listUp.childElementCount; ++i){
+                if( String(listUp.children[i].children[3].innerHTML).includes(target)){
+                    if(cnt % 10 == 1){
+                        searchList.push("");
+                    }
+                    searchList[parseInt((cnt - 1)/10)] += "<tr>\n";
+                    searchList[parseInt((cnt - 1)/10)] += "<td>" + cnt.toString() + "</td>"; 
+                    searchList[parseInt((cnt - 1)/10)] +=  "<td> <a target=\"_parent\" href = " + listUp.children[i].children[1].innerHTML + " style=\"color:black\">" + listUp.children[i].children[0].innerHTML + "</a></td>\n";
+                    var date = listUp.children[i].children[2].innerHTML;
+                    var year = date.slice(0,4);
+                    var month  = months[parseInt(date.slice(5,7))];
+                    var day  = date.slice(8,10);
+                    searchList[parseInt((cnt - 1)/10)] +=  "<td>" + month + " " + day + "," + year + "</td>\n";
+                    searchList[parseInt((cnt - 1)/10)] += "</tr>\n";
+                    cnt += 1
+                }
+            }
+        }
+        setContent();
+    }
+
+    function setContent(){
+        var updateString = "";
+        var toWrite = document.getElementById("search");
+        if(searchList.length == 0){
+            toWrite.innerHTML = "No result for tag <b>"+ target+ "</b><br>\n";
+            return;
+        }
+        if(searchList.length > page){
+            updateString += "Search result for <b>"+ target + "</b><br>\n";
+            updateString += "<table style=\"width:100%\">\n";
+            updateString += "<tr>\n";
+            updateString += "<th style=\"width:1px\">Index</th>\n";
+            updateString += "<th style=\"text-align:center\">Title</th>\n";
+            updateString += "<th style=\"width:135px; text-align:center\">Date</th>\n";
+            updateString += "</tr>\n";
+            updateString += searchList[page];
+            updateString += "</table>";
+            toWrite.innerHTML = updateString;
+        }
+        else{
+            toWrite.innerHTML = "Invalid search page access";
+        }
+        toWrite = document.getElementById("pages");
+        var startFrom = page - 5 > 0? page - 5 : 0;
+        var endAt = startFrom + 10 > searchList.length ? searchList.length : startFrom + 10;
+        startFrom = endAt - 10 > 0? endAt - 10 : 0;
+        updateString = "";
+        for(var i = startFrom; i < page; ++i){
+            updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + i + ")\">" + (i + 1) + "</button>  ";
+        }
+        updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + page + ")\"><U>" + (page + 1) + "</U></button>  ";
+        for(var i = page + 1; i < endAt; ++i){
+            updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + i + ")\">" + (i + 1) + "</button>  ";
+        }
+        toWrite.innerHTML = updateString;
+    }
+
+    function setPage(idx){
+        page = idx;
+        setContent();
+    }
+
+    </script>
+</body>

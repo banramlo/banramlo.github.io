@@ -1,0 +1,233 @@
+---
+layout: search
+title: search result
+permalink: /search.html
+---
+
+<body>
+    <style>
+        img.loadingImg {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script language = "javascript">
+        var page = 0;
+        var searchList = [];
+        var htmlCached = [];
+        var months = [
+        'Jan','Feb','Mar','Apr','May','Jun',
+        'Jul','Aug','Sep','Oct','Nov','Dec'
+        ]
+        
+
+        function searchTarget(){
+            document.getElementById("loadingImg").style.display = "";
+            window.setTimeout(_searchTarget, 1);
+        }
+        function _searchTarget(){
+            page = 0;
+            var target = document.getElementById("searchTaget").value;
+            var targetLow = document.getElementById("searchTaget").value.toLowerCase();
+            searchList = [];
+            if(target == ""){
+                setContent();
+                document.getElementById("loadingImg").style.display = "none";
+                return;
+            }
+            var cnt = 1;
+            var Connect = new XMLHttpRequest();
+            // Define which file to open and
+            // send the request.
+            Connect.open("GET", "info.xml", false);
+            Connect.setRequestHeader("Content-Type", "text/xml");
+            Connect.send(null);
+            var listUp = Connect.responseXML.children[0];
+
+            var checkTitle = document.getElementById("checkTitle").checked;
+            var checkTag = document.getElementById("checkTag").checked;
+            var checkURL = document.getElementById("checkURL").checked;
+            var checkContent = document.getElementById("checkContent").checked;
+            if(checkContent)
+                readPages();
+            var updateString = "";
+            for(var i = 0; i < listUp.childElementCount; ++i){
+                var matchedWith = '';
+                var matched = -1;
+                var titleOfPost = String(listUp.children[i].children[0].innerHTML);
+                var tagOfPost = String(listUp.children[i].children[3].innerHTML);
+                var urlOfPost = String(listUp.children[i].children[1].innerHTML);
+                if(checkTitle){
+                    matched = titleOfPost.toLowerCase().indexOf(targetLow);
+                    if(matched != -1){
+                        matchedWith = 'title';
+                    }
+                }
+                if(matched == -1 && checkTag){
+                    matched = tagOfPost.toLowerCase().indexOf(targetLow);
+                    if(matched != -1){
+                        matchedWith = 'tag';
+                    }
+                }
+                if(matched == -1 && checkURL){
+                    matched = urlOfPost.toLowerCase().indexOf(targetLow);
+                    if(matched != -1){
+                        matchedWith = 'url';
+                    }
+                }
+                if(matched == -1 && checkContent){
+                    matched = htmlCached[i][0].indexOf(targetLow);
+                    if(matched != -1){
+                        matchedWith = 'context';
+                    }
+                    else if(htmlCached[i].length == 2){
+                        matched = htmlCached[i][1].indexOf(targetLow);
+                        if(matched != -1){
+                            matchedWith = 'contextKR';
+                        }
+                    }
+                }
+                if(matched != -1){
+                    if(cnt % 10 == 1){
+                        searchList.push("");
+                    }
+                    var date = listUp.children[i].children[2].innerHTML;
+                    var year = date.slice(0,4);
+                    var month  = months[parseInt(date.slice(5,7))];
+                    var day  = date.slice(8,10);
+                    searchList[parseInt((cnt - 1)/10)] +=  "<li><a target=\"_parent\" href = " + listUp.children[i].children[1].innerHTML + " style=\"color:black\">" + month + "/" + day + "/" + year + " " + listUp.children[i].children[0].innerHTML + "</a></li>\n";
+                    searchList[parseInt((cnt - 1)/10)] +=  "<span style=\"color:black\">";
+                    var findedTarget;
+                    if(matchedWith == 'title'){
+                        findedTarget = titleOfPost;
+                    }
+                    else if(matchedWith == 'tag'){
+                        findedTarget = tagOfPost;
+                    }
+                    else if(matchedWith == 'url'){
+                        findedTarget = urlOfPost;
+                    }
+                    else if(matchedWith == 'context'){
+                        findedTarget = htmlCached[i][0];
+                    }
+                    else if(matchedWith == 'contextKR'){
+                        findedTarget = htmlCached[i][1];
+                    }
+                    var preMatch = matched - 5 > 0 ? matched - 5 : 0;
+                    var postMatch = preMatch + 50;
+                    var postMatch = postMatch < findedTarget.length ? postMatch : findedTarget.length;
+                    searchList[parseInt((cnt - 1)/10)] += findedTarget.slice(preMatch, matched);
+                    searchList[parseInt((cnt - 1)/10)] += "</span><span style=\"color:red\">";
+                    searchList[parseInt((cnt - 1)/10)] += findedTarget.slice(matched, matched + targetLow.length > postMatch ? postMatch : matched + targetLow.length);
+                    searchList[parseInt((cnt - 1)/10)] += "</span><span>";
+                    searchList[parseInt((cnt - 1)/10)] += findedTarget.slice(matched + targetLow.length , postMatch);
+                    searchList[parseInt((cnt - 1)/10)] += "</span>\n\n";
+                    cnt += 1
+                }
+            }
+            setContent();
+            document.getElementById("loadingImg").style.display = "none";
+        }
+
+        function setContent(){
+            var updateString = "";
+            var toWrite = document.getElementById("search");
+            var target = document.getElementById("searchTaget").value;
+            if(target == ""){
+                toWrite.innerHTML = "";
+                document.getElementById("pages").innerHTML = "";
+                return;
+            }
+            if(searchList.length == 0){
+                toWrite.innerHTML = "No search result for <b>"+ target+ "</b><br>\n";
+                document.getElementById("pages").innerHTML = "";
+                return;
+            }
+            if(searchList.length > page){
+                updateString += "Search result for <b>"+ target + "</b><br>\n";
+                updateString += "<ul>\n";
+                updateString += searchList[page];
+                updateString += "</ul>";
+                toWrite.innerHTML = updateString;
+            }
+            else{
+                toWrite.innerHTML = "Invalid search page access";
+            }
+            toWrite = document.getElementById("pages");
+            var startFrom = page - 5 > 0? page - 5 : 0;
+            var endAt = startFrom + 10 > searchList.length ? searchList.length : startFrom + 10;
+            startFrom = endAt - 10 > 0? endAt - 10 : 0;
+            updateString = "";
+            for(var i = startFrom; i < page; ++i){
+                updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + i + ")\">" + (i + 1) + "</button>  ";
+            }
+            updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + page + ")\"><U>" + (page + 1) + "</U></button>  ";
+            for(var i = page + 1; i < endAt; ++i){
+                updateString += "<button style=\"color:black;background:none;border:none\" onclick = \"setPage(" + i + ")\">" + (i + 1) + "</button>  ";
+            }
+            toWrite.innerHTML = updateString;
+        }
+
+        function setSearchBox(){
+            parent.document.getElementById("searchBox").style.top="-100%";
+            parent.document.getElementById("searchBoxBG").style.top="-100%";
+            parent.document.body.style.overflow = "scroll";
+            document.getElementById("searchTaget").name = "";
+            searchTarget();
+        }
+
+        function setPage(idx){
+            page = idx;
+            setContent();
+        }
+
+        function readPages(){
+            if(htmlCached.length == 0){
+                var Connect = new XMLHttpRequest();
+                Connect.open("GET", "info.xml", false);
+                Connect.setRequestHeader("Content-Type", "text/xml");
+                Connect.send(null);
+                
+                var listUp = Connect.responseXML.children[0];
+                for(var i = 0; i < listUp.childElementCount; ++i){
+                    var thisText = new XMLHttpRequest();
+                    thisText.open("GET", String(listUp.children[i].children[1].innerHTML), false);
+                    thisText.setRequestHeader("Content-Type", "text");
+                    thisText.send(null);
+                    var body = thisText.responseText;
+                    var parser = new DOMParser();
+                    var htmlDoc = parser.parseFromString(body, 'text/html');
+                    body = htmlDoc.getElementById("content").textContent.toLowerCase();
+                    //KR
+                    htmlCached.push([body]);
+                    if(String(listUp.children[i].children[4].innerHTML.trim()) == 'Y'){
+                        var thisText = new XMLHttpRequest();
+                        thisText.open("GET", String("https://banramlo.github.io/kr/" + listUp.children[i].children[1].innerHTML.slice(27)), false);
+                        thisText.onerror = function(){if(thisText.status == 404) return;};
+                        thisText.setRequestHeader("Content-Type", "text");
+                        thisText.send(null);
+                        var body = thisText.responseText;
+                        var parser = new DOMParser();
+                        var htmlDoc = parser.parseFromString(body, 'text/html');
+                        body = htmlDoc.getElementById("content").textContent.toLowerCase();
+                        htmlCached[htmlCached.length - 1].push(body);
+                    }
+                }
+            }
+        }
+
+    </script>
+    <input type="text" id="searchTaget" onkeyup="searchTarget()">
+    <label><input type="checkbox" id="checkTitle" onchange="searchTarget()" checked> Title</label>
+    <label><input type="checkbox" id="checkTag" onchange="searchTarget()" checked> Tag</label>
+    <label><input type="checkbox" id="checkURL" onchange="searchTarget()"> URL</label>
+    <label><input type="checkbox" id="checkContent" onchange="searchTarget()"> Content</label>
+    <button style="float: right;" class="nav-link" onclick="setSearchBox()">Close</button><br>
+    <p id="search">
+    </p>
+    <p id="pages" style="text-align:center;"></p>
+    <img class="loadingImg" id="loadingImg" src = "https://banramlo.github.io/assets/img/Ajax-loader.gif" style="display: none;">
+</body>

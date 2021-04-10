@@ -1,0 +1,64 @@
+---
+layout: default
+title: 'archive'
+---
+<p id="lists">
+    Loading
+</p>
+
+<p id = "pages" style="text-align:center;">
+</p>
+
+<script language = "javascript">
+    var toWrite = document.getElementById("lists");
+    var updateString = "";
+    var months = [
+        'Jan','Feb','Mar','Apr','May','Jun',
+        'Jul','Aug','Sep','Oct','Nov','Dec'
+        ];
+
+    var page = parseInt(document.URL.split("?")[1]);
+    var pageUnit = 30;
+    var pageMax = 10;
+    var Connect = new XMLHttpRequest();
+    // Define which file to open and
+    // send the request.
+    Connect.open("GET", "https://banramlo.github.io/info.xml", false);
+    Connect.setRequestHeader("Content-Type", "text/xml");
+    Connect.send(null);
+    var listUp = Connect.responseXML.children[0];
+    updateString += "<h1>There are " + parseInt(listUp.childElementCount) + "posts in total.</h1><br>";
+    var thisYear = "";
+    for(var i = page * pageUnit; i < ((page + 1) * pageUnit > listUp.childElementCount? listUp.childElementCount : (page + 1) * pageUnit); ++i){
+        var title = listUp.children[i].children[0].innerHTML;
+        var URL = listUp.children[i].children[1].innerHTML;
+        var date = listUp.children[i].children[2].innerHTML;
+        var year = date.slice(0,4);
+        var month  = months[parseInt(date.slice(5,7)) - 1];
+        var day  = date.slice(8,10);
+        if(thisYear != year){
+            if(thisYear != "")
+                updateString += "</ul>";
+            thisYear = year;
+            updateString += "<h3>" + year + "</h3><br>";
+            updateString += "<ul>";
+        }
+        updateString += "<li><a style=\"color:black\" href=" + URL + "><U>" + month + " " + day + "," + year + "    " + title + "</U></a></li>";
+    }
+    updateString += "</ul>";
+    toWrite.innerHTML = updateString;
+    var pageHalf = parseInt(pageMax/2);
+    toWrite = document.getElementById("pages");
+    var startFrom = page - pageHalf > 0? page - pageHalf : 0;
+    var endAt = startFrom + pageMax > parseInt((listUp.childElementCount + pageUnit - 1)/pageUnit) ? parseInt((listUp.childElementCount + pageUnit - 1)/pageUnit) : startFrom + pageMax;
+    startFrom = endAt - pageMax > 0? endAt - pageMax : 0;
+    updateString = "";
+    for(var i = startFrom; i < page; ++i){
+        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + i + "\">" + (i + 1) + "</a>  ";
+    }
+    updateString += "<U><a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + page + "\">" + (page + 1) + "</a></U>  ";
+    for(var i = page + 1; i < endAt; ++i){
+        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + i + "\">" + (i + 1) + "</a>  ";
+    }
+    toWrite.innerHTML = updateString;
+</script>
