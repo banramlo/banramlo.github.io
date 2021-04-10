@@ -67,7 +67,7 @@ Let's prove that this algorithm runs in polynomial time.
 Let's define a potential function $\Phi$ of tree $T$ such that $\Phi(T)$ $=$ $\sum\limits_{v \in V} 3^{d_T(v)}$.
 Notice that $n$ $<$ $\Phi(T)$ $\le$ $n3^{\Delta(T)}\le n3^n$.
 After doing a local search once, degree of $v$ and $w$ will increase and $u$ will decrease.
-Let's assume that $v$ has a degree $i \ge \Delta(T) -l$.
+Let's assume that $u$ has a degree $i \ge \Delta(T) -l$.
 As a result, potential of $T$ will increase no more than $2(3^{i-1} - 3^{i-2})$ $=$ $4 \times 3^{i-2}$ and will decrease $3^i - 3^{i - 1} = 2 \times 3^{i - 1}$.
 Which means potential of $T$ will decrease at least $\frac{2}{9}3^i$ $\ge$ $\frac{2}{9}3^{\Delta(T) - l}$ $=$ $\frac{2}{9 \times 3^{l}}3^{\Delta(T)}$ $\ge$ $\frac{2}{27 \times 3^{log_2 n}}3^{\Delta(T)}$ $\ge$ $\frac{2}{27 \times 4^{log_2 n}}3^{\Delta(T)}$ $=$ $\frac{2}{27n^2}3^{\Delta(T)}$ $\ge$ $\frac{2}{27n^3}\Phi(T)$.
 Now, potential decrase at least by a factor of $(1-\frac{2}{27n^3})$ at each iteration.

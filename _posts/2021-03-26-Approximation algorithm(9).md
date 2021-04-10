@@ -93,14 +93,11 @@ Proof is like follow.
 Let's define $C^L_i$ as a termination time founded by linear programming.
 However we can sort that works in the order of $C^L_i$ so let's assume so.
 Which means $C^L_1$ $\le$ $C^L_2$ $\le$ $C^L_3$ $\le$ $\cdots$ $\le$ $C^L_n$.
-Let's define one more solution $C^R_i$ as a termination time of work $i$ with processing order in $C^L_i$.
-Then, we can get 2 facts like unweighted version did.
+Let's define one more solution $C^R_i$ as a termination time of nonpreemptive machine's work $i$ with processing order in $C^L_i$.
+Then, we can get 2 facts like unweighted version did and we can know other two facts below With these facts.
 
 1. $\sum\limits_{i = 1}^nC^L_i \le \operatorname{OPT}$<br>
 2. $C^R_i$ $\le$ $\max\limits_{k=1,2,\cdots,i}r_k$ $+$ $\sum\limits_{k=1}^i p_k$
-
-With these facts, we can know other two facts below.
-
 3. $\max\limits_{k=1,2,\cdots,i}r_k  \le C^L_i$<br>
 4. $\frac{1}{2}\sum\limits_{k=1}^i p_k = \frac{1}{2}\rho(\\{1,2,\cdots,i\\}) \le C^L_i$
 
