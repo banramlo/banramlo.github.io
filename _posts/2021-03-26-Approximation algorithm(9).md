@@ -136,8 +136,8 @@ As a result, removing $a$ from $S$ will decrease $f(S)$ if $C_a > \rho(S - \\{a\
 adding $b$ to $S$ will decrease $f(S)$ if $C_b < \rho(S) + \frac{1}{2}p_b$.
 
 Now let's assume that every variable satisfies for all $S_i$s but there is some constraint that doesn't matches.
-Which means $\sum\limits_{j \in S_i}p_jC_j < \frac{1}{2}\rho(S_i)^2$.
-Notice that $f(S_i) < 0$.
+Which means $\sum\limits_{j \in X}p_jC_j < \frac{1}{2}\rho(SX)^2$.
+Notice that $f(X) < 0$.
 Now, let's remove the biggest $j$ in $S_i$ if removing $j$ decreases $f(S_i)$.
 Let's define $S_h$ as the termination of such an operation.
 Then, it will stop when $C_h \le \rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ for the biggest $j$ in $S_i$.
