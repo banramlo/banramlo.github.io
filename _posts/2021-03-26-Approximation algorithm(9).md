@@ -140,10 +140,10 @@ Which means $\sum\limits_{j \in X}p_jC_j < \frac{1}{2}\rho(X)^2$.
 Notice that $f(X) < 0$.
 Now, let's remove the biggest $j$ in $X$ if removing $j$ decreases $f(X)$.
 Let's define $S_h$ as the termination of such an operation.
-Then, it will stop when $C_h \le \rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ for the biggest $j$ in $X$.
+Then, it will stop when $C_h \le \rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ for the biggest $j = h$ in $X$.
 However we can add any $1 \le j < h$ to decrease $f(S_h)$ because $C_j$ $\le$ $C_h$ $\le$ $\rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ $<$ $\rho(S_h - \\{h\\}) + p_h$ $=$ $\rho(S_h)$ $<$ $\rho(S_h) + \frac{1}{2}p_j$.
 If we define $S_e=\\{1,2,\cdots,h$} then, $f(S_e) \le f(S_h) \le f(X) < 0$.
-However, it can't be true because from the algorithm $f(S_e) = \sum\limits_{i = 1}^e p_iC_i - \frac{1}{2}\rho(S_e) \ge 0$.
+However, it can't be true because $f(S_e) = \sum\limits_{i = 1}^e p_iC_i - \frac{1}{2}\rho(S_e) \ge 0$ from the algorithm.
 As a result, we don't need to see all the contraint but only for $S = \\{1,2,\cdots,i$} is enough.
 
 {: .box-note}
