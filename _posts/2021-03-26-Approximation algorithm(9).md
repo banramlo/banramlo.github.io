@@ -113,8 +113,8 @@ Therefore, $\sum\limits_{i=1}^n C^R_i$ $\le$ $\sum\limits_{i=1}^n 3C^L_i$ $\le$ 
 We didn't discussed about the running time and it look exponential because the number of contraints is exponential.
 However, we still can solve this problem in the polynomial time with ellipsoid method which doesn't bounded in the number of contraints.
 
-To solve this problem with ellipsoid method, we need an oracle that runs in the polynomial time and checks whether a solution is a feasible.
-If we have an oracle, ellipsoid method can solve the linear programming in $O(poly(log u, n))$ which $u$ is bit in use for saving the data.
+To solve this problem with ellipsoid method, we need a seperation oracle that runs in the polynomial time and checks whether a solution is a feasible.
+If we have a seperation oracle, ellipsoid method can solve the linear programming in $O(poly(log u, n))$ which $u$ is bit in use for saving the data.
 
 However we need to shirnk the number of constraint to check because it is exponential of number of variables.
 Therefore, we claim below.
