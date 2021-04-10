@@ -120,7 +120,7 @@ However we need to shirnk the number of constraint to check because it is expone
 Therefore, we claim below.
 
 "Let's define $S_1 = \\{1$}, $S_2 = \\{1, 2$}, $\cdots$, $S_n = \\{1,2,\cdots,n$}.
-If every variable satisfies for all $S_i$s then that solution statisfies all constraints."
+If every variable satisfies constraints for all $S_i$s then that solution statisfies all constraints."
 
 Before proving this, we will check brief 2 facts below.
 Notice that S is an arbitrary set in $N$, $a$ is in $S$ and $b$ isn't in S.<br>
