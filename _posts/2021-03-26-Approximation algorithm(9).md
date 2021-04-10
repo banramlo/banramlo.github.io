@@ -138,11 +138,11 @@ adding $b$ to $S$ will decrease $f(S)$ if $C_b < \rho(S) + \frac{1}{2}p_b$.
 Now let's assume that every variable satisfies for all $S_i$s but there is some constraint that doesn't matches.
 Which means $\sum\limits_{j \in X}p_jC_j < \frac{1}{2}\rho(SX)^2$.
 Notice that $f(X) < 0$.
-Now, let's remove the biggest $j$ in $S_i$ if removing $j$ decreases $f(S_i)$.
+Now, let's remove the biggest $j$ in $X$ if removing $j$ decreases $f(X)$.
 Let's define $S_h$ as the termination of such an operation.
-Then, it will stop when $C_h \le \rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ for the biggest $j$ in $S_i$.
+Then, it will stop when $C_h \le \rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ for the biggest $j$ in $X$.
 However we can add any $1 \le j < h$ to decrease $f(S_h)$ because $C_j$ $\le$ $C_h$ $\le$ $\rho(S_h - \\{h\\}) + \frac{1}{2}p_h$ $<$ $\rho(S_h - \\{h\\}) + p_h$ $=$ $\rho(S_h)$ $<$ $\rho(S_h) + \frac{1}{2}p_j$.
-If we define $S_e=\\{1,2,\cdots,h$} then, $f(S_e) \le f(S_h) \le f(S_i) < 0$.
+If we define $S_e=\\{1,2,\cdots,h$} then, $f(S_e) \le f(S_h) \le f(X) < 0$.
 However, it can't be true because from the algorithm $f(S_e) = \sum\limits_{i = 1}^e p_iC_i - \frac{1}{2}\rho(S_e) \ge 0$.
 As a result, we don't need to see all the contraint but only for $S = \\{1,2,\cdots,i$} is enough.
 
