@@ -8,7 +8,7 @@ use_math: true
 ---
 
 Linear programming is constructed with two factors.
-1. Objective function which is mizimizing/maximizing target.
+1. Objective function which is a mizimizing/maximizing target.
 2. Constraints Which are requirements for the problem.
 
 For example, minimize $2x + 5y + 6z$ such that $3x + 4y + 3z \ge 5$, $x + y \ge 10, x,y,z \ge 0$.
@@ -26,15 +26,15 @@ The reason is that a fesaible soltuion space is a convex and problem is a linear
     </div>
     Return $V$.
 </div>
-In practice, it is fast algorithm but it can't be guaranteed to be run in polynimal time.
+In practice, it is a fast algorithm but it can't be guaranteed to be run in the polynimal time.
 Therefore, there is an alternative method for it.
 
 ## Ellipsoid method
 Elliposid algorithm uses so-called a partition orcale.
-Partition orcale is an orcale that tells us whether is a solution feasible or not in polynoimal time.
+Partition orcale is an orcale that tells us whether a solution is feasible or not in polynoimal time.
 If we have such an orcale, we can bipartite solution space to two seperate spaces.
 One has an optimal solution and the other has lefts.
-With this, we can solve any linear problem in polynomial time.
+With this, we can solve any linear problem in polynomial time by the ellipsoid method.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
