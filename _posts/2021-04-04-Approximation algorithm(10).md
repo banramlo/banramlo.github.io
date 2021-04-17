@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(11) - Integer multicommodity flows
+title: Approximation algorithm(10) - Integer multicommodity flows
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true
