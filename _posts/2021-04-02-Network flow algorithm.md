@@ -25,22 +25,22 @@ Then we can decompose $f$ to some simple paths $P_1, \cdots, P_N$ and some cycle
 Which $N + M \le |E|$.
 
 Without loosing much of generality, we can assume that $f$'s value is positive or negative.
-In the proof of this flow decomposition, it doesn't necessarily to be positive or negative.
+In the proof of flow decomposition, it doesn't necessarily to be positive or negative.
 However, let's assume it to be positive for easy.
 
 Then, if $f$ has a cycle $C$, we can eliminate that $C$ from $f$ without changing value of the flow because it is a cycle.
 If we reduce every value of edges with smallest value inside of the $C$ then we can remove that cycle.
-Notice that we can reduce value of edges because we picked the smallest value inside of the $C$.
-Cycle should be dispear after reducing values because one of edge in $C$ should be 0 after reducing values.
+Notice that we can reduce value of edges because we picked the smallest value inside of the $C$,
+cycle should be disappear after reducing values because one of edge in $C$ should be 0 after reducing values.
+
 If we remove every cycle, it should have some paths because it has a flow.
-If we remove any flow that has smallest value, then value of flow $f$ should be 0 or some value.
+If we remove any flow that has the smallest value, value of flow $f$ should be 0 or some positive value.
 If it is the first case (flow of $f$ become 0) then it is decomposed.
-Otherwise(there is some value) then we can do this process again.
+Otherwise, we can do this process again.
 Therefore, there sould be at least some cycles and paths.
 
-Notice that we should remove at least 1 edge to remove a path or a cycle.
-If it didn't removing path cna't be happen because it choosed a smallest value on graph.
-It's the same case for cycle because it should remove a edge to resolve the cycle.
+Notice that we should remove at least 1 edge to remove a path or a cycle because it choosed a smallest value on graph.
+As a result, we can do this at most $|E|$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
