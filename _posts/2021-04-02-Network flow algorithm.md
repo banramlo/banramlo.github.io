@@ -13,7 +13,8 @@ Formally, flow of the graph is defined like follow.
 For a given graph $G= (V, E)$, flow $f$ is a mapping function $V \times V \rightarrow \mathcal{R}$.
 To be a flow, there are some requirements.
 If there is a capacity $c$ for edeges $c : V \times V \rightarrow \mathcal{R}$, which $(u,v) \in E$ iff $c(u,v)$ exists.
-Then flow of graph can't exceed that capacity which means $f(u,v) \le c(u, v)$.
+Then flow of graph can't exceed that capacity.
+Which means $f(u,v) \le c(u, v)$.
 Also it requires two variable which are source $s$ and destination $t$.
 Then $\sum\limits_{(i, v) \in E, v \neq s,t}f(i, v) = \sum\limits_{(v, j) \in E, v \neq s,t}f(v, j)$.
 Which means that every value goes in $v$ then every value should go out from $v$ either.
