@@ -15,9 +15,9 @@ To be a flow, there are some requirements.
 If there is a capacity $c$ for edeges $c : V \times V \rightarrow \mathcal{R}$, which $(u,v) \in E$ iff $c(u,v)$ exists.
 Then flow of graph can't exceed that capacity.
 Which means $f(u,v) \le c(u, v)$.
-Also it requires two variable which are source $s$ and destination $t$.
+Also it requires two variables which are source $s$ and destination $t$.
 Then $\sum\limits_{(i, v) \in E, v \neq s,t}f(i, v) = \sum\limits_{(v, j) \in E, v \neq s,t}f(v, j)$.
-Which means that every value goes in $v$ then every value should go out from $v$ either.
+Which means that every value goes in $v$ should go out from $v$ either.
 Then we can evaluate this flow $f$ as $\sum\limits_{(s, v) \in E}f(s, v) - \sum\limits_{(v, s) \in E}f(v, s)$ $=$ $\sum\limits_{(v, t) \in E}f(v, t) - \sum\limits_{(t, v) \in E}f(t, v)$.
 
 Now, let's think about a directed graph $G = (V,E)$ and some flow $f$ of $G$.
