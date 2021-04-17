@@ -27,9 +27,9 @@ Algorithm is like follow.
 
 Notice that $\sum\limits_{P \in P_i} x_P = 1$ means that we don't need a normalization for $P \in P_i$.
 
-Now, let's think about the solution $x^{\star}_P$ which is given from the algorithm.
+Now, let's think about the solution $x^\star_P$ which is given from the algorithm.
 If we define an event that maps a number of edges go through edge $e$ as $Y_e$,
-$E[Y_e]$ $=$ $\sum\limits_{i = 1}^k \sum\limits_{P \in P_i, e \in P} x^{\star}_p$ $=$ $\sum\limits_{e \in P} x^{\star}_p$ $\le$ $W$.
+$E[Y_e]$ $=$ $\sum\limits_{i = 1}^k \sum\limits_{P \in P_i, e \in P} x^\star_P$ $=$ $\sum\limits_{e \in P} x^\star_P$ $\le$ $W$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.z
