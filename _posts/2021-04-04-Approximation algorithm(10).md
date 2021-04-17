@@ -27,9 +27,15 @@ Algorithm is like follow.
 
 Notice that $\sum\limits_{P \in P_i} x_P = 1$ means that we don't need a normalization for $P \in P_i$.
 
-Now, let's think about the solution $x^\star_P$ which is given from the algorithm.
-If we define an event that maps a number of edges go through edge $e$ as $Y_e$,
+Now, let's think about the solution $x^\star_P, W^\star$ which is given from the algorithm.
+If we define a probability that a number of edges go through edge $e$ is greater than $x$ as $Pr[Y_e > x]$,
 $E[Y_e]$ $=$ $\sum\limits_{i = 1}^k \sum\limits_{P \in P_i, e \in P} x^\star_P$ $=$ $\sum\limits_{e \in P} x^\star_P$ $\le$ $W$.
+Notice that $x^\star_P$ is an independent random variable.
+
+If we think about chernoff bounds, we can get follow.
+$Pr[Y_e \ge (1 + \delta) W^\star]$ $<$ $e^{-W^\star\delta^2/3}$.
+Notice that $\mu$ $=$ $E[Y_e]$ $\le$ $W$.
+
 
 {: .box-note}
-**Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.z
+**Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
