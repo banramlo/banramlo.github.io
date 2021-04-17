@@ -28,7 +28,10 @@ Without loosing much of generality, we can assume that $f$'s value is positive o
 In the proof of this flow decomposition, it doesn't necessarily to be positive or negative.
 However, let's assume it to be positive for easy.
 
-Then, if $f$ has a cycle $C$, we can eliminate that $C$ from $f$ with smallest value in side of the $C$  without changing value of the flow because it is a cycle.
+Then, if $f$ has a cycle $C$, we can eliminate that $C$ from $f$ without changing value of the flow because it is a cycle.
+If we reduce every value of edges with smallest value inside of the $C$ then we can remove that cycle.
+Notice that we can reduce value of edges because we picked the smallest value inside of the $C$.
+Cycle should be dispear after reducing values because one of edge in $C$ should be 0 after reducing values.
 If we remove every cycle, it should have some paths because it has a flow.
 If we remove any flow that has smallest value, then value of flow $f$ should be 0 or some value.
 If it is the first case (flow of $f$ become 0) then it is decomposed.
