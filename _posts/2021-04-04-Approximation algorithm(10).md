@@ -47,7 +47,7 @@ As a result, we can select $c$ to make resonable probability with resonable maxi
 If $W^\star \ge c\ln{n}$, we can select $\delta = \sqrt{\frac{c\ln{n}}{W^\star}} \le 1$ then
 $Pr[Y_e \ge (1 + \delta)W^\star]$ $<$ 
 $e^{-W^\star\delta^2/3}$ $=$ 
-$e^{-W^\star c\ln{n}}{W^\star}/3}$ $=$
+$e^{\frac{-W^\star c\ln{n}}{3W^\star}}$ $=$
 $e^{-c\ln{n}/3}$ $=$ $n^{-c/3}$.
 
 As a result, $Pr[\max(Y_e) \ge (1 + \delta)W^\star]$ $=$
