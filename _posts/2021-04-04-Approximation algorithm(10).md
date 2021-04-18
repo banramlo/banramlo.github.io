@@ -58,5 +58,17 @@ $\sum\limits_{e \in E}n^{-c/3}$ $=$
 $|E|n^{-c/3}$ $\le$
 $n^{2-c/3}$
 
+What about the running time of the algorithm?
+We can't solve the problem above in polynomial time because the number of paths is NP.
+As a result, the number of variable is NP either.
+Therefore, we can't even see the whole variable.
+
+Therefore, algorithm above will be changed to equivalent algorithm.
+
+Algorithm is like follow.
+1. Solve "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$".
+2. Choose path $p_i$ by choosing an edge that adjacent to $s_i$ with probability $f_i(s_i, e)/\sum\limits_{e : e\text{ is adjacent to }$s_i$}f_i(s_i, e)$ for each $e$.
+3. Extend path $p_i$ by choosing an edge that adjacent to the last vertex which extended with probability of $f_i(v, e)/\sum\limits_{e : e\text{ is adjacent to }$v$}f_i(v, e)$.
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
