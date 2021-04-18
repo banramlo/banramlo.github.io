@@ -66,9 +66,18 @@ Therefore, we can't even see the whole variable.
 Therefore, algorithm above will be changed to equivalent algorithm.
 
 Algorithm is like follow.
-1. Solve "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$".
+1. Solve "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$ and $f_i$ should be a flow of value 1 from $s_i$ to $t_i$".
 2. Choose path $p_i$ by choosing a vertex $u$ that adjacent to $s_i$ with probability $f_i(s_i, u)/\sum\limits_{u : u\text{ is adjacent to }s_i}f_i(s_i, u)$.
 3. Extend path $p_i$ by choosing a vertex $u$ that adjacent to the last extended vertex $v$ with probability of $f_i(v, u)/\sum\limits_{u : u\text{ is adjacent to }v}f_i(v, u)$.
+
+Notice that step 1 is equal with "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$, $\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_i(u, v)$ $=$ $\sum_{w : (v,w) \in E, v \neq \\{s_i, t_i\\}}f_i(v, w)$, $\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$".
+Now it takes polynomial time to solve.
+The number of variable is $O(k|E|)$.
+The number of first contraint "$\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$" is at most $O(|E|)$.
+The number of second contraint "$\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_i(u, v)$ $=$ $\sum_{w : (v,w) \in E, v \neq \\{s_i, t_i\\}}f_i(v, w)$" is at most $O(k|E||V|)$.
+The number of Third contraint "$\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$" is at most $O(k|E|)$.
+
+Then, why this algorithm makes the same situation of previous algorithm?
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
