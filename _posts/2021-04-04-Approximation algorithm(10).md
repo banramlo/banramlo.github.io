@@ -67,8 +67,8 @@ Therefore, algorithm above will be changed to equivalent algorithm.
 
 Algorithm is like follow.
 1. Solve "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$".
-2. Choose path $p_i$ by choosing an edge that adjacent to $s_i$ with probability $f_i(s_i, e)/\sum\limits_{e : e\text{ is adjacent to }s_i}f_i(s_i, e)$ for each $e$.
-3. Extend path $p_i$ by choosing an edge that adjacent to the last vertex which extended with probability of $f_i(v, e)/\sum\limits_{e : e\text{ is adjacent to }v}f_i(v, e)$.
+2. Choose path $p_i$ by choosing a vertex $u$ that adjacent to $s_i$ with probability $f_i(s_i, u)/\sum\limits_{u : u\text{ is adjacent to }s_i}f_i(s_i, u)$.
+3. Extend path $p_i$ by choosing a vertex $u$ that adjacent to the last vertex which extended with probability of $f_i(v, u)/\sum\limits_{u : u\text{ is adjacent to }v}f_i(v, u)$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
