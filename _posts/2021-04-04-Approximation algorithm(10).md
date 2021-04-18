@@ -39,9 +39,9 @@ Notice that $\mu$ $=$ $E[Y_e]$ $\le$ $c\ln{n}W^\star$.
 Now, $W^\star \ge 1$ is not a hard assumption from the requirement of problem.
 If we select $\delta = 1$, $Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\ln{n}W^\star\delta^2/3}$ $=$ $e^{-c\ln{n}/3}$ $=$ $n^{-c/3}$.
 
-As a result, $Pr[\max{Y_e} \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
+As a result, $Pr[\max(Y_e) \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
 $\sum\limits_{e \in E}Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $\le$
-$\sum\limits_{e \in E}n^{-c/3}$ $=$ $|E|n^{-c/3}$ $\le$ $n^{2-c\3}$.
+$\sum\limits_{e \in E}n^{-c/3}$ $=$ $|E|n^{-c/3}$ $\le$ $n^{2-c/3}$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
