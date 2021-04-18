@@ -19,7 +19,7 @@ Notice that $\sum\limits_{P \in P_i} x_P = 1$ forces to choose one path and $\su
 
 Now, it can be relaxed to linear programming like follow.
 "Minimize $W$ such that $\sum\limits_{P \in P_i} x_P = 1$, $\sum\limits_{P: e \in P} x_P \le W$ $\forall e \in E$, $x_P \ge 0$".
-Then we can make a solution that is in $\operatorname{OPT} + \sqrt{c\operatorname{OPT}\ln{n}}$ with high probability by randomized rounding.
+Then we can make a solution that is in $O(\log{n})\operatorname{OPT}$ with high probability by randomized rounding.
 
 Algorithm is like follow.
 1. Solve "Minimize $W$ such that $\sum\limits_{P \in P_i} x_P = 1$, $\sum\limits_{P: e \in P} x_P \le W$ $\forall e \in E$, $x_P \ge 0$".
@@ -29,13 +29,19 @@ Notice that $\sum\limits_{P \in P_i} x_P = 1$ means that we don't need a normali
 
 Now, let's think about the solution $x^\star_P, W^\star$ which is given from the algorithm.
 If we define a probability that a number of edges go through edge $e$ is greater than $x$ as $Pr[Y_e > x]$,
-$E[Y_e]$ $=$ $\sum\limits_{i = 1}^k \sum\limits_{P \in P_i, e \in P} x^\star_P$ $=$ $\sum\limits_{e \in P} x^\star_P$ $\le$ $W$.
+$E[Y_e]$ $=$ $\sum\limits_{i = 1}^k \sum\limits_{P \in P_i, e \in P} x^\star_P$ $=$ $\sum\limits_{e \in P} x^\star_P$ $\le$ $W^\star$.
 Notice that $x^\star_P$ is an independent random variable.
 
 If we think about chernoff bounds, we can get follow.
-$Pr[Y_e \ge (1 + \delta) W^\star]$ $<$ $e^{-W^\star\delta^2/3}$.
-Notice that $\mu$ $=$ $E[Y_e]$ $\le$ $W$.
+$Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\ln{n}W^\star\delta^2/3}$.
+Notice that $\mu$ $=$ $E[Y_e]$ $\le$ $c\ln{n}W^\star$.
 
+Now, $W^\star \ge 1$ is not a hard assumption from the requirement of problem.
+If we select $\delta = 1$, $Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\ln{n}W^\star\delta^2/3}$ $=$ $e^{-c\ln{n}/3}$ $=$ $n^{-c/3}$.
+
+As a result, $Pr[\max{Y_e} \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
+$\sum\limits_{e \in E}Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $\le$
+$\sum\limits_{e \in E}n^{-c/3}$ $=$ $|E|n^{-c/3}$ $\le$ $n^{2-c\3}$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
