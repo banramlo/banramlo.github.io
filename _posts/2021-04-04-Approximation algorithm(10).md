@@ -42,6 +42,21 @@ If we select $\delta = 1$, $Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\l
 As a result, $Pr[\max(Y_e) \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
 $\sum\limits_{e \in E}Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $\le$
 $\sum\limits_{e \in E}n^{-c/3}$ $=$ $|E|n^{-c/3}$ $\le$ $n^{2-c/3}$.
+As a result, we can select $c$ to make resonable probability with resonable maximum $Y_e$.
+
+If $W^\star \ge c\ln{n}$, we can select $\delta = \sqrt{\frac{c\ln{n}}{W^\star}} \le 1$ then
+$Pr[Y_e \ge (1 + \delta)W^\star]$ $<$ 
+$e^{-W^\star\delta^2/3}$ $=$ 
+$e^{-W^\star c\ln{n}}{W^\star}/3}$ $=$
+$e^{-c\ln{n}/3}$ $=$ $n^{-c/3}$.
+
+As a result, $Pr[\max(Y_e) \ge (1 + \delta)W^\star]$ $=$
+$Pr[\max(Y_e) \ge (1 + sqrt{\frac{c\ln{n}}{W^\star}})W^\star]$ $=$
+$Pr[\max(Y_e) \ge W^\star + sqrt{c\ln{n}W^\star}]$ $\le$
+$\sum\limits_{e \in E}Pr[Y_e \ge W^\star + sqrt{c\ln{n}W^\star}]$ $\le$
+$\sum\limits_{e \in E}n^{-c/3}$ $=$
+$|E|n^{-c/3}$ $\le$
+$n^{2-c/3}$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
