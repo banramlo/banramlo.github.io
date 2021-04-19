@@ -10,8 +10,8 @@ use_math: true
 Survivable network design is a problem that designing a network that can survive from disconnecting some edges.
 
 Let's assume there is a given undirected graph $G = (V,E)$ with costs $c_e \ge 0$ $\forall e \in E$.
-Connectivity requirments $r_{ij} \in \mathbb{Z}^{+} \cup \\{0\\}$ $\forall$ pairs of vertices $i,j \in V$, where $i \neq j$.
-Now, problem is a find a minimum cost set of edges $F \in E$ such that connecting $i$ and $j$ which $i \neq j$ in $(V,F)$ by $r_{ij}$ distinct paths.
+Now, let's define connectivity requirments $r_{ij} \in \mathbb{Z}^{+} \cup \\{0\\}$ for all pairs of vertices $i,j \in V$, where $i \neq j$.
+Then problem is a find a minimum cost set of edges $F \subset E$ such that $G' = (V,F)$ has $r_{ij}$ distinct paths to connecting $i$ and $j$.
 
 Now, we can do a integer programming relaxation over this and it is like follow.
 "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
