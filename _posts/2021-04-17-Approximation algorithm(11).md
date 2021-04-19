@@ -14,10 +14,10 @@ Connectivity requirments $r_{ij} \in \mathbb{Z}^{+} \cup \\{0\\}$ $\forall$ pair
 Now, problem is a find a minimum cost set of edges $F \in E$ such that connecting $i$ and $j$ which $i \neq j$ in $(V,F)$ by $r_{ij}$ distinct paths.
 
 Now, we can do a integer programming relaxation over this and it is like follow.
-"Minimize $\sum\limits_{e \in E} c_e x_e$ such that $sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
+"Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
 
 Now, we can do a linear programming relaxation like we did in the set cover.
-"Minimize $\sum\limits_{e \in E} c_e x_e$ such that $sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $0 \le x_e \le 1$".
+"Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $0 \le x_e \le 1$".
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.\
