@@ -78,6 +78,14 @@ The number of second contraint "$\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_
 The number of Third contraint "$\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$" is at most $O(k|E|)$.
 
 Then, why this algorithm makes the same situation of previous algorithm?
+Let's recap the previous algorithm.
+"Minimize $W$ such that $\sum\limits_{P \in P_i} x_P = 1$, $\sum\limits_{P: e \in P} x_P \le W$ $\forall e \in E$, $x_P \ge 0$"
+If we can select $x_P$, we can make a flow of value $x_P$ following $P$.
+Then, we can decompose such flow to paths.
+Notice that we can make a flow without cycle that makes better solution for flow with cycle because cycle will not change a value of flow but increase the congestion of edges.
+As a result, problem above can be changed to find a flows of paths and it is the same problem we've just changed. 
+In other word, proof can be easily summariezed to "New algorithm finds a feasible solution of original because we can compose flow from paths.
+In the same time, old algorithm can find a feasible solution of new algoroithm because we can decompose flow to paths."
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
