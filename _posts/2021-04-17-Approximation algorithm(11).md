@@ -90,6 +90,7 @@ Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminat
 
 First of all, we will show "If we select $z_e \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_e$ then 
 $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
+
 Proof is like follow.
 If you think about the category of edges in $\delta(A)$, it will be one of follows.
 1. $i \in A - B$ $j \in V - (A \cup B)$
@@ -106,7 +107,7 @@ Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_e$ in following 8 cat
 5. $i \in B - A$ $j \in V - (A \cup B)$
 6. $i \in A \cap B$ $j \in V - (A \cup B)$
 7. $i \in B - A$ $j \in A - B$
-8. $i \in A \cap B$ $j \in A - B$
+8. $i \in A \cap B$ $j \in A - B$<br>
 Notice that there is a duplicated categories(2 and 6).
 
 If you think about the category of edges in $\delta(A \cup B)$, it will be one of follows.
@@ -128,7 +129,7 @@ Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in f
 6. $i \in A \cap B$ $j \in A - B$
 
 Now, we can do a mapping this 6 categories to one of 8 categories for $z(\delta(A)) + z(\delta(B))$.
-1 => 1, 2 => 2, 3 => 5, 4 => 6, 5 => 4, 6 => 8.
+$1 \rightarrow 1, 2 \rightarrow 2, 3 \rightarrow 5, 4 \rightarrow 6, 5 \rightarrow 4, 6 \rightarrow 8.$
 Now we have category 3, 7 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$.
 
@@ -152,17 +153,7 @@ Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$
 5. $i \in B - A$ $j \in A \cap B$ = $i \in A \cap B$ $j \in B - A$
 6. $i \in B - A$ $j \in A - B$
 
-
-1. $i \in A - B$ $j \in V - (A \cup B)$
-2. $i \in A \cap B$ $j \in V - (A \cup B)$
-3. $i \in A - B$ $j \in B - A$
-4. $i \in A \cap B$ $j \in B - A$
-5. $i \in B - A$ $j \in V - (A \cup B)$
-6. $i \in A \cap B$ $j \in V - (A \cup B)$
-7. $i \in B - A$ $j \in A - B$
-8. $i \in A \cap B$ $j \in A - B$
-
-We can map 1 => 1, 2 => 8, 3 => 3, 4 => 5, 5 => 4, 6 => 7.
+We can map $1 \rightarrow 1, 2 \rightarrow 8, 3 \rightarrow 3, 4 \rightarrow 5, 5 \rightarrow 4, 6 \rightarrow 7$.
 Now we have category 2, 6 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
 
