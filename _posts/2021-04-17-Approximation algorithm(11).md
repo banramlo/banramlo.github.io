@@ -186,7 +186,7 @@ As a result, we can use this as a seperation orcale.
 Now only left thing is to show that solution is in $2\operatorname{OPT}$.
 To show this, we will prove generalized version of the claim.
 For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
-If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x^1_e$.
+If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x^{1}_e$.
 Notice that this implies $\operatorname{ANS}$ $\le$ $2\sum\limits_{e \in E} c_e x^1_e$ $\le$ $2\operatorname{OPT}$. 
 
 We will show this in the inductive method.
