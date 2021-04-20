@@ -65,5 +65,24 @@ Then, we can make possible inequality for weakly supermodular in any case.
 Notice that if $f(A \cap B), f(B \cup A) \ge f(A - B)$, $f(A \cap B), f(B \cup A) \ge f(B - A)$ doesn't right then at least one of $f(A - B), f(B - A) \ge f(A \cap B)$ or $f(A - B), f(B - A) \ge f(A \cup B)$ should be true.
 As a result, $f$ is a weakly supermodular
 
+Now, if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$",
+there exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ for any weakly supermodular $f$.
+
+From the fact above, we can construct an algorithm.
+
+<div class="algorithm">
+    $F \leftarrow \emptyset$<br>
+    $i \leftarrow 1$<br>
+    $\operatorname{while}$ $F$ is not a feasible solution $\textbf{do}$<br>
+    <div class = "algorithm">
+        Solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$"<br>
+        $F_i \leftarrow \\{e \in E - F : x_e \ge \frac{1}{2}\\}$<br>
+        $F \leftarrow F \cup F_i$<br>
+        $i \leftarrow i + 1$
+    </div>
+    $\textbf{return} \text{ } F$
+</div>
+
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
