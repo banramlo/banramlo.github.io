@@ -65,8 +65,8 @@ Then, we can make possible inequality for weakly supermodular in any case.
 Notice that if $f(A \cap B), f(B \cup A) \ge f(A - B)$, $f(A \cap B), f(B \cup A) \ge f(B - A)$ doesn't right then at least one of $f(A - B), f(B - A) \ge f(A \cap B)$ or $f(A - B), f(B - A) \ge f(A \cup B)$ should be true.
 As a result, $f$ is a weakly supermodular
 
-Now, if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$",
-there exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ for any weakly supermodular $f$.
+Now, there is some nice property of a weakly supermodular $f$.
+There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
 
 From the fact above, we can construct an algorithm.
 
@@ -82,6 +82,89 @@ From the fact above, we can construct an algorithm.
     </div>
     $\textbf{return} \text{ } F$
 </div>
+
+Notice that it is so-called $\operatorname{iterative rounding}$ because it uses LP-relxation to extend solution and iterates it many times.
+
+If the algorithm above terminates, solution should be feasible.
+Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminates.
+
+First of all, we will show "If we select $z_e \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_e$ then 
+$z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
+Proof is like follow.
+If you think about the category of edges in $\delta(A)$, it will be one of follows.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in V - (A \cup B)$
+3. $i \in A - B$ $j \in B - A$
+4. $i \in A \cap B$ $j \in B - A$
+
+It's the same for the B either.
+Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_e$ in following 8 categories.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in V - (A \cup B)$
+3. $i \in A - B$ $j \in B - A$
+4. $i \in A \cap B$ $j \in B - A$
+5. $i \in B - A$ $j \in V - (A \cup B)$
+6. $i \in A \cap B$ $j \in V - (A \cup B)$
+7. $i \in B - A$ $j \in A - B$
+8. $i \in A \cap B$ $j \in A - B$
+Notice that there is a duplicated categories(2 and 6).
+
+If you think about the category of edges in $\delta(A \cup B)$, it will be one of follows.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in V - (A \cup B)$
+3. $i \in B - A$ $j \in V - (A \cup B)$
+
+If you think about the category of edges in $\delta(A \cap B)$, it will be one of follows.
+1. $i \in A \cap B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in B - A$
+3. $i \in A \cap B$ $j \in A - B$
+
+Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in following 8 categories.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in V - (A \cup B)$
+3. $i \in B - A$ $j \in V - (A \cup B)$
+4. $i \in A \cap B$ $j \in V - (A \cup B)$
+5. $i \in A \cap B$ $j \in B - A$
+6. $i \in A \cap B$ $j \in A - B$
+
+Now, we can do a mapping this 6 categories to one of 8 categories for $z(\delta(A)) + z(\delta(B))$.
+1 => 1, 2 => 2, 3 => 5, 4 => 6, 5 => 4, 6 => 8.
+Now we have category 3, 7 lefts.
+As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$.
+
+Like above, we can do the same thing for $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
+
+If you think about the category of edges in $\delta(A - B)$, it will be one of follows.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A - B$ $j \in A \cap B$
+3. $i \in A - B$ $j \in B - A$
+
+If you think about the category of edges in $\delta(B - A)$, it will be one of follows.
+1. $i \in B - A$ $j \in V - (A \cup B)$
+2. $i \in B - A$ $j \in A \cap B$
+3. $i \in B - A$ $j \in A - B$
+
+Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 8 categories.
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A - B$ $j \in A \cap B$ = $i \in A \cap B$ $j \in A - B$
+3. $i \in A - B$ $j \in B - A$
+4. $i \in B - A$ $j \in V - (A \cup B)$
+5. $i \in B - A$ $j \in A \cap B$ = $i \in A \cap B$ $j \in B - A$
+6. $i \in B - A$ $j \in A - B$
+
+
+1. $i \in A - B$ $j \in V - (A \cup B)$
+2. $i \in A \cap B$ $j \in V - (A \cup B)$
+3. $i \in A - B$ $j \in B - A$
+4. $i \in A \cap B$ $j \in B - A$
+5. $i \in B - A$ $j \in V - (A \cup B)$
+6. $i \in A \cap B$ $j \in V - (A \cup B)$
+7. $i \in B - A$ $j \in A - B$
+8. $i \in A \cap B$ $j \in A - B$
+
+We can map 1 => 1, 2 => 8, 3 => 3, 4 => 5, 5 => 4, 6 => 7.
+Now we have category 2, 6 lefts.
+As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
 
 
 {: .box-note}
