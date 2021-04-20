@@ -13,7 +13,7 @@ Let's assume there is a given undirected graph $G = (V,E)$ with costs $c_e \ge 0
 Now, let's define connectivity requirments $r_{ij} \in \mathbb{Z}^{+} \cup \\{0\\}$ for all pairs of vertices $i,j \in V$, where $i \neq j$.
 Then problem is a find a minimum cost set of edges $F \subset E$ such that $G' = (V,F)$ has $r_{ij}$ edge distinct paths to connecting $i$ and $j$.
 
-Now, we can do a integer programming relaxation over this and it is like follow.
+Now, we can make a integer programming over this and it is like follow.
 "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
 Notice that if there is $r_{ij}$ edge distinct paths, we can make flow of value $r_{ij}$ between $i$ and $j$.
 Then, there should be a mincut that corresponding to that flow from the network flow theory.
@@ -35,7 +35,7 @@ Then problem will be shifted to "Minimize $\sum\limits_{e \in E} c_e x_e$ such t
 If we make $f(S)$ as so then $f(S)$ is so-called weakly supermodular.
 To be a weakly supermodular, there are some requirements.
 1. $f(\emptyset) = f(U) = 0$ for ground set $U$.
-2. one of $f(A) + f(B) \le f(A \cap B) + f(A \cup B)$ or $f(A) + f(B) \le f(A - B) + f(B - A)$ should be true.
+2. one of $f(A) + f(B)$ $\le$ $f(A \cap B) + f(A \cup B)$ or $f(A) + f(B)$ $\le$ $f(A - B) + f(B - A)$ should be true.
 
 Proof is like follow.
 First, it is trivial that $f(\emptyset) = f(V) = 0$ because there are no such an edge between $V$ and $\emptyset$.
@@ -45,24 +45,27 @@ Because if we think about $i \in A \cup B, j \not\in A \cup B$ then it should be
 
 Now, we can make 4 property of $f$ from the fact above.
 
-1. $f(A) \le \max(f(A - B), f(A \cap B))$
-2. $f(A) = f(V - A) \le \max(f(B - A), f(V - (A \cup B))) = \max(f(B - A), f(A \cup B))$
-3. $f(B) \le \max(f(B - A), f(A \cap B))$
-4. $f(B) = f(V - B) \le \max(f(A - B), f(V - (A \cup B))) = \max(f(A - B), f(A \cup B))$
+1. $f(A)$ $\le$ $\max(f(A - B), f(A \cap B))$
+2. $f(A)$ $=$ $f(V - A)$ $\le$ $\max(f(B - A), f(V - (A \cup B)))$ $=$ $\max(f(B - A), f(A \cup B))$
+3. $f(B)$ $\le$ $\max(f(B - A), f(A \cap B))$
+4. $f(B)$ $=$ $f(V - B)$ $\le$ $\max(f(A - B), f(V - (A \cup B)))$ $=$ $\max(f(A - B), f(A \cup B))$
 
 Notice that $(A - B) \cup (A \cap B) = A$, $(V - (A \cup B)) \cup (B - A) = V - A$, $(B - A) \cup (A \cap B) = B$ and $(V - (A \cup B)) \cup (A - B) = V - B$.
+
 This implies 4 inequalities.
-1. $f(A) + f(B) \le \max(f(A - B), f(A \cap B)) + \max(f(B - A), f(A \cap B))$
-2. $f(A) + f(B) \le \max(f(A - B), f(A \cap B)) + \max(f(A - B), f(A \cup B))$
-3. $f(A) + f(B) \le \max(f(B - A), f(A \cup B)) + \max(f(B - A), f(A \cap B))$
-4. $f(A) + f(B) \le \max(f(B - A), f(A \cup B)) + \max(f(A - B), f(A \cup B))$
+
+1. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B)) + \max(f(B - A), f(A \cap B))$
+2. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B)) + \max(f(A - B), f(A \cup B))$
+3. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B)) + \max(f(B - A), f(A \cap B))$
+4. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B)) + \max(f(A - B), f(A \cup B))$
 
 Then, we can make possible inequality for weakly supermodular in any case.
-1. $f(A) + f(B) \le \max(f(A - B), f(A \cap B)) + \max(f(B - A), f(A \cap B)) = f(A - B) + f(B - A)$ if $f(A - B), f(B - A) \ge f(A \cap B)$
-2. $f(A) + f(B) \le \max(f(A - B), f(A \cap B)) + \max(f(A - B), f(A \cup B)) = f(A \cap B) + f(B \cup A)$ if $f(A \cap B), f(B \cup A) \ge f(A - B)$
-3. $f(A) + f(B) \le \max(f(B - A), f(A \cup B)) + \max(f(B - A), f(A \cap B)) = f(A \cap B) + f(B \cup A)$ if $f(A \cap B), f(B \cup A) \ge f(B - A)$
-4. $f(A) + f(B) \le \max(f(B - A), f(A \cup B)) + \max(f(A - B), f(A \cup B)) = f(A - B) + f(B - A)$ if $f(A - B), f(B - A) \ge f(A \cup B)$
-Notice that if $f(A \cap B), f(B \cup A) \ge f(A - B)$, $f(A \cap B), f(B \cup A) \ge f(B - A)$ doesn't right then at least one of $f(A - B), f(B - A) \ge f(A \cap B)$ or $f(A - B), f(B - A) \ge f(A \cup B)$ should be true.
+1. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B)) + \max(f(B - A), f(A \cap B))$ $=$ $f(A - B) + f(B - A)$ if $f(A - B), f(B - A) \ge f(A \cap B)$
+2. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B)) + \max(f(A - B), f(A \cup B))$ $=$ $f(A \cap B) + f(B \cup A)$ if $f(A \cap B), f(B \cup A) \ge f(A - B)$
+3. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B)) + \max(f(B - A), f(A \cap B))$ $=$ $f(A \cap B) + f(B \cup A)$ if $f(A \cap B), f(B \cup A) \ge f(B - A)$
+4. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B)) + \max(f(A - B), f(A \cup B))$ $=$ $f(A - B) + f(B - A)$ if $f(A - B), f(B - A) \ge f(A \cup B)$
+
+Notice that if $f(A \cap B), f(B \cup A)$ $\ge$ $f(A - B)$, $f(A \cap B), f(B \cup A)$ $\ge$ $f(B - A)$ isn't true then at least one of $f(A - B), f(B - A)$ $\ge$ $f(A \cap B)$ or $f(A - B), f(B - A)$ $\ge$ $f(A \cup B)$ should be true.
 As a result, $f$ is a weakly supermodular
 
 Now, there is some nice property of a weakly supermodular $f$.
@@ -89,7 +92,7 @@ If the algorithm above terminates, solution should be feasible.
 Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminates.
 
 First of all, we will show "If we select $z_e \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_e$ then 
-$z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
+$z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
 
 Proof is like follow.
 If you think about the category of edges in $\delta(A)$, it will be one of follows.
@@ -161,8 +164,8 @@ Now, let $z_e = 1$ if $e \in F$ and $z_e = 0$ otherwise.
 
 Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z(\delta(S))$.
 As a result $f_i(S)$ should fulfill one of follows.
-1. $f_i(A) + f_i(B) = f(A) + f(B) - z(\delta(A)) - z(\delta(B)) \le f(A \cup B) + f(A \cap B) - z(\delta(A \cup B)) - z(\delta(A \cap B)) = f_i(A \cup B) + f_i(A \cap B)$.
-2. $f_i(A) + f_i(B) = f(A) + f(B) - z(\delta(A)) - z(\delta(B)) \le f(A - B) + f(B - A) - z(\delta(A - B)) - z(\delta(B - A)) = f_i(A - B) + f_i(B - A)$.
+1. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z(\delta(A)) - z(\delta(B))$ $\le$ $f(A \cup B) + f(A \cap B) - z(\delta(A \cup B)) - z(\delta(A \cap B))$ $=$ $f_i(A \cup B) + f_i(A \cap B)$.
+2. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z(\delta(A)) - z(\delta(B))$ $\le$ $f(A - B) + f(B - A) - z(\delta(A - B)) - z(\delta(B - A))$ $=$ $f_i(A - B) + f_i(B - A)$.
 
 Now, we showed that $f_i$ is a weakly supermodular.
 
@@ -176,53 +179,53 @@ Therefore, we will make a seperation orcale like below.
 3. If there is a flow such that the value of flow $f_{ij}$ is less than $r_{ij}$ then it's an infeasible solution otherwise it is feasible.
 
 Notice that if there is a flow then it means $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F| \ge r_{ij}$ which $\delta(S)$ denotes the set of edges in $E - F$ between $S$ and $V - S$.
-Which means $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$.
+As a result, $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$.
 If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$ then there should be $S$ such that $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F|< r_{ij}$.
 As a result, we can use this as a seperation orcale.
 
-Now only left is to show that solution is in $2\operatorname{OPT}$.
+Now only left thing is to show that solution is in $2\operatorname{OPT}$.
 To show this, we will prove generalized version of the claim.
-For any weakly supermodular function $f$, if we can solve iterative rounding algorithm above in $k$ iteration then solution is in $2\operatorname{OPT}$.
+For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
+If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x^1_e$.
+Notice that this implies $\operatorname{ANS}$ $\le$ $2\sum\limits_{e \in E} c_e x^1_e$ $\le$ $2\operatorname{OPT}$. 
 
 We will show this in the inductive method.
-Let's define $x^i$ as the solution of LP in $i$th iteration. 
 
-If $k = 1$, we will solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$" once and that's all.
+If $k = 1$, we will solve "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" once and that's all.
 From the above, we will select $\\{x_e : x_e \ge \frac{1}{2}\\}$.
-As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$ $2\operatorname{OPT}$.
+As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$.
 
 If $k \ge 2$, we can three facts follows.
-First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ is true because we selected $x^1_e \ge \frac{1}{2}$ in $F_1$.
+First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ is true because we selected $x^1_e \ge \frac{1}{2}$ in $x^1_e$.
 
 Also, if we consider $\\{x^1_e | e \in E - F_1\\} = \Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
 The reason is like follow.
+Second constraint is trivial to be hold because $0 \le x^1_e \le 1$.
+First constraint holds either because of follows.
 $\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $=$ 
 $\sum\limits_{e \in \delta(S), e \in E} x^1_e - \sum\limits_{e \in \delta(S), e \in F_1} x^1_e$ $\ge$ 
 $f_1(S) - |\deta(S) \cap F_1|$ $=$
 $f_2(S)$.
 Therefore, $\Tau$ is a feasible solution.
-As a result, $\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $\ge$ $\sum\limits_{e \in \delta(S), e \in E - F_1} x^2_e$.
+As a result, $\sum\limits_{e \in E - F_1} c_e x^1_e$ $\ge$ $\sum\limits_{e \in E - F_1} c_e x^2_e$.
 
-For the last, we can use inductive method for "Minimize $\sum\limits_{e \in E - F_1} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F_1} x_e \ge f_2(S) = f(S) - |\delta(S) \cap F_1|$ $\forall S \subset V$, $0 \le x_e \le 1$".
+For the last, we can use iterative rounding for $E - F_1$ and $f_2(S)$ because it will terminted in $k - 1$ iterations.
 Notice that we've proved that $f_2$ is a weakly supermodular.
-If we start the problem solving process with $E - F_1$ and $f_2(S)$ instead of $f_1(S)$ then it should be ended in $k - 1$ iteration.
-As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $\sum\limits_{e \in F - F_1} c_e$.
+As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x^2_e$.
 
 In a summary, we have three facts.
-1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e$
-2. $\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $\ge$ $\sum\limits_{e \in \delta(S), e \in E - F_1} x^2_e$
-3. $\sum\limits_{e \in E - F_1} c_e x^2_e$ $\le$ $2\operatorname{OPT}$.
+1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$
+2. $\sum\limits_{e \in E - F_1} c_e x^2_e$ $\le$ $\sum\limits_{e \in E - F_1} c_e x^1_e$
+3. $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x^2_e$.
 
 If we combine three facts above,
-$\sum\limits_{e \in F} c_e$ $\le$ 
-$2 \sum\limits_{e \in F} c_e x^1_e$ $\le$ 
-$2\operatorname{OPT}$ is true for the solution of iterative rounding $F$.
+$\sum\limits_{e \in F} c_e$ $=$ 
+$\sum\limits_{e \in F - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
+$2\sum\limits_{e \in E - F_1} c_e x^2_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$
+$2\sum\limits_{e \in E - F_1} c_e x^1_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $=$
+$2\sum\limits_{e \in E} c_e x^1_e$.
 
-Proof is like follow.
-$\sum\limits_{e \in F} c_e$ $=$
-$W + \sum\limits_{e \in F_1} c_e$ $\le$ 
-$2\sum\limits_{e \in F - F_1} c_e x^2_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$
-$2\sum\limits_{e \in F - F_1} c_e x^1_e + 2\sum\limits_{e \in F_1} c_e x^1_e$
+Now proof stops here.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
