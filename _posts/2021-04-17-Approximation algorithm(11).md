@@ -180,5 +180,23 @@ Which means $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$.
 If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$ then there should be $S$ such that $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F|< r_{ij}$.
 As a result, we can use this as a seperation orcale.
 
+Now only left is to show that solution is in $2\operatorname{OPT}$.
+We will prove this as an inductive way.
+If we recap the problem "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$", we can know that it will give a solution in $2\operatorname{OPT}$ because solution of above LP $\opertorname{ANS}$ will better than $\operatorname{OPT}$.
+Also, we will select every $x_e \ge \frac{1}{2}$ to $1$.
+If we define rounded solution as $\opertorname{RND}$ then $\opertorname{RND} \le 2\opertorname{ANS} \le 2\opertorname{OPT}$.
+
+Now, let's define $\Tau_i = \cup\limits_{k = 1}^{i} F_i$ and solution of LP in $i$th iteration as $x_e^i$.
+Then let's assume that algorithm terminates in $m$th iteration and let $\Tau = \Tau_m$.
+
+Now, we need some facts to prove this inductive method.
+Let assume that statement hold for $i$ iterations.
+Then, $\sum\limits_{e \in \Tau_i}c_e \le 2\operatorname{OPT}$ can be assumed to be true.
+At the $i + 1$ iteration, $\sum\limits_{e \in E - \Tau_i} c_e x^{i+1}_e$ $\le$ $\sum\limits_{e \in E - \Tau_i} c_e x^i_e$ is true because $x^{i+1}_e$ is the solution of "Minimize $\sum\limits_{e \in E - \Tau_i} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - \Tau_i} x_e \ge f_i(S)$".
+
+From facts above, $\sum\limits_{e \in \Tau_{i + 1}}c_e$ $=$ 
+$\sum\limits_{e \in \Tau_{i + 1} - F_{i + 1}}c_e + \sum\limits_{e \in F_{i + 1}}c_e$ $\le$
+$2\sum\limits_{e \in \Tau _{i + 1}- F_{i + 1}}c_e x^{i + 1}_e + 2\sum\limits_{e \in F_{i + 1}}c_e x^i_e$ $\le$
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
