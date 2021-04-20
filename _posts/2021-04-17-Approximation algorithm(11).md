@@ -198,7 +198,7 @@ As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x
 If $k \ge 2$, we can three facts follows.
 First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ is true because we selected $x^1_e \ge \frac{1}{2}$ in $x^1_e$.
 
-Also, if we consider $\\{x^1_e | e \in E - F_1\\} = \Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
+Also, if we consider $\\{x^1_e | e \in E - F_1\\}$ $=$ $\Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
 The reason is like follow.
 Second constraint is trivial to be hold because $0 \le x^1_e \le 1$.
 First constraint holds either because of follows.
