@@ -157,6 +157,28 @@ We can map $1 \rightarrow 1, 2 \rightarrow 8, 3 \rightarrow 3, 4 \rightarrow 5, 
 Now we have category 2, 6 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
 
+Now, let $z_e = 1$ if $e \in F$ and $z_e = 0$ otherwise.
+
+Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z(\delta(S))$.
+As a result $f_i(S)$ should fulfill one of follows.
+1. $f_i(A) + f_i(B) = f(A) + f(B) - z(\delta(A)) - z(\delta(B)) \le f(A \cup B) + f(A \cap B) - z(\delta(A \cup B)) - z(\delta(A \cap B)) = f_i(A \cup B) + f_i(A \cap B)$.
+2. $f_i(A) + f_i(B) = f(A) + f(B) - z(\delta(A)) - z(\delta(B)) \le f(A - B) + f(B - A) - z(\delta(A - B)) - z(\delta(B - A)) = f_i(A - B) + f_i(B - A)$.
+
+Now, we showed that $f_i$ is a weakly supermodular.
+
+Therefore, we can found at least one edge such that $x_e \ge \frac{1}{2}$ for any $f_i$.
+Now if we can show that "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$" can be solved in polynomial time, it will the end of the proof for polynomial execution time for the algorithm.
+
+We still can use network flow algorithm to solve this.
+Therefore, we will make a seperation orcale like below.
+1. Make a graph that consists of $G = (V,E)$ and set capacity of $E - F$ as $x_e$ and capacity of $F$ as 1.
+2. Solve the network flow problem between all pair $i$ and $j$ such that $i \neq j$ and $i,j \in V$.
+3. If there is a flow such that the value of flow $f_{ij}$ is less than $r_{ij}$ then it's an infeasible solution otherwise it is feasible.
+
+Notice that if there is a flow then it means $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F| \ge r_{ij}$ which $\delta(S)$ denotes the set of edges in $E - F$ between $S$ and $V - S$.
+Which means $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$.
+If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$ then there should be $S$ such that $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F|< r_{ij}$.
+As a result, we can use this as a seperation orcale.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
