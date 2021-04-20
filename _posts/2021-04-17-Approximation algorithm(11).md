@@ -198,15 +198,15 @@ As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x
 If $k \ge 2$, we can three facts follows.
 First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$ is true because we selected $x_e^1 \ge \frac{1}{2}$ in $x_e^1$.
 
-Also, if we consider $\\{x_e^1 | e \in E - F_1\\}$ $=$ $\Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
+Also, if we consider $\\{x_e^1 | e \in E - F_1\\}$ $=$ $\Lambda$ then $\Lambda$ is a feasible solution of LP in the second iteration either.
 The reason is like follow.
 Second constraint is trivial to be hold because $0 \le x_e^1 \le 1$.
 First constraint holds either because of follows.
 $\sum\limits_{e \in \delta(S), e \in E - F_1} x_e^1$ $=$ 
 $\sum\limits_{e \in \delta(S), e \in E} x_e^1 - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $\ge$ 
-$f_1(S) - |\deta(S) \cap F_1|$ $=$
+$f_1(S) - |\delta(S) \cap F_1|$ $=$
 $f_2(S)$.
-Therefore, $\Tau$ is a feasible solution.
+Therefore, $\Lambda$ is a feasible solution.
 As a result, $\sum\limits_{e \in E - F_1} c_e x_e^1$ $\ge$ $\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 For the last, we can use iterative rounding for $E - F_1$ and $f_2(S)$ because it will terminted in $k - 1$ iterations.
