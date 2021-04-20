@@ -181,22 +181,48 @@ If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$
 As a result, we can use this as a seperation orcale.
 
 Now only left is to show that solution is in $2\operatorname{OPT}$.
-We will prove this as an inductive way.
-If we recap the problem "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$", we can know that it will give a solution in $2\operatorname{OPT}$ because solution of above LP $\opertorname{ANS}$ will better than $\operatorname{OPT}$.
-Also, we will select every $x_e \ge \frac{1}{2}$ to $1$.
-If we define rounded solution as $\opertorname{RND}$ then $\opertorname{RND} \le 2\opertorname{ANS} \le 2\opertorname{OPT}$.
+To show this, we will prove generalized version of the claim.
+For any weakly supermodular function $f$, if we can solve iterative rounding algorithm above in $k$ iteration then solution is in $2\operatorname{OPT}$.
 
-Now, let's define $\Tau_i = \cup\limits_{k = 1}^{i} F_i$ and solution of LP in $i$th iteration as $x_e^i$.
-Then let's assume that algorithm terminates in $m$th iteration and let $\Tau = \Tau_m$.
+We will show this in the inductive method.
+Let's define $x^i$ as the solution of LP in $i$th iteration. 
 
-Now, we need some facts to prove this inductive method.
-Let assume that statement hold for $i$ iterations.
-Then, $\sum\limits_{e \in \Tau_i}c_e \le 2\operatorname{OPT}$ can be assumed to be true.
-At the $i + 1$ iteration, $\sum\limits_{e \in E - \Tau_i} c_e x^{i+1}_e$ $\le$ $\sum\limits_{e \in E - \Tau_i} c_e x^i_e$ is true because $x^{i+1}_e$ is the solution of "Minimize $\sum\limits_{e \in E - \Tau_i} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - \Tau_i} x_e \ge f_i(S)$".
+If $k = 1$, we will solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$" once and that's all.
+From the above, we will select $\\{x_e : x_e \ge \frac{1}{2}\\}$.
+As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$ $2\operatorname{OPT}$.
 
-From facts above, $\sum\limits_{e \in \Tau_{i + 1}}c_e$ $=$ 
-$\sum\limits_{e \in \Tau_{i + 1} - F_{i + 1}}c_e + \sum\limits_{e \in F_{i + 1}}c_e$ $\le$
-$2\sum\limits_{e \in \Tau _{i + 1}- F_{i + 1}}c_e x^{i + 1}_e + 2\sum\limits_{e \in F_{i + 1}}c_e x^i_e$ $\le$
+If $k \ge 2$, we can three facts follows.
+First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ is true because we selected $x^1_e \ge \frac{1}{2}$ in $F_1$.
+
+Also, if we consider $\\{x^1_e | e \in E - F_1\\} = \Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
+The reason is like follow.
+$\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $=$ 
+$\sum\limits_{e \in \delta(S), e \in E} x^1_e - \sum\limits_{e \in \delta(S), e \in F_1} x^1_e$ $\ge$ 
+$f_1(S) - |\deta(S) \cap F_1|$ $=$
+$f_2(S)$.
+Therefore, $\Tau$ is a feasible solution.
+As a result, $\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $\ge$ $\sum\limits_{e \in \delta(S), e \in E - F_1} x^2_e$.
+
+For the last, we can use inductive method for "Minimize $\sum\limits_{e \in E - F_1} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F_1} x_e \ge f_2(S) = f(S) - |\delta(S) \cap F_1|$ $\forall S \subset V$, $0 \le x_e \le 1$".
+Notice that we've proved that $f_2$ is a weakly supermodular.
+If we start the problem solving process with $E - F_1$ and $f_2(S)$ instead of $f_1(S)$ then it should be ended in $k - 1$ iteration.
+As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $\sum\limits_{e \in F - F_1} c_e$.
+
+In a summary, we have three facts.
+1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e$
+2. $\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $\ge$ $\sum\limits_{e \in \delta(S), e \in E - F_1} x^2_e$
+3. $\sum\limits_{e \in E - F_1} c_e x^2_e$ $\le$ $2\operatorname{OPT}$.
+
+If we combine three facts above,
+$\sum\limits_{e \in F} c_e$ $\le$ 
+$2 \sum\limits_{e \in F} c_e x^1_e$ $\le$ 
+$2\operatorname{OPT}$ is true for the solution of iterative rounding $F$.
+
+Proof is like follow.
+$\sum\limits_{e \in F} c_e$ $=$
+$W + \sum\limits_{e \in F_1} c_e$ $\le$ 
+$2\sum\limits_{e \in F - F_1} c_e x^2_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$
+$2\sum\limits_{e \in F - F_1} c_e x^1_e + 2\sum\limits_{e \in F_1} c_e x^1_e$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
