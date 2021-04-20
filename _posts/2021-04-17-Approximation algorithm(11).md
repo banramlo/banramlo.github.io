@@ -187,43 +187,43 @@ Now only left thing is to show that solution is in $2\operatorname{OPT}$.
 To show this, we will prove generalized version of the claim.
 For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
 If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x_e^1$.
-Notice that this implies $\operatorname{ANS}$ $\le$ $2\sum\limits_{e \in E} c_e x^1_e$ $\le$ $2\operatorname{OPT}$. 
+Notice that this implies $\operatorname{ANS}$ $\le$ $2\sum\limits_{e \in E} c_e x_e^1$ $\le$ $2\operatorname{OPT}$. 
 
 We will show this in the inductive method.
 
 If $k = 1$, we will solve "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" once and that's all.
 From the above, we will select $\\{x_e : x_e \ge \frac{1}{2}\\}$.
-As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$.
+As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$.
 
 If $k \ge 2$, we can three facts follows.
-First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$ is true because we selected $x^1_e \ge \frac{1}{2}$ in $x^1_e$.
+First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$ is true because we selected $x_e^1 \ge \frac{1}{2}$ in $x_e^1$.
 
-Also, if we consider $\\{x^1_e | e \in E - F_1\\}$ $=$ $\Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
+Also, if we consider $\\{x_e^1 | e \in E - F_1\\}$ $=$ $\Tau$ then $\Tau$ is a feasible solution of LP in the second iteration either.
 The reason is like follow.
-Second constraint is trivial to be hold because $0 \le x^1_e \le 1$.
+Second constraint is trivial to be hold because $0 \le x_e^1 \le 1$.
 First constraint holds either because of follows.
-$\sum\limits_{e \in \delta(S), e \in E - F_1} x^1_e$ $=$ 
-$\sum\limits_{e \in \delta(S), e \in E} x^1_e - \sum\limits_{e \in \delta(S), e \in F_1} x^1_e$ $\ge$ 
+$\sum\limits_{e \in \delta(S), e \in E - F_1} x_e^1$ $=$ 
+$\sum\limits_{e \in \delta(S), e \in E} x_e^1 - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $\ge$ 
 $f_1(S) - |\deta(S) \cap F_1|$ $=$
 $f_2(S)$.
 Therefore, $\Tau$ is a feasible solution.
-As a result, $\sum\limits_{e \in E - F_1} c_e x^1_e$ $\ge$ $\sum\limits_{e \in E - F_1} c_e x^2_e$.
+As a result, $\sum\limits_{e \in E - F_1} c_e x_e^1$ $\ge$ $\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 For the last, we can use iterative rounding for $E - F_1$ and $f_2(S)$ because it will terminted in $k - 1$ iterations.
 Notice that we've proved that $f_2$ is a weakly supermodular.
-As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x^2_e$.
+As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 In a summary, we have three facts.
-1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x^1_e$
-2. $\sum\limits_{e \in E - F_1} c_e x^2_e$ $\le$ $\sum\limits_{e \in E - F_1} c_e x^1_e$
-3. $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x^2_e$.
+1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$
+2. $\sum\limits_{e \in E - F_1} c_e x_e^2$ $\le$ $\sum\limits_{e \in E - F_1} c_e x_e^1$
+3. $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 If we combine three facts above,
 $\sum\limits_{e \in F} c_e$ $=$ 
 $\sum\limits_{e \in F - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
-$2\sum\limits_{e \in E - F_1} c_e x^2_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $\le$
-$2\sum\limits_{e \in E - F_1} c_e x^1_e + 2\sum\limits_{e \in F_1} c_e x^1_e$ $=$
-$2\sum\limits_{e \in E} c_e x^1_e$.
+$2\sum\limits_{e \in E - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\le$
+$2\sum\limits_{e \in E - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
+$2\sum\limits_{e \in E} c_e x_e^1$.
 
 Now proof stops here.
 
