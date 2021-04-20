@@ -75,8 +75,8 @@ From the fact above, we can construct an algorithm.
     $i \leftarrow 1$<br>
     $\operatorname{while}$ $F$ is not a feasible solution $\textbf{do}$<br>
     <div class = "algorithm">
-        Solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$"<br>
-        $F_i \leftarrow \\{e \in E - F : x_e \ge \frac{1}{2}\\}$<br>
+        Solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$"<br>
+        $F_i \leftarrow \\{ e \in E - F : x_e \ge \frac{1}{2} \\}$<br>
         $F \leftarrow F \cup F_i$<br>
         $i \leftarrow i + 1$
     </div>
