@@ -246,7 +246,26 @@ $2\sum\limits_{e \in E - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\
 $2\sum\limits_{e \in E - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
 $2\sum\limits_{e \in E} c_e x_e^1$.
 
-Now proof stops here.
+Now proof stops here for survivable network design.
+
+However, we need to show one following fact.
+There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+
+To show this proof, we need some definitions to make a proof.
+
+1. $\chi_E$ is a vector such that $(\chi_E)_e \begin{cases}
+1, e \in E\\
+0, e \not\in E
+\end{cases}$
+2. $A$ and $B$ are intersecting if all of $A \cap B$, $A - B$ and $B - A$ are not empty.
+3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(x_e)$ for $A \in V$.
+4. A collection of sets $\mathcal{L}$ is laminor if no pair of sets in $\matcal{L}$ is intersecting.
+5. $\operatorname{Span}(\mathcal{L})$
+
+Now, we need some $\operatorname{Lemma}$s.
+
+$\operatorname{Lemma 1.}$ If $A$ and $B$ are tight and intersecting, at least one of the following is true.
+1. $A \cap B$, $A \cup B$ are both tight and $z_{A}()$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
