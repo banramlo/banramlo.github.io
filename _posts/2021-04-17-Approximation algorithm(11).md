@@ -232,17 +232,16 @@ As a result, $\sum\limits_{e \in E - F_1} c_e x_e^1$ $\ge$ $\sum\limits_{e \in E
 
 For the last, we can use iterative rounding for $E - F_1$ and $f_2(S)$ because it will terminted in $k - 1$ iterations.
 Notice that we've proved that $f_2$ is a weakly supermodular.
-As a result, $\sum\limits_{e \in E - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
+As a result, $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 In a summary, we have three facts.
 1. $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$
 2. $\sum\limits_{e \in E - F_1} c_e x_e^2$ $\le$ $\sum\limits_{e \in E - F_1} c_e x_e^1$
-3. $\sum\limits_{e \in E - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
+3. $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 If we combine three facts above,
 $\sum\limits_{e \in F} c_e$ $\le$ 
-$\sum\limits_{e \in E} c_e$ $=$ 
-$\sum\limits_{e \in E - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
+$\sum\limits_{e \in F - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
 $2\sum\limits_{e \in E - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\le$
 $2\sum\limits_{e \in E - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
 $2\sum\limits_{e \in E} c_e x_e^1$.
