@@ -309,17 +309,28 @@ Which means $\mathcal{L}$ will not be a $\operatorname{laminor}$ if we add anyth
 First, we will claim $\operatorname{Span}(\mathcal{T})$ $\subset$ $\operatorname{Span}(\mathcal{L})$ to show $\operatorname{Span}(\mathcal{T})$ $=$ $\operatorname{Span}(\mathcal{L})$.
 Notice that $\operatorname{Span}(\mathcal{L})$ $\subset$ $\operatorname{Span}(\mathcal{T})$ is trivial because $\mathcal{L} \subset \mathcal{T}$.
 
-Let's assume not, then there are some $S$ $\in$ $\mathcal{T}$ such that $\chi_{\delta(S)}$ $\not\in$ $\operatorname{Span}(\mathcal{L})$.
-Between possible $S$s, let's assume that we've choose $S$ such that $\\{S\\}$ has the fewest intersecting sets with $\mathcal{L}$.
-Then, $\\{S\\}$ should intersecting with at least one set in $\mathcal{L}$.
-The reason is that we can add $\\{S\\}$ to $\mathcal{L}$ if it don't intersect because it doesn't $\mathcal{L}$ to be not $\operatorname{laminor}$.
+Let's assume not then there are some $S$ $\in$ $\mathcal{T}$ such that $\chi_{\delta(S)}$ $\not\in$ $\operatorname{Span}(\mathcal{L})$.
+Between possible $S$s, let's assume that we've choose $S$ such that $S$ has the fewest intersecting sets in $\mathcal{L}$.
+However, $S$ should intersect with at least one set in $\mathcal{L}$.
+The reason is that we can add $S$ to $\mathcal{L}$ because it doesn't change $\mathcal{L}$ to be not $\operatorname{laminor}$ if it don't intersect.
 However, it's contradiction to "$\mathcal{L}$ is maximal $\operatorname{laminor}$".
 
-Now, we can find $T$ such that $T$ is intersecting with $S$.
+Now, we can find $T \in \operatorname{L}$ such that $T$ is intersecting with $S$.
 Then one of two need to be true because both $S$, $T$ are tight because $T \in \mathcal{L} \subset \mathcal{T}$ and $S \in \mathcal{T}$.
 
 1. $S \cap T$, $S \cup T$ are both tight and $\chi_{\delta(S \cap T)} + \chi_{\delta(S \cup T)}$ $=$ $\chi_{\delta(S)} + \chi_{\delta(T)}$ 
 2. $S - T$, $T - S$ are both tight and $\chi_{\delta(S - T)} + \chi_{\delta(T - S)}$ $=$ $\chi_{\delta(S)} + \chi_{\delta(T)}$ 
+
+Let's assume that it's the case 1.
+Then both $\chi_{\delta(S \cap T)}$, $\chi_{\delta(S \cup T)}$ can't be in $\operatorname{Span}(\mathcal{L})$ at the same time.
+
+Proof is like follow.
+From $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$, $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
+It's the same of case 2 because $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S - T)}$ + $\chi_{\delta(T)}$ - $\chi_{\delta(T - S)}$. 
+
+Now, there is some $X$ $\in$ $\\{S \cap T, \S \cup T\\}$, $X$ $\not\in$ $\operatorname{Span}\mathcal{L}$.
+
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
