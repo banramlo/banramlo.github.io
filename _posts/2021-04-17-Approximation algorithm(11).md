@@ -135,7 +135,7 @@ If you think about the category of edges in $\delta(A \cap B)$, it will be one o
 2. $i \in A \cap B$, $j \in B - A$
 3. $i \in A \cap B$, $j \in A - B$
 
-Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in following 8 categories.
+Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A \cap B$, $j \in V - (A \cup B)$
 3. $i \in B - A$, $j \in V - (A \cup B)$
@@ -143,7 +143,7 @@ Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in f
 5. $i \in A \cap B$, $j \in B - A$
 6. $i \in A \cap B$, $j \in A - B$
 
-Now, we can do a mapping this 6 categories to one of 8 categories for $z(\delta(A)) + z(\delta(B))$.
+Now, we can do a mapping from this categories of $z(\delta(A \cup B)) + z(\delta(A \cap B))$ to one of 8 categories of $z(\delta(A)) + z(\delta(B))$.
 $1 \rightarrow 1, 2 \rightarrow 2, 3 \rightarrow 5, 4 \rightarrow 6, 5 \rightarrow 4, 6 \rightarrow 8.$
 Now we have category 3, 7 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$.
@@ -160,7 +160,7 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 2. $i \in B - A$, $j \in A \cap B$
 3. $i \in B - A$, $j \in A - B$
 
-Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 8 categories.
+Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A - B$, $j \in A \cap B$ = $i \in A \cap B$ $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
