@@ -172,7 +172,7 @@ We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarr
 Now we have category 2, 6 lefts.
 As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$.
 
-As a summary, both following are true.
+As a summary, both followings are true.
 
 1. $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$
 2. $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$
@@ -189,6 +189,7 @@ Now, we showed that $f_i$ is a weakly supermodular.
 
 Therefore, we can found at least one edge such that $x_e \ge \frac{1}{2}$ for any $f_i$.
 Now if we can show that "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$" can be solved in polynomial time, it will the end of the proof for polynomial execution time for the algorithm.
+Notice that we can do this at most $O(|E|)$.
 
 We still can use network flow algorithm to solve this.
 Therefore, we will make a seperation orcale like below.
