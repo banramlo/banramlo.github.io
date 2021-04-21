@@ -241,8 +241,8 @@ In a summary, we have three facts.
 If we combine three facts above,
 $\sum\limits_{e \in F} c_e$ $=$ 
 $\sum\limits_{e \in F - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
-$2\sum\limits_{e \in E - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\le$
-$2\sum\limits_{e \in E - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
+$2\sum\limits_{e \in F - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\le$
+$2\sum\limits_{e \in F - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
 $2\sum\limits_{e \in E} c_e x_e^1$.
 
 Now proof stops here.
