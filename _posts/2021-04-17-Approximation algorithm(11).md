@@ -224,7 +224,6 @@ Second constraint is trivial to be hold because $0 \le x_e^1 \le 1$.
 First constraint holds either because of follows.
 $\sum\limits_{e \in \delta(S), e \in E - F_1} x_e^1$ $=$ 
 $\sum\limits_{e \in \delta(S), e \in E} x_e^1 - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $\ge$ 
-$f_1(S) - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $=$ 
 $f_1(S) - |\delta(S) \cap F_1|$ $=$
 $f_2(S)$.
 Therefore, $\Lambda$ is a feasible solution.
