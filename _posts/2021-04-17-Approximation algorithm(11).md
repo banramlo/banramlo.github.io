@@ -327,9 +327,10 @@ Then both $\chi_{\delta(S \cap T)}$, $\chi_{\delta(S \cup T)}$ can't be in $\ope
 Proof is like follow.
 From $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$, $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
 It's the same of case 2 because $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S - T)}$ + $\chi_{\delta(T)}$ - $\chi_{\delta(T - S)}$. 
+As a result, we can imagine 4 caes.
 
-Now, there is some $X$ $\in$ $\\{S \cap T, \S \cup T\\}$, $X$ $\not\in$ $\operatorname{Span}\mathcal{L}$.
-
+1. If $X = S \cap T$
+2.
 
 
 {: .box-note}
