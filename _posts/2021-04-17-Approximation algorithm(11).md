@@ -262,7 +262,7 @@ To show this proof, we need some definitions to make a proof.
 Now, we need some $\operatorname{Lemma}$s.
 
 If $A$ and $B$ are tight and intersecting, at least one of the following is true.
-1. $A \cap B$, $A \cup B$ are both tight and $\chi_{\delta(A \cap B)} + \chi_{\delta(A \ cup B)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$ 
+1. $A \cap B$, $A \cup B$ are both tight and $\chi_{\delta(A \cap B)} + \chi_{\delta(A \cup B)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$ 
 2. $A - B$, $B - A$ are both tight and $\chi_{\delta(A - B)} + \chi_{\delta(B - A)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$ 
 
 Proof is like follow. one of $f(A) + f(B)$ $\le$ $f(A \cap B) + f(A \cup B)$ or $f(A) + f(B)$ $\le$ $f(A - B) + f(B - A)$ is true because $f is weakly supermodular$.
