@@ -104,7 +104,7 @@ Notice that it is so-called $\operatorname{iterative rounding}$ because it uses 
 If the algorithm above terminates, solution should be feasible.
 Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminates.
 
-First of all, we will show "If we select $z_e \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_e$ then 
+First of all, we will show "If we select $z_F(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_F(e)$ then 
 $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
 
 Proof is like follow.
@@ -115,7 +115,7 @@ If you think about the category of edges in $\delta(A)$, it will be one of follo
 4. $i \in A \cap B$, $j \in B - A$
 
 It's the same for the B either.
-Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_e$ in following 8 categories.
+Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_F(e)$ in following 8 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A \cap B$, $j \in V - (A \cup B)$
 3. $i \in A - B$, $j \in B - A$
@@ -135,7 +135,7 @@ If you think about the category of edges in $\delta(A \cap B)$, it will be one o
 2. $i \in A \cap B$, $j \in B - A$
 3. $i \in A \cap B$, $j \in A - B$
 
-Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in following 6 categories.
+Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_F(e)$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A \cap B$, $j \in V - (A \cup B)$
 3. $i \in B - A$, $j \in V - (A \cup B)$
@@ -160,7 +160,7 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 2. $i \in B - A$, $j \in A \cap B$
 3. $i \in B - A$, $j \in A - B$
 
-Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 6 categories.
+Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_F(e)$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A - B$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
@@ -172,7 +172,7 @@ We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarr
 Now we have category 2, 6 lefts.
 As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$.
 
-Now, let $z_e = 1$ if $e \in F$ and $z_e = 0$ otherwise.
+Now, let $z_F(e) = 1$ if $e \in F$ and $z_F(e) = 0$ otherwise.
 
 Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z(\delta(S))$.
 As a result $f_i(S)$ should fulfill one of follows.
