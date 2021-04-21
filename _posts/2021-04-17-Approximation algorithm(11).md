@@ -299,7 +299,7 @@ Now, let's define the solution of LP as $x$.
 Then, there is $\mathcal{L} \subset 2^{V}$ which satisfies 4 things.
 1. $S$ is tight for all $S \in \mathcal{L}$
 2. $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent.
-3. $|\mathcal{L}|$ $=$ $|E|$
+3. $\left\vert \mathcal{L} \right\vert$ $=$ $\left\vert E \right\vert$
 4. $\mathcal{L}$ is $\operatorname{laminor}$.
 
 Proof is like follow.
