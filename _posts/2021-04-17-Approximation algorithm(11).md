@@ -202,10 +202,11 @@ As a result, $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$
 If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$ then there should be $S$ such that $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F|< r_{ij}$.
 As a result, we can use this as a seperation orcale.
 
-Now only left thing is to show that solution is in $2\operatorname{OPT}$.
+Now only left thing to show is that solution is in $2\operatorname{OPT}$.
 To show this, we will prove generalized version of the claim.
-For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
-If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x_e^1$.
+The claim is 
+"For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
+If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ is in $2\sum\limits_{e \in E} c_e x_e^1$".
 Notice that this implies $\operatorname{ANS}$ $\le$ $2\sum\limits_{e \in E} c_e x_e^1$ $\le$ $2\operatorname{OPT}$. 
 
 We will show this in the inductive method.
