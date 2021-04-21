@@ -254,12 +254,12 @@ There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linea
 To show this proof, we need some definitions to make a proof.
 
 1. $\chi_E$ is a vector such that $(\chi_E)_e \begin{cases}
-1, e \in E\\
+1, e \in E \\\\
 0, e \not\in E
 \end{cases}$
 2. $A$ and $B$ are intersecting if all of $A \cap B$, $A - B$ and $B - A$ are not empty.
 3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(x_e)$ for $A \in V$.
-4. A collection of sets $\mathcal{L}$ is laminor if no pair of sets in $\matcal{L}$ is intersecting.
+4. A collection of sets $\mathcal{L}$ is laminor if no pair of sets in $\mathcal{L}$ is intersecting.
 5. $\operatorname{Span}(\mathcal{L})$
 
 Now, we need some $\operatorname{Lemma}$s.
