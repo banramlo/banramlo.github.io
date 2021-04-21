@@ -62,27 +62,27 @@ This implies 4 inequalities.
 
 Then, we can make possible inequality for weakly supermodular in any case.
 1. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B))$ $+$ $\max(f(B - A), f(A \cap B))$ $=$ $f(A - B)$ $+$ $f(B - A)$ if $f(A - B), f(B - A)$ $\ge$ $f(A \cap B)$
-2. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B))$ $+$ $\max(f(A - B), f(A \cup B))$ $=$ $f(A \cap B)$ $+$ $f(B \cup A)$ if $f(A \cap B), f(B \cup A)$ $\ge$ $f(A - B)$
-3. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B))$ $+$ $\max(f(B - A), f(A \cap B))$ $=$ $f(A \cap B)$ $+$ $f(B \cup A)$ if $f(A \cap B), f(B \cup A)$ $\ge$ $f(B - A)$
+2. $f(A) + f(B)$ $\le$ $\max(f(A - B), f(A \cap B))$ $+$ $\max(f(A - B), f(A \cup B))$ $=$ $f(A \cap B)$ $+$ $f(A \cup B)$ if $f(A \cap B), f(A \cup B)$ $\ge$ $f(A - B)$
+3. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B))$ $+$ $\max(f(B - A), f(A \cap B))$ $=$ $f(A \cap B)$ $+$ $f(A \cup B)$ if $f(A \cap B), f(A \cup B)$ $\ge$ $f(B - A)$
 4. $f(A) + f(B)$ $\le$ $\max(f(B - A), f(A \cup B))$ $+$ $\max(f(A - B), f(A \cup B))$ $=$ $f(A - B)$ $+$ $f(B - A)$ if $f(A - B), f(B - A)$ $\ge$ $f(A \cup B)$
 
 Notice that if all requirements is false then all following should be true.
 
 1. $\min(f(A - B), f(B - A))$ $<$ $f(A \cap B)$
-2. $\min(f(A \cap B), f(B \cup A))$ $<$ $f(A - B)$
-3. $\min(f(A \cap B), f(B \cup A))$ $<$ $f(B - A)$
+2. $\min(f(A \cap B), f(A \cup B))$ $<$ $f(A - B)$
+3. $\min(f(A \cap B), f(A \cup B))$ $<$ $f(B - A)$
 4. $\min(f(A - B), f(B - A))$ $<$ $f(A \cup B)$
 
 Then, it is contraction because following reasoning.
 
 $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from 1, 4<br>
-$\min(f(A \cap B), f(B \cup A))$ $<$ $\min(f(A - B), f(B - A))$ from 2, 3<br>
-$\min(f(A \cap B), f(B \cup A))$ $<$ $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from above two<br>
-As a result, $\min(f(A \cap B), f(B \cup A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ and it can't be true.
+$\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ from 2, 3<br>
+$\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from above two<br>
+As a result, $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A \cap B), f(A \cup B))$ and it can't be true.
 Therefore, $f$ is a weakly supermodular.
 
 Now, there is some nice property of a weakly supermodular $f$.
-There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \su\set V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
 
 From the fact above, we can construct an algorithm.
 
