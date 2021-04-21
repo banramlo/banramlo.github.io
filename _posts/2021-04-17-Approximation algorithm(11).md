@@ -81,7 +81,7 @@ $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \c
 As a result, $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A \cap B), f(A \cup B))$ and it can't be true.
 Therefore, $f$ is a weakly supermodular.
 
-Now, there is some nice property of a weakly supermodular $f$.
+Now, there is a nice property of a weakly supermodular $f$.
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
 
 From the fact above, we can construct an algorithm.
@@ -123,8 +123,7 @@ Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_e$ in following 8 cat
 5. $i \in B - A$ $j \in V - (A \cup B)$
 6. $i \in A \cap B$ $j \in V - (A \cup B)$
 7. $i \in B - A$ $j \in A - B$
-8. $i \in A \cap B$ $j \in A - B$<br>
-Notice that there is a duplicated categories(2 and 6).
+8. $i \in A \cap B$ $j \in A - B$
 
 If you think about the category of edges in $\delta(A \cup B)$, it will be one of follows.
 1. $i \in A - B$ $j \in V - (A \cup B)$
