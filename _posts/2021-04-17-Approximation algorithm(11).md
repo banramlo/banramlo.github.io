@@ -168,7 +168,7 @@ Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$
 5. $i \in B - A$, $j \in A \cap B$ = $i \in A \cap B$ $j \in B - A$
 6. $i \in B - A$, $j \in A - B$
 
-We can map $1 \rightarrow 1, 2 \rightarrow 8, 3 \rightarrow 3, 4 \rightarrow 5, 5 \rightarrow 4, 6 \rightarrow 7$.
+We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarrow 5$, $5 \rightarrow 4$, $6 \rightarrow 7$.
 Now we have category 2, 6 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
 
