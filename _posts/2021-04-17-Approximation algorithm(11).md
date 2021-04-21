@@ -269,7 +269,7 @@ Proof is like follow. one of $f(A) + f(B)$ $\le$ $f(A \cap B) + f(A \cup B)$ or 
 Then, there are two cases.
 If we think about the first case, we can do a reasoning follow.
 $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $f(A \cap B) + f(A \cup B)$ because of constraints of linear problem.
-$f(A \cap B) + f(A \cup B)$ $\ge$ $f(A) + f(B)$ because $f$ is weakly super modular.
+$f(A \cap B) + f(A \cup B)$ $\ge$ $f(A) + f(B)$ because $ f $ is a weakly super modular.
 $f(A) + f(B)$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ beeacuse $A$ and $B$ is tight.
 As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$.
 
