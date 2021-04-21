@@ -160,7 +160,7 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 2. $i \in B - A$, $j \in A \cap B$
 3. $i \in B - A$, $j \in A - B$
 
-Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 6 categories.
+Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A - B$, $j \in A \cap B$ = $i \in A \cap B$ $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
