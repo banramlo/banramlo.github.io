@@ -146,7 +146,7 @@ Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in f
 Now, we can do a mapping from this categories of $z(\delta(A \cup B)) + z(\delta(A \cap B))$ to one of 8 categories of $z(\delta(A)) + z(\delta(B))$.
 $1 \rightarrow 1$, $2 \rightarrow 2$, $3 \rightarrow 5$, $4 \rightarrow 6$, $5 \rightarrow 4$, $6 \rightarrow 8.$
 Now we have category 3, 7 lefts.
-As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$.
+As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$.
 
 Like above, we can do the same thing for $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
 
@@ -170,7 +170,7 @@ Therefore, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$
 
 We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarrow 5$, $5 \rightarrow 4$, $6 \rightarrow 7$.
 Now we have category 2, 6 lefts.
-As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
+As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$.
 
 Now, let $z_e = 1$ if $e \in F$ and $z_e = 0$ otherwise.
 
