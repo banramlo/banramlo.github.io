@@ -162,10 +162,10 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 
 Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_e$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
-2. $i \in A - B$, $j \in A \cap B$ = $i \in A \cap B$ $j \in A - B$
+2. $i \in A - B$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
 4. $i \in B - A$, $j \in V - (A \cup B)$
-5. $i \in B - A$, $j \in A \cap B$ = $i \in A \cap B$ $j \in B - A$
+5. $i \in B - A$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in B - A$
 6. $i \in B - A$, $j \in A - B$
 
 We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarrow 5$, $5 \rightarrow 4$, $6 \rightarrow 7$.
