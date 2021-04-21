@@ -215,7 +215,7 @@ If $k = 1$, we will solve "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\
 From the above, we will select $\\{x_e : x_e \ge \frac{1}{2}\\}$.
 As a result, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$.
 
-If $k \ge 2$, we can three facts follows.
+If $k \ge 2$, we have three facts follow.
 First, $\sum\limits_{e \in F_1} c_e$ $\le$ $2\sum\limits_{e \in F_1} c_e x_e^1$ is true because we selected $x_e^1 \ge \frac{1}{2}$ in $x_e^1$.
 
 Also, if we consider $\\{x_e^1 | e \in E - F_1\\}$ $=$ $\Lambda$ then $\Lambda$ is a feasible solution of LP in the second iteration either.
@@ -224,6 +224,7 @@ Second constraint is trivial to be hold because $0 \le x_e^1 \le 1$.
 First constraint holds either because of follows.
 $\sum\limits_{e \in \delta(S), e \in E - F_1} x_e^1$ $=$ 
 $\sum\limits_{e \in \delta(S), e \in E} x_e^1 - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $\ge$ 
+$f_1(S) - \sum\limits_{e \in \delta(S), e \in F_1} x_e^1$ $=$ 
 $f_1(S) - |\delta(S) \cap F_1|$ $=$
 $f_2(S)$.
 Therefore, $\Lambda$ is a feasible solution.
