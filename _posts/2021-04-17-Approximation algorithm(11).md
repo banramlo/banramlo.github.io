@@ -257,7 +257,7 @@ To show this proof, we need some definitions to make a proof.
 2. $A$ and $B$ are intersecting if all of $A \cap B$, $A - B$ and $B - A$ are not empty.
 3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(A)$ for $A \in V$.
 4. A collection of sets $\mathcal{L}$ is $\operatorname{laminor}$ if no pair of sets in $\mathcal{L}$ is intersecting.
-5. $\operatorname{Span}(\mathcal{L})$ $=$ $\operatorname{Span}\\{\chi_{\delta(S) \mid S \in \mathcal{L}}\\}$
+5. $\operatorname{Span}(\mathcal{L})$ $=$ $\operatorname{Span}\\{\chi_{\delta(S)} \mid S \in \mathcal{L}\\}$
 
 Now, we need some $\operatorname{Lemma}$s.
 
@@ -265,7 +265,7 @@ If $A$ and $B$ are tight and intersecting, at least one of the following is true
 1. $A \cap B$, $A \cup B$ are both tight and $\chi_{\delta(A \cap B)} + \chi_{\delta(A \cup B)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$ 
 2. $A - B$, $B - A$ are both tight and $\chi_{\delta(A - B)} + \chi_{\delta(B - A)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$ 
 
-Proof is like follow. one of $f(A) + f(B)$ $\le$ $f(A \cap B) + f(A \cup B)$ or $f(A) + f(B)$ $\le$ $f(A - B) + f(B - A)$ is true because $f$ is weakly supermodular.
+Proof is like follow. one of $f(A) + f(B)$ $\le$ $f(A \cap B) + f(A \cup B)$ or $f(A) + f(B)$ $\le$ $f(A - B) + f(B - A)$ is true because $f$ is a weakly supermodular.
 Then, there are two cases.
 If we think about the first case, we can do a reasoning follow.
 $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $f(A \cap B) + f(A \cup B)$ because of constraints of linear problem.
@@ -295,7 +295,12 @@ However, $x_e$ for edges in category 2, 6 should be $0$ because $\sum\limits_{e 
 
 Simillarly, both $A - B$, $B - A$ are tight and $\chi_{\delta(A - B)} + \chi_{\delta(B - A)}$ $=$ $\chi_A + \chi_B$ should be hold in the second case.
 
-Now, let's define the solution of LP as $x$, 
+Now, let's define the solution of LP as $x$.
+Then, there is $\mathcal{L} \subset 2^{V}$ which satisfies 4 things.
+1. 
+2. 
+3. 
+4. 
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
