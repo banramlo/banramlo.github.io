@@ -257,7 +257,7 @@ To show this proof, we need some definitions to make a proof.
 2. $A$ and $B$ are intersecting if all of $A \cap B$, $A - B$ and $B - A$ are not empty.
 3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(A)$ for $A \in V$.
 4. A collection of sets $\mathcal{L}$ is $\operatorname{laminor}$ if no pair of sets in $\mathcal{L}$ is intersecting.
-5. $\operatorname{Span}(\mathcal{L}) = $
+5. $\operatorname{Span}(\mathcal{L}) = \operatorname{Span}\\{\chi_{\delta(S) | S \in \mathcal{L}}\\}$
 
 Now, we need some $\operatorname{Lemma}$s.
 
