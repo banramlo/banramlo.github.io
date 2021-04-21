@@ -83,6 +83,7 @@ Therefore, $f$ is a weakly supermodular.
 
 Now, there is a nice property of a weakly supermodular $f$.
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+Proof will be followed at the end of the post.
 
 From the fact above, we can construct an algorithm.
 
