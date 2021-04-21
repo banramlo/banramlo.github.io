@@ -73,7 +73,7 @@ Notice that if all requirements is false then all following should be true.
 3. $\min(f(A \cap B), f(A \cup B))$ $<$ $f(B - A)$
 4. $\min(f(A - B), f(B - A))$ $<$ $f(A \cup B)$
 
-Then, it is contraction because following reasoning.
+Then, it is a contraction because of following reasoning.
 
 $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from 1, 4<br>
 $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ from 2, 3<br>
@@ -82,7 +82,7 @@ As a result, $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A \cap B), f(A \cup B)
 Therefore, $f$ is a weakly supermodular.
 
 Now, there is some nice property of a weakly supermodular $f$.
-There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \su\set V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
 
 From the fact above, we can construct an algorithm.
 
