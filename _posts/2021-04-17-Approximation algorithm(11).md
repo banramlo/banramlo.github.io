@@ -297,10 +297,29 @@ Simillarly, both $A - B$, $B - A$ are tight and $\chi_{\delta(A - B)} + \chi_{\d
 
 Now, let's define the solution of LP as $x$.
 Then, there is $\mathcal{L} \subset 2^{V}$ which satisfies 4 things.
-1. 
-2. 
-3. 
-4. 
+1. $S$ is tight for all $S \in \mathcal{L}$
+2. $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent.
+3. $|\mathcal{L}|$ $=$ $|E|$
+4. $\mathcal{L}$ is $\operatorname{laminor}$.
+
+Proof is like follow.
+Let $\mathcal{T} \subset 2^{V}$ be the family of all tight sets and $\mathcal{L}$ as a maximal $\operatorname{laminor}$ subfamily of $\mathcal{T}$.
+Which means $\mathcal{L}$ will not be a $\operatorname{laminor}$ if we add anything more to $\mathcal{L}$.
+
+First, we will claim $\operatorname{Span}(\mathcal{T})$ $\subset$ $\operatorname{Span}(\mathcal{L})$ to show $\operatorname{Span}(\mathcal{T})$ $=$ $\operatorname{Span}(\mathcal{L})$.
+Notice that $\operatorname{Span}(\mathcal{L})$ $\subset$ $\operatorname{Span}(\mathcal{T})$ is trivial because $\mathcal{L} \subset \mathcal{T}$.
+
+Let's assume not, then there are some $S$ $\in$ $\mathcal{T}$ such that $\chi_{\delta(S)}$ $\not\in$ $\operatorname{Span}(\mathcal{L})$.
+Between possible $S$s, let's assume that we've choose $S$ such that $\\{S\\}$ has the fewest intersecting sets with $\mathcal{L}$.
+Then, $\\{S\\}$ should intersecting with at least one set in $\mathcal{L}$.
+The reason is that we can add $\\{S\\}$ to $\mathcal{L}$ if it don't intersect because it doesn't $\mathcal{L}$ to be not $\operatorname{laminor}$.
+However, it's contradiction to "$\mathcal{L}$ is maximal $\operatorname{laminor}$".
+
+Now, we can find $T$ such that $T$ is intersecting with $S$.
+Then one of two need to be true because both $S$, $T$ are tight because $T \in \mathcal{L} \subset \mathcal{T}$ and $S \in \mathcal{T}$.
+
+1. $S \cap T$, $S \cup T$ are both tight and $\chi_{\delta(S \cap T)} + \chi_{\delta(S \cup T)}$ $=$ $\chi_{\delta(S)} + \chi_{\delta(T)}$ 
+2. $S - T$, $T - S$ are both tight and $\chi_{\delta(S - T)} + \chi_{\delta(T - S)}$ $=$ $\chi_{\delta(S)} + \chi_{\delta(T)}$ 
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
