@@ -144,7 +144,7 @@ Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_e$ in f
 6. $i \in A \cap B$, $j \in A - B$
 
 Now, we can do a mapping from this categories of $z(\delta(A \cup B)) + z(\delta(A \cap B))$ to one of 8 categories of $z(\delta(A)) + z(\delta(B))$.
-$1 \rightarrow 1, 2 \rightarrow 2, 3 \rightarrow 5, 4 \rightarrow 6, 5 \rightarrow 4, 6 \rightarrow 8.$
+$1 \rightarrow 1$, $2 \rightarrow 2$, $3 \rightarrow 5$, $4 \rightarrow 6$, $5 \rightarrow 4$, $6 \rightarrow 8.$
 Now we have category 3, 7 lefts.
 As a result, $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A \cup B)) + z(\delta(A \cap B))$.
 
