@@ -104,7 +104,7 @@ Notice that it is so-called $\operatorname{iterative rounding}$ because it uses 
 If the algorithm above terminates, solution should be feasible.
 Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminates.
 
-First of all, we will show "If we select $z_F(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z_F(e)$ then 
+First of all, we will show "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
 $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$."
 
 Proof is like follow.
@@ -115,7 +115,7 @@ If you think about the category of edges in $\delta(A)$, it will be one of follo
 4. $i \in A \cap B$, $j \in B - A$
 
 It's the same for the B either.
-Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z_F(e)$ in following 8 categories.
+Therefore, $z(\delta(A)) + z(\delta(B))$ will be sum of $z(e)$ in following 8 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A \cap B$, $j \in V - (A \cup B)$
 3. $i \in A - B$, $j \in B - A$
@@ -135,7 +135,7 @@ If you think about the category of edges in $\delta(A \cap B)$, it will be one o
 2. $i \in A \cap B$, $j \in B - A$
 3. $i \in A \cap B$, $j \in A - B$
 
-Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z_F(e)$ in following 6 categories.
+Therefore, $z(\delta(A \cup B)) + z(\delta(A \cap B))$ will be sum of $z(e)$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A \cap B$, $j \in V - (A \cup B)$
 3. $i \in B - A$, $j \in V - (A \cup B)$
@@ -148,7 +148,7 @@ $1 \rightarrow 1$, $2 \rightarrow 2$, $3 \rightarrow 5$, $4 \rightarrow 6$, $5 \
 Now we have category 3, 7 lefts.
 As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$.
 
-Like above, we can do the same thing for $z(\delta(A)) + z(\delta(B)) \ge z(\delta(A - B)) + z(\delta(B - A))$.
+Like above, we can do the same thing for $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$.
 
 If you think about the category of edges in $\delta(A - B)$, it will be one of follows.
 1. $i \in A - B$, $j \in V - (A \cup B)$
@@ -160,7 +160,7 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 2. $i \in B - A$, $j \in A \cap B$
 3. $i \in B - A$, $j \in A - B$
 
-Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z_F(e)$ in following 6 categories.
+Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z(e)$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
 2. $i \in A - B$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
@@ -174,10 +174,10 @@ As a result, $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B 
 
 Now, let $z_F(e) = 1$ if $e \in F$ and $z_F(e) = 0$ otherwise.
 
-Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z(\delta(S))$.
+Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z_F(\delta(S))$.
 As a result $f_i(S)$ should fulfill one of follows.
-1. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z(\delta(A)) - z(\delta(B))$ $\le$ $f(A \cup B) + f(A \cap B) - z(\delta(A \cup B)) - z(\delta(A \cap B))$ $=$ $f_i(A \cup B) + f_i(A \cap B)$.
-2. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z(\delta(A)) - z(\delta(B))$ $\le$ $f(A - B) + f(B - A) - z(\delta(A - B)) - z(\delta(B - A))$ $=$ $f_i(A - B) + f_i(B - A)$.
+1. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z_F(\delta(A)) - z_F(\delta(B))$ $\le$ $f(A \cup B) + f(A \cap B) - z_F(\delta(A \cup B)) - z_F(\delta(A \cap B))$ $=$ $f_i(A \cup B) + f_i(A \cap B)$.
+2. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z_F(\delta(A)) - z_F(\delta(B))$ $\le$ $f(A - B) + f(B - A) - z_F(\delta(A - B)) - z_F(\delta(B - A))$ $=$ $f_i(A - B) + f_i(B - A)$.
 
 Now, we showed that $f_i$ is a weakly supermodular.
 
