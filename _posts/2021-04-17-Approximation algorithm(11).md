@@ -208,7 +208,7 @@ To show this, we will prove generalized version of the claim.
 The claim is 
 "For any weakly supermodular function $f$, let's define $x^i$ as the solution of LP in $i$th iteration.
 If we can solve iterative rounding algorithm above in $k$ iteration then solution of iterative rounding $\operatorname{ANS}$ $=$ $\sum\limits_{e \in F} c_e$ is in $2\sum\limits_{e \in E} c_e x_e^1$".
-Notice that this implies $\operatorname{ANS}$ $=$ $\sum\limits_{e \in E} c_e x_e^1$ $\le$ $2\sum\limits_{e \in F} c_e$ $\le$ $2\operatorname{OPT}$. 
+Notice that this implies $\operatorname{ANS}$ $=$ $\sum\limits_{e \in F} c_e$ $\le$ $2\sum\limits_{e \in E} c_e x_e^1$ $\le$ $2\operatorname{OPT}$. 
 
 We will show this in the inductive method.
 
