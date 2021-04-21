@@ -255,7 +255,7 @@ To show this proof, we need some definitions to make a proof.
 
 1. $\chi_E$ is a vector such that $(\chi_E)_e$ $=$ $\cases{ 1, e \in E \cr 0, e \not\in E}$
 2. $A$ and $B$ are intersecting if all of $A \cap B$, $A - B$ and $B - A$ are not empty.
-3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(x_e)$ for $A \in V$.
+3. $A$ is tight if $\sum\limits_{e \in \delta(A)} x_e = f(x_e)$ for $A \in V, x_e > 0$.
 4. A collection of sets $\mathcal{L}$ is $\operatorname{laminor}$ if no pair of sets in $\mathcal{L}$ is intersecting.
 5. $\operatorname{Span}(\mathcal{L}) = $
 
@@ -273,7 +273,7 @@ $f(A \cap B) + f(A \cup B)$ $\ge$ $f(A) + f(B)$ because $ f $ is a weakly super 
 $f(A) + f(B)$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ beeacuse $A$ and $B$ is tight.
 As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$.
 
-With this fact, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ if we use the fact above "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
+With this fact, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ if we use the fact follow "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
 $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$".
 
 As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$. Which means that both $A \cap B$, $A \cup B$ are tight.
@@ -289,9 +289,9 @@ More over, if we recap the process of prooving the statement of $z$, there were 
 8. $i \in A \cap B$, $j \in A - B$
 
 Now we have category 2, 6 lefts for $\delta(A - B)$ and $\delta(B - A)$.
-Now we have category 3, 7 lefts for $\delta(A \cup B)$ and $\delta(A \cap B)$.
+Similarly we have category 3, 7 lefts for $\delta(A \cup B)$ and $\delta(A \cap B)$.
 
-However, $x_e$ for edges in category 2, 6 should be $0$ because $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$. Then, we can know that $\delta(A - B)$, $\delta(B - A)$ and $\delta(A)$, $\delta(B)$ should have the same set of edges. As a result, $\chi_{\delta(A \cap B)} + \chi_{\delta(A \ cup B)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$.
+However, $x_e$ for edges in category 2, 6 should be $0$ because $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ and $0 \ge x_e \ge 1$. Then, we can know that $\delta(A - B)$, $\delta(B - A)$ and $\delta(A)$, $\delta(B)$ should have the same set of edges. As a result, $\chi_{\delta(A \cap B)} + \chi_{\delta(A \ cup B)}$ $=$ $\chi_{\delta(A)} + \chi_{\delta(B)}$.
 
 Simillarly, $\chi_{\delta(A - B)} + \chi_{\delta(B - A)}$ $=$ $\chi_A + \chi_B$ should be hold in the second case.
 
