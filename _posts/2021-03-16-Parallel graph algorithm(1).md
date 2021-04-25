@@ -12,12 +12,12 @@ There are many formats to represent matrices.
 
 | Format            | Adjacency matrix  | COO(Edge list(Array))   | Edge list(linked list)  | Adjacency list   | CSR/CSC          |
 | :------           | :------           | :------                 | :------                 | :------          | :------          |
-| Space             | $O (\right V \left^2)$       | $O(\right E \left)$                | $O(\right E \left)$                | $O(\right V \left + \right E \left)$   | $O(\right V \left + \right E \left)$   |
-| Read edge         | $O (1)$           | $O(log \right E \left)$            | $O(\right E \left)$                | $O(deg(v))$      | $O(deg(v))$      |
-| Add edge          | $O (1)$           | $O(\right E \left)$                | $O(\right E \left)$                | $O(deg(v))$      | $O(\right V \left + \right E \left)$   |
-| Delete edge       | $O (1)$           | $O(\right E \left)$                | $O(\right E \left)$                | $O(deg(v))$      | $O(\right V \left + \right E \left)$   |
-| Read neighbors    | $O (\right V \left)$         | $O(log \right E \left + deg(v))$   | $O(\right E \left)$                | $O(deg(v))$      | $O(deg(v))$      |
-| Get degree        | $O (\right V \left)$         | $O(log \right E \left + deg(v))$   | $O(\right E \left)$                | $O(deg(v))$      | $O(1)$           | 
+| Space             | $O (\right\vert V \left\vert^2)$       | $O(\right\vert E \left\vert)$                | $O(\right\vert E \left\vert)$                | $O(\right\vert V \left\vert + \right\vert E \left\vert)$   | $O(\right\vert V \left\vert + \right\vert E \left\vert)$   |
+| Read edge         | $O (1)$           | $O(log \right\vert E \left\vert)$            | $O(\right\vert E \left\vert)$                | $O(deg(v))$      | $O(deg(v))$      |
+| Add edge          | $O (1)$           | $O(\right\vert E \left\vert)$                | $O(\right\vert E \left\vert)$                | $O(deg(v))$      | $O(\right\vert V \left\vert + \right\vert E \left\vert)$   |
+| Delete edge       | $O (1)$           | $O(\right\vert E \left\vert)$                | $O(\right\vert E \left\vert)$                | $O(deg(v))$      | $O(\right\vert V \left\vert + \right\vert E \left\vert)$   |
+| Read neighbors    | $O (\right\vert V \left\vert)$         | $O(log \right\vert E \left\vert + deg(v))$   | $O(\right\vert E \left\vert)$                | $O(deg(v))$      | $O(deg(v))$      |
+| Get degree        | $O (\right\vert V \left\vert)$         | $O(log \right\vert E \left\vert + deg(v))$   | $O(\right\vert E \left\vert)$                | $O(deg(v))$      | $O(1)$           | 
 
 Adjacency matrix is a matrix representation as it is.
 Adjacency matrix uses 2D-array to store every value.
@@ -35,4 +35,4 @@ Therefore, adjacency matrix isn't used anymore.
 Edge list and Adjacency list(which uses linked list) aren't used because of dynamic memory hierarchy.
 
 COO representation are rarely used but CSR/CSC are more standards because of memory usage is slightly different.
-CSC/CSC uses $\right V \left + 2\right E \left$ memories but COO uses $3\right E \left$ memories.
+CSC/CSC uses $\right\vert V \left\vert + 2\right\vert E \left\vert$ memories but COO uses $3\right\vert E \left\vert$ memories.
