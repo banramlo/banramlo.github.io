@@ -11,7 +11,7 @@ use_math: true
 Page rank is an algorithm to determine which vertices are important and which aren't.
 For each iteration, each vertex will be updated by nearby vertices.
 If we define $r_i^t$ as the value of vertex $i$ at $t$th iteration,
-then $r_i^{t + 1} = \belta\sum\limits_{j \in \operatorname{in_neighbor}(i)}r_j^t + (1 - \beta)r_i^t$.
+then $r_i^{t + 1} = \beta\sum\limits_{j \in \operatorname{neighbor}(i)}r_j^t + (1 - \beta)r_i^t$ for $0 \le \beta \le 1$.
 
 <div class="algorithm">
     Loop untill convergence
@@ -26,7 +26,6 @@ then $r_i^{t + 1} = \belta\sum\limits_{j \in \operatorname{in_neighbor}(i)}r_j^t
         </div>
     </div>
 </div>
-
 
 ## BFS
 
