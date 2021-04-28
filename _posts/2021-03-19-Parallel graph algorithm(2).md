@@ -17,7 +17,8 @@ Let's define some terms.
 
 With terms above, $r_i^{t + 1}$ $=$ $\beta\sum\limits_{j \in \delta(i)}\frac{r_j^t}{|\delta(j)|}$ $+$ $(1 - \beta)\frac{1}{|V|}$.
 If we keep compute this, it will converges to some values and that is the result of the page rank.
-Notice that if we have $\sum\limits_{i \in V}r_i^{t + 1}$ $=$ $1$ then it will keep consistant after.
+Notice that if we have $\sum\limits_{i \in V}r_i^t$ $=$ $1$ then it will keep consistant after $t$th iteration either.
+Proof is like follow.
 
 $\sum\limits_{i \in V}r_i^{t + 1}$
 $=$ $\sum\limits_{i \in V}(\beta\sum\limits_{j \in \delta(i)}\frac{r_j^t}{|\delta(j)|}$ $+$ $(1 - \beta)\frac{1}{|V|})$
@@ -44,8 +45,10 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="algorithm">
             $\operatorname{for} u \in \delta(v)$<br>
-            $s^{old}[u] leftarrow 0$<br>
-            $s[u] leftarrow 0$<br>
+            <div class="algorithm">
+                $s^{old}[u] \leftarrow s[u]$<br>
+                $s[u] \leftarrow 0$<br>
+            </div>
             <div class="algorithm">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
