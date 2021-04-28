@@ -90,7 +90,7 @@ However, all threads can't escape lock if two thread makes each flags to $\text{
 
 However, if we add a global variable $v$ to lock, it changes.
 Now it checks $v$ didn't changed and all $flag$s are $\text{false}$.
-Notice that it is still satisfies mutal exclusive.
+Notice that it guarantees mutal exclusive.
 There are 20 possible combination of two sequences like below.
 
 1. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false}\text{ or }v \neq i)$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false}\text{ or }v \neq j)$
@@ -115,6 +115,8 @@ There are 20 possible combination of two sequences like below.
 20. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false}\text{ or }v \neq j)$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false}\text{ or }v \neq i)$
 
 However, none of above can't be true.
+As a result, it guarantees mutal exclusive.
+However, it can't starve anymore because at least one of thread should be pass the statement because $v \neq i$ should be true if thread $j$ comes in.
 
 ## TAS(Test and set)
 
