@@ -44,11 +44,9 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="algorithm">
+            $s^{old}[v] \leftarrow s[v]$<br>
+            $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v)$<br>
-            <div class="algorithm">
-                $s^{old}[u] \leftarrow s[u]$<br>
-                $s[u] \leftarrow 0$<br>
-            </div>
             <div class="algorithm">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
