@@ -50,7 +50,8 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
             <div class="algorithm">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
-            $error \leftarrow error + |s^{old}[u] - s[u]|$<br>
+            $s[v] \leftarrow s[v] + (1 - \beta) \frac{1}{|V|}$<br>
+            $error \leftarrow error + |s^{old}[v] - s[v]|$<br>
         </div>
     </div>
 </div>
