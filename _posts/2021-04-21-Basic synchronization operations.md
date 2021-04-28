@@ -52,12 +52,12 @@ $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false})$ is the v
 Similarly, $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false})$ is the valid sequence because thread $j$ escapes from lock.
 There are 6 possible combination of two sequences like below.
 
-1. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false})$
-2. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false}) \rightarrow (flag[i] = \text{false})$
-3. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false}) \rightarrow (flag[j] = \text{false})$
-4. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false}) \rightarrow (flag[i] = \text{false})$
-5. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false}) \rightarrow (flag[j] = \text{false})$
-6. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false})$
+1. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] = \text{false})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] = \text{false})$
+2. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] = \text{false})$ $\rightarrow $ $(flag[i] = \text{false})$
+3. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] = \text{false})$ $\rightarrow $ $(flag[j] = \text{false})$
+4. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] = \text{false})$ $\rightarrow $ $(flag[i] = \text{false})$
+5. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] = \text{false})$ $\rightarrow $ $(flag[j] = \text{false})$
+6. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] = \text{false})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] = \text{false})$
 
 However, none of above can't be true.
 Therefore, it guarantees to be mutual exclusive.
@@ -93,26 +93,26 @@ Now it checks $v$ didn't changed and all $flag$s are $\text{false}$.
 Notice that it is still satisfies mutal exclusive.
 There are 20 possible combination of two sequences like below.
 
-1. $(flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j)$
-2. $(flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j)$
-3. $(flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-4. $(flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-5. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j)$
-6. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (v \leftarrow j) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-7. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-8. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-9. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (v \leftarrow i) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-10. $(flag[i] \leftarrow \text{true}) \rightarrow (flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i)$
-11. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j)$
-12. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (v \leftarrow j) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-13. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-14. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-15. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (v \leftarrow i) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-16. $(flag[j] \leftarrow \text{true}) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i)$
-17. $(flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i) \rightarrow (flag[i] = \text{false} or v \neq j)$
-18. $(flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[j] = \text{false} or v \neq i)$
-19. $(flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i)$
-20. $(flag[j] \leftarrow \text{true}) \rightarrow (v \leftarrow j) \rightarrow (flag[i] = \text{false} or v \neq j) \rightarrow (flag[i] \leftarrow \text{true}) \rightarrow (v \leftarrow i) \rightarrow (flag[j] = \text{false} or v \neq i)$
+1. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+2. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+3. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+4. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+5. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+6. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+7. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+8. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+9. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+10. $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+11. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+12. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+13. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+14. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+15. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+16. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+17. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$
+18. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+19. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
+20. $(flag[j] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow j)$ $\rightarrow $ $(flag[i] = \text{false} or v \neq j)$ $\rightarrow $ $(flag[i] \leftarrow \text{true})$ $\rightarrow $ $(v \leftarrow i)$ $\rightarrow $ $(flag[j] = \text{false} or v \neq i)$
 
 However, none of above can't be true.
 
