@@ -315,7 +315,7 @@ However, $S$ should intersect with at least one set in $\mathcal{L}$.
 The reason is that we can add $S$ to $\mathcal{L}$ because it doesn't change $\mathcal{L}$ to be not $\operatorname{laminor}$ if it don't intersect.
 However, it's contradiction to "$\mathcal{L}$ is maximal $\operatorname{laminor}$".
 
-Now, we can find $T \in \operatorname{L}$ such that $T$ is intersecting with $S$.
+Now, we can find $T \in \mathcal{L}$ such that $T$ is intersecting with $S$.
 Then one of two need to be true because both $S$, $T$ are tight because $T \in \mathcal{L} \subset \mathcal{T}$ and $S \in \mathcal{T}$.
 
 1. $S \cap T$, $S \cup T$ are both tight and $\chi_{\delta(S \cap T)} + \chi_{\delta(S \cup T)}$ $=$ $\chi_{\delta(S)} + \chi_{\delta(T)}$ 
@@ -327,10 +327,9 @@ Then both $\chi_{\delta(S \cap T)}$, $\chi_{\delta(S \cup T)}$ can't be in $\ope
 Proof is like follow.
 From $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$, $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
 It's the same of case 2 because $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S - T)}$ + $\chi_{\delta(T)}$ - $\chi_{\delta(T - S)}$. 
-As a result, we can imagine 4 caes.
 
-1. If $X = S \cap T$
-2.
+Now, let's think about $S \in \mathcal{L}$.
+Then, 
 
 
 {: .box-note}
