@@ -31,7 +31,7 @@ Notice that every implementation below need to be un-reordered.
         $\operatorname{while} acheive = \text{false}$<br>
         <div class="algorithm">
             $acheive \leftarrow \text{true}$<br>
-            $\operatorname{for} j \in \{Possible thread index\}$<br>
+            $\operatorname{for} j \in \{\text{Possible thread index}\}$<br>
             <div class="algorithm">
                 $\operatorname{if} flag[j] = \text{true}$
                 <div class="algorithm">
@@ -73,7 +73,7 @@ However, all threads can't escape lock if two thread makes each flags to $\text{
         $\operatorname{while} acheive = \text{false}$<br>
         <div class="algorithm">
             $acheive \leftarrow \text{true}$<br>
-            $\operatorname{for} j \in \{Possible thread index\}$<br>
+            $\operatorname{for} j \in \{\text{Possible thread index}\}$<br>
             <div class="algorithm">
                 $\operatorname{if} flag[j] = \text{true} and v = i$
                 <div class="algorithm">
