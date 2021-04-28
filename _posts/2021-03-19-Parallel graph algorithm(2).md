@@ -40,7 +40,7 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
         $error \leftarrow 0$<br>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="algorithm">
-            $o[v] \leftarrow \frac{s[v]}{|\delta(v)|}$<br>
+            $o[v] \leftarrow s[v]$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="algorithm">
