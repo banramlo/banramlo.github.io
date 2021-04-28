@@ -56,5 +56,47 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
     </div>
 </div>
 
+If we see the algorithm above, it is known to be parallelizable for each $\operatorname{for}$ loops because there is no dependancy between each $\operatorname{for}$ loops.
+As a result, page rank can be parallelized like below.
+
+<div class="algorithm">
+    $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
+    <div class="algorithm">
+        $s[i] \leftarrow 1/|V|$<br>
+    </div>
+    $\operatorname{while} error \le threshold$<br>
+    <div class="algorithm">
+        $error \leftarrow 0$<br>
+        $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
+        <div class="algorithm">
+            $o[v] \leftarrow s[v]$<br>
+        </div>
+        $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
+        <div class="algorithm">
+            $s^{old}[v] \leftarrow s[v]$<br>
+            $s[v] \leftarrow 0$<br>
+            $\operatorname{for} u \in \delta(v) \operatorname{in} \operatorname{parellel}$<br>
+            <div class="algorithm">
+                $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
+            </div>
+            $s[v] \leftarrow s[v] + (1 - \beta) \frac{1}{|V|}$<br>
+        </div>
+        $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{reduction}$<br>
+        <div class="algorithm">
+            $error \leftarrow error + |s^{old}[v] - s[v]|$<br>
+        </div>
+    </div>
+</div>
+
+There are two major parallelization technique used in above.
+1. $\operatorname{for} \operatorname{in} \operatorname{parellel}$<br>
+2. $\operatorname{for} \operatorname{in} \operatorname{reduction}$<br>
+
+$\operatorname{for} \operatorname{in} \operatorname{parellel}$ means that it can be run in the fulluy parallelization manner.
+$\operatorname{for} \operatorname{in} \operatorname{reduction}$ means that it can be run in the fullu parallelization manner but it will collect datas in the tree order.
+First technique usually used for operations that have no dependancies between.
+Second technique usually used for there is some dependancies for data but it will accumulates it only.
+It can be easily checked about the dependancies by reading the algorithm above.
+
 ## BFS
 
