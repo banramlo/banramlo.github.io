@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chernoff bounds
+title: Basic synchronization operations
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true
@@ -27,9 +27,17 @@ Notice that every implementation below need to be un-reordered.
     <div class="algorithm">
         $i \leftarrow \text{index of the thread}$<br>
         $flag[i] \leftarrow \text{true}$<br>
-        $\operatorname{flag[j] = \text{true} \text{ for } \\{j | Possible thread index\\}}$<br>
+        $acheive \leftarrow \text{false}$<br>
+        $\operatorname{while} acheive = \text{false}$<br>
         <div class="algorithm">
-            Spin
+            $acheive \leftarrow \text{true}$<br>
+            $\operatorname{for} j \in \\{Possible thread index\\}$<br>
+            <div class="algorithm">
+                $\operatorname{if} flag[j] = \text{true}$
+                <div class="algorithm">
+                    $acheive \leftarrow \text{false}$
+                </div>
+            </div>
         </div>
     </div>
 </div>
