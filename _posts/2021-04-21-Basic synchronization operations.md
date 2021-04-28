@@ -31,7 +31,7 @@ Notice that every implementation below need to be un-reordered.
         $\operatorname{while} acheive = \text{false}$<br>
         <div class="algorithm">
             $acheive \leftarrow \text{true}$<br>
-            $\operatorname{for} j \in \\{Possible thread index\\}$<br>
+            $\operatorname{for} j \in \\\{Possible thread index\\\}$<br>
             <div class="algorithm">
                 $\operatorname{if} flag[j] = \text{true}$
                 <div class="algorithm">
