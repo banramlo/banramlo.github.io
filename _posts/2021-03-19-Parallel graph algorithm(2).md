@@ -88,15 +88,16 @@ As a result, page rank can be parallelized like below.
     </div>
 </div>
 
-There are two major parallelization technique used in above.
+There are two major parallelization techniques used above.
 1. $\operatorname{for} \operatorname{in} \operatorname{parellel}$<br>
 2. $\operatorname{for} \operatorname{in} \operatorname{reduction}$<br>
 
-$\operatorname{for} \operatorname{in} \operatorname{parellel}$ means that it can be run in the fulluy parallelization manner.
-$\operatorname{for} \operatorname{in} \operatorname{reduction}$ means that it can be run in the fullu parallelization manner but it will collect datas in the tree order.
+$\operatorname{for} \operatorname{in} \operatorname{parellel}$ means that it can run in the fully parallelized manner.
+$\operatorname{for} \operatorname{in} \operatorname{reduction}$ means that it can be run in the fully parallelized manner but it will collect data in the tree order.
 First technique usually used for operations that have no dependancies between.
-Second technique usually used for there is some dependancies for data but it will accumulates it only.
+Second technique usually used for there is some dependancies for data but it will accumulates outputs only.
 It can be easily checked about the dependancies by reading the algorithm above.
+Notice that there may exists read dependancy but there is no write dependancy.
 
 ## BFS
 
