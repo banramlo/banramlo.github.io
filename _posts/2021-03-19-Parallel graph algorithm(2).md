@@ -10,8 +10,13 @@ use_math: true
 ## Page rank
 Page rank is an algorithm to determine which vertices are important and which aren't.
 For each iteration, each vertex will be updated by nearby vertices.
-If we define $r_i^t$ as the value of vertex $i$ at $t$th iteration,
-then $r_i^{t + 1} = \beta\sum\limits_{j \in \operatorname{neighbor}(i)}r_j^t + (1 - \beta)r_i^t$ for $0 \le \beta \le 1$.
+If we define some terms.
+1. $r_i^t$ as the value of vertex $i$ at $t$th iteration.
+2. $\delta(i)$ as the set of neighbor vetices of vertex $i$.
+3. $\beta$ is a convergance speed which means $0 \le \beta \le 1$.
+
+With terms above, $r_i^{t + 1} = \beta\sum\limits_{j \in \delta(i)}
+frac{r_j^t}{|\delta(i)|} + (1 - \beta)\frac{1}{|V|}$.
 
 <div class="algorithm">
     Loop untill convergence
