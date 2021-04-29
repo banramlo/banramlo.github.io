@@ -11,10 +11,9 @@ Synchronizing threads are not trivial to achieve.
 There are some techniques to achieve this property.
 
 1. Lock
-2. TAS(Test and set)
-3. TTAS(Test Test and set)
-4. Atomic
-5. CAS(Compare and swap)
+2. Atomic
+3. TAS(Test and set)
+4. TTAS(Test Test and set)
 
 ## Lock
 Lock is a variable that can be locked and unlocked.
@@ -27,15 +26,15 @@ Notice that every implementation below need to be un-reordered.
     <div class="algorithm">
         $i \leftarrow \text{index of the thread}$<br>
         $flag[i] \leftarrow \text{true}$<br>
-        $acheive \leftarrow \text{false}$<br>
-        $\operatorname{while} acheive = \text{false}$<br>
+        $achieve \leftarrow \text{false}$<br>
+        $\operatorname{while} achieve = \text{false}$<br>
         <div class="algorithm">
-            $acheive \leftarrow \text{true}$<br>
+            $achieve \leftarrow \text{true}$<br>
             $\operatorname{for} j \in \{\text{Possible thread index}\}$<br>
             <div class="algorithm">
                 $\operatorname{if} flag[j] = \text{true}$
                 <div class="algorithm">
-                    $acheive \leftarrow \text{false}$
+                    $achieve \leftarrow \text{false}$
                 </div>
             </div>
         </div>
@@ -68,16 +67,16 @@ However, all threads can't escape lock if two thread makes each flags to $\text{
     <div class="algorithm">
         $i \leftarrow \text{index of the thread}$<br>
         $flag[i] \leftarrow \text{true}$<br>
-        $acheive \leftarrow \text{false}$<br>
+        $achieve \leftarrow \text{false}$<br>
         $v \leftarrow i$<br>
-        $\operatorname{while} acheive = \text{false}$<br>
+        $\operatorname{while} achieve = \text{false}$<br>
         <div class="algorithm">
-            $acheive \leftarrow \text{true}$<br>
+            $achieve \leftarrow \text{true}$<br>
             $\operatorname{for} j \in \{\text{Possible thread index}\}$<br>
             <div class="algorithm">
-                $\operatorname{if} flag[j] = \text{true} and v = i$
+                $\operatorname{if} flag[j] = \text{true} \text{ and } v = i$
                 <div class="algorithm">
-                    $acheive \leftarrow \text{false}$
+                    $achieve \leftarrow \text{false}$
                 </div>
             </div>
         </div>
@@ -116,12 +115,74 @@ There are 20 possible combination of two sequences like below.
 
 However, none of above can't be true.
 As a result, it guarantees mutal exclusive.
-However, it can't starve anymore because at least one of thread should be pass the statement because $v \neq i$ should be true if thread $j$ comes in.
+However, it can't starve anymore because at least one of thread should pass the $\operatorname{while}$ statement because $v \neq i$ should be true if thread $j$ comes in.
 
-## TAS(Test and set)
-
-## TTAS(Test Test and set)
+It looks good because it works.
+However, cost of lock isn't tirivial.
+It needs to check all flags to pass it or not.
+Therefore, complexity of lock is $O(n)$ for $n$ as the number of threads. 
 
 ## Atomic
 
-## CAS(Compare and swap)
+Atomic operation means that operation will executed in a single step.
+This atomic operation will be a synchronization point between every thread.
+To avoid linear overhead of a lock, many cpu supports some atomic operations.
+There are many variance of atomic operations and follows are typical atomic operations.
+
+## TAS(Test and set)
+
+TAS is an atomic operation that reads one bit at the specific location and write 1 if that was 0 before.
+It will return $\text{true}$ if it writes and $\text{false}$ if it failed to write.
+With this TAS operation, following lock and unlock operation can be implemented.
+
+<div class="algorithm">
+    $\operatorname{function} \operatorname{lock()}$<br>
+    <div class="algorithm">
+        $\operatorname{while} TAS(locked)$<br>
+        <div class="algorithm">
+            Spin.<br>
+        </div>
+    </div>
+
+    $\operatorname{function} \operatorname{unlock()}$<br>
+    <div class="algorithm">
+        $locked \leftarrow \text{false}$<br>
+    </div>
+</div>
+
+However, this TAS based lock doesn't work well.
+Notice that TAS needs to keep a data sector exclusively.
+To achieve that, CPU need to take it to the own cache.
+Which means CPU will transfer that data sector to own cache for TAS operation.
+Then with the lock above, CPU will keep moving data sector of lock between each CPU.
+Therefore TAS will suffer from the data transfer bottleneck.
+
+## TTAS(Test Test and set)
+
+<div class="algorithm">
+    $\operatorname{function} \operatorname{lock()}$<br>
+    <div class="algorithm">
+        $achieve \leftarrow \text{false}$
+        $\operatorname{while} achieve = \text{false}$<br>
+        <div class="algorithm">
+            $\operatorname{while} locked = \text{true}$<br>
+            <div class="algorithm">
+                Spin.<br>
+            </div>
+            $\operatorname{if} TAS(locked)$<br>
+            <div class="algorithm">
+                $achieve \leftarrow \text{true}$
+            </div>
+        </div>
+    </div>
+
+    $\operatorname{function} \operatorname{unlock()}$<br>
+    <div class="algorithm">
+        $locked \leftarrow \text{false}$<br>
+    </div>
+</div>
+
+TTAS doesn't different from TAS much.
+To achieve better cache optimization, it doesn't transfer data sector to own CPU untill it is ready.
+As a result, it will work better than before.
+
