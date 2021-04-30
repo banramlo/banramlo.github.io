@@ -31,7 +31,7 @@ $=$ $\beta\sum\limits_{j \in V}r_j^t$ $+$ $(1 - \beta)$
 $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
 
 <div class="algorithm">
-    1. $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1$<br>
+    $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1$<br>
     <div class="algorithm">
         $s[i] \leftarrow 1/|V|$<br>
     </div>
@@ -104,8 +104,26 @@ Notice that there may exists read dependancy but there is no write dependancy.
 BFS is a search algorithm which reads vertices from source.
 It doesn't need to be a specific algorithm.
 It may updates the edge distance from source, it may finds component by checking boolean variable of vertices.
-Now, this can be parallelized either.
+In this case, let's assume that BFS works for set a value of vertex to a distance from the source.
+For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
 
 <div class="algorithm">
-    
+    $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1$<br>
+    <div class="algorithm">
+        $d[i] = -1$<br>
+    </div>
+    $Q \leftarrow \text{Empty queue}$<br>
+    $Q.push(s)$<br>
+    $\operatorname{for} Q \neq \empty$<br>
+    <div class="algorithm">
+        $v \leftarrow Q_{top}$<br>
+        $\operatorname{for} u \in \delta(v)$<br>
+        <div class="algorithm">
+            $\operatorname{if} d[u] = -1$<br>
+            <div class="algorithm">
+                $\operatorname{if} d[u] = d[v] + 1$<br>
+            </div>
+        </div>
+        $Q.pop()$
+    </div>
 </div>
