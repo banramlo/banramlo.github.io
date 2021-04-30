@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallel graph algorithm(1)
+title: Parallel graph algorithm(1) - matrix representation
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, concurrency, graph]
 comments: true

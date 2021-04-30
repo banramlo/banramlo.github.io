@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallel graph algorithm(2)
+title: Parallel graph algorithm(2) - parallel page rank/BFS
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, concurrency, graph]
 comments: true
@@ -31,7 +31,7 @@ $=$ $\beta\sum\limits_{j \in V}r_j^t$ $+$ $(1 - \beta)$
 $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
 
 <div class="algorithm">
-    $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1$<br>
+    1. $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1$<br>
     <div class="algorithm">
         $s[i] \leftarrow 1/|V|$<br>
     </div>
@@ -101,3 +101,11 @@ Notice that there may exists read dependancy but there is no write dependancy.
 
 ## BFS
 
+BFS is a search algorithm which reads vertices from source.
+It doesn't need to be a specific algorithm.
+It may updates the edge distance from source, it may finds component by checking boolean variable of vertices.
+Now, this can be parallelized either.
+
+<div class="algorithm">
+    
+</div>
