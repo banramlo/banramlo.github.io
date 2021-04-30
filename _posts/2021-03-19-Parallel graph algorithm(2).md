@@ -114,14 +114,15 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
     </div>
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
-    $\operatorname{for} Q \neq \empty$<br>
+    $d[0] = 0$<br>
+    $\operatorname{while} Q \neq \emptyset$<br>
     <div class="algorithm">
         $v \leftarrow Q_{top}$<br>
         $\operatorname{for} u \in \delta(v)$<br>
         <div class="algorithm">
             $\operatorname{if} d[u] = -1$<br>
             <div class="algorithm">
-                $\operatorname{if} d[u] = d[v] + 1$<br>
+                $d[u] = d[v] + 1$<br>
             </div>
         </div>
         $Q.pop()$
