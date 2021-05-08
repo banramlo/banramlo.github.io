@@ -331,7 +331,7 @@ Let's assume that it's the case 1.
 Then both $\chi_{\delta(S \cap T)}$, $\chi_{\delta(S \cup T)}$ can't be in $\operatorname{Span}(\mathcal{L})$ at the same time.
 
 Proof is like follow.
-$\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$ and $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$, \chi_{\delta(S \cap T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
+$\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$ and $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$, $\chi_{\delta(S \cap T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
 It's the same of case 2 because $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S - T)}$ + $\chi_{\delta(T)}$ - $\chi_{\delta(T - S)}$. 
 
 Now, let's think $X \not\in \operatorname{Span}(\mathcal{L})$ between $S \cap T, S \cup T$ in the first case or $S - T, T - S$ in the second case.
