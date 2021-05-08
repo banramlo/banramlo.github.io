@@ -270,7 +270,7 @@ Then, there are two cases.
 If we think about the first case, we can do a reasoning follow.
 $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $f(A \cap B) + f(A \cup B)$ because of constraints of linear problem.
 $f(A \cap B) + f(A \cup B)$ $\ge$ $f(A) + f(B)$ because $f$ is a weakly super modular.
-$f(A) + f(B)$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ beeacuse $A$ and $B$ is tight.
+$f(A) + f(B)$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ becacuse $A$ and $B$ is tight.
 As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$.
 
 With this fact, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ if we use the fact follow "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
@@ -280,7 +280,8 @@ As a result,
 $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$
 $f(A \cap B) + f(A \cup B)$ $=$
 $f(A) + f(B)$ $=$
-$\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$.
+$\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ $=$
+$\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$.
 Which means that both $A \cap B$, $A \cup B$ are tight.
 More over, if we recap the process of prooving the statement of $z$, there were 8 categories of edges and 2 are lefts in each cases.
 
@@ -330,11 +331,29 @@ Let's assume that it's the case 1.
 Then both $\chi_{\delta(S \cap T)}$, $\chi_{\delta(S \cup T)}$ can't be in $\operatorname{Span}(\mathcal{L})$ at the same time.
 
 Proof is like follow.
-From $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$, $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
+$\chi_{\delta(S)}$ $=$ $\chi_{\delta(S \cap T)}$ + $\chi_{\delta(S \cup T)}$ - $\chi_{\delta(T)}$ and $\chi_{\delta(S)}$ should be in $\operatorname{Span}(\mathcal{L})$ if $\chi_{\delta(S \cup T)}$, \chi_{\delta(S \cap T)}$ are in $\operatorname{Span}(\mathcal{L})$ at the same time.
 It's the same of case 2 because $\chi_{\delta(S)}$ $=$ $\chi_{\delta(S - T)}$ + $\chi_{\delta(T)}$ - $\chi_{\delta(T - S)}$. 
 
-Now, let's think about $S \in \mathcal{L}$.
-Then, 
+Now, let's think $X \not\in \operatorname{Span}(\mathcal{L})$ between $S \cap T, S \cup T$ in the first case or $S - T, T - S$ in the second case.
+Then, $S$ and $Y$ are intersecting for any $Y \in \mathcal{L}$ such that $Y$ is intersecting with $X$.
+
+Proof is like follow.
+Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $T \in \mathcal{L}$.
+1. $Y \cap T = \emptyset$
+2. $T \in Y$
+3. $Y \in T$
+
+### $X = S \cap T$
+1. $Y \cap T = \emptyset$
+    $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
+2. $T \in Y$
+    $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
+    As a result, $X - Y$ $=$ $\emptyset$.
+3. $Y \in T$
+    $\emptyset$ $\noteq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
+    $\emptyset$ $\noteq$ $X - Y$ $\subseteq$ $S - Y$.
+    $\emptyset$ $\noteq$ $Y - X$ $\subseteq$ $Y - S$.
+    As a result, $S$ intersects with $Y$.
 
 
 {: .box-note}
