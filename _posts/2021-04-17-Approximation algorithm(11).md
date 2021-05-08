@@ -340,27 +340,44 @@ Then, $S$ and $Y$ are intersecting for any $Y \in \mathcal{L}$ such that $Y$ is 
 Proof is like follow.
 Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $T \in \mathcal{L}$.
 1. $Y \cap T = \emptyset$
-2. $T \subseteq Y$
-3. $Y \subseteq T$
-
-Because, one of following should be $\emptyset$.
-1. $Y \cap T$
-2. $T - Y$
-3. $Y - T$
+2. $T - Y = \emptyset$
+3. $Y - T = \emptyset$
+Also, $Y$ and $T$ can be two or three case of above
 
 If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
-    $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
+    $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.
     Therefore, this can't be the case.
-2. $T \subseteq Y$<br>
-    $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
-    As a result, $X - Y$ $=$ $\emptyset$.
+2. $T - Y = \emptyset$<br>
+    $Y$ can't intersect with $X$ because $X - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.
     Therefore, this can't be the case.
-3. $Y \subseteq T$<br>
+3. $Y - T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $(Y - S)$.
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $Y - S$.
     As a result, $S$ intersects with $Y$.
+
+If $X = S \cup T$, $Y$ should fullfill one of three followings.
+1. $Y \cap T = \emptyset$<br>
+2. $T - Y = \emptyset$<br>
+    $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.
+    $\emptyset$ $\neq$ $Y - X$ $subseteq$ $Y - S$.
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $(S \cap Y)$.
+    Notice that $T \cap Y$ $=$ $\emptyset$ because both are in $\mathcal{L}$.
+    As a result, $S$ intersects with $Y$.
+3. $Y - T = \emptyset$<br>
+    $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.
+    Therefore, this can't be the case.
+
+If $X = S - T$, $Y$ should fullfill one of three followings.
+1. $Y \cap T = \emptyset$<br>
+2. $T - Y = \emptyset$<br>
+3. $Y - T = \emptyset$<br>
+
+If $X = T - S$, $Y$ should fullfill one of three followings.
+1. $Y \cap T = \emptyset$<br>
+2. $T - Y = \emptyset$<br>
+3. $Y - T = \emptyset$<br>
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
