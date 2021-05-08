@@ -340,8 +340,8 @@ Then, $S$ and $Y$ are intersecting for any $Y \in \mathcal{L}$ such that $Y$ is 
 Proof is like follow.
 Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $T \in \mathcal{L}$.
 1. $Y \cap T = \emptyset$
-2. $T \in Y$
-3. $Y \in T$
+2. $T \subseteq Y$
+3. $Y \subseteq T$
 
 Because, one of following should be $\emptyset$.
 1. $Y \cap T$
@@ -352,14 +352,14 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
     Therefore, this can't be the case.
-2. $T \in Y$<br>
+2. $T \subseteq Y$<br>
     $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
     As a result, $X - Y$ $=$ $\emptyset$.
     Therefore, this can't be the case.
-3. $Y \in T$<br>
+3. $Y \subseteq T$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S) \cup (Y - T) $=$ $(Y - S)$.
     As a result, $S$ intersects with $Y$.
 
 {: .box-note}
