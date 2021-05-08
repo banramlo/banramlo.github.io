@@ -343,7 +343,7 @@ Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $
 2. $T \in Y$
 3. $Y \in T$
 
-### $X = S \cap T$
+If $X = S \cap T$, $Y$ should fullfill one of three followings.<br>
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
 2. $T \in Y$<br>
