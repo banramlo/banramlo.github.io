@@ -347,10 +347,10 @@ Also, $Y$ and $T$ can be two or three case of above
 If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.
-    Therefore, this can't be the case.
+    Therefore, such an $y$ doesn't exist.
 2. $T - Y = \emptyset$<br>
     $Y$ can't intersect with $X$ because $X - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.
-    Therefore, this can't be the case.
+    Therefore, such an $y$ doesn't exist.
 3. $Y - T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
@@ -361,13 +361,13 @@ If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
 2. $T - Y = \emptyset$<br>
     $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $subseteq$ $Y - S$.
-    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $(S \cap Y)$.
-    Notice that $T \cap Y$ $=$ $\emptyset$ because both are in $\mathcal{L}$.
+    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
+    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap (Y))$ $=$ $S \cap (Y)$.
+    Notice that $S \cap T$ $\neq$ $\emptyset$ because $S$ and $T$ are intersecting.
     As a result, $S$ intersects with $Y$.
 3. $Y - T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.
-    Therefore, this can't be the case.
+    Therefore, such an $y$ doesn't exist.
 
 If $X = S - T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
