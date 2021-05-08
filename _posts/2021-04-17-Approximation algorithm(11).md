@@ -344,18 +344,16 @@ Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $
 3. $Y \in T$
 
 ### $X = S \cap T$
-1. $Y \cap T = \emptyset$
+1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
-2. $T \in Y$
+2. $T \in Y$<br>
     $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
     As a result, $X - Y$ $=$ $\emptyset$.
-3. $Y \in T$
+3. $Y \in T$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
     $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
     As a result, $S$ intersects with $Y$.
-
-
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
