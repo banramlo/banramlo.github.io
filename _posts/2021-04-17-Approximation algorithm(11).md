@@ -343,12 +343,19 @@ Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $
 2. $T \in Y$
 3. $Y \in T$
 
-If $X = S \cap T$, $Y$ should fullfill one of three followings.<br>
+Because, one of following should be $\emptyset$.
+1. $Y \cap T$
+2. $T - Y$
+3. $Y - T$
+
+If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T = \emptyset$.
+    Therefore, this can't be the case.
 2. $T \in Y$<br>
     $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
     As a result, $X - Y$ $=$ $\emptyset$.
+    Therefore, this can't be the case.
 3. $Y \in T$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
