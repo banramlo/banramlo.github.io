@@ -359,7 +359,7 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 3. $Y \subseteq T$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S) \cup (Y - T) $=$ $(Y - S)$.
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $(Y - S)$.
     As a result, $S$ intersects with $Y$.
 
 {: .box-note}
