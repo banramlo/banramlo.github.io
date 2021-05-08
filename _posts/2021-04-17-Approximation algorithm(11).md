@@ -77,7 +77,7 @@ Then, it is a contraction because of following reasoning.
 
 $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from 1, 4<br>
 $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ from 2, 3<br>
-$\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from above two<br>
+$\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A - B), f(B - A))$ $<$ $\min(f(A \cap B), f(A \cup B))$ from above two.<br>
 As a result, $\min(f(A \cap B), f(A \cup B))$ $<$ $\min(f(A \cap B), f(A \cup B))$ and it can't be true.
 Therefore, $f$ is a weakly supermodular.
 
@@ -93,7 +93,7 @@ From the fact above, we can construct an algorithm.
     $\operatorname{while}$ $F$ is not a feasible solution $\textbf{do}$<br>
     <div class = "algorithm">
         Solve "Minimize $\sum\limits_{e \in E - F} c_e x_e$ such that $\sum\limits_{e \in \delta(S), e \in E - F} x_e \ge f_i(S) = f(S) - |\delta(S) \cap F|$ $\forall S \subset V$, $0 \le x_e \le 1$"<br>
-        $F_i \leftarrow \{ e \in E - F : x_e \ge \frac{1}{2} \}$<br>
+        $F_i \leftarrow \{ e \in E - F \vert x_e \ge \frac{1}{2} \}$<br>
         $F \leftarrow F \cup F_i$<br>
         $i \leftarrow i + 1$
     </div>
@@ -105,7 +105,7 @@ Notice that it is so-called $\operatorname{iterative rounding}$ because it uses 
 If the algorithm above terminates, solution should be feasible.
 Now, we will show that solution will be in $2\operatorname{OPT}$ and it terminates.
 
-First of all, we will show "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
+First of all, we will show "If we define $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
 $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$".
 
 Proof is like follow.
@@ -198,7 +198,7 @@ Therefore, we will make a seperation orcale like below.
 2. Solve the network flow problem between all pair $i$ and $j$ such that $i \neq j$ and $i,j \in V$.
 3. If there is a flow such that the value of flow $f_{ij}$ is less than $r_{ij}$ then it's an infeasible solution otherwise it is feasible.
 
-Notice that if there is a flow then it means $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F| \ge r_{ij}$ which $\delta(S)$ denotes the set of edges in $E - F$ between $S$ and $V - S$.
+Notice that if it is feasible then it means $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F| \ge r_{ij}$ which $\delta(S)$ denotes the set of edges between $S$ and $V - S$ in $E - F$.
 As a result, $\sum\limits_{e \in \delta(S)} f_e \ge r_{ij} - |\delta(S) \cap F|$.
 If there is some $i, j$ such that flow between $i$ and $j$ is less than $r_{ij}$ then there should be $S$ such that $\sum\limits_{e \in \delta(S)} f_e + |\delta(S) \cap F|< r_{ij}$.
 As a result, we can use this as a seperation orcale.
@@ -240,13 +240,13 @@ In a summary, we have three facts.
 3. $\sum\limits_{e \in F - F_1} c_e$ $\le$ $2\sum\limits_{e \in E - F_1} c_e x_e^2$.
 
 If we combine three facts above,
-$\sum\limits_{e \in F} c_e$ $\le$ 
+$\sum\limits_{e \in F} c_e$ $=$ 
 $\sum\limits_{e \in F - F_1} c_e + \sum\limits_{e \in F_1} c_e$ $\le$ 
 $2\sum\limits_{e \in E - F_1} c_e x_e^2 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $\le$
 $2\sum\limits_{e \in E - F_1} c_e x_e^1 + 2\sum\limits_{e \in F_1} c_e x_e^1$ $=$
 $2\sum\limits_{e \in E} c_e x_e^1$.
 
-Now proof stops here for survivable network design.
+Now proof stops here for survivable network design problem.
 
 However, we need to show one following fact.
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
@@ -276,7 +276,12 @@ As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in 
 With this fact, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$ $\ge$ $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ if we use the fact follow "If we select $z(e) \ge 0$ for all $e \in E$ and define $z(E) = \sum\limits_{e \in E}z(e)$ then 
 $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A \cup B)) + z(\delta(A \cap B))$ and $z(\delta(A)) + z(\delta(B))$ $\ge$ $z(\delta(A - B)) + z(\delta(B - A))$ for any $A, B \subset V$".
 
-As a result, $\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$ $\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$. Which means that both $A \cap B$, $A \cup B$ are tight.
+As a result, 
+$\sum\limits_{e \in \delta(A \cap B)} x_e$ $+$ $\sum\limits_{e \in \delta(A \cup B)} x_e$ $=$
+$f(A \cap B) + f(A \cup B)$ $=$
+$f(A) + f(B)$ $=$
+$\sum\limits_{e \in \delta(A)} x_e$ $+$ $\sum\limits_{e \in \delta(B)} x_e$.
+Which means that both $A \cap B$, $A \cup B$ are tight.
 More over, if we recap the process of prooving the statement of $z$, there were 8 categories of edges and 2 are lefts in each cases.
 
 1. $i \in A - B$, $j \in V - (A \cup B)$
