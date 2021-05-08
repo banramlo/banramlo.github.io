@@ -17,7 +17,7 @@ Now, we can make a integer programming over this and it is like follow.
 "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
 Notice that if there is $r_{ij}$ edge distinct paths, we can make a flow of value $r_{ij}$ between $i$ and $j$.
 Then, there should be a mincut that corresponding to that flow from the network flow theory.
-As a result, constraint above should fullfilled.
+As a result, constraint above should be fullfilled.
 It's the same in the opposite direction.
 If we have a such min-cut then we have such flow either.
 
@@ -51,7 +51,7 @@ Now, we can make 4 property of $f$ from the fact above.
 4. $f(B)$ $=$ $f(V - B)$ $\le$ $\max(f(A - B),$ $f(V - (A \cup B)))$ $=$ $\max(f(A - B),$ $f(A \cup B))$
 
 Notice that $(A - B)$ $\cup$ $(A \cap B)$ $=$ $A$, $(V - (A \cup B))$ $\cup$ $(B - A)$ $=$ $V$ $-$ $A$, 
-$(B - A)$ $\cup$ $(A \cap B)$ $=$ $B$ and $(V- $(A \cup B))$ $\cup$ $(A - B)$ $=$ $V$ $-$ $B$.
+$(B - A)$ $\cup$ $(A \cap B)$ $=$ $B$ and $(V- (A \cup B))$ $\cup$ $(A - B)$ $=$ $V$ $-$ $B$.
 
 This implies 4 inequalities.
 
