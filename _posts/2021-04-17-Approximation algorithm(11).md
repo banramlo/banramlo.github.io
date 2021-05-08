@@ -342,7 +342,14 @@ Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $
 1. $Y \cap T = \emptyset$
 2. $T - Y = \emptyset$
 3. $Y - T = \emptyset$
-Also, $Y$ and $T$ can be two or three case of above
+
+Notice that all of followings are true.
+1. $X \cap Y \neq \emptyset$
+2. $X - Y \neq \emptyset$
+3. $Y - X \neq \emptyset$
+4. $S \cap T \neq \emptyset$
+5. $S - T \neq \emptyset$
+6. $T - S \neq \emptyset$
 
 If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
@@ -359,11 +366,11 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 
 If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
+
 2. $T - Y = \emptyset$<br>
+    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap Y)$ $=$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.
     $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
-    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap (Y))$ $=$ $S \cap (Y)$.
-    Notice that $S \cap T$ $\neq$ $\emptyset$ because $S$ and $T$ are intersecting.
     As a result, $S$ intersects with $Y$.
 3. $Y - T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.
