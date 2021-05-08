@@ -350,10 +350,11 @@ Notice that $Y$ should be one of three followings because $Y \in \mathcal{L}$, $
     $Y$ can't intersect with $X$ because $X$ $\subseteq$ $T$ $\subseteq$ $Y$.
     As a result, $X - Y$ $=$ $\emptyset$.
 3. $Y \in T$
-    $\emptyset$ $\noteq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
-    $\emptyset$ $\noteq$ $X - Y$ $\subseteq$ $S - Y$.
-    $\emptyset$ $\noteq$ $Y - X$ $\subseteq$ $Y - S$.
+    $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
+    $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
+    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
     As a result, $S$ intersects with $Y$.
+
 
 
 {: .box-note}
