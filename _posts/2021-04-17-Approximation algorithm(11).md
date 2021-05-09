@@ -402,9 +402,13 @@ If $X = T - S$, $Y$ should fulfill one of three followings.
     $Y$ can't intersect with $X$ because $X - Y$ $=$ $(T - S) - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.<br>
     Therefore, such $Y$ doesn't exist.<br>
 3. $Y - T = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap T$ $=$ $(S \cap T) \cup (S \cap  (Y - T))$ $=$ $S \cap (T \cup  (Y - T))$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (T - S)$ $=$ $Y - ((T \cup (Y - T)) - S)$ $=$ $Y - ((Y \cup T) - S)$ $=$ $Y - ((Y \cup (T - Y)) - S)$ $\subseteq$ $Y - (Y - S)$ $=$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $S - T$ $=$ $S - (T \cup (Y - T))$ $=$ $S - (Y \cup T)$ $=$ $S - (Y \cup (T - Y))$ $\subseteq$ $S - Y$.<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(T - S) \cap Y$ $=$ $(T - (S \cap T)) \cap Y$ $=$ $(T \cap Y) - ((S \cap T) \cap Y)$ $=$ $(T \cap Y) - (S \cap (T \cap Y))$ $=$ $(T \cap Y) - S$ $=$ $((T \cap Y) \cup (Y - T)) - S$ $=$ $Y - S$.<br>
+    As a result, $S$ intersects with $Y$.<br>
+
+As a result, $S$ and $Y$ are intersecting for any $Y \in \mathcal{L}$ such that $Y$ is intersecting with $X$.
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
