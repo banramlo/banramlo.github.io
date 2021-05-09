@@ -390,7 +390,7 @@ If $X = S - T$, $Y$ should fullfill one of three followings.<br>
     $\emptyset$ $\neq$ $T - S$ $=$ $(Y \cup (T - Y)) - S$ $=$ $(Y - S) \cup ((T - Y) - S)$ $=$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
 3. $Y - T = \emptyset$<br>
-    $Y$ can't intersect with $X$ because $X cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $=$ $(S \cap Y) - ((T \cap Y) \cup (Y - T))$ $\subseteq$ $((S \cap Y) \cup (Y - S)) - ((T \cap Y) \cup (Y - T))$ $=$ $Y - Y$ $=$ \emptyset$.<br>
+    $Y$ can't intersect with $X$ because $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $=$ $(S \cap Y) - ((T \cap Y) \cup (Y - T))$ $\subseteq$ $((S \cap Y) \cup (Y - S)) - ((T \cap Y) \cup (Y - T))$ $=$ $Y - Y$ $=$ \emptyset$.<br>
     Therefore, such $Y$ doesn't exist.<br>
 
 If $X = T - S$, $Y$ should fullfill one of three followings.
