@@ -367,11 +367,11 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
-    $\emptyset$ $\neq$ $S - X$ $\subseteq$ $S - (X \cap Y)$ $=$ $S - ((S \cup T) \cap Y)$ $=$ $S - ((S \cap Y) \cup (T \cap Y))$ $=$ $S - (S \cap Y)$ $=$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $S \cap T$ $=$ $(S \cap T) - (S \cap (T \cap Y))$ $=$ $(S \cap T) - ((S \cap T) \cap Y)$ $=$ $(S \cap T) - Y$ $\subseteq$ $((S \cap T) - Y) \cup (S - T) - Y$ $=$ $S - Y$.<br>
     $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
 2. $T - Y = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap Y)$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S \cap T$ $=$ $S \cap ((T \cap Y) \cup (T - Y))$ $=$ $S \cap (T \cap Y)$ $=$ $(S \cap T) \cap Y$ $\subseteq$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.<br>
     $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
