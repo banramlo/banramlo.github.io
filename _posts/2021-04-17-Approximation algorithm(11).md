@@ -367,7 +367,7 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.
-    $\emptyset$ $\neq$ $S - Y$.
+    $\emptyset$ $\neq$ $S - X$ $\subseteq$ $S - (X \cap Y)$ $=$ $S - ((S \cup T) \cap Y)$ $=$ $S - ((S \cap Y) \cup (T \cap Y))$ $=$ $S - (S \cap Y)$ $=$ $S - Y$.
     $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
     As a result, $S$ intersects with $Y$.
 2. $T - Y = \emptyset$<br>
