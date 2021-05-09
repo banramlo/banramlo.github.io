@@ -354,10 +354,10 @@ Notice that all of followings are true.
 If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.
-    Therefore, such an $y$ doesn't exist.
+    Therefore, such $Y$ doesn't exist.
 2. $T - Y = \emptyset$<br>
     $Y$ can't intersect with $X$ because $X - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.
-    Therefore, such an $y$ doesn't exist.
+    Therefore, such $Y$ doesn't exist.
 3. $Y - T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
@@ -366,7 +366,10 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
 
 If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
-
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.
+    $\emptyset$ $\neq$ $S - Y$.
+    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
+    As a result, $S$ intersects with $Y$.
 2. $T - Y = \emptyset$<br>
     $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap Y)$ $=$ $S \cap Y$.
     $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.
@@ -374,7 +377,7 @@ If $X = S \cup T$, $Y$ should fullfill one of three followings.
     As a result, $S$ intersects with $Y$.
 3. $Y - T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.
-    Therefore, such an $y$ doesn't exist.
+    Therefore, such $Y$ doesn't exist.
 
 If $X = S - T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
