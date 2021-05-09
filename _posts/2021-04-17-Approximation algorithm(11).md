@@ -429,7 +429,7 @@ Now, we've showend that there is at least one of a maximal $\operatorname{lamino
 Now, we can find some set $S \in \mathcal{T}$ which is lineary dependent from other vectors.
 Then, we can just remove it without losing property above.
 Now, we keep doing it untill every vectors are lineary independent and let the result to be $\mathcal{L}^\star$.
-Then, $\mathcal{L}^\star$ should have $|E|$ independent vectors because they are all independent and $\operatorname(Span)(\mathcal{L}^\star)$ Should be still $\operatorname{Span}(\mathcal{T})$ because we removed only lineary dependent vectors.
+Then, $\mathcal{L}^\star$ should have $|E|$ independent vectors because they are all independent and $\operatorname{Span}(\mathcal{L}^\star)$ Should be still $\operatorname{Span}(\mathcal{T})$ because we removed only lineary dependent vectors.
 Notice that each vector has $|E|$ elements inside.
 Therefore, $\mathcal{L}^\star$ fullfills every property below.
 1. $S$ is tight for all $S \in \mathcal{L}^\star$
@@ -485,7 +485,7 @@ Then, the total costs $S$ gain is $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) 
 Notice that $E_{cc} \cup E_{cp} \cup E_{po} \neq \emptyset$.
 Proof is like follow.
 Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
-Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k$))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
+Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
 Notice that it's in the forest.
 However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for $\mathcal{L}$ is a $\operatorname{laminor}$.
 Therefore, $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) + x(E_{po}) > 0$.
