@@ -163,10 +163,10 @@ If you think about the category of edges in $\delta(B - A)$, it will be one of f
 
 Therefore, $z(\delta(A - B)) + z(\delta(B - A))$ will be sum of $z(e)$ in following 6 categories.
 1. $i \in A - B$, $j \in V - (A \cup B)$
-2. $i \in A - B$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in A - B$
+2. $i \in A - B$, $j \in A \cap B$ $\leftrightarrow$ $i \in A \cap B$, $j \in A - B$
 3. $i \in A - B$, $j \in B - A$
 4. $i \in B - A$, $j \in V - (A \cup B)$
-5. $i \in B - A$, $j \in A \cap B$ $\rightarrow$ $i \in A \cap B$, $j \in B - A$
+5. $i \in B - A$, $j \in A \cap B$ $\leftrightarrow$ $i \in A \cap B$, $j \in B - A$
 6. $i \in B - A$, $j \in A - B$
 
 We can map $1 \rightarrow 1$, $2 \rightarrow 8$, $3 \rightarrow 3$, $4 \rightarrow 5$, $5 \rightarrow 4$, $6 \rightarrow 7$.
@@ -301,7 +301,7 @@ However, $x_e$ for edges in category 2, 6 should be $0$ because $\sum\limits_{e 
 
 Simillarly, both $A - B$, $B - A$ are tight and $\chi_{\delta(A - B)} + \chi_{\delta(B - A)}$ $=$ $\chi_A + \chi_B$ should be hold in the second case.
 
-Now, let's define the solution of LP as $x$.
+Now, we will claim below with the lemma above.
 Then, there is $\mathcal{L} \subset 2^{V}$ which satisfies 4 things.
 1. $S$ is tight for all $S \in \mathcal{L}$
 2. $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent.
@@ -409,6 +409,105 @@ If $X = T - S$, $Y$ should fulfill one of three followings.
 
 As a result, $S$ and $Y$ are intersecting for any $Y \in \mathcal{L}$ such that $Y$ is intersecting with $X$.
 
+Now, let's think about $X$.
+Then, $X$ should have strictly fewer intersecting sets with $\mathcal{L}$ than $S$.
+The reason is like follow.
+If $X$ is intersecting with $Y \in \mathcal{L}$ then, $S$ does so either.
+However, there is at least one set such that intersects with $S$ but not with $X$ which is $T$.
+Notice that $X \in \\{S \cap T, S \cup T, S - T, T - S\\}$ and
+$(S \cap T) - T = \emptyset$,
+$T - (S \cup T) = \emptyset$,
+$(S - T) \cap T = \emptyset$,
+$(T - S) - T= \emptyset$.
+However, this is contradiction that we've choosed $S$ such that has $S$ has the fewest intersecting sets in $\mathcal{L}$.
+
+Therefore, such an $S$ can't exists and $\operatorname{Span}(\mathcal{T})$ $=$ $\operatorname{Span}(\mathcal{L})$ is true.
+Now, we've showend that there is at least one of a maximal $\operatorname{laminor}$ subfamily of $\mathcal{T}$ namely $\mathcal{L}$ such that fulfills following two.
+1. $S$ is tight for all $S \in \mathcal{L}$
+2. $\mathcal{L}$ is $\operatorname{laminor}$.
+
+Now, we can find some set $S \in \mathcal{T}$ which is lineary dependent from other vectors.
+Then, we can just remove it without losing property above.
+Now, we keep doing it untill every vectors are lineary independent and let the result to be $\mathcal{L}^\star$.
+Then, $\mathcal{L}^\star$ should have $|E|$ independent vectors because they are all independent and $\operatorname(Span)(\mathcal{L}^\star)$ Should be still $\operatorname{Span}(\mathcal{T})$ because we removed only lineary dependent vectors.
+Notice that each vector has $|E|$ elements inside.
+Therefore, $\mathcal{L}^\star$ fullfills every property below.
+1. $S$ is tight for all $S \in \mathcal{L}^\star$
+2. $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}^\star}$ are linear independent.
+3. $\left\vert \mathcal{L}^\star \right\vert$ $=$ $\left\vert E \right\vert$
+4. $\mathcal{L}^\star$ is $\operatorname{laminor}$.
+
+Now, we will show the following is true.
+There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+
+To show this, let's think about such an $\mathcal{L}$ satisfies 4 properties from given LP.
+With this $\mathcal{L}$, we can pass some costs to the sets.
+Let's pass the costs like follow.
+
+1. Pass $x_e$ to set $X$ if $u$ or $v$ is in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
+2. Pass $1 - 2x_e$ to set $X$ if both $u$ and $v$ are in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
+
+Notice that every value is positive if our claim is false which means $0 < x_e < \frac{1}{2}$.
+
+Now, let's define set $A$ is bigger than $B$ when $B \subset A$.
+Then we can construct a forest since $\mathcal{L}$ is a $\operatorname{laminor}$.
+Notice that one of following should be true for $X, Y \in \mathcal{L}$.
+1. $X \cap Y$ $=$ $\emptyset$
+2. $X - Y$ $=$ $\emptyset$ $\leftrightarrow$ $X \subseteq Y$
+3. $Y - X$ $=$ $\emptyset$ $\leftrightarrow$ $Y \subseteq X$
+
+From the fact above, we will construct a forest like follow.
+
+1. Select the biggest sets in $\mathcal{L}$ and make them to the roots.
+2. Select the biggest sets in $S$ for any root $S$ and make them to child of $S$.
+3. Keep do this recursively untill every set is in the forest.
+
+Notice that $X$ is the child of $S$ if and only if there is no set $Y$ exists such that $Y$ is the child of $S$ but $X$ is child of $Y$ either.
+It means there is no double depth child relation.
+
+Then, select a root of forest $S$.
+With this $S$, let's define child of $S$ as $C_1, C_2, \cdots, C_n$ and $C = \bigcup\limits_{k = 1}^{n} C_k$.
+Then, we can define 4 categories for edge $e \in (\delta(S) \cup \delta(C))$.
+
+1. $E_{cc}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $C_j$ for $i \neq j$.
+2. $E_{cp}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $S - C$.
+3. $E_{co}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $V - S$.
+4. $E_{po}$ is the set of edges $e \in E_S$ such that one end point of edge is in $S - C$ and other is in $V - S$.
+
+Now, if we count every cost gain from each categories, it is like follow.
+
+1. $1 - 2x_e$ from $E_{cc}$.
+2. $1 - 2x_e + x_e = 1 - x_e$ from $E_{cp}$.
+3. Nothing from $E_{co}$.
+4. $x_e$ from $E_{po}$.
+
+Then, the total costs $S$ gain is $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) + x(E_{po})$ $=$ $|E_{cc}| + |E_{cp}| - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$.
+Notice that $E_{cc} \cup E_{cp} \cup E_{po} \neq \emptyset$.
+Proof is like follow.
+Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
+Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k$))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
+Notice that it's in the forest.
+However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for $\mathcal{L}$ is a $\operatorname{laminor}$.
+Therefore, $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) + x(E_{po}) > 0$.
+
+Now, let's think about the categories of edges for $E_{cc}, E_{cp}, E_{po}$.
+Then $x(\delta(S)) = x(E_{po}) + x(E_{co})$ and $x(\delta(C)) = x(E_{cp}) + 2x(E_{cc}) + x(E_{co})$.
+Reason is like follow.
+
+1. For $\delta(S)$, all the edges should be one of $E_{co}$ or $E_{po}$ because one of end point should be in $V - S$.
+2. For $\delta(C)$, there are three type of edges like just described.
+    One for from $C_i$ to $V - S$.
+    One for from $C_i$ to $S - C$.
+    One for from $C_i$ to $C_j$ for $i \neq j$.
+    However, $x(\delta(C))$ will count twice for the "One for from $C_i$ to $C_j$ for $i \neq j$".
+
+As a result, $|E_{cc}| + |E_{cp}| - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$ $=$ $|E_{cc}| + |E_{cp}|  + x(E_{po}) + x(E_{co}) - (x(E_{cp}) + 2x(E_{cc}) + x(E_{co}))$
+$=$ $|E_{cc}| + |E_{cp}| + x(\delta(S)) - x(\delta(C))$.
+However, $|E_{cc}| + |E_{cp}| + x(\delta(S)) - x(\delta(C))$ should be an integer because all of operations are interger.
+Therefore, each $S$ should have at least 1 costs.
+Which means total cost of $\mathcal(L) \ge |E|$ since $|\mathcal{L}| = |E|$.
+However, $\mathcal{L} \le |E|$ because each edges passes at most $x_e + x_e + (1 - 2x_e)$ to sets.
+As a result, total costs in $\mathcal{L}$ is $|E|$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
