@@ -17,7 +17,7 @@ Now, we can make a integer programming over this and it is like follow.
 "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge \max\limits_{i \in S, j \not\in S} r_{ij}$ $\forall S \subset V$, $x_e \in \\{0,1\\}$" which $\delta(S)$ denotes the set of edges between $S$ and $V - S$.
 Notice that if there is $r_{ij}$ edge distinct paths, we can make a flow of value $r_{ij}$ between $i$ and $j$.
 Then, there should be a mincut that corresponding to that flow from the network flow theory.
-As a result, constraint above should be fullfilled.
+As a result, constraint above should be fulfilled.
 It's the same in the opposite direction.
 If we have a such min-cut then we have such flow either.
 
@@ -351,7 +351,7 @@ Notice that all of followings are true.
 5. $S - T \neq \emptyset$
 6. $T - S \neq \emptyset$
 
-If $X = S \cap T$, $Y$ should fullfill one of three followings.
+If $X = S \cap T$, $Y$ should fulfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.<br>
     Therefore, such $Y$ doesn't exist.<br>
@@ -364,7 +364,7 @@ If $X = S \cap T$, $Y$ should fullfill one of three followings.
     $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
 
-If $X = S \cup T$, $Y$ should fullfill one of three followings.
+If $X = S \cup T$, $Y$ should fulfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $S \cap T$ $=$ $(S \cap T) - (S \cap (T \cap Y))$ $=$ $(S \cap T) - ((S \cap T) \cap Y)$ $=$ $(S \cap T) - Y$ $\subseteq$ $((S \cap T) - Y) \cup ((S - T) - Y)$ $=$ $S - Y$.<br>
@@ -379,14 +379,14 @@ If $X = S \cup T$, $Y$ should fullfill one of three followings.
     $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.<br>
     Therefore, such $Y$ doesn't exist.<br>
 
-If $X = S - T$, $Y$ should fullfill one of three followings.<br>
+If $X = S - T$, $Y$ should fulfill one of three followings.<br>
 1. $Y \cap T = \emptyset$<br>
-    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $((S - T) \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $((S - T) \cap Y) \cup (T \cap Y)$ $=$ $((S - T) \cup T) \cap Y$ $=$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
     $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S - T)$ $=$ $Y - (Y \cap (S - T))$ $=$ $Y - ((Y \cap S) - (Y \cap T))$ $=$ $Y - (Y \cap S)$ $=$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
 2. $T - Y = \emptyset$<br>
-    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $\subseteq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap  Y) - (T \cap Y)$ $\subseteq$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
     $\emptyset$ $\neq$ $T - S$ $\subseteq$  $(Y \cup T) - S$ $=$ $(Y \cup (T - Y)) - S$ $=$ $(Y - S) \cup ((T - Y) - S)$ $=$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
@@ -394,19 +394,17 @@ If $X = S - T$, $Y$ should fullfill one of three followings.<br>
     $Y$ can't intersect with $X$ because $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $=$ $(S \cap Y) - ((T \cap Y) \cup (Y - T))$ $\subseteq$ $((S \cap Y) \cup (Y - S)) - ((T \cap Y) \cup (Y - T))$ $=$ $Y - Y$ $=$ $\emptyset$.<br>
     Therefore, such $Y$ doesn't exist.<br>
 
-If $X = T - S$, $Y$ should fullfill one of three followings.
+If $X = T - S$, $Y$ should fulfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap Y$.<br>
-    $\emptyset$ $\neq$ $S - Y$.<br>
-    $\emptyset$ $\neq$ $Y - S$.<br>
+    $Y$ can't intersect with $X$ because $X \cap Y$ $=$ $(T - S) \cap Y$ $\subseteq$ $T \cap Y$ $=$ $\emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 2. $T - Y = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap Y$.<br>
-    $\emptyset$ $\neq$ $S - Y$.<br>
-    $\emptyset$ $\neq$ $Y - S$.<br>
+    $Y$ can't intersect with $X$ because $X - Y$ $=$ $(T - S) - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 3. $Y - T = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap Y$.<br>
-    $\emptyset$ $\neq$ $S - Y$.<br>
-    $\emptyset$ $\neq$ $Y - S$.<br>
+    $\emptyset$ $\neq$ $S \cap T$ $=$ $(S \cap T) \cup (S \cap  (Y - T))$ $=$ $S \cap (T \cup  (Y - T))$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S - T$ $=$ $S - (T \cup (Y - T))$ $=$ $S - (Y \cup T)$ $=$ $S - (Y \cup (T - Y))$ $\subseteq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(T - S) \cap Y$ $=$ $(T - (S \cap T)) \cap Y$ $=$ $(T \cap Y) - ((S \cap T) \cap Y)$ $=$ $(T \cap Y) - (S \cap (T \cap Y))$ $=$ $(T \cap Y) - S$ $=$ $((T \cap Y) \cup (Y - T)) - S$ $=$ $Y - S$.<br>
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
