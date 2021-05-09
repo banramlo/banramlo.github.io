@@ -353,41 +353,59 @@ Notice that all of followings are true.
 
 If $X = S \cap T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
-    $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.
-    Therefore, such $Y$ doesn't exist.
+    $Y$ can't intersect with $X$ because $Y \cap X$ $\subseteq$ $Y \cap T$ $=$ $\emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 2. $T - Y = \emptyset$<br>
-    $Y$ can't intersect with $X$ because $X - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.
-    Therefore, such $Y$ doesn't exist.
+    $Y$ can't intersect with $X$ because $X - Y$ $\subseteq$ $T - Y$ $=$ $\emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 3. $Y - T = \emptyset$<br>
-    $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.
-    $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $Y - S$.
-    As a result, $S$ intersects with $Y$.
+    $\emptyset$ $\neq$ $X \cap Y$ $\subseteq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S \cap T)$ $=$ $(Y - S)$ $\cup$ $(Y - T)$ $=$ $Y - S$.<br>
+    As a result, $S$ intersects with $Y$.<br>
 
 If $X = S \cup T$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
-    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.
-    $\emptyset$ $\neq$ $S - X$ $\subseteq$ $S - (X \cap Y)$ $=$ $S - ((S \cup T) \cap Y)$ $=$ $S - ((S \cap Y) \cup (T \cap Y))$ $=$ $S - (S \cap Y)$ $=$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
-    As a result, $S$ intersects with $Y$.
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S \cup T) \cap Y$ $=$ $(S \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S - X$ $\subseteq$ $S - (X \cap Y)$ $=$ $S - ((S \cup T) \cap Y)$ $=$ $S - ((S \cap Y) \cup (T \cap Y))$ $=$ $S - (S \cap Y)$ $=$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.<br>
+    As a result, $S$ intersects with $Y$.<br>
 2. $T - Y = \emptyset$<br>
-    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap Y)$ $=$ $S \cap Y$.
-    $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.
-    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.
-    As a result, $S$ intersects with $Y$.
+    $\emptyset$ $\neq$ $S \cap T$ $\subseteq$ $(S \cap (T - Y)) \cup (S \cap Y)$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X - Y$ $=$ $(S \cup T) - Y$ $=$ $(S - Y) \cup (T - Y)$ $=$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $\subseteq$ $Y - S$.<br>
+    As a result, $S$ intersects with $Y$.<br>
 3. $Y - T = \emptyset$<br>
-    $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.
-    Therefore, such $Y$ doesn't exist.
+    $Y$ can't intersect with $X$ because $Y - X$ $\subseteq$ $Y - T$ $=$ $\emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 
-If $X = S - T$, $Y$ should fullfill one of three followings.
+If $X = S - T$, $Y$ should fullfill one of three followings.<br>
 1. $Y \cap T = \emptyset$<br>
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $((S - T) \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S - T)$ $=$ $\subseteq$ $Y - S$.<br>
 2. $T - Y = \emptyset$<br>
+    $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $\subseteq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $T - S$ $=$ $(Y \cup (T - Y)) - S$ $=$ $(Y - S) \cup ((T - Y) - S)$ $=$ $Y - S$.<br>
+    As a result, $S$ intersects with $Y$.<br>
 3. $Y - T = \emptyset$<br>
+    $Y$ can't intersect with $X$ because $X cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $=$ $(S \cap Y) - ((T \cap Y) \cup (Y - T))$ $\subseteq$ $((S \cap Y) \cup (Y - S)) - ((T \cap Y) \cup (Y - T))$ $=$ $Y - Y$ $$=$ \emptyset$.<br>
+    Therefore, such $Y$ doesn't exist.<br>
 
 If $X = T - S$, $Y$ should fullfill one of three followings.
 1. $Y \cap T = \emptyset$<br>
+    $\emptyset$ $\neq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - S$.<br>
 2. $T - Y = \emptyset$<br>
+    $\emptyset$ $\neq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - S$.<br>
 3. $Y - T = \emptyset$<br>
+    $\emptyset$ $\neq$ $S \cap Y$.<br>
+    $\emptyset$ $\neq$ $S - Y$.<br>
+    $\emptyset$ $\neq$ $Y - S$.<br>
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
