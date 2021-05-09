@@ -383,7 +383,7 @@ If $X = S - T$, $Y$ should fullfill one of three followings.<br>
 1. $Y \cap T = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $((S - T) \cap Y) \cup (T \cap Y)$ $=$ $S \cap Y$.<br>
     $\emptyset$ $\neq$ $X - Y$ $\subseteq$ $S - Y$.<br>
-    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S - T)$ $\subseteq$ $(Y - (S - T)) \cup (Y - (S \cap T))$ $=$ $Y - S$.<br>
+    $\emptyset$ $\neq$ $Y - X$ $=$ $Y - (S - T)$ $=$ $Y - (Y \cap (S - T))$ $=$ $Y - ((Y \cap S) - (Y \cap T))$ $=$ $Y - (Y \cap S)$ $=$ $Y - S$.<br>
     As a result, $S$ intersects with $Y$.<br>
 2. $T - Y = \emptyset$<br>
     $\emptyset$ $\neq$ $X \cap Y$ $=$ $(S - T) \cap Y$ $=$ $(S \cap Y) - (T \cap Y)$ $\subseteq$ $S \cap Y$.<br>
