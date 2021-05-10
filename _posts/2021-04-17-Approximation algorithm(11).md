@@ -490,7 +490,7 @@ Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co
 Notice that $C_i$ is the sibling of $C_j$ in the forest.
 However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for "\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent".
 Therefore, $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po}) > 0$.
-Notice that every value is positive if our claim is false which means $0 < x_e < \frac{1}{2}$.
+Notice that every value is positive because we assumed $0 < x_e < \frac{1}{2}$.
 
 Now, let's think about the categories of edges for $E_{cc}, E_{cp}, E_{po}$.
 Then $x(\delta(S)) = x(E_{po}) + x(E_{co})$ and $x(\delta(C)) = x(E_{cp}) + 2x(E_{cc}) + x(E_{co})$.
