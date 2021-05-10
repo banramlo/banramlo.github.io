@@ -22,7 +22,7 @@ Then we can evaluate this flow $f$ as $\sum\limits_{(s, v) \in E}f(s, v) - \sum\
 
 Now, let's think about a directed graph $G = (V,E)$ and some flow $f$ of $G$.
 Then we can decompose $f$ to some simple paths $P_1, \cdots, P_N$ and some cycles $C_1, \cdots, C_M$.
-Which $N + M \le |E|$.
+Which $N + M \le \left\vert E \right\vert$.
 
 Without loosing much of generality, we can assume that $f$'s value is positive or negative.
 In the proof of flow decomposition, it doesn't necessarily to be positive or negative.
@@ -40,7 +40,7 @@ Otherwise, we can do this process again.
 Therefore, there sould be at least some cycles and paths.
 
 Notice that we should remove at least 1 edge to remove a path or a cycle because it choosed a smallest value on graph.
-As a result, we can do this at most $|E|$.
+As a result, we can do this at most $\left\vert E \right\vert$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.

@@ -41,7 +41,7 @@ If we select $\delta = 1$, $Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\l
 
 As a result, $Pr[\max(Y_e) \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
 $\sum\limits_{e \in E}Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $\le$
-$\sum\limits_{e \in E}n^{-c/3}$ $=$ $|E|n^{-c/3}$ $\le$ $n^{2-c/3}$.
+$\sum\limits_{e \in E}n^{-c/3}$ $=$ $\left\vert E \right\vertn^{-c/3}$ $\le$ $n^{2-c/3}$.
 As a result, we can select $c$ to make resonable probability with resonable maximum $Y_e$.
 
 If $W^\star \ge c\ln{n}$, we can select $\delta = \sqrt{\frac{c\ln{n}}{W^\star}} \le 1$ then
@@ -55,7 +55,7 @@ $Pr[\max(Y_e) \ge (1 + \sqrt{\frac{c\ln{n}}{W^\star}})W^\star]$ $=$
 $Pr[\max(Y_e) \ge W^\star + \sqrt{c\ln{n}W^\star}]$ $\le$
 $\sum\limits_{e \in E}Pr[Y_e \ge W^\star + \sqrt{c\ln{n}W^\star}]$ $\le$
 $\sum\limits_{e \in E}n^{-c/3}$ $=$
-$|E|n^{-c/3}$ $\le$
+$\left\vert E \right\vertn^{-c/3}$ $\le$
 $n^{2-c/3}$
 
 What about the running time of the algorithm?
@@ -72,10 +72,10 @@ Algorithm is like follow.
 
 Notice that step 1 is equal with "Minimize $W$ such that $\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$, $\forall (u, v) \in E$, $\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_i(u, v)$ $=$ $\sum_{w : (v,w) \in E, v \neq \\{s_i, t_i\\}}f_i(v, w)$, $\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$".
 Now it takes polynomial time to solve.
-The number of variable is $O(k|E|)$.
-The number of first contraint "$\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$" is at most $O(|E|)$.
-The number of second contraint "$\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_i(u, v)$ $=$ $\sum_{w : (v,w) \in E, v \neq \\{s_i, t_i\\}}f_i(v, w)$" is at most $O(k|E||V|)$.
-The number of Third contraint "$\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$" is at most $O(k|E|)$.
+The number of variable is $O(k\left\vert E \right\vert)$.
+The number of first contraint "$\sum\limits_{i = 1}^{k} f_i(u, v) + f_i(v, u) \le W$" is at most $O(\left\vert E \right\vert)$.
+The number of second contraint "$\sum_{u : (u,v) \in E, v \neq \\{s_i, t_i\\}}f_i(u, v)$ $=$ $\sum_{w : (v,w) \in E, v \neq \\{s_i, t_i\\}}f_i(v, w)$" is at most $O(k\left\vert E \right\vert|V|)$.
+The number of Third contraint "$\sum_{v : (s_i, v) \in E}f_i(s_i, v) - \sum_{v : (v, s_i) \in E}f_i(v, s_i)$ $=$ $\sum_{v : (v, t_i) \in E}f_i(v, t_i) - \sum_{v : (t_i, v) \in E}f_i(t_i, v)$ $=$ $1$" is at most $O(k\left\vert E \right\vert)$.
 
 Then, why this algorithm makes the same situation of previous algorithm?
 Let's recap the previous algorithm.
