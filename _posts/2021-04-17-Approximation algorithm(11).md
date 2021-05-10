@@ -488,7 +488,7 @@ Proof is like follow.
 Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
 Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
 Notice that $C_i$ is the sibling of $C_j$ in the forest.
-However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for " $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent".
+However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for '$ \\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}} $ are linear independent'.
 Therefore, $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po}) > 0$.
 Notice that every value is positive because we assumed $0 < x_e < \frac{1}{2}$.
 
@@ -511,7 +511,7 @@ Which means total cost of $\mathcal{L} \ge \left\vert E \right\vert$ since $\lef
 However, total cost of $\mathcal{L} < \left\vert E \right\vert$ is true because of following reasons.
 
 Each edges passes at most $x_e + x_e + (1 - 2x_e) = 1$ costs to sets.
-Therefore, total cost of $\mathcal{L} \le \left\vert E \right\vert.
+Therefore, total cost of $\mathcal{L} \le \left\vert E \right\vert$.
 However, there is at least one edge that outgoing of $S$.
 If there is no such an edge, $S$ should contain every vertices and it means $S = V$.
 However, $\delta(S) = \emptyset$ because there is no edge between $S$ and $S - V = V - V = \emptyset$.
