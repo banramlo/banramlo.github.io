@@ -515,7 +515,7 @@ Therefore, total cost of $\mathcal{L} \le \left\vert E \right\vert$.
 However, there is at least one edge that outgoing of $S$.
 If there is no such an edge, $S$ should contain every vertices and it means $S = V$.
 However if so, $\delta(S) = \emptyset$ because there is no edge between $S$ and $S - V = V - V = \emptyset$.
-Which means $S$ can't be in $\mathcal{L}$ because $\chi_{\delta(S)} = \vec{0}$ can't be the vector in lineary indepdendent set.
+Which means $S$ can't be in $\mathcal{L}$ because $\chi_{\delta(S)} = \vec{0}$ can't be the vector in the lineary indepdendent set.
 As a result, total cost of $\mathcal{L} < \left\vert E \right\vert$.
 
 Therefore, it's a contradiction with the fact above.
