@@ -440,6 +440,7 @@ Therefore, $\mathcal{L}^\star$ fulfills every property below.
 Now, we will show the following is true.
 
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
+
 To show this, let's think about such an $\mathcal{L}$ satisfies 4 properties from given LP and let's assume that $0 < x_e < \frac{1}{2}$ for all $e \in E$.
 Now, let's define set $A$ is bigger than $B$ when $B \subset A$.
 Then we can construct a forest since $\mathcal{L}$ is a $\operatorname{laminor}$.
@@ -487,7 +488,7 @@ Proof is like follow.
 Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
 Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
 Notice that $C_i$ is the sibling of $C_j$ in the forest.
-However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for "$\mathcal{L}$ is a $\operatorname{laminor}$".
+However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for "\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent".
 Therefore, $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po}) > 0$.
 Notice that every value is positive if our claim is false which means $0 < x_e < \frac{1}{2}$.
 
