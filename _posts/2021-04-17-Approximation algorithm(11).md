@@ -488,7 +488,7 @@ Proof is like follow.
 Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
 Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
 Notice that $C_i$ is the sibling of $C_j$ in the forest.
-However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for the fact that $\chi_{\delta(S)}$ and $\chi_{\delta(C_i)}$s are linear independent.
+However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for the fact that $\chi_{\delta(S)}$, $\chi_{\delta(C_1)}$, $\cdots$, $\chi_{\delta(C_n)}$ are linear independent.
 Therefore, $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po}) > 0$.
 Notice that every value is positive because we assumed $0 < x_e < \frac{1}{2}$.
 
@@ -510,18 +510,18 @@ Therefore, each $S$ should have at least 1 costs.
 Which means total cost of $\mathcal{L} \ge \left\vert E \right\vert$ since $\left\vert \mathcal{L} \right\vert = \left\vert E \right\vert$.
 However, total cost of $\mathcal{L} < \left\vert E \right\vert$ is true because of following reasons.
 
-Each edges passes at most $x_e + x_e + (1 - 2x_e) = 1$ costs to sets.
+Each edge passes at most $x_e + x_e + (1 - 2x_e) = 1$ cost to sets.
 Therefore, total cost of $\mathcal{L} \le \left\vert E \right\vert$.
 However, there is at least one edge that outgoing of $S$.
 If there is no such an edge, $S$ should contain every vertices and it means $S = V$.
-However, $\delta(S) = \emptyset$ because there is no edge between $S$ and $S - V = V - V = \emptyset$.
-Which means $S$ can't be in $\mathcal{L}$ because $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent.
-As a result, total cost of $\mathcal{L} < \left\vert E \right\vert.
+However if so, $\delta(S) = \emptyset$ because there is no edge between $S$ and $S - V = V - V = \emptyset$.
+Which means $S$ can't be in $\mathcal{L}$ because $\chi_{\delta(S)} = \vec{0}$ can't be the vector in lineary indepdendent set.
+As a result, total cost of $\mathcal{L} < \left\vert E \right\vert$.
 
 Therefore, it's a contradiction with the fact above.
 As a result, assumption that "$0 < x_e < \frac{1}{2}$ for all $e \in E$" is false.
 Therefore, there should be at least $x_e$ shuch that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
-However, if we think about the LP with removing $x_e$s than solution of problem should be the same with before.
+However, if we think about the LP with removing $x_e$s such that $x_e = 0$ then solution of problem should be the same with before.
 At the same time, there should be at least one such an $x_e$ that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
 However, that should be the case of $x_e \ge \frac{1}{2}$ because we just removed every $x_e = 0$.
 Therefore, claim holds.
