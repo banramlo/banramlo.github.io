@@ -431,23 +431,22 @@ Then, we can just remove it without losing property above.
 Now, we keep doing it untill every vectors are lineary independent and let the result to be $\mathcal{L}^\star$.
 Then, $\mathcal{L}^\star$ should have $|E|$ independent vectors because they are all independent and $\operatorname{Span}(\mathcal{L}^\star)$ Should be still $\operatorname{Span}(\mathcal{T})$ because we removed only lineary dependent vectors.
 Notice that each vector has $|E|$ elements inside.
-Therefore, $\mathcal{L}^\star$ fullfills every property below.
+Therefore, $\mathcal{L}^\star$ fulfills every property below.
 1. $S$ is tight for all $S \in \mathcal{L}^\star$
 2. $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}^\star}$ are linear independent.
 3. $\left\vert \mathcal{L}^\star \right\vert$ $=$ $\left\vert E \right\vert$
 4. $\mathcal{L}^\star$ is $\operatorname{laminor}$.
 
 Now, we will show the following is true.
+
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
 
-To show this, let's think about such an $\mathcal{L}$ satisfies 4 properties from given LP.
+To show this, let's think about such an $\mathcal{L}$ satisfies 4 properties from given LP and let's assume that $0 < x_e < \frac{1}{2}$ for all $e \in E$.
 With this $\mathcal{L}$, we can pass some costs to the sets.
 Let's pass the costs like follow.
 
 1. Pass $x_e$ to set $X$ if $u$ or $v$ is in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
 2. Pass $1 - 2x_e$ to set $X$ if both $u$ and $v$ are in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
-
-Notice that every value is positive if our claim is false which means $0 < x_e < \frac{1}{2}$.
 
 Now, let's define set $A$ is bigger than $B$ when $B \subset A$.
 Then we can construct a forest since $\mathcal{L}$ is a $\operatorname{laminor}$.
@@ -458,8 +457,8 @@ Notice that one of following should be true for $X, Y \in \mathcal{L}$.
 
 From the fact above, we will construct a forest like follow.
 
-1. Select the biggest sets in $\mathcal{L}$ and make them to the roots.
-2. Select the biggest sets in $S$ for any root $S$ and make them to child of $S$.
+1. Select biggest sets in $\mathcal{L}$ and make them to the roots.
+2. Select biggest sets in $S$ for any root $S$ and make them to child of $S$.
 3. Keep do this recursively untill every set is in the forest.
 
 Notice that $X$ is the child of $S$ if and only if there is no set $Y$ exists such that $Y$ is the child of $S$ but $X$ is child of $Y$ either.
@@ -469,12 +468,12 @@ Then, select a root of forest $S$.
 With this $S$, let's define child of $S$ as $C_1, C_2, \cdots, C_n$ and $C = \bigcup\limits_{k = 1}^{n} C_k$.
 Then, we can define 4 categories for edge $e \in (\delta(S) \cup \delta(C))$.
 
-1. $E_{cc}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $C_j$ for $i \neq j$.
-2. $E_{cp}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $S - C$.
-3. $E_{co}$ is the set of edges $e \in E_S$ such that one end point of edge is in $C_i$ and other is in $V - S$.
-4. $E_{po}$ is the set of edges $e \in E_S$ such that one end point of edge is in $S - C$ and other is in $V - S$.
+1. $E_{cc}$ is the set of edges $e \in E$ such that one end point of edge is in $C_i$ and other is in $C_j$ for $i \neq j$.
+2. $E_{cp}$ is the set of edges $e \in E$ such that one end point of edge is in $C_i$ and other is in $S - C$.
+3. $E_{co}$ is the set of edges $e \in E$ such that one end point of edge is in $C_i$ and other is in $V - S$.
+4. $E_{po}$ is the set of edges $e \in E$ such that one end point of edge is in $S - C$ and other is in $V - S$.
 
-Now, if we count every cost gain from each categories, it is like follow.
+If we count every cost gain for $S$ from each categories, it is like follow.
 
 1. $1 - 2x_e$ from $E_{cc}$.
 2. $1 - 2x_e + x_e = 1 - x_e$ from $E_{cp}$.
@@ -482,13 +481,16 @@ Now, if we count every cost gain from each categories, it is like follow.
 4. $x_e$ from $E_{po}$.
 
 Then, the total costs $S$ gain is $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) + x(E_{po})$ $=$ $|E_{cc}| + |E_{cp}| - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$.
+
 Notice that $E_{cc} \cup E_{cp} \cup E_{po} \neq \emptyset$.
 Proof is like follow.
+
 Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
 Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
-Notice that it's in the forest.
-However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for $\mathcal{L}$ is a $\operatorname{laminor}$.
+Notice that $C_i$ is the sibling of $C_j$ in the forest.
+However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for "$\mathcal{L}$ is a $\operatorname{laminor}$".
 Therefore, $|E_{cc}| - 2x(E_{cc}) + |E_{cp}| - x(E_{cp}) + x(E_{po}) > 0$.
+Notice that every value is positive if our claim is false which means $0 < x_e < \frac{1}{2}$.
 
 Now, let's think about the categories of edges for $E_{cc}, E_{cp}, E_{po}$.
 Then $x(\delta(S)) = x(E_{po}) + x(E_{co})$ and $x(\delta(C)) = x(E_{cp}) + 2x(E_{cc}) + x(E_{co})$.
@@ -499,15 +501,30 @@ Reason is like follow.
     One for from $C_i$ to $V - S$.
     One for from $C_i$ to $S - C$.
     One for from $C_i$ to $C_j$ for $i \neq j$.
-    However, $x(\delta(C))$ will count twice for the "One for from $C_i$ to $C_j$ for $i \neq j$".
+    However, $x(\delta(C))$ will count twice for "One for from $C_i$ to $C_j$ for $i \neq j$".
 
 As a result, $|E_{cc}| + |E_{cp}| - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$ $=$ $|E_{cc}| + |E_{cp}|  + x(E_{po}) + x(E_{co}) - (x(E_{cp}) + 2x(E_{cc}) + x(E_{co}))$
 $=$ $|E_{cc}| + |E_{cp}| + x(\delta(S)) - x(\delta(C))$.
-However, $|E_{cc}| + |E_{cp}| + x(\delta(S)) - x(\delta(C))$ should be an integer because all of operations are interger.
+However, $|E_{cc}| + |E_{cp}| + x(\delta(S)) - x(\delta(C))$ should be an integer because all of elements in the equation are intergers.
 Therefore, each $S$ should have at least 1 costs.
-Which means total cost of $\mathcal(L) \ge |E|$ since $|\mathcal{L}| = |E|$.
-However, $\mathcal{L} \le |E|$ because each edges passes at most $x_e + x_e + (1 - 2x_e)$ to sets.
-As a result, total costs in $\mathcal{L}$ is $|E|$.
+Which means total cost of $\mathcal{L} \ge |E|$ since $|\mathcal{L}| = |E|$.
+However, total cost of $\mathcal{L} < |E|$ is true because of following reasons.
+
+Each edges passes at most $x_e + x_e + (1 - 2x_e) = 1$ costs to sets.
+Therefore, total cost of $\mathcal{L} \le |E|.
+However, there is at least one edge that outgoing of $S$.
+If there is no such an edge, $S$ should contain every vertices and it means $S = V$.
+However, $\delta(S) = \emptyset$ because there is no edge between $S$ and $S - V = V - V = \emptyset$.
+Which means $S$ can't be in $\mathcal{L}$ because $\\{\chi_{\delta(S)}\\}_{S \in \mathcal{L}}$ are linear independent.
+As a result, total cost of $\mathcal{L} < |E|.
+
+Therefore, it's a contradiction with the fact above.
+As a result, assumption that "$0 < x_e < \frac{1}{2}$ for all $e \in E$" is false.
+Therefore, there should be at least $x_e$ shuch that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
+However, if we think about the LP with removing $x_e$s than solution of problem should be the same with before.
+At the same time, there should be at least one such an $x_e$ that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
+However, that should be the case of $x_e \ge \frac{1}{2}$ because we just removed every $x_e = 0$.
+Therefore, claim holds.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
