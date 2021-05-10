@@ -41,7 +41,7 @@ If we select $\delta = 1$, $Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $<$ $e^{-c\l
 
 As a result, $Pr[\max(Y_e) \ge (1 + \delta)c\ln{n}W^\star]$ $\le$ 
 $\sum\limits_{e \in E}Pr[Y_e \ge (1 + \delta)c\ln{n}W^\star]$ $\le$
-$\sum\limits_{e \in E}n^{-c/3}$ $=$ $\left\vert E \right\vertn^{-c/3}$ $\le$ $n^{2-c/3}$.
+$\sum\limits_{e \in E}n^{-c/3}$ $=$ $\left\vert E \right\vert n^{-c/3}$ $\le$ $n^{2-c/3}$.
 As a result, we can select $c$ to make resonable probability with resonable maximum $Y_e$.
 
 If $W^\star \ge c\ln{n}$, we can select $\delta = \sqrt{\frac{c\ln{n}}{W^\star}} \le 1$ then
@@ -55,7 +55,7 @@ $Pr[\max(Y_e) \ge (1 + \sqrt{\frac{c\ln{n}}{W^\star}})W^\star]$ $=$
 $Pr[\max(Y_e) \ge W^\star + \sqrt{c\ln{n}W^\star}]$ $\le$
 $\sum\limits_{e \in E}Pr[Y_e \ge W^\star + \sqrt{c\ln{n}W^\star}]$ $\le$
 $\sum\limits_{e \in E}n^{-c/3}$ $=$
-$\left\vert E \right\vertn^{-c/3}$ $\le$
+$\left\vert E \right\vert n^{-c/3}$ $\le$
 $n^{2-c/3}$
 
 What about the running time of the algorithm?
