@@ -31,9 +31,9 @@ $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix
 $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Maximize $C^T X$ such that <br>
-    $a_i^T X \ge b_i$ for $i \in C_p$,<br>
-    $a_i^T X \le b_i$ for $i \in C_m$,<br>
-    $a_i^T X = b_i$ for $i \in C_e$,<br>
+    $a_i X \ge b_i$ for $i \in C_p$,<br>
+    $a_i X \le b_i$ for $i \in C_m$,<br>
+    $a_i X = b_i$ for $i \in C_e$,<br>
     $x_i \ge 0$ for $i \in B_p$,<br>
     $x_i \le 0$ for $i \in B_m$,<br>
     No limitation $x_i$ for $i \in B_f$.
@@ -49,9 +49,9 @@ $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix
 $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Minimize $C^T X$ such that <br>
-    $a_i^T X \ge b_i$ for $i \in C_p$,<br>
-    $a_i^T X \le b_i$ for $i \in C_m$,<br>
-    $a_i^T X = b_i$ for $i \in C_e$,<br>
+    $a_i X \ge b_i$ for $i \in C_p$,<br>
+    $a_i X \le b_i$ for $i \in C_m$,<br>
+    $a_i X = b_i$ for $i \in C_e$,<br>
     $x_i \ge 0$ for $i \in B_p$,<br>
     $x_i \le 0$ for $i \in B_m$,<br>
     No limitation $x_i$ for $i \in B_f$.
