@@ -11,30 +11,31 @@ For any given LP, we can construct LP like one of the format follow.
 
 ### Minimization problem
 For given vectors
-$$X = \begin{pmatrix}
+\[X = \begin{pmatrix}
 x_1 \\\
 x_2 \\\
 \vdots \\\
-x_n \\\
-\end{pmatrix}$$, 
-$$C = \begin{pmatrix}
+x_n 
+\end{pmatrix}\], 
+\[$$C = \begin{pmatrix}
 c_1 \\\
 c_2 \\\
 \vdots \\\
-c_n \\\
-\end{pmatrix}$$,
-$$B = \begin{pmatrix}
+c_n 
+\end{pmatrix}\],
+\[B = \begin{pmatrix}
 b_1 \\\
 b_2 \\\
 \vdots \\\
-b_m \\\
-\end{pmatrix}$$ and matrix 
-$$A = \begin{pmatrix}
-a_{11} & a_{12} & \cdots & a_{1n}\\\
-a_{21} & a_{22} & \cdots & a_{2n}\\\
+b_m 
+\end{pmatrix}\] and matrix 
+\[A = \begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\\
+a_{21} & a_{22} & \cdots & a_{2n} \\\
 \vdots & \vdots & \ddots & \vdots \\\
-a_{m1} & a_{m2} & \cdots & a_{mn}\\\
-\end{pmatrix}$$
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}\].<br>
+
 Minimize $C^T X$ such that <br>
     $a_i^T X \ge b_i$ for $i \in C_p$,<br>
     $a_i^T X \le b_i$ for $i \in C_m$,<br>
