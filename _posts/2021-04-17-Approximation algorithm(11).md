@@ -522,7 +522,7 @@ Therefore, it's a contradiction with the fact above.
 As a result, assumption that "$0 < x_e < \frac{1}{2}$ for all $e \in E$" is false.
 Therefore, there should be at least $x_e$ shuch that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
 However, if we think about the LP with removing $x_e$s such that $x_e = 0$ then solution of problem should be the same with before.
-At the same time, there should be at least one such an $x_e$ that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
+At the same time, there should be at least one $x_e$ such that $x_e \ge \frac{1}{2}$ or $x_e = 0$.
 However, that should be the case of $x_e \ge \frac{1}{2}$ because we just removed every $x_e = 0$.
 Therefore, claim holds.
 
