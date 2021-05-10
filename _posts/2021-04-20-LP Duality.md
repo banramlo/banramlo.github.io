@@ -21,7 +21,8 @@ Minimize $C^T X$ such that <br>
     $a_i^T X \le b_i$ for $i \in C_m$,<br>
     $a_i^T X = b_i$ for $i \in C_e$,<br>
     $x_i \ge 0$ for $i \in B_p$,<br>
-    $x_i \le 0$ for $i \in B_m$.
+    $x_i \le 0$ for $i \in B_m$,<br>
+    No limitation $x_i$ for $i \in B_f$.
 
 ### Maximization problem
 For given vectors
