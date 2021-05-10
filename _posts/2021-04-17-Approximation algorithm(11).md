@@ -440,14 +440,7 @@ Therefore, $\mathcal{L}^\star$ fulfills every property below.
 Now, we will show the following is true.
 
 There exists an edge $e \in E$ such that $x_e \ge \frac{1}{2}$ if we solve linear problem "Minimize $\sum\limits_{e \in E} c_e x_e$ such that $\sum\limits_{e \in \delta(S)} x_e \ge f(S)$ $\forall S \subset V$, $0 \le x_e \le 1$" for any weakly supermodular $f$.
-
 To show this, let's think about such an $\mathcal{L}$ satisfies 4 properties from given LP and let's assume that $0 < x_e < \frac{1}{2}$ for all $e \in E$.
-With this $\mathcal{L}$, we can pass some costs to the sets.
-Let's pass the costs like follow.
-
-1. Pass $x_e$ to set $X$ if $u$ or $v$ is in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
-2. Pass $1 - 2x_e$ to set $X$ if both $u$ and $v$ are in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
-
 Now, let's define set $A$ is bigger than $B$ when $B \subset A$.
 Then we can construct a forest since $\mathcal{L}$ is a $\operatorname{laminor}$.
 Notice that one of following should be true for $X, Y \in \mathcal{L}$.
@@ -463,6 +456,12 @@ From the fact above, we will construct a forest like follow.
 
 Notice that $X$ is the child of $S$ if and only if there is no set $Y$ exists such that $Y$ is the child of $S$ but $X$ is child of $Y$ either.
 It means there is no double depth child relation.
+
+With this $\mathcal{L}$, we can pass some costs to the sets.
+Let's pass the costs like follow.
+
+1. Pass $x_e$ to set $X$ if $u$ or $v$ is in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
+2. Pass $1 - 2x_e$ to set $X$ if both $u$ and $v$ are in $X$ and $X$ is the smallest set among such sets for any edge $e = (u,v)$.
 
 Then, select a root of forest $S$.
 With this $S$, let's define child of $S$ as $C_1, C_2, \cdots, C_n$ and $C = \bigcup\limits_{k = 1}^{n} C_k$.
