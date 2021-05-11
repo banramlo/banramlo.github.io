@@ -117,7 +117,7 @@ Let's think about the following LP.
 For given vectors
 
 Minimize $-x_1 + 3x_2 + x_3$ such that <br>
-    $2x_1 + x_2 \ge 6$,<br>
+    $2x_3 + x_2 \ge 6$,<br>
     $x_1 - x_2 + x_3 \ge 4$,<br>
     $x_1 - 3x_2 \le 2$,<br>
     $2 x_1 - x_2 + x_3 = 7$,<br>
@@ -125,7 +125,7 @@ Minimize $-x_1 + 3x_2 + x_3$ such that <br>
     $x_2 \le 0$,<br>
     No limitation $x_3$.
 
-Notice that optimal solution is $(x_1, x_2, x_3) = (3,0,1)$
+Notice that optimal solution is $(x_1, x_2, x_3) = (2,0,3)$
 
 
 {: .box-note}
