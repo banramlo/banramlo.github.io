@@ -114,7 +114,6 @@ Now, we've understood what is dual of primal.
 However, where does it come from?
 
 Let's think about the following LP.
-For given vectors
 
 Minimize $-x_1 + 3x_2 + x_3$ such that <br>
     $x_2 + 2x_3 \ge 6$,<br>
