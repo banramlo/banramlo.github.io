@@ -73,8 +73,8 @@ Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
     $y_i \le 0$ for $i \in C_m$,<br>
     No limitation for $y_i$ for $i \in C_e$,<br>
-    $A_i^T Y \ge c_i$ for $i \in B_p$,<br>
-    $A_i^T Y \le c_i$ for $i \in B_m$,<br>
+    $A_i^T Y \le c_i$ for $i \in B_p$,<br>
+    $A_i^T Y \ge c_i$ for $i \in B_m$,<br>
     $A_i^T Y = c_i$ for $i \in B_f$.
 
 It's the same for the opposite.
@@ -89,8 +89,8 @@ Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
     $y_i \le 0$ for $i \in C_m$,<br>
     No limitation for $y_i$ for $i \in C_e$,<br>
-    $A_i^T Y \ge c_i$ for $i \in B_p$,<br>
-    $A_i^T Y \le c_i$ for $i \in B_m$,<br>
+    $A_i^T Y \le c_i$ for $i \in B_p$,<br>
+    $A_i^T Y \ge c_i$ for $i \in B_m$,<br>
     $A_i^T Y = c_i$ for $i \in B_f$.
 
 Then dual of primal maximization problem is a minimization problem like follow.
@@ -117,16 +117,62 @@ Let's think about the following LP.
 For given vectors
 
 Minimize $-x_1 + 3x_2 + x_3$ such that <br>
-    $2x_3 + x_2 \ge 6$,<br>
+    $x_2 + 2x_3 \ge 6$,<br>
     $x_1 - x_2 + x_3 \ge 4$,<br>
     $x_1 - 3x_2 \le 2$,<br>
-    $2 x_1 - x_2 + x_3 = 7$,<br>
+    $2x_1 - x_2 + x_3 = 7$,<br>
     $x_1 \ge 0$,<br>
     $x_2 \le 0$,<br>
-    No limitation $x_3$.
+    No limitation for $x_3$.
 
-Notice that optimal solution is $(x_1, x_2, x_3) = (2,0,3)$
+Notice that optimal solution is $1$ with $(x_1, x_2, x_3) = (2,0,3)$.
 
+Even though we know the optimum is $1$, we may want to provide some lower bound of the problem.
+In this case, we can think about sumation of constraint.
+If we think about any feasible solution $X = \begin{pmatrix}x_1 \\\ x_2 \\\ x_3 \end{pmatrix}$, all of constraints should hold.
+As a result all of following is true.
+1. $x_2 + 2x_3$ $\ge$ $6$
+2. $x_1 - x_2 + x_3$ $\ge$ $4$
+3. $x_1 - 3x_2$ $\le$ $2$
+4. $2x_1 - x_2 + x_3$ $=$ $7$
+
+Now, let's define $X = \begin{pmatrix}y_1 \\\ y_2 \\\ y_3 \\\ y_4 \end{pmatrix}$ and multiply it to all of them.
+Then all of following is true.
+Notice that each $y_i$ has positive or negative values to match direction of inequality.
+
+1. $(x_2 + 2x_3) y_1$ $\ge$ $6y_1$, $y_1$ $\ge$ $0$
+2. $(x_1 - x_2 + x_3)y_2$ $\ge$ $4y_2$, $y_2$ $\ge$ $0$
+3. $(x_1 - 3x_2)y_3$ $\ge$ $2y_3$, $y_3$ $\le$ $0$
+4. $(2x_1 - x_2 + x_3)y_4$ $=$ $7y_4$, no limitation for $y_4$
+
+Now, let's sum up all the constraints.
+$(x_2 + 2x_3)y_1$ $+$ $(x_1 - x_2 + x_3)y_2$ $+$ $(x_1 - 3x_2)y_3$ $+$ $(2x_1 - x_2 + x_3)y_4$ $\ge$ $6y_1 + 4y_2 + 2y_3 + 7y_4$.
+Now, just reorder the formula with the $x_1, x_2, x_3$.
+Then, $(y_2 + y_3 + 2y_4)x_1$ $+$ $(y_1 - y_2 - 3y_3 - y_4)x_2$ $+$ $(2y_1 + y_2 + y_4)x_3$ $\ge$ $6y_1 + 4y_2 + 2y_3 + 7y_4$.
+Now, if each of factor of $x_1, x_2, x_3$ is less or greater than original problem then it should be bigger than before.
+
+Therefore, $-x_1 + 3x_2 + x_3$ $\ge$ $(y_2 + y_3 + 2y_4)x_1$ $+$ $(y_1 - y_2 - 3y_3 - y_4)x_2$ $+$ $(2y_1 + y_2 + y_4)x_3$ should hold if followings are true.
+
+1. $y_2 + y_3 + 2y_4$ $\le$ $-1$ because $x_1$ $\ge$ $0$
+2. $y_1 - y_2 - 3y_3 - y_4$ $\ge$ $3$ because $x_2$ $\le$ $0$
+3. $2y_1 + y_2 + y_4$ $=$ $1$ because there was no limitation for $x_3$ 
+
+Then $-x_1 + 3x_2 + x_3$ $\ge$ $6y_1 + 4y_2 + 2y_3 + 7y_4$ is true.
+
+As a result, we can define a maximization problem of lower bound of minization problem like follow.
+
+Maximize $6y_1 + 4y_2 + 2y_3 + 7y_4$ such that <br>
+    $y_2 + y_3 + 2y_4$ $\le$ $-1$,<br>
+    $y_1 - y_2 - 3y_3 - y_4$ $\ge$ $3$,<br>
+    $2y_1 + y_2 + y_4$ $=$ $1$,<br>
+    $y_1 \ge 0$,<br>
+    $y_2 \ge 0$,<br>
+    $y_3 \le 0$,<br>
+    No limitation for $y_4$.
+
+Notice that optimum of this maximization problem is $1$ with $(y_1, y_2, y_3, y_4) = (\frac{5}{9}, 0, -\frac{7}{9}, -\frac{1}{9})$.
+
+Like the process above, we can change the problem to dual of it to change lower or upper bound of problem.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
