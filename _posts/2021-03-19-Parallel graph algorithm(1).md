@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallel graph algorithm(2) - parallel page rank/BFS
+title: Parallel graph algorithm(1) - parallel page rank/BFS
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, concurrency, graph]
 comments: true
@@ -109,6 +109,30 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
 
 <div class="algorithm">
     $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1$<br>
+    <div class="algorithm">
+        $d[i] = -1$<br>
+    </div>
+    $Q \leftarrow \text{Empty queue}$<br>
+    $Q.push(s)$<br>
+    $d[0] = 0$<br>
+    $\operatorname{while} Q \neq \emptyset$<br>
+    <div class="algorithm">
+        $v \leftarrow Q_{top}$<br>
+        $\operatorname{for} u \in \delta(v)$<br>
+        <div class="algorithm">
+            $\operatorname{if} d[u] = -1$<br>
+            <div class="algorithm">
+                $d[u] = d[v] + 1$<br>
+            </div>
+        </div>
+        $Q.pop()$
+    </div>
+</div>
+
+Now, it can be parallelized per vetex at the same depth.
+
+<div class="algorithm">
+    $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1 \operatorname{in} \operatorname{parellel}$<br>
     <div class="algorithm">
         $d[i] = -1$<br>
     </div>

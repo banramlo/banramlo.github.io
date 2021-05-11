@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(8) - Linear programming
+title: Linear programming
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true

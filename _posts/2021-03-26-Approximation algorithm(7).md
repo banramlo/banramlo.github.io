@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(9) - Minimizing sum of completion time
+title: Approximation algorithm(7) - Minimizing sum of completion time
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true

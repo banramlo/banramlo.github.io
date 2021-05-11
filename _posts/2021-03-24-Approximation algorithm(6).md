@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(7) - Minimum-degree spanning tree
+title: Approximation algorithm(6) - Minimum-degree spanning tree
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true
