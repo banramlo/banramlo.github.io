@@ -233,8 +233,7 @@ Then, there is so-called complementary slackness condition which is follow.
 Now, there is a theorem as known as complementary slackness.
 Let $X$ and $Y$ be feasible solutions for primal and dual of LP repectively.
 Then, $X$ and $Y$ fulfill complementary slackness condition if and only if they are optimum of primal and dual repectively.
-
-Primal problem is like follow.
+Proof will be updated later.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
