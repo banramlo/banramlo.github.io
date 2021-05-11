@@ -20,34 +20,33 @@ It is not too hard constraint because $j$ can recieves item at $k$ delivered by 
 Now, problem is to minimize sum of costs to assign all clients to some facility which are open.
 
 Then, Problem can be written as IP follow.
-Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ 
-such that
-$\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, 
-$x_{ij} \le y_i$ $\forall i \in F, j \in D$ and 
+Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ such that<br>
+$\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, <br>
+$x_{ij} \le y_i$ $\forall i \in F, j \in D$ and <br>
 $x_{ij}, y_i \in \\{0, 1\\}$ $\forall i \in F, j \in D$.
 
 Notice that there is a problem similar with above but with some capacity for each facility.
 In such a case, the problem is so-called "The capacitated facility location problem".
 
 Now IP above can be LP-relaxed to below.
-Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ 
-such that $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, 
-$x_{ij} \le y_i$ $\forall i \in F, j \in D$ and 
+Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ such that <br>
+$\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, <br>
+$x_{ij} \le y_i$ $\forall i \in F, j \in D$ and <br>
 $x_{ij}, y_i \ge 0$ $\forall i \in F, j \in D$.
 
 Notice that LP above is the same with LP below.
 
-Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ 
-such that $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, 
-$y_i - x_{ij} \ge 0$ $\forall i \in F, j \in D$ and 
+Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ such that <br>
+$\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, <br>
+$y_i - x_{ij} \ge 0$ $\forall i \in F, j \in D$ and <br>
 $x_{ij}, y_i \ge 0$ $\forall i \in F, j \in D$.
 
 Now let's use $v_i$ to multiplier for the first constraints and $w_{ij}$ for the second constraints.
 we can change primal LP above to dual of it.
 
-Maximize $\sum\limits_{j \in D} v_j$
-such that $w_{ij} \ge 0$ $\forall i \in F, j \in D$,
-$\sum\limits_{j \in D}w_{ij} \le f_i$ $\forall i \in F$,
+Maximize $\sum\limits_{j \in D} v_j$ such that <br>
+$w_{ij} \ge 0$ $\forall i \in F, j \in D$,<br>
+$\sum\limits_{j \in D}w_{ij} \le f_i$ $\forall i \in F$,<br>
 $v_j - w_{ij} \le c_{ij}$ $\forall i \in F, j \in D$.
 
 {: .box-note}
