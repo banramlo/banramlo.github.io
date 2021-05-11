@@ -72,7 +72,7 @@ $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cd
 Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
     $y_i \le 0$ for $i \in C_m$,<br>
-    No limitation for$y_i$ for $i \in C_e$,<br>
+    No limitation for $y_i$ for $i \in C_e$,<br>
     $A_i^T Y \ge c_i$ for $i \in B_p$,<br>
     $A_i^T Y \le c_i$ for $i \in B_m$,<br>
     $A_i^T Y = c_i$ for $i \in B_f$.
@@ -88,7 +88,7 @@ $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cd
 Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
     $y_i \le 0$ for $i \in C_m$,<br>
-    No limitation for$y_i$ for $i \in C_e$,<br>
+    No limitation for $y_i$ for $i \in C_e$,<br>
     $A_i^T Y \ge c_i$ for $i \in B_p$,<br>
     $A_i^T Y \le c_i$ for $i \in B_m$,<br>
     $A_i^T Y = c_i$ for $i \in B_f$.
@@ -107,7 +107,7 @@ Minimize $C^T X$ such that <br>
     $a_i X = b_i$ for $i \in C_e$,<br>
     $x_i \ge 0$ for $i \in B_p$,<br>
     $x_i \le 0$ for $i \in B_m$,<br>
-    No limitation for$x_i$ for $i \in B_f$.
+    No limitation for $x_i$ for $i \in B_f$.
 
 ### Example
 Now, we've understood what is dual of primal.
@@ -116,8 +116,8 @@ However, where does it come from?
 Let's think about the following LP.
 For given vectors
 
-Minimize $-x_1 + 3 * x_2 + x_3$ such that <br>
-    $2x_2 + x_3 \ge 6$,<br>
+Minimize $-x_1 + 3x_2 + x_3$ such that <br>
+    $x_2 + 2x_3 \ge 6$,<br>
     $x_1 - x_2 + x_3 \ge 4$,<br>
     $x_1 - 3x_2 \le 2$,<br>
     $2 x_1 - x_2 + x_3 = 7$,<br>
