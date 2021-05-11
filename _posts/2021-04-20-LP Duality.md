@@ -177,7 +177,7 @@ Like the process above, we can change the problem to dual of it which finds lowe
 
 Let's assume that primal problem is a minimzation problem for $C^T X$ and dual of it is a maximization problem for $B^T Y$.
 Now, let's define optimum of primal as $X$ and optimum of dual as $Y$.
-$C^T X \ge B^T Y$ is valid because optimum of dual is a lower bound of primal.
+Then, $C^T X \ge B^T Y$ is valid because optimum of dual is a lower bound of primal.
 
 ### Strong duality
 
@@ -192,12 +192,13 @@ Notice that there are three type of situations for LP.
 
 For each case, the possible situation is like follow.
 
-                                | Primal has an optimum | Primal has no feasible solution | Primal has unbounded solution |
-Dual has an optimum             |  Possible   |  Impossible |  Impossible |
-Dual has no feasible solution   |  Impossible | Possible | Possible |
-Dual has unbounded solution     |  Impossible | Possible |  Impossible |
+|                                | Primal has an optimum | Primal has no feasible solution | Primal has unbounded solution |
+| :------           | :------           | :------                 | :------                 |
+| Dual has an optimum             |  Possible   |  Impossible |  Impossible |
+| Dual has no feasible solution   |  Impossible | Possible | Possible |
+| Dual has unbounded solution     |  Impossible | Possible |  Impossible |
 
-###
+### Complementary slackness
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
