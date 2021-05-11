@@ -14,7 +14,7 @@ For given vectors
 $X = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Minimize $C^T X$ such that <br>
     $a_i X \ge b_i$ for $i \in C_p$,<br>
@@ -31,7 +31,7 @@ For given vectors
 $X = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Maximize $C^T X$ such that <br>
     $a_i X \ge b_i$ for $i \in C_p$,<br>
@@ -51,7 +51,7 @@ For given vectors
 $X = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Minimize $C^T X$ such that <br>
     $a_i X \ge b_i$ for $i \in C_p$,<br>
@@ -67,7 +67,7 @@ For given vectors
 $Y = \begin{pmatrix} y_1 \\\ y_2 \\\ \vdots \\\ y_m \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
 
 Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
@@ -83,7 +83,7 @@ For given vectors
 $Y = \begin{pmatrix} y_1 \\\ y_2 \\\ \vdots \\\ y_m \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
  
 Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
@@ -99,7 +99,7 @@ For given vectors
 $X = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Minimize $C^T X$ such that <br>
     $a_i X \ge b_i$ for $i \in C_p$,<br>
@@ -200,11 +200,11 @@ For each case, the possible situation is like follow.
 
 ### Complementary slackness
 For given vectors
-$Y = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
+$X = \begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$, 
 $Y = \begin{pmatrix} y_1 \\\ y_2 \\\ \vdots \\\ y_m \end{pmatrix}$, 
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
-$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
+$A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix}$ $=$ $\begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$ $=$ $\begin{pmatrix} a_1 \\\ a_2 \\\ \vdots \\\ a_m \end{pmatrix}$.
 
 Primal problem is like follow.
 
