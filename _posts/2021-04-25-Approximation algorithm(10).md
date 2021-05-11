@@ -7,7 +7,7 @@ comments: true
 use_math: true
 ---
 
-The uncapacitated facility location problem is a problem to decide which facility to open and how to handle to clients for it.
+The uncapacitated facility location problem is a problem to decide which facility to open and how to handle clients for it.
 Notice that every client will just go to the closest facility because there is no capacity limits.
 
 Now, for a given set of facility $F$, clients $D$.
@@ -19,7 +19,7 @@ It is not too hard constraint because $j$ can recieves item at $k$ delivered by 
 
 Now, problem is to minimize sum of costs to assign all clients to some facility which are open.
 
-Then, Problem can be IP follow.
+Then, Problem can be written as IP follow.
 Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ 
 such that
 $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, 
@@ -35,13 +35,20 @@ such that $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$,
 $x_{ij} \le y_i$ $\forall i \in F, j \in D$ and 
 $x_{ij}, y_i \ge 0$ $\forall i \in F, j \in D$.
 
+Notice that LP above is the same with LP below.
+
+Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ 
+such that $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, 
+$y_i - x_{ij} \ge 0$ $\forall i \in F, j \in D$ and 
+$x_{ij}, y_i \ge 0$ $\forall i \in F, j \in D$.
+
 Now let's use $v_i$ to multiplier for the first constraints and $w_{ij}$ for the second constraints.
 we can change primal LP above to dual of it.
 
-Maximize $\sum\limits_{j \in D} v_j + \sum\limits_{i \in F, j \in D}w_{ij}$
-such that $w_{ij} \le 0$ $\forall i \in F, j \in D$,
-$\sum\limits_{i \in F}c_{ij}v_j \le 0$ $\forall j \in D$,
-$c_{ij}w_{ij} \le 0$ $\forall i \in F, j \in D$.
+Maximize $\sum\limits_{j \in D} v_j$
+such that $w_{ij} \ge 0$ $\forall i \in F, j \in D$,
+$\sum\limits_{j \in D}w_{ij} \le f_i$ $\forall i \in F$,
+$v_j - w_{ij} \le c_{ij}$ $\forall i \in F, j \in D$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
