@@ -84,7 +84,7 @@ $Y = \begin{pmatrix} y_1 \\\ y_2 \\\ \vdots \\\ y_m \end{pmatrix}$,
 $C = \begin{pmatrix} c_1 \\\ c_2 \\\ \vdots \\\ c_n \end{pmatrix}$,
 $B = \begin{pmatrix} b_1 \\\ b_2 \\\ \vdots \\\ b_m \end{pmatrix}$ and matrix 
 $A = \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\\ a_{21} & a_{22} & \cdots & a_{2n} \\\ \vdots & \vdots & \ddots & \vdots \\\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{pmatrix} = \begin{pmatrix} A_1 & A_2 & \cdots & A_n \end{pmatrix}$.
-
+ 
 Maximize $B^T Y$ such that <br>
     $y_i \ge 0$ for $i \in C_p$,<br>
     $y_i \le 0$ for $i \in C_m$,<br>
@@ -127,7 +127,7 @@ Minimize $-x_1 + 3x_2 + x_3$ such that <br>
 Notice that optimal solution is $1$ with $(x_1, x_2, x_3) = (2,0,3)$.
 
 Even though we know the optimum is $1$, we may want to provide some lower bound of the problem.
-In this case, we can think about sumation of constraint.
+In this case, we can think about sumation of constraints.
 If we think about any feasible solution $X = \begin{pmatrix}x_1 \\\ x_2 \\\ x_3 \end{pmatrix}$, all of constraints should hold.
 As a result all of following is true.
 1. $x_2 + 2x_3$ $\ge$ $6$
@@ -171,7 +171,33 @@ Maximize $6y_1 + 4y_2 + 2y_3 + 7y_4$ such that <br>
 
 Notice that optimum of this maximization problem is $1$ with $(y_1, y_2, y_3, y_4) = (\frac{5}{9}, 0, -\frac{7}{9}, -\frac{1}{9})$.
 
-Like the process above, we can change the problem to dual of it to change lower or upper bound of problem.
+Like the process above, we can change the problem to dual of it which finds lower or upper bound of primal.
+
+### Weak duality
+
+Let's assume that primal problem is a minimzation problem for $C^T X$ and dual of it is a maximization problem for $B^T Y$.
+Now, let's define optimum of primal as $X$ and optimum of dual as $Y$.
+$C^T X \ge B^T Y$ is valid because optimum of dual is a lower bound of primal.
+
+### Strong duality
+
+With the above, there is a stronger statement for it.
+If there is a fesible optimum for both primal and dual, $C^T X = B^T Y$.
+Proof will be updated later.
+
+Notice that there are three type of situations for LP.
+1. LP has an optimum.
+2. LP has no feasible solution.
+3. LP has unbounded solution.(Infinitely small or big)
+
+For each case, the possible situation is like follow.
+
+                                | Primal has an optimum | Primal has no feasible solution | Primal has unbounded solution |
+Dual has an optimum             |  Possible   |  Impossible |  Impossible |
+Dual has no feasible solution   |  Impossible | Possible | Possible |
+Dual has unbounded solution     |  Impossible | Possible |  Impossible |
+
+###
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
