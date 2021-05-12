@@ -73,7 +73,7 @@ Now, if $x_{ij}^{\star} > 0$ then $c_{ij} \le v_j^{\star}$.
 Therefore, $\sum\limits_{j \in D}v_j^{\star}$ $\ge$ $\sum\limits_{j \in D}c_{ij}$.
 Proof is like follow.
 
-By complementary slackness, $x^{ij}^{\star} > 0$ means $v_{j}^{\star} - w_{ij}^{\star} = c_{ij}$.
+By complementary slackness, $x_{ij}^{\star} > 0$ means $v_{j}^{\star} - w_{ij}^{\star} = c_{ij}$.
 Therefore, $v_j^{\star} \ge c_{ij}$.
 
 Now, let $i^{\star}$ be the facility with the smallest $c_{ij}$ in $N(j)$ for $j \in D$.
