@@ -2,7 +2,7 @@
 layout: post
 title: Matrix representation
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, concurrency, graph]
+tags: [algorithm, graph, matrix]
 comments: true
 use_math: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: LP Duality
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, approximation]
+tags: [algorithm, LP]
 comments: true
 use_math: true
 ---

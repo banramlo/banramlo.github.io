@@ -2,7 +2,7 @@
 layout: post
 title: Network decomposition
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm]
+tags: [algorithm, network]
 comments: true
 use_math: true
 ---

@@ -129,7 +129,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
     </div>
 </div>
 
-Now, it can be parallelized per vetex at the same depth.
+Now, it can be parallelized per vetices at the same depth.
 
 <div class="algorithm">
     $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1 \operatorname{in} \operatorname{parellel}$<br>
