@@ -104,7 +104,7 @@ Proof is like follow.
 Before we proceed the proof, let's define $S_k$ as the set of $j \in D$ which assigned to facility at the $k$th iteration.
 Now, let's assume that algorithm terminates in $K$ iteration.
 
-Then, 
+Then, $\sum\limits_{k = 1}^{K} f_{i_k}$ $\le$ $\sum\limits_{k = 1}^{K}\sum\limits_{i \in N(j_k)}^{K} f_{i_k}y_i^{\star}$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
