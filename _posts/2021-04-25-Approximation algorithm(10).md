@@ -14,7 +14,7 @@ Now, for a given set of facility $F$, clients $D$.
 There are some costs for opening facility $f_i \ge 0$ $\forall i \in F$.
 With this costs, there are some assignment costs $c_{ij} \ge 0$ $\forall i \in F, j \in D$ such that triangular inequality holds.
 Which means $C_{ij}$ $\le$ $C_{il} + C_{kl} + C_{kj}$.
-This means cost of "assigning $j$ to $i$" is allways less than cost of "assigning $l$ to $i$, $l$ to $k$ and $j$ to $k$".
+This means cost of "assigning $j$ to $i$" is allways less or equal than cost of "assigning $l$ to $i$, $l$ to $k$ and $j$ to $k$".
 It is not too hard constraint because $j$ can recieves item at $k$ delivered by $l$ from $i$ if it is.
 
 Now, problem is to minimize sum of costs to assign all clients to some facility which are open.
@@ -87,7 +87,7 @@ Then, $f_{i_{k}^\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}x_{ij_{k}}^{\sta
 
 Now, here is an approximation algorithm follow.
 <div class="algorithm">
-    Solve primal and dual LP and get optimum $(x^{\star}, x^{\star})$, dual optimum $(v^{\star}, w^{\star})$<br>
+    Solve primal and dual LP and get optimum $(x^{\star}, y^{\star})$, dual optimum $(v^{\star}, w^{\star})$<br>
     $C \leftarrow D$<br>
     $k \leftarrow 0$<br>
     $\operatorname{while} C \neq \emptyset$
@@ -139,7 +139,6 @@ Therefore, primal and dual of LP can be solved in polynomial time.
 Algorithm iterates at most $|D|$ iterations.
 Therefore, it will terminates in polynomial time.
 Proof stops here.
-
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
