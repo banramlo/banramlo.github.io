@@ -20,6 +20,7 @@ It is not too hard constraint because $j$ can recieves item at $k$ delivered by 
 Now, problem is to minimize sum of costs to assign all clients to some facility which are open.
 
 Then, Problem can be written as IP follow.
+
 Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ such that<br>
 $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, <br>
 $x_{ij} \le y_i$ $\forall i \in F, j \in D$ and <br>
@@ -29,6 +30,7 @@ Notice that there is a problem similar with above but with some capacity for eac
 In such a case, the problem is so-called "The capacitated facility location problem".
 
 Now IP above can be LP-relaxed to below.
+
 Minimize $\sum\limits_{i \in F}f_iy_i + \sum\limits_{i \in F, j \in D} c_{ij}x_{ij}$ such that <br>
 $\sum\limits_{i \in F}x_{ij} = 1$ $\forall j \in D$, <br>
 $x_{ij} \le y_i$ $\forall i \in F, j \in D$ and <br>
