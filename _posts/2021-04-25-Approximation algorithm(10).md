@@ -111,6 +111,8 @@ For the second inequality, if we read about the algorithm, $N(j_{k_1}) \cap N(j_
 
 Now, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ for $l \in S_k$ and any $h \in N(j_k) \cap N(l)$ because of the triangular inequality. 
 Then, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ $\le$ $v_{j_k}^{\star} + v_{j_k}^{\star} + v_l^{\star}$ because "$x_{ij}^{\star} > 0$ then $c_{ij}$ $\le$ $v_j^{\star}$".
+Notice that $l \in N^2(j_k) $if $l \in S_k$.
+Which means $x_{i^kl} > 0$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
