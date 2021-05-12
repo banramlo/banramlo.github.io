@@ -77,7 +77,7 @@ Proof is like follow.
 By complementary slackness, $x_{ij}^{\star} > 0$ means $v_{j}^{\star} - w_{ij}^{\star} = c_{ij}$.
 Therefore, $v_j^{\star} \ge c_{ij}$.
 
-Now, let $i_{k}^{\star}$ be the facility with the smallest $c_{ij_{k}}$ in $N(j_{k})$ for $j_{k} \in D$.
+Now, let $i_{k}^{\star}$ be the facility $i$ with the smallest $f_i$ in $N(j_{k})$ for $j_{k} \in D$.
 Then $f_{i_{k}^\star}$ $=$ $f_{i_{k}^\star}\sum\limits_{i \in N(j_{k})}x_{ij_{k}}^{\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}x_{ij_{k}}^{\star}$. 
 Notice that $\sum\limits_{i \in N(j_{k})}x_{ij_{k}}^{\star}$ $=$ $1$, $f_{i_{k}^\star}$ $\le$ $f_i$ for $i \in N(j_{k})$.
 
