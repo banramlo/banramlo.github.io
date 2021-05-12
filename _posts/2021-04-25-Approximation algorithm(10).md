@@ -68,6 +68,8 @@ Also, they need to pay at least the same costs for opening facility.
 Now, let $(x^{\star}, y^{\star}), (v^{\star}, w^{\star})$ be an optimumm of primal and dual respectively.
 Then define client $j$ is neighbor of facility $i$ if $x_{ij}^{\star} > 0$.
 Therefore, let $N(j) = \\{i \in F, x_{ij}^{\star} > 0\\}$.
+With this, we can define distance 2 neighborhood of $j$ like follow.
+$N^2(j) = \\{i \in D, x_{kj}^{\star} > 0, x_{ki}^{\star} > 0\\}$.
 
 Now, if $x_{ij}^{\star} > 0$ then $c_{ij} \le v_j^{\star}$.
 Therefore, $\sum\limits_{j \in D}v_j^{\star}$ $\ge$ $\sum\limits_{j \in D}c_{ij}$.
@@ -82,6 +84,28 @@ Notice that $\sum\limits_{i \in N(j)}x_{ij}^{\star}$ $=$ $1$, $f_{i^\star}$ $\le
 
 Then, $f_{i^\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}x_{ij}^{\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$.
 
+Now, here is an approximation algorithm follow.
+<div class="algorithm">
+    Solve primal and dual LP and get optimum $(x^{\star}, x^{\star})$, dual optimum $(v^{\star}, w^{\star})$<br>
+    $C \leftarrow D$<br>
+    $k \leftarrow 0$<br>
+    $\operatorname{while} C \neq \emptyset$
+    <div class = "algorithm">
+        $k \leftarrow k + 1$<br>
+        Choose $j_k \in C$ that minimizes $v_j^{\star}$ over all $j \in C$<br>
+        Choose $i_k \in N(j_k)$ to be the cheapest facility in $N(j_k)$<br>
+        Open $i_k$ and assign $j_k$ and all unassigned clients in $N^2(j_k)$ to $i_k$<br>
+        $C \leftarrow C - \{j_k\}  - N^2(j_k)$
+    </div>
+</div>
+
+Then, the algorithm given is a 4-approximation algorithm.
+Proof is like follow.
+
+Before we proceed the proof, let's define $S_k$ as the set of $j \in D$ which assigned to facility at the $k$th iteration.
+Now, let's assume that algorithm terminates in $K$ iteration.
+
+Then, 
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
