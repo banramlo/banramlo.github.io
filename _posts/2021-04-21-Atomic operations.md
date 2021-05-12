@@ -21,4 +21,4 @@ It will return $\text{true}$ if it writes and $\text{false}$ if it failed to wri
 
 CAS is an atomic operation that read some variable, check whether it is the same with asking and write if it is the same.
 If it is the same with what asking, it writes a new value and return $\text{true}$.
-If the value is not the same with what asking, update variable to ask with newer value and return $\text{false}$.
+If the value is not the same with what asking, update variable asking with a newer value and return $\text{false}$.
