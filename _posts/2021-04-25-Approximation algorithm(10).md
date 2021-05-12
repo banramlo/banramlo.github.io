@@ -82,8 +82,6 @@ Notice that $\sum\limits_{i \in N(j)}x_{ij}^{\star}$ $=$ $1$, $f_{i^\star}$ $\le
 
 Then, $f_{i^\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}x_{ij}^{\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$.
 
-Now, if we define $F'$ as the set of edges between client $j$ and facility $i$ if $i \in N(j)$.
-Then, $\sum\limits_{}f_{i^\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}x_{ij}^{\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
