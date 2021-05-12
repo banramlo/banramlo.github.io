@@ -19,6 +19,6 @@ It will return $\text{true}$ if it writes and $\text{false}$ if it failed to wri
 
 ## CAS(Compare and swap)
 
-CAS is an atomic operation that read some variable.
-If it is the same with what given, it writes new value and return $\text{true}$.
-If the value has been changed, update it to some place and return $\text{false}$.
+CAS is an atomic operation that read some variable, check whether it is the same with asking and write if it is the same.
+If it is the same with what asking, it writes a new value and return $\text{true}$.
+If the value is not the samw with what asking, update variable to ask with newer value and return $\text{false}$.
