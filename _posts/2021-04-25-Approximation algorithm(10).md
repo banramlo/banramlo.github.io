@@ -72,17 +72,16 @@ With this, we can define distance 2 neighborhood of $j$ like follow.
 $N^2(j) = \\{i \in D, x_{kj}^{\star} > 0, x_{ki}^{\star} > 0\\}$.
 
 Now, if $x_{ij}^{\star} > 0$ then $c_{ij} \le v_j^{\star}$.
-Therefore, $\sum\limits_{j \in D}v_j^{\star}$ $\ge$ $\sum\limits_{j \in D}c_{ij}$.
 Proof is like follow.
 
 By complementary slackness, $x_{ij}^{\star} > 0$ means $v_{j}^{\star} - w_{ij}^{\star} = c_{ij}$.
 Therefore, $v_j^{\star} \ge c_{ij}$.
 
-Now, let $i^{\star}$ be the facility with the smallest $c_{ij}$ in $N(j)$ for $j \in D$.
-Then $f_{i^\star}$ $\le$ $f_{i^\star}\sum\limits_{i \in N(j)}x_{ij}^{\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}x_{ij}^{\star}$. 
-Notice that $\sum\limits_{i \in N(j)}x_{ij}^{\star}$ $=$ $1$, $f_{i^\star}$ $\le$ $f_i$ for $i \in N(j)$.
+Now, let $i_{k}^{\star}$ be the facility with the smallest $c_{ij_{k}}$ in $N(j_{k})$ for $j_{k} \in D$.
+Then $f_{i_{k}^\star}$ $=$ $f_{i_{k}^\star}\sum\limits_{i \in N(j_{k})}x_{ij_{k}}^{\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}x_{ij_{k}}^{\star}$. 
+Notice that $\sum\limits_{i \in N(j_{k})}x_{ij_{k}}^{\star}$ $=$ $1$, $f_{i_{k}^\star}$ $\le$ $f_i$ for $i \in N(j_{k})$.
 
-Then, $f_{i^\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}x_{ij}^{\star}$ $\le$ $\sum\limits_{i \in N(j)}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$.
+Then, $f_{i_{k}^\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}x_{ij_{k}}^{\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$.
 
 Now, here is an approximation algorithm follow.
 <div class="algorithm">
