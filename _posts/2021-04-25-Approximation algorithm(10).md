@@ -114,11 +114,12 @@ Now, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ for $l \in N^2(j_k)$ and 
 Then, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ $\le$ $v_{j_k}^{\star} + v_{j_k}^{\star} + v_l^{\star}$ because "$x_{ij}^{\star} > 0$ then $c_{ij}$ $\le$ $v_j^{\star}$".
 
 Notice that $S_k \subseteq N^2(j_k)$ and $x_{i_kj_k} > 0$ is true.
+
 First one is trivial.
-Second one is true because"
+Second one is true because of following.
 $i_k \in N(j_k)$,
 $x_{hj_k} > 0$ because $h \in (N(j_k) \cap N(l)) \subseteq N(j_k)$,
-$x_{hl} > 0$ because $h \in (N(j_k) \cap N(l)) \subseteq N(l)$".
+$x_{hl} > 0$ because $h \in (N(j_k) \cap N(l)) \subseteq N(l)$.
 
 If we think about $v_l^{\star}$, $v_{j_k}^{\star}$ $\le$ $v_l^{\star}$ because we've choosed the minimum of $v_j^{\star}$ at each iteration.
 As a result, $c_{i_kl}$ $\le$ $3v_l^{\star}$.
