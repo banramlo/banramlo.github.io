@@ -103,7 +103,7 @@ Now, here is an approximation algorithm follow.
 Then, the algorithm given is a 4-approximation algorithm.
 Proof is like follow.
 
-Now, let's assume that algorithm terminates in $K$ iteration.
+Now, let's define $S_k$ as the set of assigned clients at the $k$th ieration and assume that algorithm terminates in $K$ iteration.
 
 Then, $\sum\limits_{k = 1}^{K} f_{i_k}$ $\le$ $\sum\limits_{k = 1}^{K}\sum\limits_{i \in N(j_k)} f_{i_k}y_i^{\star}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$. Proof is like follow.
 
@@ -113,24 +113,24 @@ For the second inequality, if we read about the algorithm, $N(j_{k_1}) \cap N(j_
 Now, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ for $l \in N^2(j_k)$ and any $h \in N(j_k) \cap N(l)$ because of the triangular inequality. 
 Then, $c_{i_kl}$ $\le$ $c_{i_kj_k} + c_{hj_k} + c_{hl}$ $\le$ $v_{j_k}^{\star} + v_{j_k}^{\star} + v_l^{\star}$ because "$x_{ij}^{\star} > 0$ then $c_{ij}$ $\le$ $v_j^{\star}$".
 
-Notice that $x_{i_kj_k} > 0$ because $i_k \in N(j_k)$,
+Notice that $S_k \subseteq N^2(j_k)$ and $x_{i_kj_k} > 0$ because $i_k \in N(j_k)$,
 $x_{hj_k} > 0$ because $h \in (N(j_k) \cap N(l)) \subseteq N(j_k)$,
 $x_{hl} > 0$ because $h \in (N(j_k) \cap N(l)) \subseteq N(l)$.
 
 If we think about $v_l^{\star}$, $v_{j_k}^{\star}$ $\le$ $v_l^{\star}$ because we've choosed the minimum of $v_j^{\star}$ at each iteration.
 As a result, $c_{i_kl}$ $\le$ $3v_l^{\star}$.
 
-Therefore, $\sum\limits_{k = 1}^{K}\sum\limits_{l \in N^2(i_k)}c_{i_kl}$ $\le$ 
-$\sum\limits_{k = 1}^{K}\sum\limits_{l \in N^2(i_k)}3v_l^{\star}$ $\le$
+Therefore, $\sum\limits_{k = 1}^{K}\sum\limits_{l \in S_k}c_{i_kl}$ $\le$ 
+$\sum\limits_{k = 1}^{K}\sum\limits_{l \in S_k}3v_l^{\star}$ $\le$
 $\sum\limits_{l \in D}3v_l^{\star}$.
 
-As a result, $\sum\limits_{k = 1}^{K} f_{i_k}$ $+$ $\sum\limits_{k = 1}^{K}\sum\limits_{l \in N^2(i_k)}c_{i_kl}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$ $+$ $\sum\limits_{l \in D}3v_l^{\star}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$ $+$ $\sum\limits_{i \in F, j \in D} c_{ij}x_{ij}^{\star}$ $+$ $\sum\limits_{l \in D}3v_l^{\star}$ $\le$ $\operatorname{OPT}$ + $3\operatorname{OPT}$ $=$ $4\operatorname{OPT}$.
+As a result, $\sum\limits_{k = 1}^{K} f_{i_k}$ $+$ $\sum\limits_{k = 1}^{K}\sum\limits_{l \in S_k}c_{i_kl}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$ $+$ $\sum\limits_{l \in D}3v_l^{\star}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$ $+$ $\sum\limits_{i \in F, j \in D} c_{ij}x_{ij}^{\star}$ $+$ $\sum\limits_{l \in D}3v_l^{\star}$ $\le$ $\operatorname{OPT}$ + $3\operatorname{OPT}$ $=$ $4\operatorname{OPT}$.
 
 Notice that $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$ $+$ $\sum\limits_{i \in F, j \in D} c_{ij}x_{ij}^{\star}$ is an optimum of primal and
-$\sum\limits_{l \in D}3v_l^{\star}$ is an optimum of dual.
+$\sum\limits_{l \in D}v_l^{\star}$ is an optimum of dual.
 Therefore both are less or equal than $\operatorname{OPT}$.
 
-Now, we've know that the number of constraints are polynomial.
+Now, we know that the number of constraints are polynomial.
 Therefore, primal and dual of LP can be solved in polynomial time.
 Algorithm iterates at most $|D|$ iterations.
 Therefore, it will terminates in polynomial time.
