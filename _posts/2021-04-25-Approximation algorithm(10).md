@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(10) - The uncapacitated facility location problem
+title: Approximation algorithm(10) - The uncapacitated facility location problem(1)
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true

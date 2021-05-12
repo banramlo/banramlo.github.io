@@ -2,7 +2,7 @@
 layout: post
 title: Atomic operations
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, approximation]
+tags: [algorithm, concurrency]
 comments: true
 use_math: true
 ---

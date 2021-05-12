@@ -27,7 +27,7 @@ title: 'archive'
     Connect.setRequestHeader("Content-Type", "text/xml");
     Connect.send(null);
     var listUp = Connect.responseXML.children[0];
-    updateString += "<h1>There are " + parseInt(listUp.childElementCount) + "posts in total.</h1><br>";
+    updateString += "<h1>There are " + parseInt(listUp.childElementCount) + " posts in total.</h1><br>";
     var thisYear = "";
     for(var i = page * pageUnit; i < ((page + 1) * pageUnit > listUp.childElementCount? listUp.childElementCount : (page + 1) * pageUnit); ++i){
         var title = listUp.children[i].children[0].innerHTML;
