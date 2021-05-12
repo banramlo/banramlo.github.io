@@ -104,7 +104,13 @@ Proof is like follow.
 Before we proceed the proof, let's define $S_k$ as the set of $j \in D$ which assigned to facility at the $k$th iteration.
 Now, let's assume that algorithm terminates in $K$ iteration.
 
-Then, $\sum\limits_{k = 1}^{K} f_{i_k}$ $\le$ $\sum\limits_{k = 1}^{K}\sum\limits_{i \in N(j_k)}^{K} f_{i_k}y_i^{\star}$
+Then, $\sum\limits_{k = 1}^{K} f_{i_k}$ $\le$ $\sum\limits_{k = 1}^{K}\sum\limits_{i \in N(j_k)} f_{i_k}y_i^{\star}$ $\le$ $\sum\limits_{i \in F} f_{i_k}y_i^{\star}$. Proof is like follow.
+
+First inequality is what just we've showen.
+For the second inequality, if we read about the algorithm, $N(j_{k_1}) \cap N(j_{k_2}) = \emptyset$ because we will assign all the $j$ in $N^2(j_k)$ at the each iteration. Therefore, claim holds.
+
+Now, $c_{il}$ $\le$ $c_{ij_k} + c_{hj_k} + c_{hl}$ for $l \in S_k$ because of the triangular inequality. 
+with above, $c_{ij_k} + c_{hj_k} + c_{hl}$ $\le$ $v^{\star}_{j_k} + v^{\star}_{j_k} + v^{\star}_{l}$ because "$x_{ij}^{\star} > 0$ then $c_{ij} \le v_j^{\star}$".
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
