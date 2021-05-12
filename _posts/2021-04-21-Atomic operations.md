@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Basic synchronization operations
+title: Atomic operations
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true
