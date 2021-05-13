@@ -11,20 +11,24 @@ permalink: /mathtools.html
             parent.document.getElementById("externalBoxBG").style.top="-100%";
             parent.document.body.style.overflow = "scroll";
         }
+
+        function compute(){
+            var target = document.getElementById("fomula").value;
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(95,50,40,0,1*Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.stroke();
+        }
     </script>
+    <input type="fomula" id="fomulaText"> 
+    <button class="nav-link" onclick="compute()">Compute</button> 
     <button style="float: right;" class="nav-link" onclick="setMathBox()">Close</button><br>
 
-
+    <!-- Above is the fixed close button-->
+    
     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
-        
-    <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        ctx.beginPath();
-        ctx.arc(95,50,40,0,1*Math.PI);
-        ctx.fillStyle = "red";
-        ctx.fill();
-        ctx.stroke();
-    </script> 
 </body>
