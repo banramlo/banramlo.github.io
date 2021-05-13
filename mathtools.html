@@ -11,19 +11,16 @@ permalink: /mathtools.html
     <br>
     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
-    <textarea id="memo" style="float: right;" rows="10" cols="50" onkeyup="saveMemo()">
-        </textarea>
+    <textarea id="memo" style="float: right;" rows="10" cols="50" onkeyup="saveMemo()">This is a free memo space.</textarea>
 
 
     
     <!-------------------------------->
     <script language = "javascript">
+        document.getElementById("fomulaText").value = JSON.parse(localStorage['memoFile'])['memo'];
         function saveMemo() {
             var memoFile = {'memo':document.getElementById("memo").value};
             localStorage['memoFile'] = JSON.stringify(memoFile);
-        }
-        function load() {
-            document.getElementById("fomulaText").value = JSON.parse(localStorage['memoFile'])['memo'];
         }
 
         function setMathBox(){
