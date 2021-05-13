@@ -5,7 +5,7 @@ permalink: /mathtools.html
 ---
 
 <body>
-    <input type="fomula" id="fomulaText"> <button class="nav-link" onclick="compute()">Compute</button> <button style="float: right;" class="nav-link" onclick="setMathBox()">Close</button><br>
+    <input type="fomula" id="fomulaText"> <button onclick="compute()">Compute</button> <button style="float: right;" onclick="setMathBox()">Close</button><br>
 
     <!-------------------------------->
     
@@ -23,7 +23,7 @@ permalink: /mathtools.html
         }
 
         function compute(){
-            var target = document.getElementById("fomula").value;
+            var target = document.getElementById("fomulaText").value;
             var c = document.getElementById("myCanvas");
             var ctx = c.getContext("2d");
             ctx.beginPath();
