@@ -18,13 +18,12 @@ permalink: /mathtools.html
     
     <!-------------------------------->
     <script language = "javascript">
-
         function saveMemo() {
             var memoFile = {'memo':document.getElementById("memo").value};
-            localStroage['memoFile'] = JSON.stringify(memoFile);
+            localStorage['memoFile'] = JSON.stringify(memoFile);
         }
         function load() {
-            document.getElementById("fomulaText").value = JSON.parse(localStroage['memoFile'])['memo'];
+            document.getElementById("fomulaText").value = JSON.parse(localStorage['memoFile'])['memo'];
         }
 
         function setMathBox(){
