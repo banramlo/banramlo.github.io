@@ -5,16 +5,15 @@ permalink: /mathtools.html
 ---
 
 <body>
-    <input type="fomula" id="fomulaText"> <button onclick="compute()">Compute</button> <button style="float: right;" onclick="setMathBox()">Close</button><br>
+    <input type="fomula" id="fomulaText"> <br>
+    <button onclick="compute()">Compute</button> <button onclick="setMathBox()">Close</button>
 
     <!-------------------------------->
     <br>
+    <textarea id="memo" rows="10" cols="20" onkeyup="saveMemo()">This is a free memo space.</textarea><br>
     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
-    <textarea id="memo" style="float: right;" rows="10" cols="20" onkeyup="saveMemo()">This is a free memo space.</textarea>
 
-
-    
     <!-------------------------------->
     <script language = "javascript">
         document.getElementById("memo").value = JSON.parse(localStorage['memoFile'])['memo'];
