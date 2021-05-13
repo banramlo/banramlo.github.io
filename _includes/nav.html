@@ -18,7 +18,13 @@
   style="position: fixed; z-index: 9999; left:10%; top:-100%; background-color: white; padding:20px">
 </iframe>
 
-<iframe id="searchBoxBG" 
+<iframe id="mathBox" 
+  width="80%" height="60%" 
+  src="https://banramlo.github.io/mathtools" 
+  style="position: fixed; z-index: 9999; left:10%; top:-100%; background-color: white; padding:20px">
+</iframe>
+
+<iframe id="externalBoxBG" 
   width="100%" height="100%" 
   style="position: fixed; z-index: 9998; left:0%; top:-100%; background-color: rgba(128,128,128,0.5)">
 </iframe>
@@ -26,7 +32,13 @@
   <script language = "javascript">
     function setSearchBox(){
       document.getElementById("searchBox").style.top="20%";
-      document.getElementById("searchBoxBG").style.top="0%";
+      document.getElementById("externalBoxBG").style.top="0%";
+      document.body.style.overflow = "hidden";
+    }
+    
+    function setMathBox(){
+      document.getElementById("mathBox").style.top="20%";
+      document.getElementById("externalBoxBG").style.top="0%";
       document.body.style.overflow = "hidden";
     }
         
@@ -61,6 +73,11 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
+      <li>
+        <div class="nav-item">
+          <a class="nav-link" onclick="setMathBox()">Toolbox</a>
+        </div>
+      </li>
       <li>
         <div class="nav-item">
           <a class="nav-link" onclick="setSearchBox()">Search</a>

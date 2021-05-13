@@ -23,8 +23,10 @@ navbar-links:
     - Programming launge: "https://banramlo.github.io/tags_Select?PL"
     - Simulation: "https://banramlo.github.io/tags_Select?simulation"
     - Game Programming: "https://banramlo.github.io/tags_Select?game"
-  Tag: "https://banramlo.github.io/tags"
-  Archive: "https://banramlo.github.io/archive?0"
+  Collection:
+    - Series: "https://banramlo.github.io/series"
+    - Tags: "https://banramlo.github.io/tags"
+    - Archive: "https://banramlo.github.io/archive?0"
 
 # --- Logo --- #
 
