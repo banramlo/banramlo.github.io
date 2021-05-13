@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Approximation algorithm(9) - survivable network design and iterated rounding
+title: Approximation algorithm(9) - survivable network design
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, approximation]
 comments: true
