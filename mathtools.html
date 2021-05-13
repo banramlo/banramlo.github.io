@@ -8,14 +8,25 @@ permalink: /mathtools.html
     <input type="fomula" id="fomulaText"> <button onclick="compute()">Compute</button> <button style="float: right;" onclick="setMathBox()">Close</button><br>
 
     <!-------------------------------->
-    
+    <br>
     <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
+    <textarea id="memo" style="float: right;" rows="10" cols="50" onkeyup="saveMemo()">
+        </textarea>
 
 
     
     <!-------------------------------->
     <script language = "javascript">
+
+        function saveMemo() {
+            var memoFile = {'memo':document.getElementById("memo").value};
+            localStroage['memoFile'] = JSON.stringify(memoFile);
+        }
+        function load() {
+            document.getElementById("fomulaText").value = JSON.parse(localStroage['memoFile'])['memo'];
+        }
+
         function setMathBox(){
             parent.document.getElementById("mathBox").style.top="-100%";
             parent.document.getElementById("externalBoxBG").style.top="-100%";
