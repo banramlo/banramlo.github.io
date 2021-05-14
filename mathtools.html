@@ -21,7 +21,21 @@ permalink: /mathtools.html
 
     <!-------------------------------->
     <br>
-    <textarea id="memo" rows="10" cols="20" onkeyup="saveMemo()">You can type some fomula in here to draw set.
+    <textarea id="form1" rows="10" cols="20" onkeyup="saveMemo()">You can type some fomula in here to draw set.
+Following grammar can be used in this section.
+Ground set is U.
+It supports at most three sets namely A, B, C.
+Statements should be in a single line.
+You can rename the set like follow X = B.
+You can alias the set like follow X = B - C.
+You can draw the set like follow print A.
+You can draw the set only once.
+You can union two set like one of follow A + B.
+You can intersect two set like follow A * B.
+You can subtract two set like one of follow A - B.
+You can parentheses like follow A*(B+C).
+Statments will proceed from the back to the front.</textarea>
+    <textarea id="form2" rows="10" cols="20" onkeyup="saveMemo()">You can type some fomula in here to draw set.
 Following grammar can be used in this section.
 Ground set is U.
 It supports at most three sets namely A, B, C.
@@ -36,10 +50,12 @@ You can subtract two set like one of follow A - B.
 You can parentheses like follow A*(B+C).
 Statments will proceed from the back to the front.</textarea>
     <script language = "javascript">
-        document.getElementById("memo").value = JSON.parse(localStorage['memoFile'])['memo'];
+        document.getElementById("form1").value = JSON.parse(localStorage['formFile'])['form1'];
+        document.getElementById("form2").value = JSON.parse(localStorage['formFile'])['form2'];
         function saveMemo() {
-            var memoFile = {'memo':document.getElementById("memo").value};
-            localStorage['memoFile'] = JSON.stringify(memoFile);
+            var formFile = {'form1':document.getElementById("form1").value,
+                            'form2':document.getElementById("form2").value};
+            localStorage['formFile'] = JSON.stringify(formFile);
         }
 
         function setMathBox(){
@@ -47,16 +63,23 @@ Statments will proceed from the back to the front.</textarea>
             parent.document.body.style.overflow = "scroll";
         }
 
-        function copy(){
-            var sourceCanvas = document.getElementById("canvas1");
-            var destinationCanvas = document.getElementById("canvas2");
-            var destCtx = destinationCanvas.getContext('2d');
-            destCtx.drawImage(sourceCanvas, 0, 0);
-        }
-
         function init(){
             if(confirm("Do you want to init the fomula?")){
-                document.getElementById("memo").value = `You can type some fomula in here to draw set.
+                document.getElementById("form1").value = `You can type some fomula in here to draw set.
+    Following grammar can be used in this section.
+    Ground set is U.
+    It supports at most three sets namely A, B, C.
+    Statements should be in a single line.
+    You can rename the set like follow X = B.
+    You can alias the set like follow X = B - C.
+    You can draw the set like follow print A.
+    You can draw the set only once.
+    You can union two set like one of follow A + B.
+    You can intersect two set like follow A * B.
+    You can subtract two set like one of follow A - B.
+    You can parentheses like follow A*(B+C).
+    Statments will proceed froe the back to the front.`;
+                document.getElementById("form2").value = `You can type some fomula in here to draw set.
     Following grammar can be used in this section.
     Ground set is U.
     It supports at most three sets namely A, B, C.
@@ -186,7 +209,12 @@ Statments will proceed from the back to the front.</textarea>
 		}
 		
         function compute(){
-            let statement = document.getElementById("memo").value.split('\n');
+            compute("1");
+            compute("2");
+        }
+
+        function compute(idx){
+            let statement = document.getElementById("form" + idx).value.split('\n');
             //                U - A + B + C, A - (B + C), B - (A + C), C - (A + B), A*B - A*B*C, B*C - A*B*C, A*C - A*B*C, A*B*C
             let map = new Map();
             map.set('A', [0,            1,           0,           0,           1,           0,           1,           1]);
@@ -219,7 +247,7 @@ Statments will proceed from the back to the front.</textarea>
                     }
                 }
             }
-            let c = document.getElementById("canvas1");
+            let c = document.getElementById("canvas" + idx);
             let ctx = c.getContext("2d");
 
             //Draw
