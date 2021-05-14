@@ -5,20 +5,22 @@ permalink: /mathtools.html
 ---
 
 <body>
-    <button onclick="init()">Initilize</button>
-    <button onclick="compute()">Compute</button>
-    <button onclick="setMathBox()">Close</button>
+    <center>
+        <button onclick="init()">Initilize</button>
+        <button onclick="compute()">Compute</button>
+        <button onclick="setMathBox()">Close</button>
 
-    <!-------------------------------->
-    <br>
-    <canvas id="canvas1" width="200" height="150" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML canvas tag.</canvas>
-    <canvas id="canvas2" width="200" height="150" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML canvas tag.</canvas>
+        <!-------------------------------->
+        <br>
+        <canvas id="canvas1" width="200" height="150" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.</canvas>
+        <canvas id="canvas2" width="200" height="150" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.</canvas>
 
-    <!-------------------------------->
-    <br>
-    <textarea id="form" rows="4" cols="20" onkeyup="saveMemo()"></textarea>
+        <!-------------------------------->
+        <br>
+        <textarea id="form" rows="4" cols="20" onkeyup="saveMemo()"></textarea>
+    </center>
     <script language = "javascript">
         document.getElementById("form").value = JSON.parse(localStorage['formFile'])['form'];
         function saveMemo() {
