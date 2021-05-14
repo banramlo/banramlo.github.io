@@ -35,7 +35,7 @@ permalink: /mathtools.html
 
         function init(){
             if(confirm("Do you want to init the fomula?")){
-                document.getElementById("form").value = "X = U - (A + B + C)\nI = A*B\nJ = B*C\nK = C*A\nprint I\nprint X + (I + J + K) - A*B*C";
+                document.getElementById("form").value = "//Base are A,B,C,U\n\n//Assigning varaible\n//* is an intersection\nI = A*B\nJ = B*C\nK = C*A\n//- is an complement\nX = U - (A + B + C)\n//+ is an union\nR = X + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - A*B*C\n//Ignore other prints\nprint U";
                 saveMemo();
             }
         }
@@ -185,6 +185,9 @@ permalink: /mathtools.html
                         break;
                     else
                         targetPt += 1;
+                }
+                else if(statement[i].startsWith('//')){
+                    //pass
                 }
                 else{
                     let l = statement[i].split('=');
