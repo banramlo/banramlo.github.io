@@ -35,7 +35,7 @@ permalink: /mathtools.html
 
         function init(){
             if(confirm("Do you want to init the fomula?")){
-                document.getElementById("form").value = "//Base are A,B,C,U\n\n//Assigning varaible\n//* is an intersection\nI = A*B\nJ = B*C\nK = C*A\n//- is an complement\nX = U - (A + B + C)\n//+ is an union\nR = X + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - A*B*C\n//Ignore other prints\nprint U";
+                document.getElementById("form").value = "//Base are A,B,C,U\n\n//Assigning varaible\n//* is an intersection\nI = A*B\nJ = B*C\nK = C*A\n//- is a difference\nX = U - (A + B + C)\n//+ is an union\nR = X + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - A*B*C\n//Ignore other prints\nprint U";
                 saveMemo();
             }
         }
