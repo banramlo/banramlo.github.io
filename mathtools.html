@@ -20,7 +20,7 @@ permalink: /mathtools.html
 
     <!-------------------------------->
     <br>
-    <textarea id="form1" rows="10" cols="20" onkeyup="saveMemo()">Following grammar can be used in this section. Ground set is U. It supports at most three sets namely A, B, C. Statements should be in a single line. You can rename the set like follow X = B. You can alias the set like follow X = B - C. You can draw the set like follow print A. You can draw the set only once. You can union two set like one of follow A + B. You can intersect two set like follow A * B. You can subtract two set like one of follow A - B. You can parentheses like follow A*(B+C). Statements will proceed from the back to the front.</textarea>
+    <textarea id="form1" rows="10" cols="20" onkeyup="saveMemo()">Following grammar can be used in this section. Ground set is U. It supports at most three sets namely A, B, C. Statements should be in a single line. You can alias the set like follow X = B - C. You can draw the set like follow print A. You can draw the set only once. You can union two set like one of follow A + B. You can intersect two set like follow A * B. You can subtract two set like one of follow A - B. You can parentheses like follow A*(B+C). Statements will proceed from the back to the front.</textarea>
     <textarea id="form2" rows="10" cols="20" onkeyup="saveMemo()"></textarea>
     <script language = "javascript">
         document.getElementById("form1").value = JSON.parse(localStorage['formFile'])['form1'];
@@ -38,7 +38,8 @@ permalink: /mathtools.html
 
         function init(){
             if(confirm("Do you want to init the fomula?")){
-                document.getElementById("form1").value = "Following grammar can be used in this section. Ground set is U. It supports at most three sets namely A, B, C. Statements should be in a single line. You can rename the set like follow X = B. You can alias the set like follow X = B - C. You can draw the set like follow print A. You can draw the set only once. You can union two set like one of follow A + B. You can intersect two set like follow A * B. You can subtract two set like one of follow A - B. You can parentheses like follow A*(B+C). Statements will proceed from the back to the front.";
+                document.getElementById("form1").value = "Following grammar can be used in this section. Ground set is U. It supports at most three sets namely A, B, C. Statements should be in a single line. You can alias the set like follow X = B - C. You can draw the set like follow print A. You can draw the set only once. You can union two set like one of follow A + B. You can intersect two set like follow A * B. You can subtract two set like one of follow A - B. You can parentheses like follow A*(B+C). Statements will proceed from the back to the front.";
+                document.getElementById("form2").value = "X = U - (A + B + C)\nI = A*B\nJ = B*C\nK = C*A\nprint X + (I + J + K) - A*B*C";
                 saveMemo();
             }
         }
