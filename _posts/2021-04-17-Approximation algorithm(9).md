@@ -183,8 +183,8 @@ Now, let $z_F(e) = 1$ if $e \in F$ and $z_F(e) = 0$ otherwise.
 
 Then, $f_i(S) = f(S) - |\delta(S) \cap F| = f(S) - z_F(\delta(S))$.
 As a result $f_i(S)$ should fulfill one of follows.
-1. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z_F(\delta(A)) - z_F(\delta(B))$ $\le$ $f(A \cup B) + f(A \cap B) - z_F(\delta(A \cup B)) - z_F(\delta(A \cap B))$ $=$ $f_i(A \cup B) + f_i(A \cap B)$.
-2. $f_i(A) + f_i(B)$ $=$ $f(A) + f(B) - z_F(\delta(A)) - z_F(\delta(B))$ $\le$ $f(A - B) + f(B - A) - z_F(\delta(A - B)) - z_F(\delta(B - A))$ $=$ $f_i(A - B) + f_i(B - A)$.
+1. $f_i(A)$ $+$ $f_i(B)$ $=$ $f(A)$ $+$ $f(B)$ $-$ $z_F(\delta(A))$ $-$ $z_F(\delta(B))$ $\le$ $f(A \cup B)$ $+$ $f(A \cap B)$ $-$ $z_F(\delta(A \cup B))$ $-$ $z_F(\delta(A \cap B))$ $=$ $f_i(A \cup B)$ $+$ $f_i(A \cap B)$.
+2. $f_i(A)$ $+$ $f_i(B)$ $=$ $f(A)$ $+$ $f(B)$ $-$ $z_F(\delta(A))$ $-$ $z_F(\delta(B))$ $\le$ $f(A - B)$ $+$ $f(B - A)$ $-$ $z_F(\delta(A - B))$ $-$ $z_F(\delta(B - A))$ $=$ $f_i(A - B)$ $+$ $f_i(B - A)$.
 
 Now, we showed that $f_i$ is a weakly supermodular.
 
