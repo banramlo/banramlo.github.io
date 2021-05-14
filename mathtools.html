@@ -99,10 +99,14 @@ permalink: /mathtools.html
 		var pos;
 		function parse(s, map){// plus
 			let r = parseMul(s, map);
+            if(r == null)
+                return null;
 			if(pos >= 0 && (s[pos] == '+' || s[pos] == '-')){
 				let ret = new AST(s[pos]);
 				pos -= 1;
 				let l = parse(s, map);
+                if(l == null)
+                    return null;
 				ret.addLeft(l);
 				ret.addRight(r);
 				return ret;
@@ -114,12 +118,16 @@ permalink: /mathtools.html
 
 		function parseMul(s, map){// mult
 			let r = parsePar(s, map);
+            if(r == null)
+                return null;
 			if(pos >= 0 && s[pos] == '*'){
 				let ret = new AST('*');
 				pos -= 1;
 				let l = parseMul(s, map);
 				ret.addLeft(l);
 				ret.addRight(r);
+                if(l == null)
+                    return null;
 				return ret;
 			}
 			else{
@@ -177,7 +185,10 @@ permalink: /mathtools.html
 					let filteredS = statement[i].substr(6, statement[i].length - 6).replaceAll(/\s/g, '');
 					pos = filteredS.length - 1;
                     let ast = parse(filteredS, map);
-                    pt = ast.getValue();
+                    if(ast == null)
+                        pt = null;
+                    else
+                        pt = ast.getValue();
                     break;
                 }
                 else{
@@ -189,7 +200,12 @@ permalink: /mathtools.html
 							let filteredS = l[1].substr(0, l[1].length).replaceAll(/\s/g, '');
 							pos = filteredS.length - 1;
                             let ast = parse(filteredS, map);
-                            map.set(newName, ast.getValue());
+                            if(ast == null){
+                                pt = null;
+                                break;
+                            }
+                            else
+                                map.set(newName, ast.getValue());
                         }
                     }
                 }
@@ -198,7 +214,16 @@ permalink: /mathtools.html
             let ctx = c.getContext("2d");
 
             //Draw
-            if(pt != null)
+            if(pt == null){
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(200, 150);
+                ctx.stroke();
+                ctx.moveTo(0, 150);
+                ctx.lineTo(200, 0);
+                ctx.stroke();
+            }
+            else
             {
                 //fill in
                 if(pt[0]){
