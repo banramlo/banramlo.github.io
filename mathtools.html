@@ -6,11 +6,16 @@ permalink: /mathtools.html
 
 <body>
     <input type="fomula" id="fomulaText"> 
-    <button onclick="compute()">Compute</button> <button onclick="setMathBox()">Close</button>
+    <button onclick="compute()">Compute</button>
+    <button onclick="copy()">Copy</button>
+    <button onclick="setMathBox()">Close</button>
 
     <!-------------------------------->
     <br>
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+    You can try a set operation in here with in 3 elements in total with venn-diagram.
+    <canvas id="canvas1" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+    <canvas id="canvas2" width="200" height="100" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
 
     <!-------------------------------->
@@ -29,9 +34,16 @@ permalink: /mathtools.html
             parent.document.body.style.overflow = "scroll";
         }
 
+        function copy(){
+            var sourceCanvas = document.getElementById("canvas1");
+            var destinationCanvas = document.getElementById("canvas2");
+            var destCtx = destinationCanvas.getContext('2d');
+            destCtx.drawImage(sourceCanvas, 0, 0);
+        }
+        
         function compute(){
             var target = document.getElementById("fomulaText").value;
-            var c = document.getElementById("myCanvas");
+            var c = document.getElementById("canvas1");
             var ctx = c.getContext("2d");
             ctx.beginPath();
             ctx.arc(95,50,40,0,1*Math.PI);
