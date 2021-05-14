@@ -169,7 +169,7 @@ Statments will proceed from the front to the back.`;
                 }
                 if(at == -1){//No operator
                     if(map.has(s))
-                        return map[s];
+                        return map.get(s);
                     else
                         return null;//Error
                 }
@@ -189,10 +189,10 @@ Statments will proceed from the front to the back.`;
             let statement = document.getElementById("memo").value.split('\n');
             //                U - A + B + C, A - (B + C), B - (A + C), C - (A + B), A*B - A*B*C, B*C - A*B*C, A*C - A*B*C, A*B*C
             let map = new Map();
-            map['A'] = [0,            1,           0,           0,           1,           0,           1,           1];
-            map['B'] = [0,            0,           1,           0,           1,           1,           0,           1];
-            map['C'] = [0,            0,           0,           1,           0,           1,           1,           1];
-            map['U'] = [1,            1,           1,           1,           1,           1,           1,           1];
+            map.set('A', [0,            1,           0,           0,           1,           0,           1,           1]);
+            map.set('B', [0,            0,           1,           0,           1,           1,           0,           1]);
+            map.set('C', [0,            0,           0,           1,           0,           1,           1,           1]);
+            map.set('U', [1,            1,           1,           1,           1,           1,           1,           1]);
             let pt = [0,0,0,0,0,0,0,0];
             for(let i = 0; i < statement.length; ++i){
                 if(statement[i].startsWith('print ')){
@@ -208,7 +208,7 @@ Statments will proceed from the front to the back.`;
                             newName != '-' && newName != '*'&& newName != 'A'&&
                             newName != 'B' && newName != 'C' && newName != 'U'){
                             let ast = parse(l[1], 0, l[1].length, map);
-                            map[newName] = ast.getValue();
+                            map.set(newName, ast.getValue());
                         }
                     }
                 }
