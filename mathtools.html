@@ -201,12 +201,14 @@ Statments will proceed from the front to the back.`;
                 }
                 else{
                     let l = statement[i].split('=');
-                    let newName = l[0];
-                    if(newName != '(' && newName != ')' && newName != '+' &&
-                        newName != '-' && newName != '*'&& newName != 'A'&&
-                        newName != 'B' && newName != 'C' && newName != 'U'){
-                        let ast = parse(l[1], 0, l[1].length, map);
-                        map[newName] = ast.getValue();
+                    if(l.length == 2){
+                        let newName = l[0];
+                        if(newName != '(' && newName != ')' && newName != '+' &&
+                            newName != '-' && newName != '*'&& newName != 'A'&&
+                            newName != 'B' && newName != 'C' && newName != 'U'){
+                            let ast = parse(l[1], 0, l[1].length, map);
+                            map[newName] = ast.getValue();
+                        }
                     }
                 }
             }
