@@ -480,7 +480,7 @@ If we count every cost gain for $S$ from each categories, it is like follow.
 3. Nothing from $E_{co}$.
 4. $x_e$ from $E_{po}$.
 
-Then, the total costs $S$ gain is $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po})$ $=$ $\left\vert E_{cc}\right\vert + \left\vert E_{cp} \right\vert - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$.
+Then, the total costs $S$ gain is $\left\vert E_{cc} \right\vert$ $-$ $2x(E_{cc})$ $+$ $\left\vert E_{cp} \right\vert$ $-$ $x(E_{cp})$ $+$ $x(E_{po})$ $=$ $\left\vert E_{cc}\right\vert$ $+$ $\left\vert E_{cp} \right\vert$ $-$ $2x(E_{cc})$ $-$ $x(E_{cp})$ $+$ $x(E_{po})$.
 
 Notice that $E_{cc} \cup E_{cp} \cup E_{po} \neq \emptyset$.
 Proof is like follow.
@@ -489,11 +489,11 @@ Let's assume not then $E_{cc} = E_{cp} = E_{po} = \emptyset$.
 Which means $x(\delta(S))$ $=$ $x(E_{po} + E_{co})$ $=$ $x(E_{co})$ $=$ $x(E_{co} \cup E_{cc} \cup E_{cp})$ $=$ $x(\delta(C))$ $=$ $x(\delta(\bigcup\limits_{k = 1}^{n} C_k))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ because $C_i \cap C_j = \emptyset$.
 Notice that $C_i$ is the sibling of $C_j$ in the forest.
 However, $x(\delta(S))$ $=$ $\sum\limits_{k = 1}^n x(\delta(C_k))$ can't be true because it's a contradiction for the fact that $\chi_{\delta(S)}$, $\chi_{\delta(C_1)}$, $\cdots$, $\chi_{\delta(C_n)}$ are linear independent.
-Therefore, $\left\vert E_{cc} \right\vert - 2x(E_{cc}) + \left\vert E_{cp} \right\vert - x(E_{cp}) + x(E_{po}) > 0$.
+Therefore, $\left\vert E_{cc} \right\vert$ $-$ $2x(E_{cc})$ $+$ $\left\vert E_{cp} \right\vert$ $-$ $x(E_{cp})$ $+$ $x(E_{po})$ $>$ $0$.
 Notice that every value is positive because we assumed $0 < x_e < \frac{1}{2}$.
 
 Now, let's think about the categories of edges for $E_{cc}, E_{cp}, E_{po}$.
-Then $x(\delta(S)) = x(E_{po}) + x(E_{co})$ and $x(\delta(C)) = x(E_{cp}) + 2x(E_{cc}) + x(E_{co})$.
+Then $x(\delta(S))$ $=$ $x(E_{po})$ $+$ $x(E_{co})$ and $x(\delta(C))$ $=$ $x(E_{cp})$ $+$ $2x(E_{cc})$ $+$ $x(E_{co})$.
 Reason is like follow.
 
 1. For $\delta(S)$, all the edges should be one of $E_{co}$ or $E_{po}$ because one of end point should be in $V - S$.
@@ -503,12 +503,12 @@ Reason is like follow.
     One for from $C_i$ to $C_j$ for $i \neq j$.
     However, $x(\delta(C))$ will count twice for "One for from $C_i$ to $C_j$ for $i \neq j$".
 
-As a result, $\left\vert E_{cc} \right\vert + \left\vert E_{cp} \right\vert - 2x(E_{cc}) - x(E_{cp}) + x(E_{po})$ $=$ $\left\vert E_{cc} \right\vert + \left\vert E_{cp} \right\vert  + x(E_{po}) + x(E_{co}) - (x(E_{cp}) + 2x(E_{cc}) + x(E_{co}))$
-$=$ $\left\vert E_{cc} \right\vert + \left\vert E_{cp} \right\vert + x(\delta(S)) - x(\delta(C))$.
-However, $\left\vert E_{cc} \right\vert + \left\vert E_{cp} \right\vert + x(\delta(S)) - x(\delta(C))$ should be an integer because all of elements in the equation are intergers.
+As a result, $\left\vert E_{cc} \right\vert$ $+$ $\left\vert E_{cp} \right\vert$ $-$ $2x(E_{cc})$ $-$ $x(E_{cp})$ $+$ $x(E_{po})$ $=$ $\left\vert E_{cc} \right\vert$ $+$ $\left\vert E_{cp} \right\vert$ $+$ $x(E_{po})$ $+$ $x(E_{co})$ $-$ $(x(E_{cp}) + 2x(E_{cc}) + x(E_{co}))$
+$=$ $\left\vert E_{cc} \right\vert$ $+$ $\left\vert E_{cp} \right\vert$ $+$ $x(\delta(S))$ $-$ $x(\delta(C))$.
+However, $\left\vert E_{cc} \right\vert$ $+$ $\left\vert E_{cp} \right\vert$ $+$ $x(\delta(S))$ $-$ $x(\delta(C))$ should be an integer because all of elements in the equation are intergers.
 Therefore, each $S$ should have at least 1 costs.
-Which means total cost of $\mathcal{L} \ge \left\vert E \right\vert$ since $\left\vert \mathcal{L} \right\vert = \left\vert E \right\vert$.
-However, total cost of $\mathcal{L} < \left\vert E \right\vert$ is true because of following reasons.
+Which means total cost of $\mathcal{L}$ $\ge$ $\left\vert E \right\vert$ since $\left\vert \mathcal{L} \right\vert$ $=$ $\left\vert E \right\vert$.
+However, total cost of $\mathcal{L}$ $<$ $\left\vert E \right\vert$ is true because of following reasons.
 
 Each edge passes at most $x_e + x_e + (1 - 2x_e) = 1$ cost to sets.
 Therefore, total cost of $\mathcal{L} \le \left\vert E \right\vert$.
