@@ -226,11 +226,8 @@ Statments will proceed from the back to the front.</textarea>
                 if(statement[i].startsWith('print ')){
 					let filteredS = statement[i].substr(6, statement[i].length - 6).replaceAll(/\s/g, '');
 					pos = filteredS.length - 1;
-					console.log("=====================");
                     let ast = parse(filteredS, map);
-					console.log(ast);
                     pt = ast.getValue();
-					console.log(pt);
                     break;
                 }
                 else{
@@ -255,8 +252,11 @@ Statments will proceed from the back to the front.</textarea>
                 //fill in
                 if(pt[0]){
                     ctx.fillStyle = "orange";
-                    ctx.fillRect(0, 0, 200, 150);
                 }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.fillRect(0, 0, 200, 150);
 
                 if(pt[1]){
                     ctx.fillStyle = "orange";
