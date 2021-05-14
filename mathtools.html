@@ -5,7 +5,7 @@ permalink: /mathtools.html
 ---
 
 <body>
-    <input type="fomula" id="fomulaText"> 
+    <button onclick="init()">Initilize</button>
     <button onclick="compute()">Compute</button>
     <button onclick="copy()">Copy</button>
     <button onclick="setMathBox()">Close</button>
@@ -13,14 +13,28 @@ permalink: /mathtools.html
     <!-------------------------------->
     <br>
     You can try a set operation in here with in 3 elements in total with venn-diagram.
-    <canvas id="canvas1" width="200" height="100" style="border:1px solid #d3d3d3;">
+    <br>
+    <canvas id="canvas1" width="200" height="150" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
-    <canvas id="canvas2" width="200" height="100" style="border:1px solid #d3d3d3;">
+    <canvas id="canvas2" width="200" height="150" style="border:1px solid #d3d3d3;">
         Your browser does not support the HTML canvas tag.</canvas>
 
     <!-------------------------------->
     <br>
-    <textarea id="memo" rows="10" cols="20" onkeyup="saveMemo()">This is a free memo space.</textarea>
+    <textarea id="memo" rows="10" cols="20" onkeyup="saveMemo()">You can type some fomula in here to draw set.
+Following grammar can be used in this section.
+Ground set is U.
+It supports at most three sets namely A, B, C.
+Statements should be in a single line.
+You can rename the set like follow X = B.
+You can alias the set like follow X = B - C.
+You can draw the set like follow print A.
+You can draw the set only once.
+You can union two set like one of follow A + B.
+You can intersect two set like follow A * B.
+You can subtract two set like one of follow A - B.
+You can parentheses like follow A*(B+C).
+Statments will proceed from the front to the back</textarea>
     <script language = "javascript">
         document.getElementById("memo").value = JSON.parse(localStorage['memoFile'])['memo'];
         function saveMemo() {
@@ -40,16 +54,301 @@ permalink: /mathtools.html
             var destCtx = destinationCanvas.getContext('2d');
             destCtx.drawImage(sourceCanvas, 0, 0);
         }
-        
+
+        function init(){
+            if(confirm("Do you want to init the fomula?")){
+                document.getElementById("memo").value = `You can type some fomula in here to draw set.
+Following grammar can be used in this section.
+Ground set is U.
+It supports at most three sets namely A, B, C.
+Statements should be in a single line.
+You can rename the set like follow X = B.
+You can alias the set like follow X = B - C.
+You can draw the set like follow print A.
+You can draw the set only once.
+You can union two set like one of follow A + B.
+You can intersect two set like follow A * B.
+You can subtract two set like one of follow A - B.
+You can parentheses like follow A*(B+C).
+Statments will proceed from the front to the back.`;
+                saveMemo();
+            }
+        }
+
+        class AST {
+            AST(data) {
+                this.node = data;
+                this.left = null;
+                this.right = null;
+            }
+            addLeft(left){
+                this.left = left;
+            }
+            addRight(right){
+                this.right = right;
+            }
+            readLeft(){
+                return this.left;
+            }
+            readRight(){
+                return this.right;
+            }
+            getValue(){
+                if((typeof data) == "object"){//Set
+                    return data
+                }
+                else if((typeof data) == "str"){//ops
+                    let l = left.getValue();
+                    let r = right.getValue();
+                    let ret = [0,0,0,0,0,0,0,0];
+                    if(data == '+'){//cup
+                        for(let i = 0; i < 8; ++i){
+                            if(l[i] || r[i])
+                                ret[i] = 1;
+                        }
+                    }
+                    else if(data == '-'){//minus
+                        for(let i = 0; i < 8; ++i){
+                            if(l[i] && (!r[i]))
+                                ret[i] = 1;
+                        }
+                    }
+                    else if(data == '*'){//cap
+                        for(let i = 0; i < 8; ++i){
+                            if(l[i] && r[i])
+                                ret[i] = 1;
+                        }
+                    }
+                    return ret;
+                }
+            }
+        }
+
+        function parse(s, from, to, map){
+
+            s = s.strim();
+            if(s.length == 0){
+                return [0,0,0,0,0,0,0,0];
+            }
+            else if(s[0] == '('){
+                let at = -1;//closer
+                for(let i = from; i < to; ++i){
+                    if(s[i] == ')'){
+                        at = i;
+                        break;
+                    }
+                }
+                let l = parse(s, from + 1, at, map);
+                if(at == -1)
+                    return null;
+                if(at == to - 1){
+                    return l;
+                }
+                else{
+                    let at = -1;//operator
+                    for(let i = at; i < to; ++i){
+                        if(s[i] == '+' ||s[i] == '-'||s[i] == '*'){
+                            at = i;
+                            break;
+                        }
+                    }
+                    let r = parse(s, at + 1, to, map);
+                    let ret = new AST(s[at]);
+                    ret.addLeft(l);
+                    ret.addRight(r);
+                    return ret;
+                }
+            }
+            else{
+                let at = -1;//operator
+                for(let i = from; i < to; ++i){
+                    if(s[i] == '+' ||s[i] == '-'||s[i] == '*'){
+                        at = i;
+                        break;
+                    }
+                }
+                if(at == -1){//No operator
+                    if(map.has(s))
+                        return map[s];
+                    else
+                        return null;//Error
+                }
+                else{
+                    let l = parse(s, from, at, map);
+                    let r = parse(s, at + 1, to, map);
+                    let ret = new AST(s[at]);
+                    ret.addLeft(l);
+                    ret.addRight(r);
+                    return ret;
+                }
+            }
+        }
+
+
         function compute(){
-            var target = document.getElementById("fomulaText").value;
-            var c = document.getElementById("canvas1");
-            var ctx = c.getContext("2d");
-            ctx.beginPath();
-            ctx.arc(95,50,40,0,1*Math.PI);
-            ctx.fillStyle = "red";
-            ctx.fill();
-            ctx.stroke();
+            let statement = document.getElementById("memo").value.split('\n');
+            //                U - A + B + C, A - (B + C), B - (A + C), C - (A + B), A*B - A*B*C, B*C - A*B*C, A*C - A*B*C, A*B*C
+            let map = { 'A' : [0,            1,           0,           0,           1,           0,           1,           1],
+                        'B' : [0,            0,           1,           0,           1,           1,           0,           1],
+                        'C' : [0,            0,           0,           1,           0,           1,           1,           1],
+                        'U' : [1,            1,           1,           1,           1,           1,           1,           1]};
+            let pt = [0,0,0,0,0,0,0,0];
+            for(let i = 0; i < statement.length; ++i){
+                if(statement[i].startsWith('print ')){
+                    let ast = parse(statement[i], 6, statement[i].length, map);
+                    pt = ast.getValue();
+                    break;
+                }
+                else{
+                    let l = statement[i].split('=');
+                    let newName = l[0];
+                    if(newName != '(' && newName != ')' && newName != '+' &&
+                        newName != '-' && newName != '*'&& newName != 'A'&&
+                        newName != 'B' && newName != 'C' && newName != 'U'){
+                        let ast = parse(l[1], 0, l[1].length, map);
+                        map[newName] = ast.getValue();
+                    }
+                }
+            }
+            let c = document.getElementById("canvas1");
+            let ctx = c.getContext("2d");
+
+            //Draw
+            {
+                //fill in
+                if(pt[0]){
+                    ctx.fillStyle = "orange";
+                    ctx.fillRect(0, 0, 200, 150);
+                }
+
+                if(pt[1]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(100,55,40, 0,2*Math.PI);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[2]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(75,100,40, 0,2*Math.PI);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[3]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(125,100,40, 0,2*Math.PI);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[4]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(100,55,40, 1.15,3);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(75,100,40, 4.3,6.1);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[5]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(75,100,40, -0.9,0.9);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(125,100,40, 2.25,4.1);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[6]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.beginPath();
+                ctx.arc(100,55,40, 0.2,2);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(125,100,40, 3.3,5.1);
+                ctx.fill();
+                ctx.stroke();
+
+                if(pt[7]){
+                    ctx.fillStyle = "orange";
+                }
+                else{
+                    ctx.fillStyle = "white";
+                }
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(125,100,40, 3.25,4.1);
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(75,100,40, -1,-0.1);
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(100,55,40, 1.1,2);
+                ctx.fill();
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(85, 92);
+                ctx.lineTo(115, 92);
+                ctx.lineTo(100, 70);
+                ctx.fill();
+
+
+                //Border
+                ctx.beginPath();
+                ctx.arc(100,55,40, 0,2*Math.PI);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(75,100,40, 0,2*Math.PI);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(125,100,40, 0,2*Math.PI);
+                ctx.stroke();
+
+                //Text
+                ctx.textAlign = "center";
+                ctx.fillStyle = "red";
+                ctx.font = "20px Arial";
+                ctx.fillText("A", 100, 20);
+                ctx.fillText("B", 40, 130);
+                ctx.fillText("C", 160, 130);
+            }
         }
     </script>
 </body>
