@@ -126,7 +126,6 @@ Statments will proceed from the front to the back.`;
 
         function parse(s, from, to, map){
 
-            s = s.trim();
             if(s.length == 0){
                 return [0,0,0,0,0,0,0,0];
             }
@@ -168,6 +167,7 @@ Statments will proceed from the front to the back.`;
                     }
                 }
                 if(at == -1){//No operator
+                    s = s.trim()
                     if(map.has(s))
                         return map.get(s);
                     else
