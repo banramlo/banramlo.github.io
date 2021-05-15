@@ -18,7 +18,7 @@ Generalized steiner tree problem is a problem that requires to connect some pair
 If we select one vertex $v$ and set a required pairs as $v$ and others, it's the steiner tree problem.
 Which means Generalized steiner tree problem is a generalized version of steiner tree problem like it named.
 At the same time, it's a special case of survivable network design problem which all $r_{ij} = 1$.
-Now let's define $S_i = \\{S \subseteq V : \left\vert S \cap \\{s_i, t_i\\} \right\vert = 1\\}$ and $\delta(S) = \\{e | e = (u,v) \text{such that} u \in S, v \in V - S \\}$.
+Now let's define $\delta(S) = \\{e | e = (u,v) \text{ such that } u \in S, v \in V - S \\}$ and $S_i = \\{S \subseteq V : \left\vert S \cap \\{s_i, t_i\\} \right\vert = 1\\}$.
 Notice that $S_i$ is a set of subsets that make a proper s-t cut for $s_i, t_i$.
 Therefore, problem can be written as LP follow.
 
