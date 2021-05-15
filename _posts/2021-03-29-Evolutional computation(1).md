@@ -2,7 +2,7 @@
 layout: post
 title: Evolutional computation(1)
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, concurrency, graph]
+tags: [GA]
 comments: true
 use_math: true
 ---
