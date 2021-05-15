@@ -7,7 +7,16 @@ comments: true
 use_math: true
 ---
 
-Generalized Steiner tree problem is a special case of survivable network design problem which all $r_{ij} = 1$.
+There is a problem known as a steiner tree problem.
+The steiner tree problem is a problem to find a minimum edge set that connects every vertex in $S \subseteq V$ from a given graph $G = (V,E)$.
+Notice that this problem doesn't care whether you included some vertices $v \in V - S$ in the edge set.
+Moreover, this problem is a superset of the minimum spanning tree problem or shortest path problem.
+We can construct problem like $S = V$ or $S = \\{s, t\\}$ to solve the minimum spanning tree problem or shortest path problem repectively.
+
+Generalized steiner tree problem is a problem that requires to connect some pairs of vertices of given graph $G$.
+If we set a required pairs to the complete graph, it's the steiner tree problem.
+Which means Generalized steiner tree problem is a generalized version of steiner tree problem like it named.
+At the same time, it's a special case of survivable network design problem which all $r_{ij} = 1$.
 Now let's define $S_i = \\{S \subseteq V : \left\vert S \cap \\{s_i, t_i\\} \right\vert = 1\\}$.
 Notice that $S_i$ is a set of subsets that make a proper s-t cut for $s_i, t_i$.
 Therefore, problem can be written as LP follow.
