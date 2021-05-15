@@ -19,7 +19,7 @@ permalink: /mathtools.html
 
         <!-------------------------------->
         <br>
-        <textarea id="form" rows="4" cols="20" onkeyup="saveMemo()"></textarea>
+        <textarea id="form" rows="4" cols="20" onkeyup="saveMemo()">//Base are A,B,C,U\n//Rename the base\nV = A\n//Assigning varaible\n//* is an intersection\nI = V*B\nJ = B*C\nK = C*V\n//- is a difference\n// Reuse base variable after rename\nA = U - (V + B + C)\n//+ is an union\nR = A + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - V*B*C\n//Ignore other prints\nprint U</textarea>
     </center>
     <script language = "javascript">
         document.getElementById("form").value = JSON.parse(localStorage['formFile'])['form'];
@@ -34,7 +34,7 @@ permalink: /mathtools.html
 
         function init(){
             if(confirm("Do you want to init the fomula?")){
-                document.getElementById("form").value = "//Base are A,B,C,U\n\n//Assigning varaible\n//* is an intersection\nI = A*B\nJ = B*C\nK = C*A\n//- is a difference\nX = U - (A + B + C)\n//+ is an union\nR = X + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - A*B*C\n//Ignore other prints\nprint U";
+                document.getElementById("form").value = "//Base are A,B,C,U\n//Rename the base\nV = A\n//Assigning varaible\n//* is an intersection\nI = V*B\nJ = B*C\nK = C*V\n//- is a difference\n// Reuse base variable after rename\nA = U - (V + B + C)\n//+ is an union\nR = A + (I + J + K)\n\n//Print result 1\nprint I\n//Print result 2\nprint R - V*B*C\n//Ignore other prints\nprint U";
                 saveMemo();
             }
         }
