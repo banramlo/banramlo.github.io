@@ -12,6 +12,7 @@ The steiner tree problem is a problem to find a minimum edge set that connects e
 Notice that this problem doesn't care whether you included some vertices $v \in V - S$ in the edge set.
 Moreover, this problem is a superset of the minimum spanning tree problem or shortest path problem.
 We can construct problem like $S = V$ or $S = \\{s, t\\}$ to solve the minimum spanning tree problem or shortest path problem repectively.
+Notice that this problem will result in a tree because it will not have a cycle which doesn't make sense for minimum edge set with connectivity.
 
 Generalized steiner tree problem is a problem that requires to connect some pairs of vertices of given graph $G$.
 If we set a required pairs to the complete graph, it's the steiner tree problem.
