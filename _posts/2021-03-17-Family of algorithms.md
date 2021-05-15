@@ -7,7 +7,7 @@ comments: true
 use_math: true
 ---
 
-There are some algorithm family.
+There are some algorithm families.
 
 ## PTAS(Polynomial-time approximation scheme)
 $\operatorname{PTAS}$ is a family of algorithms which is a $(1 + \epsilon)$ - approximation for minimization problem and a $(1 - \epsilon)$ - approximation for maximization problem.
