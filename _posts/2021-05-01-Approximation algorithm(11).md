@@ -8,7 +8,7 @@ use_math: true
 ---
 
 Generalized Steiner tree problem is a special case of survivable network design problem which all $r_{ij} = 1$.
-Now let's define $S_i = \\{S \subseteq V : \left\vertS \cap \\{s_i, t_i\\} \right\vert = 1\\}$.
+Now let's define $S_i = \\{S \subseteq V : \left\vert S \cap \\{s_i, t_i\\} \right\vert = 1\\}$.
 Notice that $S_i$ is a set of subsets that make a proper s-t cut for $s_i, t_i$.
 Therefore, problem can be written as LP follow.
 
