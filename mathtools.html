@@ -199,8 +199,8 @@ permalink: /mathtools.html
                             let newVariable = true;
                             for(let i = 0; i < 4; ++i){
                                 if(filteredS == baseName[i]){
-                                    map.set(filteredS, map.get(baseName[i]));
-                                    baseName[i] = filteredS;
+                                    map.set(newName, map.get(baseName[i]));
+                                    baseName[i] = newName;
                                     newVariable = false;
                                     break;
                                 }
