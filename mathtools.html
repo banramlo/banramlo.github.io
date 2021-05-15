@@ -162,13 +162,14 @@ permalink: /mathtools.html
 		}
 		
         function compute(){
+            let baseName = ["A","B","C","U"];
             let statement = document.getElementById("form").value.split('\n');
             //                U - A + B + C, A - (B + C), B - (A + C), C - (A + B), A*B - A*B*C, B*C - A*B*C, A*C - A*B*C, A*B*C
             let map = new Map();
-            map.set('A', [0,            1,           0,           0,           1,           0,           1,           1]);
-            map.set('B', [0,            0,           1,           0,           1,           1,           0,           1]);
-            map.set('C', [0,            0,           0,           1,           0,           1,           1,           1]);
-            map.set('U', [1,            1,           1,           1,           1,           1,           1,           1]);
+            map.set(baseName[0], [0,            1,           0,           0,           1,           0,           1,           1]);
+            map.set(baseName[1], [0,            0,           1,           0,           1,           1,           0,           1]);
+            map.set(baseName[2], [0,            0,           0,           1,           0,           1,           1,           1]);
+            map.set(baseName[3], [1,            1,           1,           1,           1,           1,           1,           1]);
             let pt = [null, null];
             let targetPt = 0;
             for(let i = 0; i < statement.length; ++i){
@@ -193,16 +194,28 @@ permalink: /mathtools.html
                     if(l.length == 2){
                         let newName = l[0].replaceAll(/\s/g, '');
                         if(newName != '+' && newName != '-' && newName != '*'
-                        && newName != 'A'&& newName != 'B' && newName != 'C' && newName != 'U'){
+                        && newName != baseName[0] && newName != baseName[1] && newName != baseName[2] && newName != baseName[3]){
 							let filteredS = l[1].substr(0, l[1].length).replaceAll(/\s/g, '');
-							pos = filteredS.length - 1;
-                            let ast = parse(filteredS, map);
-                            if(ast == null){
-                                pt = [null, null];
-                                break;
+                            let newVariable = true;
+                            for(let i = 0; i < 4; ++i){
+                                if(filteredS == baseName[i]){
+                                    map.set(filteredS, map.get(baseName[i]));
+                                    map.delete(baseName[i]);
+                                    baseName[i] = filteredS;
+                                    newVariable = false;
+                                    break;
+                                }
                             }
-                            else
-                                map.set(newName, ast.getValue());
+                            if(newVariable){
+                                pos = filteredS.length - 1;
+                                let ast = parse(filteredS, map);
+                                if(ast == null){
+                                    pt = [null, null];
+                                    break;
+                                }
+                                else
+                                    map.set(newName, ast.getValue());
+                            }
                         }
                     }
                 }
@@ -357,9 +370,9 @@ permalink: /mathtools.html
                     ctx.textAlign = "center";
                     ctx.fillStyle = "red";
                     ctx.font = "20px Arial";
-                    ctx.fillText("A", 100, 20);
-                    ctx.fillText("B", 40, 130);
-                    ctx.fillText("C", 160, 130);
+                    ctx.fillText(baseName[0], 100, 20);
+                    ctx.fillText(baseName[1], 40, 130);
+                    ctx.fillText(baseName[2], 160, 130);
                 }
             }
         }
