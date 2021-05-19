@@ -54,7 +54,6 @@ Then we can try algorithm follow.
     $F \leftarrow \emptyset$<br>
     $\operatorname{while}$ not all $s_i-t_i$ pairs are connected in $(V,F)$<br>
     <div class="alg">
-        $l \leftarrow l + 1$<br>
         Let $C$ be a connected component of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
         Increase $y_C$ until there is an edge $e \in \delta(C)$ such that $c_{e}$ $=$ $\sum\limits_{S:e \in \delta(S)}y_S$<br>
         $F \leftarrow F \cup \{e\}$<br>
@@ -62,7 +61,17 @@ Then we can try algorithm follow.
     return $F$
 </div>
 
+Algorithm above works like choose any componenet such that are not tight then increase moat distance as possible as.
 
+Then, LP optimum is $\sum\limits_{e \in F}c_e$ because of strong duality.
+However, $\sum\limits_{e \in F}c_e$ $=$ $\sum\limits_{e \in F}\sum\limits_{e \in \delta(S)} y_S$ $=$ $\sum\limits_{S}\sum\limits_{e \in F \cap \delta(S)} y_S$ $=$ $\sum\limits_{S}|F \cap \delta(S)|y_S$.
+
+However, algorithm above can't guarantees to be nice approximation algorithm.
+Let's think about the complete graph $G = (\\{s,t_1,t_2,t_3,\cdots,t_n\\},E)$ with $C_{(s,t_1)} = C_{(s,t_2)} = \cdots = C_{(s,t_n)}$.
+If pair is set to be connected is $(s,t_1), (s,t_2), \cdots, (s,t_n)$ then $\sum\limits_{S}|F \cap \delta(S)|y_S$ = $\sum\limits_{S}ny_S$.
+Which means this is $O(n)OPT$ approximation.
+However it's not good enough even though the solution we will get is an good solution.
+Therefore, we will modify algorithm above bit to below.
 
 <div class="alg">
     $y \leftarrow 0$<br>
