@@ -15,12 +15,12 @@ Notice that this is a NP-hard problem.
 There is an approximation algorithm for this problem.
 Approximation algorithm will work with a local search.
 Let $l = \left[ log_2 n \right]$, $d_T(u)$ denotes the degree of $u$ in $T$ and $\Delta(T) = max_{u \in V} d_T(u)$
-<div class="algorithm">
+<div class="alg">
     Make an arbitrary spanning tree of $G$.<br>
     $\operatorname{while} \exists (v,w) \not\in T.E$ but $(v,w) \in G.E$
         such that there is a $u$ such that $u$ is a vertex in a cycle $C$ of $T.E$ + $(v,w)$,
             $d_T(u) \ge \Delta(T) - l$ and $max(d_T(v), d_T(w)) \le d_T(u) - 2$<br>
-    <div class="algorithm">
+    <div class="alg">
         $T \leftarrow T + (v,w) - $ an edge which is incident to $u$ in a cycle $C$.
     </div>
     return $T$

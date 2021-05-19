@@ -18,11 +18,11 @@ Here are some different approaches to this $\operatorname{SET COVER}$ with $O(ln
 
 ## Greedy algorithm
 
-<div class="algorithm">
+<div class="alg">
     $I \leftarrow \emptyset$<br>
     $\hat S_j \leftarrow S_j \forall j$<br>
     $\operatorname{while}$ $I$ is not a set cover $\operatorname{do}$<br>
-    <div class="algorithm">
+    <div class="alg">
         $l \leftarrow \operatorname{argmin}_{j:\hat S_j \neq \emptyset} \frac{w_j}{|\hat S_j|}$<br>
         $I \leftarrow I \cup$ {$l$}<br>
         $\hat S_j \leftarrow \hat S_j - S_l \forall j$<br>

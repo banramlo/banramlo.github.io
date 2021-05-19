@@ -47,11 +47,11 @@ Now, there are some major points in this algorithm.
 3. We will choose $\sum\limits_{i:e_i \in S_j} y_i = w_j$.
 
 From the above, we can make better algorithmic approach for it.
-<div class="algorithm">
+<div class="alg">
     $y \leftarrow 0$<br>
     $l \leftarrow \emptyset$<br>
-    <div class="algorithm">$\operatorname{while}$ there exists $e_i \not\in \bigcup\limits_{j \in I} S_j \operatorname{do}$<br>
-        <div class="algorithm">Increase the dual variable $y_i$ untill there is some $l$ with $e_i \in S_l$ such that $\sum\limits_{j:e_j \in S_l} y_j = w_l$<br>
+    <div class="alg">$\operatorname{while}$ there exists $e_i \not\in \bigcup\limits_{j \in I} S_j \operatorname{do}$<br>
+        <div class="alg">Increase the dual variable $y_i$ untill there is some $l$ with $e_i \in S_l$ such that $\sum\limits_{j:e_j \in S_l} y_j = w_l$<br>
         $I \leftarrow I \cup$ {$l$}</div>
     </div>
 </div>

@@ -40,5 +40,17 @@ Maximize $\sum\limits_{e \in \delta(S), S \in S_i, \forall i}y_S$ such that<br>
 $\sum\limits_{e \in \delta(S)} y_S \le c_e$ for all $e \in E$<br>
 $y_S \ge 0$.
 
+Now, let's think it as following for intuition.
+$v \in V$ will be spread at the space with edge distance $c_e$.
+For any $S \subseteq V$, we can think about some moats surrounding that $S$.
+Now, let's think a width of moat for $S$ as $y_S$.
+Then it can be thought as maximizing moat's width.
+With constraint that moats can't overlapped.
+
+Then we can try algorithm follow.
+<div class="alg">
+</div>
+
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.

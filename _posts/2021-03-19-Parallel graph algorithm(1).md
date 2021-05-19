@@ -30,24 +30,24 @@ $=$ $\beta\sum\limits_{j \in V}\frac{r_j^t}{|\delta(j)|}|\delta(j)|$ $+$ $(1 - \
 $=$ $\beta\sum\limits_{j \in V}r_j^t$ $+$ $(1 - \beta)$
 $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
 
-<div class="algorithm">
+<div class="alg">
     $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1$<br>
-    <div class="algorithm">
+    <div class="alg">
         $s[i] \leftarrow 1/|V|$<br>
     </div>
     $\operatorname{while} error \le threshold$<br>
-    <div class="algorithm">
+    <div class="alg">
         $error \leftarrow 0$<br>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
-        <div class="algorithm">
+        <div class="alg">
             $o[v] \leftarrow s[v]$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
-        <div class="algorithm">
+        <div class="alg">
             $s^{old}[v] \leftarrow s[v]$<br>
             $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v)$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
             $s[v] \leftarrow s[v] + (1 - \beta) \frac{1}{|V|}$<br>
@@ -59,30 +59,30 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
 If we see the algorithm above, it is known to be parallelizable for each $\operatorname{for}$ loops because there is no dependancy between each $\operatorname{for}$ loops.
 As a result, page rank can be parallelized like below.
 
-<div class="algorithm">
+<div class="alg">
     $\operatorname{for} i \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
-    <div class="algorithm">
+    <div class="alg">
         $s[i] \leftarrow 1/|V|$<br>
     </div>
     $\operatorname{while} error \le threshold$<br>
-    <div class="algorithm">
+    <div class="alg">
         $error \leftarrow 0$<br>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
-        <div class="algorithm">
+        <div class="alg">
             $o[v] \leftarrow s[v]$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
-        <div class="algorithm">
+        <div class="alg">
             $s^{old}[v] \leftarrow s[v]$<br>
             $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v) \operatorname{in} \operatorname{parellel}$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
             $s[v] \leftarrow s[v] + (1 - \beta) \frac{1}{|V|}$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{reduction}$<br>
-        <div class="algorithm">
+        <div class="alg">
             $error \leftarrow error + |s^{old}[v] - s[v]|$<br>
         </div>
     </div>
@@ -107,21 +107,21 @@ It may updates the edge distance from source, it may finds component by checking
 In this case, let's assume that BFS works for set a value of vertex to a distance from the source.
 For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
 
-<div class="algorithm">
+<div class="alg">
     $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1$<br>
-    <div class="algorithm">
+    <div class="alg">
         $d[i] = -1$<br>
     </div>
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
     $d[0] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
-    <div class="algorithm">
+    <div class="alg">
         $v \leftarrow Q_{top}$<br>
         $\operatorname{for} u \in \delta(v)$<br>
-        <div class="algorithm">
+        <div class="alg">
             $\operatorname{if} d[u] = -1$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $d[u] = d[v] + 1$<br>
             </div>
         </div>
@@ -131,21 +131,21 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
 
 Now, it can be parallelized per vetices at the same depth.
 
-<div class="algorithm">
+<div class="alg">
     $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1 \operatorname{in} \operatorname{parellel}$<br>
-    <div class="algorithm">
+    <div class="alg">
         $d[i] = -1$<br>
     </div>
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
     $d[0] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
-    <div class="algorithm">
+    <div class="alg">
         $v \leftarrow Q_{top}$<br>
         $\operatorname{for} u \in \delta(v)$<br>
-        <div class="algorithm">
+        <div class="alg">
             $\operatorname{if} d[u] = -1$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $d[u] = d[v] + 1$<br>
             </div>
         </div>

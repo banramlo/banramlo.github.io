@@ -18,10 +18,10 @@ There are two major methods to solve this.
 ## Simplex method
 Simplex algorithm is based on the fact that an optimal solution exists on one of the intersection of contraints or on one of constarint itself.
 The reason is that a fesaible soltuion space is a convex and problem is a linear combination of axis.
-<div class="algorithm">
+<div class="alg">
     For a given linear programming problem, choose a feasible solution $V = (v_1, v_2, \cdots, v_n)$.<br>
     $\operatorname{while}$ moving $V$ following one of intersection of contraints makes $v$ better.
-    <div class="algorithm">
+    <div class="alg">
         Move $V$ to any way which makes $V$ better. 
     </div>
     Return $V$.

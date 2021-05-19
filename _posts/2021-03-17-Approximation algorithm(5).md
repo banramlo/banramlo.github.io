@@ -16,11 +16,11 @@ It's like making clusters efficiently.
 
 There is a $2$-approximation algorithm for this.
 Let's define $d(i,S) = \min_{j \in S} d_{ij}$.
-<div class="algorithm">
+<div class="alg">
     Pick arbitrary $i \in V$<br>
     $S \leftarrow$ {$i$}<br>
     $\operatorname{while}$ $|S| < k$ $\operatorname{do}$
-    <div class="algorithm">
+    <div class="alg">
     $j \leftarrow \operatorname{argmax}_{j \in V} d(j,S)$<br>
     $S \leftarrow S \cup$ {$j$}
     </div>

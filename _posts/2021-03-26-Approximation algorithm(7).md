@@ -20,9 +20,9 @@ Notice that this machine is a nonpreemptively which means each work can't interr
 Now we can do a relaxation at this problem by just changing nonpreemptive machine to preemptive machine which means each work may interrupt other works.
 If we change it to the preemptive machine, we can solve this problem with an algorithm below.
 
-<div class="algorithm">
+<div class="alg">
     $\operatorname{while}$ there is any work not finished.<br>
-    <div class="algorithm">
+    <div class="alg">
         $S \leftarrow \{$ work $i$ which didn't finished yet and $r_i \le$ current date $\}$.<br>
         Choose a work $i \in S$ that has the smallest left processing time.<br>
         Process work $i$ until work $i$ is done or new $r_j$ release.<br>

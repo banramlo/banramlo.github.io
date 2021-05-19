@@ -13,21 +13,21 @@ There is a set of items $I = \\{1,2,\cdots,n$}, where each item $i$ has a value 
 Now, knapsack problem is a "Find the maximum possible value with capacity $B$".
 
 There is a well-known dynamic programming algorithm to solve this.
-<div class="algorithm">
+<div class="alg">
     $\operatorname{for} j \leftarrow 0, \cdots, B$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{OPT}_{0, j} \leftarrow 0$
     </div>
     $\operatorname{for} i \leftarrow 1, \cdots, n$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{for} j \leftarrow 0, \cdots, B$<br>
-        <div class="algorithm">
+        <div class="alg">
             $\operatorname{if} w_i > j$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \operatorname{OPT}_{i - 1, j}$
             </div>
             $\operatorname{else}$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \max(\operatorname{OPT}_{i -1, j}, \operatorname{OPT}_{i - 1, j - w_i} + v_i)$
             </div>
         </div>
@@ -37,22 +37,22 @@ There is a well-known dynamic programming algorithm to solve this.
 In this case, $\operatorname{OPT}_{i,j}$ means an optimal value possible with $1,2,\cdots, i$ items and capacity below $j$.
 
 There is an alternative algorithm to solve this.
-<div class="algorithm">
+<div class="alg">
     $V \leftarrow \sum\limits_{i = 1}^{n} v_i$
     $\operatorname{for} j \leftarrow 0, \cdots, V$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{OPT}_{0, j} \leftarrow \infty$
     </div>
     $\operatorname{for} i \leftarrow 1, \cdots, n$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{for} j \leftarrow 0, \cdots, V$<br>
-        <div class="algorithm">
+        <div class="alg">
             $\operatorname{if} j < v_i$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \operatorname{OPT}_{i - 1, j}$
             </div>
             $\operatorname{else}$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \max(\operatorname{OPT}_{i -1, j}, \operatorname{OPT}_{i - 1, j - v_i} + s_i)$
             </div>
         </div>
@@ -67,28 +67,28 @@ However, $B$ and $W$ may arbitrary big and running time may become too long.
 Now, we will try to make a quantization for it.
 
 ## Quantization
-<div class="algorithm">
+<div class="alg">
     $M \leftarrow \max_{i \in I} v_i$<br>
     $\mu \leftarrow \epsilon \frac{M}{n}$<br>
     $\operatorname{for} i \leftarrow 1, \cdots, n$<br>
-    <div class="algorithm">
+    <div class="alg">
         $v_i \leftarrow$ [$\frac{v_i}{\mu}$]
     </div>
     $V \leftarrow \sum\limits_{i = 1}^{n} v_i$
     $\operatorname{for} j \leftarrow 0, \cdots, V$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{OPT}_{0, j} \leftarrow \infty$
     </div>
     $\operatorname{for} i \leftarrow 1, \cdots, n$<br>
-    <div class="algorithm">
+    <div class="alg">
         $\operatorname{for} j \leftarrow 0, \cdots, V$<br>
-        <div class="algorithm">
+        <div class="alg">
             $\operatorname{if} j < v_i$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \operatorname{OPT}_{i - 1, j}$
             </div>
             $\operatorname{else}$<br>
-            <div class="algorithm">
+            <div class="alg">
                 $\operatorname{OPT}_{i, j} \leftarrow \max(\operatorname{OPT}_{i -1, j}, \operatorname{OPT}_{i - 1, j - v_i} + s_i)$
             </div>
         </div>

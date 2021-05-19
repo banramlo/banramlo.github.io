@@ -86,12 +86,12 @@ Notice that $\sum\limits_{i \in N(j_{k})}x_{ij_{k}}^{\star}$ $=$ $1$, $f_{i_{k}^
 Then, $f_{i_{k}^\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}x_{ij_{k}}^{\star}$ $\le$ $\sum\limits_{i \in N(j_{k})}f_{i}y_{i}^{\star}$ from the constraint $x_{ij} \le y_i$.
 
 Now, here is an approximation algorithm follow.
-<div class="algorithm">
+<div class="alg">
     Solve primal and dual LP and get optimum $(x^{\star}, y^{\star})$, dual optimum $(v^{\star}, w^{\star})$<br>
     $C \leftarrow D$<br>
     $k \leftarrow 0$<br>
     $\operatorname{while} C \neq \emptyset$
-    <div class = "algorithm">
+    <div class = "alg">
         $k \leftarrow k + 1$<br>
         Choose $j_k \in C$ that minimizes $v_j^{\star}$ over all $j \in C$<br>
         Choose $i_k \in N(j_k)$ to be the cheapest facility in $N(j_k)$<br>
