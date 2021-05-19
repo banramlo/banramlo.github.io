@@ -48,6 +48,22 @@ Then it can be thought as maximizing moat's width.
 With constraint that moats can't overlapped.
 
 Then we can try algorithm follow.
+
+<div class="alg">
+    $y \leftarrow 0$<br>
+    $F \leftarrow \emptyset$<br>
+    $\operatorname{while}$ not all $s_i-t_i$ pairs are connected in $(V,F)$<br>
+    <div class="alg">
+        $l \leftarrow l + 1$<br>
+        Let $C$ be a connected component of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
+        Increase $y_C$ until there is an edge $e \in \delta(C)$ such that $c_{e}$ $=$ $\sum\limits_{S:e \in \delta(S)}y_S$<br>
+        $F \leftarrow F \cup \{e\}$<br>
+    </div>
+    return $F$
+</div>
+
+
+
 <div class="alg">
     $y \leftarrow 0$<br>
     $l \leftarrow 0$<br>
