@@ -49,6 +49,25 @@ With constraint that moats can't overlapped.
 
 Then we can try algorithm follow.
 <div class="alg">
+    $y \leftarrow 0$<br>
+    $l \leftarrow 0$<br>
+    $F \leftarrow \emptyset$<br>
+    $\operatorname{while}$ not all $s_i-t_i$ pairs are connected in $(V,F)$<br>
+    <div class="alg">
+        $l \leftarrow l + 1$<br>
+        Let $\mathcal{C}$ be the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
+        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until for some $e_l \in \delta(C')$, $C' \in \mathcal{C}$, $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$<br>
+        $F \leftarrow F \cup \{e_l\}$<br>
+    </div>
+    $F' \leftarrow F$<br>
+    $\operatorname{for} k \leftarrow l,l-1,\cdots,1$
+    <div class="alg">
+        $\operatorname{if}$ $F' - e_k$ is a feasible solution then
+        <div class="alg">
+            Remove $e_k$ from $F'$
+        </div>
+    </div>
+    return $F'$
 </div>
 
 
