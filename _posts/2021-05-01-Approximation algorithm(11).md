@@ -135,7 +135,8 @@ Proof is like follow.
 First, no $v \in V_i - A_i$ has degree one.
 If there is any $v \in V_i - A_i$ has degree one, let $e = (v, u)$.
 However, it means $e$ was not removed which means $e$ was necessary for feasiblity.
-Which means $|C \cap \\{s_j, t_j\\}| = 1$ for some $j$ and $C$ which is $v$ in $G_i$.
+Which means $|C \cap \\{s_j, t_j\\}| = 1$ for some $j$ and $C$.
+Notice that $C$ is $v$ in $G_i$ in this case.
 However, this is contradict with $v \not\in A_i$.
 
 Let $B_i$ $=$ $\\{v \in V_i - A_i \vert deg(v) > 0\\}$.
