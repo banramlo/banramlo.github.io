@@ -64,11 +64,11 @@ Then we can try algorithm follow.
 Algorithm above works like choose any componenet such that are not tight then increase moat distance as possible as.
 
 Then, LP optimum is $\sum\limits_{e \in F}c_e$ because of strong duality.
-However, $\sum\limits_{e \in F}c_e$ $=$ $\sum\limits_{e \in F}\sum\limits_{e \in \delta(S)} y_S$ $=$ $\sum\limits_{S}\sum\limits_{e \in F \cap \delta(S)} y_S$ $=$ $\sum\limits_{S}|F \cap \delta(S)|y_S$.
+However, $\sum\limits_{e \in F}c_e$ $=$ $\sum\limits_{e \in F}\sum\limits_{S:e \in \delta(S)} y_S$ $=$ $\sum\limits_{S}\sum\limits_{e \in F \cap \delta(S)} y_S$ $=$ $\sum\limits_{S}|F \cap \delta(S)|y_S$.
 
 However, algorithm above can't guarantees to be nice approximation algorithm.
-Let's think about the complete graph $G = (\\{s,t_1,t_2,t_3,\cdots,t_n\\},E)$ with $C_{(s,t_1)} = C_{(s,t_2)} = \cdots = C_{(s,t_n)}$.
-If pair is set to be connected is $(s,t_1), (s,t_2), \cdots, (s,t_n)$ then $\sum\limits_{S}|F \cap \delta(S)|y_S$ = $\sum\limits_{S}ny_S$.
+Let's think about the complete graph $G = (\\{s,t_1,t_2,t_3,\cdots,t_n\\},E)$ with $C_{(s,t_1)} = C_{(s,t_2)} = \cdots = C_{(s,t_n)} > 0$.
+If pairs set to be connected is $(s,t_1), (s,t_2), \cdots, (s,t_n)$ then $\sum\limits_{S}|F \cap \delta(S)|y_S$ = $\sum\limits_{S}ny_S$.
 Which means this is $O(n)OPT$ approximation.
 However it's not good enough even though the solution we will get is an good solution.
 Therefore, we will modify algorithm above bit to below.
@@ -81,7 +81,7 @@ Therefore, we will modify algorithm above bit to below.
     <div class="alg">
         $l \leftarrow l + 1$<br>
         Let $\mathcal{C}$ be the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
-        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until for some $e_l \in \delta(C')$, $C' \in \mathcal{C}$, $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$<br>
+        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until for some $e_l \in \delta(C)$, $C \in \mathcal{C}$, $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$<br>
         $F \leftarrow F \cup \{e_l\}$<br>
     </div>
     $F' \leftarrow F$<br>
@@ -94,6 +94,20 @@ Therefore, we will modify algorithm above bit to below.
     </div>
     return $F'$
 </div>
+
+Notice that algorithm is a polynomial algorithm.
+Finding connected components is polynomial algorithm by BFS.
+Increasing $y_C$ is polynomial algorithm because we can pick some $\Delta y_C$ to be tight.
+Then it is enough to pick minimum of such an $\Delta y_C$ for uniform increasement.
+
+First of all, $\sum\limits_{c \in \mahtcal{C}} \left\vert \delta(C) \cap F' \right\vert \le 2 \left\vert \mathcal{C} \right\vert$.
+Proof is like follow.
+
+Now this is a 2-approximation algorithm.
+Proof is like follow.
+
+We will show that $\sum\limits_{S}|F' \cap \delta(S)|y_S$ $\le$ $2\sum\limits_{S}y_S$ at the beginning and end of the iteration for $k$.
+From the fact above, $\sum\limits_{S}|F' \cap \delta(S)|y_S$
 
 
 {: .box-note}
