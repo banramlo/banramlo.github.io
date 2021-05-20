@@ -37,7 +37,7 @@ $x_e \ge 0$.
 Now let's make a dual of primal like follow.
 
 Maximize $\sum\limits_{e \in \delta(S), S \in S_i, \forall i}y_S$ such that<br>
-$\sum\limits_{e \in \delta(S)} y_S \le c_e$ for all $e \in E$<br>
+$\sum\limits_{S : e \in \delta(S), S \in S_i \forall i} y_S \le c_e$ for all $e \in E$<br>
 $y_S \ge 0$.
 
 Now, let's think it as following for intuition.
