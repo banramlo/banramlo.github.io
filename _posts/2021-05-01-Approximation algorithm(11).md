@@ -45,7 +45,7 @@ $v \in V$ will be spread at the space with edge distance $c_e$.
 For any $S \subseteq V$, we can think about some moats surrounding that $S$.
 Now, let's think a width of moat for $S$ as $y_S$.
 Then it can be thought as maximizing moat's width.
-With constraint that moats can't overlapped.
+With constraint that moats can't overlapped for subsets exist at the same edge.
 
 Then we can try algorithm follow.
 
