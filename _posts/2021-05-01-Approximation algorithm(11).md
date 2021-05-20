@@ -100,14 +100,63 @@ Finding connected components is polynomial algorithm by BFS.
 Increasing $y_C$ is polynomial algorithm because we can pick some $\Delta y_C$ to be tight.
 Then it is enough to pick minimum of such an $\Delta y_C$ for uniform increasement.
 
-First of all, $\sum\limits_{c \in \mahtcal{C}} \left\vert \delta(C) \cap F' \right\vert \le 2 \left\vert \mathcal{C} \right\vert$.
+First of all, $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ $\le$ $2 \left\vert \mathcal{C} \right\vert$.
 Proof is like follow.
+
+Let $F_i = \\{e_1,e_2,\cdots,e_{i-1}\\}$, $H_i = F' - F_i$.
+Notice that $F_i \cup H_i = F_i \cup F'$ is a feasible soltuion.
+Also, if we remove any edge from $H_i$ then $F_i \cup H_i$ will be a non-feasible soluiton.
+Notice that we only removed edges that doesn't change feasibility on the progress.
+
+With above, $F_i$ is a foreset for all $i$ because algorithm will increase only $y_C$ such that $C \in \mathcal{C}$.
+However, two end points of $y_C$ need to in the seperate componenets to be that. 
+Because $\mathcal{C}$ is the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$ that are not connected.
+As a result, $F_i$ is a forest.
+
+Now let's think about a super graph $G_i$ that changes every connected componenets of $(V, F_i)$ to a single vertex.
+Then $G_i$ is a forest because $G$ was a forest.
+With that, no edge in $H_i$ can't have both end points in one connected component because it will make a cycle.
+Therefore, $G_i$ will not have a loop either.
+Now, let $V_i$ as the vertex set of $G_i$ and degree of that vertex to $\operatorname{deg}(v)$ for $v \in V_i$.
+
+With that, let $v \in V_i$ is active if $\left\vert C \cap \\{S_j, t_j\\}\right\vert$ $=$ $1$ for some $j$.
+Then, let $A_i$ as the set of active components in $V_i$.
+
+Now, let's go back to the "$\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ $\le$ $2 \left\vert \mathcal{C} \right\vert$".
+Then, $\mathcal{C}$ should be active because we pick "$\mathcal{C}$ be the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$".
+Therefore, RHS is $2 \left\vert A_i \right\vert$.
+Also, no edge in $F_i$ can be in $\delta(C)$ for $C \in \mathcal{C}$ because $F' \subseteq F_i \cup H_i$.
+Notice that even we used $\mathcal{C}$ but it's $\mathcal{C}$ at the $i$ th iteration and $C$ is a connected componenet of $F_i$.
+Therefore, $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ = $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap H_i' \right\vert$ $=$ $\sum\limits_{v \in A_i} deg(v)$ because there is no edge in side of ecah connected component to be grow. 
+
+Therefore, showing $\sum\limits_{v \in A_i} deg(v)$ $\le$ $2 \left\vert A_i \right\vert$ is enough.
+Proof is like follow.
+
+First, no $v \in V_i - A_i$ has degree one.
+If there is any $v \in V_i - A_i$ has degree one, let $e = (v, u)$.
+However, it means $e$ was not removed which means $e$ was necessary for feasiblity.
+Which means $|C_{V_i} \cap \\{S_j, t_j\\}| = 1$ for some $j$.
+However, this is contradict with $v \not\in A_i$.
+
+Let $B_i$ $=$ $\\{v \in V_i - A_i \vert deg(v) > 0\\}$.
+Then, $\sum\limits_{v \in A_i} deg(v)$ $=$ $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$.
+Notice that $A_i \cap B_i = \emptyset$.
+Then $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$ $\le$ $2(\left\vert A \right\vert + \left\vert B \right\vert)$ $-$ $2\left\vert B \right\vert$.
+Notice that this graph is a forest and therefore sum of degree can't bigger than twice of size of the set because there are less edge than number of vertices.
+$\sum\limits_{v \in A_i} deg(v)$ $=$ $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$ $\le$ $2(\left\vert A_i \right\vert + \left\vert B_i \right\vert)$ $-$ $2\left\vert B_i \right\vert$ $=$ $2\left\vert A_i \right\vert$.
+As a result, claim holds.
 
 Now this is a 2-approximation algorithm.
 Proof is like follow.
 
-We will show that $\sum\limits_{S}|F' \cap \delta(S)|y_S$ $\le$ $2\sum\limits_{S}y_S$ at the beginning and end of the iteration for $k$.
-From the fact above, $\sum\limits_{S}|F' \cap \delta(S)|y_S$
+We will show that $\sum\limits_{S} \left\vert F' \cap \delta(S) \right\vert y_S$ $\le$ $2\sum\limits_{S}y_S$ at the beginning and end of the iteration of $\operatorname{while}$ loop.
+First of all, $0$ $=$ $\sum\limits_{S} \left\vert F' \cap \delta(S) \right\vert y_S$ $\le$ $2\sum\limits_{S}y_S$ $=$ $0$ at the first iteration.
+Now, let's assume that it works for $l - 1$ iterations.
+Now let's assume that $\epsilon$ of $y_C$ increased. 
+Then, LHS of given inequality will incrase $\sum\limits_{C \in \mathcal{C}} \left\vert F' \cap \delta(C) \right\vert \epsilon$.
+RHS of given inequality will incrase $2\sum\limits_{\mathcal{C}}\epsilon$.
+Then, LHS $\le$ RHS is true from the fact "$\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ $\le$ $2 \left\vert \mathcal{C} \right\vert$".
+As a result, claim holds.
 
 
 {: .box-note}
