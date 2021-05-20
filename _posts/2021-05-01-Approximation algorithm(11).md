@@ -63,7 +63,7 @@ Then we can try algorithm follow.
 
 Algorithm above works like choose any componenet such that are not tight then increase moat distance as possible as.
 
-Then, LP optimum is $\sum\limits_{e \in F}c_e$ because of strong duality.
+Then, solution of algorithm is $\sum\limits_{e \in F}c_e$.
 However, $\sum\limits_{e \in F}c_e$ $=$ $\sum\limits_{e \in F}\sum\limits_{S:e \in \delta(S)} y_S$ $=$ $\sum\limits_{S}\sum\limits_{e \in F \cap \delta(S)} y_S$ $=$ $\sum\limits_{S}|F \cap \delta(S)|y_S$.
 
 However, algorithm above can't guarantees to be nice approximation algorithm.
