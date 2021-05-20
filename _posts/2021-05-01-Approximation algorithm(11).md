@@ -15,7 +15,7 @@ We can construct problem like $S = V$ or $S = \\{s, t\\}$ to solve the minimum s
 Notice that this problem will result in a tree because it will not have a cycle which doesn't make sense for minimum edge set with connectivity.
 
 Generalized steiner tree problem is a problem that requires to connect some pairs of vertices of given graph $G$.
-If we select one vertex $v$ and set a required pairs as $v$ and others, it's the steiner tree problem.
+If we select one vertex $v$ and set required pairs as $v$ and others, it's the steiner tree problem.
 Which means Generalized steiner tree problem is a generalized version of steiner tree problem like it named.
 At the same time, it's a special case of survivable network design problem which all $r_{ij} = 1$.
 Now let's define $\delta(S) = \\{e | e = (u,v) \text{ such that } u \in S, v \in V - S \\}$ and $S_i = \\{S \subseteq V : \left\vert S \cap \\{s_i, t_i\\} \right\vert = 1\\}$.
@@ -24,14 +24,14 @@ Therefore, problem can be written as LP follow.
 
 For given pairs of vetices $s_i, t_i$,<br>
 minimize $\sum\limits_{e \in E}c_e x_e$ such that<br>
-$\sum\limits_{e \in \delta(S)} x_e \ge 1$, for all $S \subseteq V$ which $S \in S_i$ for some $i$, <br>
+$\sum\limits_{e \in \delta(S)} x_e \ge 1$, for all $S \subseteq V$ which $S \in S_i$ for all $i$, <br>
 $x_e \in \\{0, 1\\}$.
 
 Now IP above can be relaxed to LP below.
 
 For given pairs of vetices $s_i, t_i$,<br>
 minimize $\sum\limits_{e \in E}c_e x_e$ such that<br>
-$\sum\limits_{e \in \delta(S)} x_e \ge 1$, for all $S \subseteq V$ which $S \in S_i$ for some $i$, <br>
+$\sum\limits_{e \in \delta(S)} x_e \ge 1$, for all $S \subseteq V$ which $S \in S_i$ for all $i$, <br>
 $x_e \ge 0$.
 
 Now let's make a dual of primal like follow.
