@@ -127,7 +127,7 @@ Then, $\mathcal{C}$ should be active because we pick "$\mathcal{C}$ be the set o
 Therefore, RHS is $2 \left\vert A_i \right\vert$.
 Also, no edge in $F_i$ can be in $\delta(C)$ for $C \in \mathcal{C}$ because $F' \subseteq F_i \cup H_i$.
 Notice that even we used $\mathcal{C}$ but it's $\mathcal{C}$ at the $i$ th iteration and $C$ is a connected componenet of $F_i$.
-Therefore, $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ = $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap H_i' \right\vert$ $=$ $\sum\limits_{v \in A_i} deg(v)$ because there is no edge in side of ecah connected component to be grow. 
+Therefore, $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ = $\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap H_i' \right\vert$ $=$ $\sum\limits_{v \in A_i} deg(v)$ because there is no edge to be picked in side of ecah connected component. 
 
 Therefore, showing $\sum\limits_{v \in A_i} deg(v)$ $\le$ $2 \left\vert A_i \right\vert$ is enough.
 Proof is like follow.
