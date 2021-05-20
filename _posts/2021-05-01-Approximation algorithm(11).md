@@ -119,7 +119,7 @@ With that, no edge in $H_i$ can't have both end points in one connected componen
 Therefore, $G_i$ will not have a loop either.
 Now, let $V_i$ as the vertex set of $G_i$ and degree of that vertex to $\operatorname{deg}(v)$ for $v \in V_i$.
 
-With that, let $v \in V_i$ is active if $\left\vert C \cap \\{S_j, t_j\\}\right\vert$ $=$ $1$ for some $j$.
+With that, let $v \in V_i$ is active if $\left\vert C \cap \\{s_j, t_j\\}\right\vert$ $=$ $1$ for some $j$.
 Then, let $A_i$ as the set of active components in $V_i$.
 
 Now, let's go back to the "$\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ $\le$ $2 \left\vert \mathcal{C} \right\vert$".
@@ -135,7 +135,7 @@ Proof is like follow.
 First, no $v \in V_i - A_i$ has degree one.
 If there is any $v \in V_i - A_i$ has degree one, let $e = (v, u)$.
 However, it means $e$ was not removed which means $e$ was necessary for feasiblity.
-Which means $|C_{V_i} \cap \\{S_j, t_j\\}| = 1$ for some $j$.
+Which means $|C \cap \\{s_j, t_j\\}| = 1$ for some $j$ and $C$ which is $v$ in $G_i$.
 However, this is contradict with $v \not\in A_i$.
 
 Let $B_i$ $=$ $\\{v \in V_i - A_i \vert deg(v) > 0\\}$.
