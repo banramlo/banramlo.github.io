@@ -68,10 +68,10 @@ However, $\sum\limits_{e \in F}c_e$ $=$ $\sum\limits_{e \in F}\sum\limits_{S:e \
 
 However, algorithm above can't guarantees to be nice approximation algorithm.
 Let's think about the complete graph $G = (\\{s,t_1,t_2,t_3,\cdots,t_n\\},E)$ with $C_{(s,t_1)} = C_{(s,t_2)} = \cdots = C_{(s,t_n)} > 0$.
-If pairs set to be connected is $(s,t_1), (s,t_2), \cdots, (s,t_n)$ then $\sum\limits_{S}|F \cap \delta(S)|y_S$ = $\sum\limits_{S}ny_S$.
+If pairs need to be connected is $(s,t_1), (s,t_2), \cdots, (s,t_n)$ then $\sum\limits_{S}|F \cap \delta(S)|y_S$ = $\sum\limits_{S}ny_S$.
 Which means this is $O(n)OPT$ approximation.
-However it's not good enough even though the solution we will get is an good solution.
-Therefore, we will modify algorithm above bit to below.
+However it's not good enough even though the solution we will give a good solution.
+Therefore, we will modify algorithm above to below.
 
 <div class="alg">
     $y \leftarrow 0$<br>
@@ -81,7 +81,7 @@ Therefore, we will modify algorithm above bit to below.
     <div class="alg">
         $l \leftarrow l + 1$<br>
         Let $\mathcal{C}$ be the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
-        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until for some $e_l \in \delta(C)$, $C \in \mathcal{C}$, $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$<br>
+        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$ for some $e_l \in \delta(C)$, $C \in \mathcal{C}$<br>
         $F \leftarrow F \cup \{e_l\}$<br>
     </div>
     $F' \leftarrow F$<br>
