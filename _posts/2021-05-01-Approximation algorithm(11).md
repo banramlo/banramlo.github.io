@@ -144,7 +144,7 @@ Let $B_i$ $=$ $\\{v \in V_i - A_i \vert deg(v) > 0\\}$.
 Then, $\sum\limits_{v \in A_i} deg(v)$ $=$ $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$.
 Notice that $A_i \cap B_i = \emptyset$.
 Then $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$ $\le$ $2(\left\vert A \right\vert + \left\vert B \right\vert)$ $-$ $2\left\vert B \right\vert$.
-Notice that this graph is a forest and therefore sum of degree can't bigger than twice of size of the set because there are less edge than number of vertices.
+Notice that this graph is a forest and therefore sum of degree can't bigger than twice of the size of the set because there are less edge than number of vertices.
 $\sum\limits_{v \in A_i} deg(v)$ $=$ $\sum\limits_{v \in A_i \cup B_i} deg(v)$ $-$ $\sum\limits_{v \in B_i} deg(v)$ $\le$ $2(\left\vert A_i \right\vert + \left\vert B_i \right\vert)$ $-$ $2\left\vert B_i \right\vert$ $=$ $2\left\vert A_i \right\vert$.
 As a result, claim holds.
 
