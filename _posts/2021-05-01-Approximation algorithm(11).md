@@ -81,7 +81,7 @@ Therefore, we will modify algorithm above to below.
     <div class="alg">
         $l \leftarrow l + 1$<br>
         Let $\mathcal{C}$ be the set of all connected components $C$ of $(V,F)$ such that $\left\vert C \cap \{s_i, t_i\} \right\vert = 1$ for some $i$<br>
-        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$ for some $e_l \in \delta(C)$, $C \in \mathcal{C}$<br>
+        Increase $y_C$ for all $C \in \mathcal{C}$ uniformly until $c_{e_l}$ $=$ $\sum\limits_{S:e_l \in \delta(S)}y_s$ for $e_l \in \delta(C)$ for some $C \in \mathcal{C}$<br>
         $F \leftarrow F \cup \{e_l\}$<br>
     </div>
     $F' \leftarrow F$<br>
