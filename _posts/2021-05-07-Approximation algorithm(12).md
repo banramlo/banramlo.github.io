@@ -62,7 +62,7 @@ Now, let's desing the algorithm.
     $\operatorname{while}$ $T$ $\neq$ $\emptyset$<br>
     <div class="alg">
         $T' \leftarrow T' \cup \{i\}$<br>
-        $T \leftarrow T - \{h \in T : \exist j \in D, w_{ij} > 0 \text{ and } w_{hj} > 0\}$<br>
+        $T \leftarrow T - \{h \in T : \exists j \in D, w_{ij} > 0 \text{ and } w_{hj} > 0\}$<br>
     </div>
 </div>
 
