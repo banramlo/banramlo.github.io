@@ -37,7 +37,7 @@ Now let's define some terminologies for a given dual solution $v^{\star}, w^{\st
 
 1. Client $j$ is neighbor of facility $i$ if $v_{j}^{\star}$ $\ge$ $c_{ij}$.
 With that let denotes $N(i)$ as the set of neighbors of $i$.
-2. Client $i$ contributes to $i$ if $w_{ij}^{\star} > 0$.
+2. Client $j$ contributes to $i$ if $w_{ij}^{\star} > 0$.
 
 Now, let's desing the algorithm.
 
@@ -48,11 +48,11 @@ Now, let's desing the algorithm.
     $\operatorname{while}$ $S$ $\neq$ $\emptyset$<br>
     <div class="alg">
         Increase $v_j$ for all $j \in S$ and $w_{ij}$ for all $i$ $\in$ $N(j)$, $j$ $\in$ $S$ uniformly until some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ or some $i$ $\not\in$ $T$ has a tight dual inequality<br>
-        $\operatorname{if}$ some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$<br>
+        $\operatorname{if}$ some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ // $j$ paid enough to assigned to facility<br>
         <div class="alg">
             $S \leftarrow S - \{j\}$
         </div>
-        $\operatorname{if}$ some $i$ $\not\in$ $T$ has a tight dual inequality<br>
+        $\operatorname{if}$ some $i$ $\not\in$ $T$ has a tight dual inequality // $i$'s funding collected enough to be opened<br>
         <div class="alg">
             $T \leftarrow T \cup \{i\}$<br>
             $S \leftarrow S - N(i)$
