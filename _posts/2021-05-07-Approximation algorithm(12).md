@@ -43,8 +43,8 @@ Now, let's desing the algorithm.
 
 <div class="alg">
     $v \leftarrow 0, w \leftarrow 0$<br>
-    $S \leftarrow D$<br>
-    $T \leftarrow \emptyset$<br>
+    $S \leftarrow D$ // Left clients to be allocated<br>
+    $T \leftarrow \emptyset$ // Facility which are open<br>
     $operatorname{while}$ $S \neq \emptyset$<br>
     <div class="alg">
         Increase $v_j$ for all $j \in S$ and $w_{ij}$ for all $i$ $\in$ $N(j)$, $j$ $\in$ $S$ uniformly until some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ or some $i$ $\not\in$ $T$ has a tight dual inequality<br>
