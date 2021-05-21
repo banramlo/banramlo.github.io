@@ -61,6 +61,7 @@ Now, let's desing the algorithm.
     $T' \leftarrow \emptyset$<br>
     $\operatorname{while}$ $T$ $\neq$ $\emptyset$<br>
     <div class="alg">
+        Pick $i$ $\in$ $T$<br>
         $T' \leftarrow T' \cup \{i\}$<br>
         $T \leftarrow T - \{h \in T : \exists j \in D, w_{ij} > 0 \text{ and } w_{hj} > 0\}$<br>
     </div>
