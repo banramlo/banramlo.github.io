@@ -154,12 +154,13 @@ Proof is like follow.
 We will show that $\sum\limits_{S} \left\vert F' \cap \delta(S) \right\vert y_S$ $\le$ $2\sum\limits_{S}y_S$ at the beginning and end of the iteration of $\operatorname{while}$ loop.
 First of all, $0$ $=$ $\sum\limits_{S} \left\vert F' \cap \delta(S) \right\vert y_S$ $\le$ $2\sum\limits_{S}y_S$ $=$ $0$ at the first iteration.
 Now, let's assume that it works for $l - 1$ iterations.
-Now let's assume that $\epsilon$ of $y_C$ increased. 
+Now let's assume that $\epsilon$ of $y_C$ increased at $l$th iteration. 
 Then, LHS of given inequality will incrase $\sum\limits_{C \in \mathcal{C}} \left\vert F' \cap \delta(C) \right\vert \epsilon$.
 RHS of given inequality will incrase $2\sum\limits_{\mathcal{C}}\epsilon$.
 Then, LHS $\le$ RHS is true from the fact "$\sum\limits_{C \in \mathcal{C}} \left\vert \delta(C) \cap F' \right\vert$ $\le$ $2 \left\vert \mathcal{C} \right\vert$".
 As a result, claim holds.
 
+Notice that $\sum\limits_{S}y_S$ is a LP optimum which is less than optimal solution of original problem.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
