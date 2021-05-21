@@ -35,9 +35,9 @@ $v_j - w_{ij} \le c_{ij}$ $\forall i \in F, j \in D$.
 
 Now let's define some terminologies for a given dual solution $v^{\star}, w^{\star}$.
 
-1. Client $j$ is neighbor of facility $i$ if $v^{\star}_{j}$ $\ge$ $c_{ij}$, w^{\star}$.
+1. Client $j$ is neighbor of facility $i$ if $v_{j}^{\star}$ $\ge$ $c_{ij}$, w^{\star}$.
 With that let denotes $N(i)$ as the set of neighbors of $i$.
-2. Client $i$ contributes to $i$ if $w^{\star}_{ij} > 0$.
+2. Client $i$ contributes to $i$ if $w_{ij}^{\star} > 0$.
 
 Now, let's desing the algorithm.
 
