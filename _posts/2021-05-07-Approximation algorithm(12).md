@@ -48,7 +48,7 @@ Now, let's desing the algorithm.
     $\operatorname{while}$ $S$ $\neq$ $\emptyset$<br>
     <div class="alg">
         Increase $v_j$ for all $j \in S$ and $w_{ij}$ for all $i$ $\in$ $N(j)$, $j$ $\in$ $S$ uniformly until some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ or some $i$ $\not\in$ $T$ has a tight dual inequality<br>
-        $\operatorname{if}$ some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ // $j$ paid enough to assigned to facility<br>
+        $\operatorname{if}$ some $j$ $\in$ $S$ neighbors some $i$ $\in$ $T$ // $j$ paid enough to assigned to facility $i$<br>
         <div class="alg">
             $S \leftarrow S - \{j\}$
         </div>
@@ -58,7 +58,7 @@ Now, let's desing the algorithm.
             $S \leftarrow S - N(i)$
         </div>
     </div>
-    $T' \leftarrow \emptyset$<br>
+    $T' \leftarrow \emptyset$ // $T'$ is the set of facility to be<br>
     $\operatorname{while}$ $T$ $\neq$ $\emptyset$<br>
     <div class="alg">
         Pick $i$ $\in$ $T$<br>
@@ -67,6 +67,14 @@ Now, let's desing the algorithm.
     </div>
 </div>
 
+Now, if $j$ doesn't have a neighbor in $T'$ then there exists some $i \in T'$ such that $c_{ij} \le 3v_j$ if we work with algorithm above.
+Let's think about $T$ at the end of "$\operatorname{while}$ $S$ $\neq$ $\emptyset$" and $T'$ at the end of the algorithm.
+Then, $j$ will be excluded in $T$ at the loop of "$\operatorname{while}$ $S$ $\neq$ $\emptyset$" because there is some neighbor of $j$ in $T$.
+However it should be removed at the "$\operatorname{while}$ $T$ $\neq$ $\emptyset$" to be not exists in $T'$.
+Let denotes $h$ as some neighbor of $j$ but not in $T'$.
+Then, there should be some $k$ that contributes $h$ and $i$ $\in$ $T'$ for all $h$.
+If we think about the progress of algorithm, $v_j$ will stop increasing when $h$
+As a result, $v_k$ $\le$ $v_j$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
