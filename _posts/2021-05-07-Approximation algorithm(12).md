@@ -70,9 +70,13 @@ Now, let's desing the algorithm.
 Now, if $j$ doesn't have a neighbor in $T'$ then there exists some $i \in T'$ such that $c_{ij} \le 3v_j$ if we work with algorithm above.
 Let's think about $T$ at the end of "$\operatorname{while}$ $S$ $\neq$ $\emptyset$" and $T'$ at the end of the algorithm.
 Then, all $j$'s neighbors will be excluded in $T$ at the loop of "$\operatorname{while}$ $T$ $\neq$ $\emptyset$" to be not exists in $T'$.
-Let denotes $h$ as some neighbor of $j$ but not in $T'$.
+Let denotes $h$ as the neighbor of $j$ which $v_j$ stops to increase.
+Notice that $h$ is not in $T'$ and $h$ should be a neighbor of $j$.
 Then, there should be some $k$ that contributes $h$ and $i$ $\in$ $T'$ for all $h$.
-If we think about the progress of algorithm, $v_j$ will stop increasing when $h$
+If we think about the progress of algorithm, $v_j$ will stop increasing when $h$ is already in $T$ or $v_h$ became to be tight.
+At the first case, $k$ should be excluded already  .
+At the second case, $v_k$ $\le$ $v_j$ because both $j$ and $k$ will be excluded at the moment.
+Which means $k$ should be not increase more than $v_j$ or it should be already excluded which means $v_k$ $<$ $v_j$.
 As a result, $v_k$ $\le$ $v_j$.
 
 {: .box-note}
