@@ -171,20 +171,24 @@ permalink: /mathtools.html
             map.set(baseName[2], [0,            0,           0,           1,           0,           1,           1,           1]);
             map.set(baseName[3], [1,            1,           1,           1,           1,           1,           1,           1]);
             let pt = [null, null];
-            let targetPt = 0;
             for(let i = 0; i < statement.length; ++i){
-                if(statement[i].startsWith('print ')){
+                if(statement[i].startsWith('print1 ')){
 					let filteredS = statement[i].substr(6, statement[i].length - 6).replaceAll(/\s/g, '');
 					pos = filteredS.length - 1;
                     let ast = parse(filteredS, map);
                     if(ast == null)
-                        pt[targetPt] = null;
+                        pt[0] = null;
                     else
-                        pt[targetPt] = ast.getValue();
-                    if(targetPt == 1)
-                        break;
+                        pt[0] = ast.getValue();
+                }
+                else if(statement[i].startsWith('print2 ')){
+					let filteredS = statement[i].substr(6, statement[i].length - 6).replaceAll(/\s/g, '');
+					pos = filteredS.length - 1;
+                    let ast = parse(filteredS, map);
+                    if(ast == null)
+                        pt[1] = null;
                     else
-                        targetPt += 1;
+                        pt[1] = ast.getValue();
                 }
                 else if(statement[i].startsWith('//')){
                     //pass
