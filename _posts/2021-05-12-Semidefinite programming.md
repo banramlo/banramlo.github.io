@@ -37,7 +37,7 @@ $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} &
 Program above is equivalent with below.
 If $X = V^TV$.
 Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$.
-Notice that this program is so-called vector program because it has vector as variables.
+This program is so-called vector program because it has vector as variables.
 
 Minimize or maximize $\sum\limits_{i,j} c_{ij} \<v_i, v_j\>$<br>
 such that $\sum\limits_{i,j} a_{ijk_1} \<v_i, v_j\>$ $=$ $b_{k_1}$ $\forall k_1$<br>
