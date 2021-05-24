@@ -36,7 +36,7 @@ $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} &
 
 The program above is equivalent with the program below if $X = V^TV$.
 Notice that there is such an $V$ because $X$ is positive semidefinitive.
-Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$.
+Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$.
 This program is so-called vector program because it has vector as variables.
 
 ### Vector program
@@ -46,7 +46,7 @@ such that $\sum\limits_{i,j} a_{ijk_1} \<v_i, v_j\>$ $=$ $b_{k_1}$ $\forall k_1$
 $\sum\limits_{i,j} a_{ijk_2} \<v_i, v_j\>$ $\ge$ $b_{k_2}$ $\forall k_2$<br>
 $\sum\limits_{i,j} a_{ijk_3} \<v_i, v_j\>$ $\le$ $b_{k_3}$ $\forall k_3$<br>
 
-
+Notice that number of vetices are the same with dimension of vector.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
