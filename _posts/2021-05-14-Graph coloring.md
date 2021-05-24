@@ -20,7 +20,7 @@ This is some extention that ignoring logarithmic terms.
 
 ### Theorems
 1. There is a polynomial time algorithm to check 2-colorable.
-Notice that we can do it by BFS and checking there is some pair of vertices that adjacent between odd depth or even depth.
+Notice that we can do it by DFS and checking there is some pair of vertices that colors collide.
 2. It is known to be NP-hard to decide if a graph is 3-colorable.
 3. It is known to be NP-hard to decide if a graph is 3-colorable or any of its proper coloring requires at least five colors.
 This means input will give like 3-colorable, 5-colorable, 6-colorable, etc..
