@@ -78,9 +78,9 @@ If we think about the algorithm itself, we increase $w_{ij}$ only if $i$ $\in$ $
 As a result, $k$ need to be a neighbor of both $h$ and $i$.
 At the same time $j$ is a neighbor of $h$. 
 Now, $c_{ij}$ $\le$ $c_{ik}$ $+$ $c_{hk}$ $+$ $c_{hj}$ from the triangle inequality.
-Then, $c_{ik}$ $+$ $c_{hk}$ $+$ $c_{hj}$ $\le$ $v_{k}$ $+$ $v_{k}$ $+$ $v_{j}$ $=$ because each of them are in the neighbor relation.
+Then, $c_{ik}$ $+$ $c_{hk}$ $+$ $c_{hj}$ $\le$ $v_{k}$ $+$ $v_{k}$ $+$ $v_{j}$ because each of them are in the neighbor relation.
 
-With above, $v_k$ $\le$ $v_j$.
+With above, $v_k$ $\le$ $v_j$ is true.
 Proof is like follow.
 Let's assume not.
 $v_k, w_{hk}$ will stop increasing at the moment of between "$k$ neighbors $h$ $\in$ $T$" or "$h$ $\not\in$ $T$ become tight and $k$ neighbors $h$".
@@ -92,15 +92,18 @@ Therefore claim holds.
 
 Now, we can prove that this algorithm is a 3-approximation algorithm.
 Even though algorithm increase uniformly, we can just pick the smallest delta value of constraints to run this algorithm in polynomial time.
-With this, all other parts of algorithm is polynomial therefore, this algorithm runs in polynomial time.
+With this, all other parts of algorithm are polynomial.
+Therefore, this algorithm runs in a polynomial time.
 
 Now, let's think about the solution that assigning $i$ to $j$ which $i$ that contributes to $j$ and assigning $i$ to arbitrary facility in $T'$ for $i$ that doesn't contributes to any of facility.
 Notice that from the algorithm we forced it to contributes to only one facility or none of facility.
-If we define $A(i)$ as the set of assigned clients to faciltiy $i$, total cost will be $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$.
+Let's define $A(i)$ $\subseteq$ $N(i)$ as the set of assigned clients to faciltiy $i$ which clients neighbors $i$ $\in$ $T$, $Z$ as the set of clients that doesn't neighbors any $j$ $\in$ $T$ and $X(j)$ $\in$ $T'$ as the facility that client $j$ assigned to for $j$ such that contributes none of $T'$.
+Notice that all of clients that contributes none of $T'$ will not be in $A(i)$ because it should neighbor of some in $T'$ if it contributes.
+At the same time, all of clients that contributes some of $T'$ will be in $A(i)$ because it should neighbor of some in $T'$.
+Then, total cost of these clients and opwill be $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $+$ $\sum\limits_{i \in Z}c_{X(i)i}$.
 Then, $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}(w_{ij} + c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}v_{j}$.
 Notice that first equality comes from that $i$ $\in$ $T'$ $\subseteq$ $T$ and $T$ is the set of facility that become tight.
-At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$ because it should be tight.
-
+At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
