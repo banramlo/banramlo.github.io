@@ -21,6 +21,7 @@ Followings are equivalent for $X$ $\in$ $S_n$.
 4. $X$ $=$ $\sum\limits_{i = 1}^{n} \lambda_i w_i w_i^T$ for some $\lambda_i \ge 0$ and vector $w_i$ $\in$ $R^n$ such that $w_i^T w_i = 1$ and $w_i^T w_j = 0$ for all $i \neq j$
 
 A semifinite program is a mathematical program where the varaibles form a symmetric matrix and the objective function and constraints are all linear.
+Notice that this program is just a linear programming but variables and constraints are semidefinitive matrices.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
