@@ -31,7 +31,8 @@ $\sum\limits_{i,j} a_{ij} x_{ij}$ $\le$ $b_k_3$ $\forall k_3$<br>
 $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} & x_{22} & \cdots & x_{2n} = x_{n2} \\\ \vdots & \vdots & \ddots & \vdots\\\ x_{n1} = x_{1n} & x_{n2} = x_{2n} & \cdots & x_{nn} \end{pmatrix}$ is semidefinitive.
 
 This is equivalent with below.
-If $X = V^TV$
+If $X = V^TV$.
+Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$
 
 Minimize or maximize $\sum\limits_{i,j} c_{ij} x_{ij}$<br>
 such that $\sum\limits_{i,j} a_{ij} x_{ij}$ $=$ $b_k_1$ $\forall k_1$<br>
