@@ -27,8 +27,32 @@ This means input will give like 3-colorable, 5-colorable, 6-colorable, etc..
 There will no 4-colorable inputs.
 4. It is known to be NP-hard to find a 3-coloring from a 3-colorable graph.
 Notice that if there is such an algorithm in polynomial time then running that algorithm and checking the result are enough to solve 3-colorable problem.
+5. A graph with maximum degree $\delta$ can be $(\delta + 1)$-colored in polynomial time.
+Notice that all of vertices never run out of colors in this case because even all the neighbors use seperate colors, there are still one color to use.
+6. 3-colorable graph can be $O(\sqrt{n})$-colored in polynomial time for $n$ as the number of vertices.
+This can be done by following algorithm.
 
-
+<div class="alg">
+    $\operatorname{while} \exists$ a vertex $v$ with at least degree $\sqrt{n}$<br>
+    <div class="alg">
+        Choose three new colors $c_1, c_2, c_3$<br>
+        Color $v$ with $c_1$<br>
+        Color neighbors of $v$ with $c_2, c_3$<br>
+        Remove colored vertices
+    </div>
+    Color the rest of graph with $\sqrt{n}$ new colors
+</div>
+Notice that the neighbors of $v$ can be colored with 2 colors in each iteration because given graph is a 3-colorable graph.
+The reason is that all of neighbor of $v$ can't be $c_1$ if we select $v$ as $c_1$.
+Then, it's a 2-coloring problem which can be solve in polynomial time.
+With that, $v$ and its neighbors are using distinct from other vertices because it producess new colors.
+Notice that we can remove it because it uses independent color sets.
+Now, it uses just $\sqrt{n}$ color at the last.
+Therefore it's enough to show there are at most $O(\sqrt{n})$ iteration for " $\operatorname{while} \exists$ a vertex $v$ with at least degree $\sqrt{n}$".
+With that, it removes at least $\sqrt{n}I$ vetices from graph if we denote $I$ as the number of such an iteration because each vertices has $\sqrt{n}$ degree.
+However, we can't remove more vetices than number of vertices at the beginning.
+Therefore, $\sqrt{n}I$ $\le$ $n$.
+As a result, $I$ $\le$ $\sqrt{n}$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
