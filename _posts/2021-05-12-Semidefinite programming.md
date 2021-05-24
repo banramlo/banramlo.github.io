@@ -32,7 +32,7 @@ $\sum\limits_{i,j} a_{ijk_2} x_{ij}$ $\ge$ $b_{k_2}$ $\forall k_2$<br>
 $\sum\limits_{i,j} a_{ijk_3} x_{ij}$ $\le$ $b_{k_3}$ $\forall k_3$<br>
 $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} & x_{22} & \cdots & x_{2n} = x_{n2} \\\ \vdots & \vdots & \ddots & \vdots\\\ x_{n1} = x_{1n} & x_{n2} = x_{2n} & \cdots & x_{nn} \end{pmatrix}$ is semidefinitive.
 
-<br><br><br>
+<br>
 
 The program above is equivalent with the program below if $X = V^TV$.
 Notice that there is such an $V$ because $X$ is positive semidefinitive.
