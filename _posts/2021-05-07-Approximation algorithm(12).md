@@ -90,6 +90,16 @@ In the first case, $h$ $\in$ $T$ already but $k$ stoped increasing $v_k$ when $h
 In the second case, both $v_j$ and $v_k$ stop increasing at the same time. As a result $v_k$ $=$ $v_j$.
 Therefore claim holds.
 
+Now, we can prove that this algorithm is a 3-approximation algorithm.
+Even though algorithm increase uniformly, we can just pick the smallest delta value of constraints to run this algorithm in polynomial time.
+With this, all other parts of algorithm is polynomial therefore, this algorithm runs in polynomial time.
+
+Now, let's think about the solution that assigning $i$ to $j$ which $i$ that contributes to $j$ and assigning $i$ to arbitrary facility in $T'$ for $i$ that doesn't contributes to any of facility.
+Notice that from the algorithm we forced it to contributes to only one facility or none of facility.
+If we define $A(i)$ as the set of assigned clients to faciltiy $i$, total cost will be $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$.
+Then, $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}(w_{ij} + c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}v_{j}$.
+Notice that first equality comes from that $i$ $\in$ $T'$ $\subseteq$ $T$ and $T$ is the set of facility that become tight.
+At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$ because it should be tight.
 
 
 {: .box-note}
