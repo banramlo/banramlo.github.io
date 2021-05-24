@@ -72,12 +72,25 @@ Let's think about $T$ at the end of "$\operatorname{while}$ $S$ $\neq$ $\emptyse
 Then, all $j$'s neighbors will be excluded in $T$ at the loop of "$\operatorname{while}$ $T$ $\neq$ $\emptyset$" to be not exists in $T'$.
 Let denotes $h$ as the neighbor of $j$ which $v_j$ stops to increase.
 Notice that $h$ is not in $T'$ and $h$ should be a neighbor of $j$.
-Then, there should be some $k$ that contributes $h$ and $i$ $\in$ $T'$ for all $h$.
-If we think about the progress of algorithm, $v_j$ will stop increasing when $h$ is already in $T$ or $v_h$ became to be tight.
-At the first case, $k$ should be excluded already  .
-At the second case, $v_k$ $\le$ $v_j$ because both $j$ and $k$ will be excluded at the moment.
-Which means $k$ should be not increase more than $v_j$ or it should be already excluded which means $v_k$ $<$ $v_j$.
-As a result, $v_k$ $\le$ $v_j$.
+Then, there exists some $k$ that contributes $h$ and $i$ $\in$ $T'$ for all $h$.
+First of all, if $j$ contributes to $i$ then $j$ is neighbor of $i$.
+If we think about the algorithm itself, we increase $w_{ij}$ only if $i$ $\in$ $N(j)$.
+As a result, $k$ need to be a neighbor of both $h$ and $i$.
+At the same time $j$ is a neighbor of $h$. 
+Now, $c_{ij}$ $\le$ $c_{ik}$ $+$ $c_{hk}$ $+$ $c_{hj}$ from the triangle inequality.
+Then, $c_{ik}$ $+$ $c_{hk}$ $+$ $c_{hj}$ $\le$ $v_{k}$ $+$ $v_{k}$ $+$ $v_{j}$ $=$ because each of them are in the neighbor relation.
+
+With above, $v_k$ $\le$ $v_j$.
+Proof is like follow.
+Let's assume not.
+$v_k, w_{hk}$ will stop increasing at the moment of between "$k$ neighbors $h$ $\in$ $T$" or "$h$ $\not\in$ $T$ become tight and $k$ neighbors $h$".
+However we should select second case because $k$ can increase $w_{hk}$ only after $k$ neighbors $h$.
+At the same time, $v_j$ will stop increasing at the moment of between "$j$ neighbors $h$ $\in$ $T$" or "$j$ $\not\in$ $T$ become tight and $k$ neighbors $h$".
+In the first case, $h$ $\in$ $T$ already but $k$ stoped increasing $v_k$ when $h$ become tight therefore $v_k$ $<$ $v_j$.
+In the second case, both $v_j$ and $v_k$ stop increasing at the same time. As a result $v_k$ $=$ $v_j$.
+Therefore claim holds.
+
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
