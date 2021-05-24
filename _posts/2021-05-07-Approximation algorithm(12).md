@@ -67,7 +67,7 @@ Now, let's desing the algorithm.
     </div>
 </div>
 
-Now, if $j$ doesn't have a neighbor in $T'$ then $c_{ij} \le 3v_j$ for $i \in T'$ if we work with algorithm above.
+Now, if $j$ doesn't have a neighbor in $T'$ then there exists $i \in T'$ such that $c_{ij} \le 3v_j$ if we work with algorithm above.
 Let's think about $T$ at the end of "$\operatorname{while}$ $S$ $\neq$ $\emptyset$" and $T'$ at the end of the algorithm.
 Then, all $j$'s neighbors will be excluded in $T$ at the loop of "$\operatorname{while}$ $T$ $\neq$ $\emptyset$" to be not exists in $T'$.
 Let denotes $h$ as the neighbor of $j$ which $v_j$ stops to increase.
@@ -105,8 +105,8 @@ Then, $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $=$ $\sum\l
 Notice that first equality comes from that $i$ $\in$ $T'$ $\subseteq$ $T$ and $T$ is the set of facility that become tight.
 At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$ because $j$ is tight.
 Notice that $j$ is tight because $j$ will contributes to only one facility and $j$ will be assigned to there.
-Now, $\sum\limits_{i \in Z}c_{X(i)i}$ $\le$ $3\sum\limits_{i \in Z}v_{X(i)}$.
-Notice that we proved that "if $j$ doesn't have a neighbor in $T'$ then $c_{ij} \le 3v_j$ for $i \in T'$".
+Now, $\sum\limits_{i \in Z}c_{X(i)i}$ $\le$ $3\sum\limits_{i \in Z}v_{X(i)}$ if we pick $X(i)$ as the maximum possible one for $v_{X(i)}$.
+Notice that we proved that "if $j$ doesn't have a neighbor in $T'$ then there exists $i \in T'$ such that $c_{ij} \le 3v_j$".
 Therefore, claim holds.
 
 {: .box-note}
