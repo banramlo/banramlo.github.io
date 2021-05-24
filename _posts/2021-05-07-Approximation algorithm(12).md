@@ -58,7 +58,7 @@ Now, let's desing the algorithm.
             $S \leftarrow S - N(i)$
         </div>
     </div>
-    $T' \leftarrow \emptyset$ // $T'$ is the set of facility to be<br>
+    $T' \leftarrow \emptyset$ // $T'$ is the set of facility to be open<br>
     $\operatorname{while}$ $T$ $\neq$ $\emptyset$<br>
     <div class="alg">
         Pick $i$ $\in$ $T$<br>
@@ -67,7 +67,7 @@ Now, let's desing the algorithm.
     </div>
 </div>
 
-Now, if $j$ doesn't have a neighbor in $T'$ then there exists some $i \in T'$ such that $c_{ij} \le 3v_j$ if we work with algorithm above.
+Now, if $j$ doesn't have a neighbor in $T'$ then $c_{ij} \le 3v_j$ for $i \in T'$ if we work with algorithm above.
 Let's think about $T$ at the end of "$\operatorname{while}$ $S$ $\neq$ $\emptyset$" and $T'$ at the end of the algorithm.
 Then, all $j$'s neighbors will be excluded in $T$ at the loop of "$\operatorname{while}$ $T$ $\neq$ $\emptyset$" to be not exists in $T'$.
 Let denotes $h$ as the neighbor of $j$ which $v_j$ stops to increase.
@@ -97,13 +97,17 @@ Therefore, this algorithm runs in a polynomial time.
 
 Now, let's think about the solution that assigning $i$ to $j$ which $i$ that contributes to $j$ and assigning $i$ to arbitrary facility in $T'$ for $i$ that doesn't contributes to any of facility.
 Notice that from the algorithm we forced it to contributes to only one facility or none of facility.
-Let's define $A(i)$ $\subseteq$ $N(i)$ as the set of assigned clients to faciltiy $i$ which clients neighbors $i$ $\in$ $T$, $Z$ as the set of clients that doesn't neighbors any $j$ $\in$ $T$ and $X(j)$ $\in$ $T'$ as the facility that client $j$ assigned to for $j$ such that contributes none of $T'$.
+Let's define $A(i)$ $\subseteq$ $N(i)$ as the set of assigned clients to faciltiy $i$ which clients neighbors $i$ $\in$ $T$, $Z$ as the set of clients that doesn't neighbors any $j$ $\in$ $T$ and $X(j)$ $\in$ $T'$ as the facility that client $j$ assigned for $j$ such that contributes none of $T'$.
 Notice that all of clients that contributes none of $T'$ will not be in $A(i)$ because it should neighbor of some in $T'$ if it contributes.
 At the same time, all of clients that contributes some of $T'$ will be in $A(i)$ because it should neighbor of some in $T'$.
-Then, total cost of these clients and opwill be $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $+$ $\sum\limits_{i \in Z}c_{X(i)i}$.
+Then, total cost will be $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $+$ $\sum\limits_{i \in Z}c_{X(i)i}$.
 Then, $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}(w_{ij} + c_{ij})$ $=$ $\sum\limits_{i \in T'}\sum\limits_{j \in A(i)}v_{j}$.
 Notice that first equality comes from that $i$ $\in$ $T'$ $\subseteq$ $T$ and $T$ is the set of facility that become tight.
-At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$.
+At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$ because $j$ is tight.
+Notice that $j$ is tight because $j$ will contributes to only one facility and $j$ will be assigned to there.
+Now, $\sum\limits_{i \in Z}c_{X(i)i}$ $\le$ $3\sum\limits_{i \in Z}v_{X(i)}$.
+Notice that we proved that "if $j$ doesn't have a neighbor in $T'$ then $c_{ij} \le 3v_j$ for $i \in T'$".
+Therefore, claim holds.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
