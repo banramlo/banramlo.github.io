@@ -105,7 +105,7 @@ Then, $\sum\limits_{i \in T'}(f_i + \sum\limits_{j \in A(i)}c_{ij})$ $=$ $\sum\l
 Notice that first equality comes from that $i$ $\in$ $T'$ $\subseteq$ $T$ and $T$ is the set of facility that become tight.
 At the same time, $w_{ij}$ $+$ $c_{ij}$ $=$ $v_j$ because $j$ is tight.
 Notice that $j$ is tight because $j$ will contributes to only one facility and $j$ will be assigned to there.
-Now, $\sum\limits_{j \in Z}c_{X(j)j}$ $\le$ $3\sum\limits_{j \in Z}v_{X(j)}$ if we pick $X(i)$ as the maximum possible one for $v_{X(i)}$.
+Now, $\sum\limits_{j \in Z}c_{X(j)j}$ $\le$ $3\sum\limits_{j \in Z}v_{X(j)}$ if we pick $X(i)$ as the maximum possible one for $v_j$.
 Notice that we proved that "if $j$ doesn't have a neighbor in $T'$ then there exists $i \in T'$ such that $c_{ij} \le 3v_j$".
 Therefore, claim holds.
 
