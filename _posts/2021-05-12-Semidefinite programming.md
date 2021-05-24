@@ -10,11 +10,11 @@ use_math: true
 To show what is semidefinite programming, we need to know what is semidefinite matrix.
 Notice that $x$ $=$ $R^{n}$ $=$ $\begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$.
 
-1. $S_n$ is the set of $n$ by $n$ symmetric matrix.
-2. We call symmetric matrix $X$ $\in$ $S_n$ is positive semidefinite if for all $x \in \mathcal{R}^{n}$, $x^TXx \ge 0$.
-3. For $A,B$ $\in$ $S_n$, inner product of $A,B$ is defined as $\<A,B\> = tr(A^T B)$
+1. $\mathcal{S}_n$ is the set of $n$ by $n$ symmetric matrix.
+2. We call symmetric matrix $X$ $\in$ $\mathcal{S}_n$ is positive semidefinite if for all $x \in \mathcal{R}^{n}$, $x^TXx \ge 0$.
+3. For $A,B$ $\in$ $\mathcal{S}_n$, inner product of $A,B$ is defined as $\<A,B\> = tr(A^T B)$
 
-Followings are equivalent for $X$ $\in$ $S_n$.
+Followings are equivalent for $X$ $\in$ $\mathcal{S}_n$.
 1. $X$ is positive semidefinitive
 2. All eigenvalues of $X$ are non negative
 3. $X$ $=$ $V^TV$ for some $V$ $\in$ $R^{n \times n}$
