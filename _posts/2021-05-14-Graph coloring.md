@@ -20,9 +20,14 @@ A coloring is proper if no two adjacent vertices are assigned to the same color.
 A graph is so-called $k$-colorable if it has a proper $k$-coloring.
 
 ### Theorems
+There is a polynomial time algorithm to check 2-colorable.
+Notice that we can do it by BFS and checking there is some pair of vertices that adjacent between odd depth or even depth.
+
 It is known to be NP-hard to decide if a graph is 3-colorable.
 
 It is known to be NP-hard to decide if a graph is 3-colorable or any of its proper coloring requires at least five colors.
+This means input will give like 3-colorable, 5-colorable, 6-colorable, etc..
+There will no 4-colorable inputs.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
