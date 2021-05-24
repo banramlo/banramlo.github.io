@@ -24,21 +24,27 @@ A semifinite program is a mathematical program where the varaibles form a symmet
 Notice that this program is just a linear programming but variables and constraints are semidefinitive matrices.
 In other word, it's like follow.
 
+### Semidefinite programming
+
 Minimize or maximize $\sum\limits_{i,j} c_{ij} x_{ij}$<br>
-such that $\sum\limits_{i,j} a_{ij} x_{ij}$ $=$ $b_k_1$ $\forall k_1$<br>
-$\sum\limits_{i,j} a_{ij} x_{ij}$ $\ge$ $b_k_2$ $\forall k_2$<br>
-$\sum\limits_{i,j} a_{ij} x_{ij}$ $\le$ $b_k_3$ $\forall k_3$<br>
+such that $\sum\limits_{i,j} a_{ijk_1} x_{ij}$ $=$ $b_{k_1}$ $\forall k_1$<br>
+$\sum\limits_{i,j} a_{ijk_2} x_{ij}$ $\ge$ $b_{k_2}$ $\forall k_2$<br>
+$\sum\limits_{i,j} a_{ijk_3} x_{ij}$ $\le$ $b_{k_3}$ $\forall k_3$<br>
 $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} & x_{22} & \cdots & x_{2n} = x_{n2} \\\ \vdots & \vdots & \ddots & \vdots\\\ x_{n1} = x_{1n} & x_{n2} = x_{2n} & \cdots & x_{nn} \end{pmatrix}$ is semidefinitive.
 
-This is equivalent with below.
-If $X = V^TV$.
-Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$
+### Vector program
 
-Minimize or maximize $\sum\limits_{i,j} c_{ij} x_{ij}$<br>
-such that $\sum\limits_{i,j} a_{ij} x_{ij}$ $=$ $b_k_1$ $\forall k_1$<br>
-$\sum\limits_{i,j} a_{ij} x_{ij}$ $\ge$ $b_k_2$ $\forall k_2$<br>
-$\sum\limits_{i,j} a_{ij} x_{ij}$ $\le$ $b_k_3$ $\forall k_3$<br>
-$X$ is semidefinitive.
+Program above is equivalent with below.
+If $X = V^TV$.
+Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$.
+Notice that this program is so-called vector program because it has vector as variables.
+
+Minimize or maximize $\sum\limits_{i,j} c_{ij} \<v_i, v_j\>$<br>
+such that $\sum\limits_{i,j} a_{ijk_1} \<v_i, v_j\>$ $=$ $b_{k_1}$ $\forall k_1$<br>
+$\sum\limits_{i,j} a_{ijk_2} \<v_i, v_j\>$ $\ge$ $b_{k_2}$ $\forall k_2$<br>
+$\sum\limits_{i,j} a_{ijk_3} \<v_i, v_j\>$ $\le$ $b_{k_3}$ $\forall k_3$<br>
+
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
