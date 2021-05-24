@@ -53,6 +53,26 @@ With that, it removes at least $\sqrt{n}I$ vetices from graph if we denote $I$ a
 However, we can't remove more vetices than number of vertices at the beginning.
 Therefore, $\sqrt{n}I$ $\le$ $n$.
 As a result, $I$ $\le$ $\sqrt{n}$.
+Notice that algorithm uses at most $4\sqrt{n}$ colors and it runs in a polynomial time.
+
+7. There is a polynomial algorithm that finds $\tilde{O}(n^{log_6 2})$-coloring of a given 3-colorable graph
+
+Consider the following vector program for given graph $G$ $=$ $(V,E)$.
+Let $n$ $=$ $\left\vert V \right\vert$
+Minimize $\lambda$<br>
+such that
+    $v_i \cdot v_j \le \lambda$ for all $(i, j) \in E$<br>
+    $v_i \cdot v_i = 1$ for all $i \in V$<br>
+    $v_i \in \mathcal{R}^n$ for all $i \in V$<br>
+
+Then, there is a feasible solution such that $v_i \cdot v_j$ $=$ $-\frac{1}{2}$ for all $(i,j) \in E$ if given graph is a 3-colorable graph.
+Proof is like follow.
+
+Consider an equilateral triangle inscribed in the intersection of the unit hypersphere and a hyperplane containing the origin.
+Fix a 3-coloring and assign one of the three vertices of the triangle as the vector of each vetex in $V$ so that vertices are assigned the same vector iff they are assigned the same color.
+Notice that all $v_i$ will be on this hypersphere because "$v_i \cdot v_i = 1$ for all $i \in V$".
+Now, we have $v_i \cdot v_j$ $=$ $\left\vert v_i \right\vert \left\vert v_j \right\vert \cos (\frac{2\pi}{3})$ $=$ $-\frac{1}{2}$.
+Notice that angle is \frac{2\pi}{3} because it's an equilateral triangle.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
