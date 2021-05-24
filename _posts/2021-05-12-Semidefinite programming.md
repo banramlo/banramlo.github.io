@@ -35,6 +35,7 @@ $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} &
 
 
 The program above is equivalent with the program below if $X = V^TV$.
+Notice that there is such an $V$ because $X$ is positive semidefinitive.
 Notice that If $V$ $=$ $\begin{pmatrix} v_1, v_2, \cdots, v_n\end{pmatrix}$ then $X$ $=$ $\begin{pmatrix} \<v_1, v_1\> & \<v_1, v_2\> & \cdots \\\ \vdots &   & \ddots & \vdots \\\ \cdots & \cdots & \<v_n, v_n\> \end{pmatrix}$.
 This program is so-called vector program because it has vector as variables.
 
