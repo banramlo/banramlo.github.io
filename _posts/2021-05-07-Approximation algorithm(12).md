@@ -95,7 +95,7 @@ Even though algorithm increase uniformly, we can just pick the smallest delta va
 With this, all other parts of algorithm are polynomial.
 Therefore, this algorithm runs in a polynomial time.
 
-Now, let's think about the solution that assigning $i$ to $j$ which $i$ that contributes to $j$ and assigning $i$ to arbitrary facility in $T'$ for $i$ that doesn't contributes to the facility such that maximizes $v_j$ which $i$ assigned to $j$.
+Now, let's think about the solution that assigning $i$ to $j$ which $i$ that contributes to $j$ and assigning $i$ to arbitrary facility in $T'$ for $i$ that doesn't contributes to the facility such that maximizes $v_j$ which $i$ assigned to $j$ $\in$ $T'$.
 Notice that from the algorithm we forced it to contributes to only one facility or none of facility.
 Let's define $A(i)$ $\subseteq$ $N(i)$ as the set of assigned clients to faciltiy $i$ which clients neighbors $i$ $\in$ $T$, $Z$ as the set of clients that doesn't neighbors any $j$ $\in$ $T$ and $X(j)$ $\in$ $T'$ as the facility that client $j$ assigned for $j$ such that contributes none of $T'$.
 Notice that all of clients that contributes none of $T'$ will not be in $A(i)$ because it should neighbor of some in $T'$ if it contributes.
