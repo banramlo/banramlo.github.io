@@ -112,8 +112,14 @@ Then, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k 
 Proof is like follow.
 Let's think about three vector $v_i, v_j, r^{\star}_k$ on the plane and denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$.
 Then, there are two cases for $\theta_k$.
-1. $\theta_i - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{\pi}{2}$
-2. $\theta_i + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{3\pi}{2}$
+Both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive or negative.
+Then, there are 2 cases for each of them from criteria "$\theta_i = \theta_j + \pi$" to choose the range of possible angle.
+
+1. $\theta_j - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{\pi}{2}$ if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive.
+2. $\theta_i - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_j + \frac{\pi}{2}$ if $\theta_i$ $+$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $2\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive.
+3. $\theta_j + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{3\pi}{2}$ if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
+4. $\theta_i + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_j + \frac{3\pi}{2}$ if $\theta_i$ $+$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $2\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
