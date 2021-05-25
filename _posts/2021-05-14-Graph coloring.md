@@ -105,7 +105,7 @@ $v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$
 $v_i \cdot r^{\star}_k$.
 This works in the same way for $v_j$ either.
 Now, $Pr[\text{Only one of } v_i \text{ and } v_j \text{ are in } H_k]$ $=$
-$Pr[v_i \cdot r_k and v_j \cdot r_k \text{ has the different sign}]$ $=$ 
+$Pr[v_i \cdot r_k \text{ and } v_j \cdot r_k \text{ has the different sign}]$ $=$ 
 $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$
 
 Then, $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$ $=$ $\frac{\theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
