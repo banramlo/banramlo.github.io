@@ -33,7 +33,7 @@ Notice that if there is such an algorithm in polynomial time then running that a
 5. A graph with maximum degree $\delta$ can be $(\delta + 1)$-colored in polynomial time.
 Notice that all of vertices never run out of colors in this case because even all the neighbors use seperate colors, there are still one color to use.
 6. 3-colorable graph can be $O(\sqrt{n})$-colored in polynomial time for $n$ as the number of vertices.
-7. There exists a polynomial algorithm that finds a semicoloring with $4\Delta^{\log_2 3}$ colors where $\Delta$ is the maximum degree of a graph.
+7. There exists a polynomial time random algorithm that finds a semicoloring with $4\Delta^{\log_3 2}$ colors at least $\frac{1}{2}$ probability where $\Delta$ is the maximum degree of a graph with.
 8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph
 
 ### Proof of theorems
@@ -91,8 +91,29 @@ Then, we can design an algorithm like follow.
 
 Polynomial running time of semidefinitive program/random picking will be updated later.
 Then, all other process will be in the polynomial time.
-Notice that this algorithm uses $2^t$ $=$ $2^{2 + \log_3 \Delta}$ $=$ $4 2^{\log_3 \Delta}$ $=$ $4 {\Delta}^{\log_3 2}$ colors.
+Notice that this algorithm uses $2^t$ $=$ $2^{2 + \log_3 \Delta}$ $=$ $4 \times 2^{\log_3 \Delta}$ $=$ $4 {\Delta}^{\log_3 2}$ colors.
+Therefore, it's enough to show that this makes a semicoloring with $\frac{1}{2}$ probability.
 
+Now, let's think about edge $e$ $=$ $(u, v)$.
+With this, consider some $H_k$ and $r^{\star}_k$.
+Which $r^{\star}_k$ is the projection of $r_k$ on to the plane defined by $v_i, v_j, 0$.
+Then, $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$ and $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$.
+Notice that $r_k$ can be decomposed to $r^{\star}_k$ and $r^{\circ}_k$.
+Then, $v_i \cdot r^{\star}_k$ $=$ 
+$v_i \cdot (r^{\star}_k + r^{\circ}_k)$ $=$ 
+$v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$
+$v_i \cdot r^{\star}_k$.
+This works in the same way for $v_j$ either.
+Now, $Pr[\text{Both } v_i \text{ and } v_j \text{ are in } H_k]$ $=$
+$Pr[\text{Both } v_i \cdot r_k and v_j \cdot r_k \text{ has the same sign}]$ $=$ 
+$Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$
+
+Then, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$ $\frac{\theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
+Proof is like follow.
+Let's think about three vector $v_i, v_j, r^{\star}_k$ on the plane and denote $\theta_i$ and $\theta_j$ as the angle of $v_i$ and $v_j$.
+Then, $r^{\star}_k$ should be in "$[\theta_i - \frac{\pi}{2}, \theta_i + \frac{\pi}{2}]$ and $[\theta_j - \frac{\pi}{2}, \theta_j + \frac{\pi}{2}]$" or "$[\theta_i + \frac{\pi}{2}, \theta_i + \frac{3\pi}{2}]$ and $[\theta_j + \frac{\pi}{2}, \theta_j + \frac{3\pi}{2}]$".
+Now, we can assume $\theta_i \le \theta_j$ without loosing generality.
+Then, $r^{\star}_k$ should be in $[\theta_j - \frac{\pi}{2}, \theta_i + \frac{\pi}{2}]$ or $[\theta_j + \frac{\pi}{2}, \theta_i + \frac{3\pi}{2}]$.
 
 
 {: .box-note}
