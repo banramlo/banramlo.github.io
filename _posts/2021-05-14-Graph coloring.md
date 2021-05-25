@@ -101,7 +101,7 @@ Then, $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$ and $v_i \cdot r_k$ $=$ $v_i \
 Notice that $r_k$ can be decomposed to $r^{\star}_k$ and $r^{\circ}_k$.
 Then, $v_i \cdot r_k$ $=$ 
 $v_i \cdot (r^{\star}_k + r^{\circ}_k)$ $=$ 
-$v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$
+$v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$ $=$
 $v_i \cdot r^{\star}_k$.
 This works in the same way for $v_j$ either.
 Now, $Pr[\text{Only one of } v_i \text{ and } v_j \text{ are in } H_k]$ $=$
