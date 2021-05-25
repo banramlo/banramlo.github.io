@@ -104,13 +104,13 @@ $v_i \cdot (r^{\star}_k + r^{\circ}_k)$ $=$
 $v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$ $=$
 $v_i \cdot r^{\star}_k$.
 This works in the same way for $v_j$ either.
-Now, $Pr[\text{Only one of } v_i \text{ and } v_j \text{ are in } H_k]$ $=$
-$Pr[v_i \cdot r_k \text{ and } v_j \cdot r_k \text{ has the different sign}]$ $=$ 
-$Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$
+Now, $Pr[\text{Both } v_i \text{ and } v_j \text{ are in the } H_k]$ $=$
+$Pr[\text{Both } v_i \cdot r_k \text{ and } v_j \cdot r_k \text{ has the same sign}]$ $=$ 
+$Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$
 
-Then, $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$ $=$ $\frac{\theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
+Then, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$ $\frac{\pi - \theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
 Proof is like follow.
-Let's think about the opposite case and denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$.
+Let's denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$.
 Then, there are two cases for $\theta_k$ which both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive or negative.
 With this two cases, there are 2 cases per each case for each of them from criteria "$\theta_i = \theta_j + \pi$" to choose the range of possible angle.
 Therefore, there are 4 cases in total.
@@ -125,21 +125,26 @@ Then, we can know claim holds in each cases.
 1. $2\pi Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$
 $(\theta_i + \frac{\pi}{2})$ $-$ $(\theta_j - \frac{\pi}{2})$ $+$ $(\theta_i + \frac{3\pi}{2})$ - $(\theta_j + \frac{\pi}{2})$  $=$
 $2(\theta_i - \theta_j)$ $+$ $2\pi$ $=$
-$2(\pi + \theta_i - \theta_j)$
+$2(\pi + \theta_i - \theta_j)$ $=$
+$2(\pi - (\theta_j - \theta_i))$
 if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$.
-As a result, $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$ $=$
-$1$ $-$ $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$
-$1$ $-$ $\frac{2(\pi + \theta_i - \theta_j)}{2\pi}$ $=$ $\frac{\theta_j - \theta_i}{\pi}$.
+As a result, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$ 
+$\frac{\pi - (\theta_j - \theta_i)}{\pi}$.
 Therefore claim holds in this case.
 2. $2\pi Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$
 $(\theta_j + \frac{\pi}{2})$ $-$ $(\theta_i - \frac{\pi}{2})$ $+$ $(\theta_j + \frac{3\pi}{2})$ $-$ $(\theta_i + \frac{\pi}{2})$ $=$
 $2(\theta_j - \theta_i)$ $+$ $2\pi$ $=$
-$2(\pi + \theta_j - \theta_i)$
+$2(\pi + \theta_j - \theta_i)$ $=$
+$2(\pi - (\theta_i - \theta_j))$
 if $\theta_i$ $-$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$.
-As a result, $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$ $=$
-$1$ $-$ $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$
-$1$ $-$ $\frac{2(\pi + \theta_j - \theta_i)}{2\pi}$ $=$ $\frac{\theta_i - \theta_j}{\pi}$.
+As a result, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$ 
+$\frac{\pi - (\theta_i - \theta_j)}{\pi}$.
 Therefore claim holds in this case.
+
+Notice that $Pr[\text{Both } v_i \text{ and } v_j \text{ are in the } H_k]$ $=$
+$\frac{\pi - \theta}{\pi}$ $=$
+$1$ $-$ $\frac{\theta}{\pi}$ $=$
+$1$ $-$ $\frac{\arccos(v_i, v_j)}{\pi}$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
