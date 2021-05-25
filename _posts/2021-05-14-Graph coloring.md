@@ -99,7 +99,7 @@ With this, consider some $H_k$ and $r^{\star}_k$.
 Which $r^{\star}_k$ is the projection of $r_k$ on to the plane defined by $v_i, v_j, 0$.
 Then, $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$ and $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$.
 Notice that $r_k$ can be decomposed to $r^{\star}_k$ and $r^{\circ}_k$.
-Then, $v_i \cdot r^{\star}_k$ $=$ 
+Then, $v_i \cdot r_k$ $=$ 
 $v_i \cdot (r^{\star}_k + r^{\circ}_k)$ $=$ 
 $v_i \cdot r^{\star}_k$ $+$ $v_i \cdot r^{\circ}_k$
 $v_i \cdot r^{\star}_k$.
