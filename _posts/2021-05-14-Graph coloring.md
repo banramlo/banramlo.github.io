@@ -120,6 +120,8 @@ Therefore, there are 4 cases in total.
 3. $\theta_i - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_j + \frac{\pi}{2}$ if $\theta_i$ $-$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive.
 4. $\theta_i + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_j + \frac{3\pi}{2}$ if $\theta_i$ $-$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
 
+Then, we can know claim holds in each cases.
+
 1. $2\pi Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$
 $(\theta_i + \frac{\pi}{2})$ $-$ $(\theta_j - \frac{\pi}{2})$ $+$ $(\theta_i + \frac{3\pi}{2})$ - $(\theta_j + \frac{\pi}{2})$  $=$
 $2(\theta_i - \theta_j)$ $+$ $2\pi$ $=$
