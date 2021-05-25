@@ -120,6 +120,5 @@ Then, there are 2 cases for each of them from criteria "$\theta_i = \theta_j + \
 3. $\theta_j + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{3\pi}{2}$ if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
 4. $\theta_i + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_j + \frac{3\pi}{2}$ if $\theta_i$ $+$ $\pi$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $2\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
 
-
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
