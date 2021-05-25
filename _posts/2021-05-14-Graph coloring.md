@@ -33,8 +33,12 @@ Notice that if there is such an algorithm in polynomial time then running that a
 5. A graph with maximum degree $\delta$ can be $(\delta + 1)$-colored in polynomial time.
 Notice that all of vertices never run out of colors in this case because even all the neighbors use seperate colors, there are still one color to use.
 6. 3-colorable graph can be $O(\sqrt{n})$-colored in polynomial time for $n$ as the number of vertices.
-This can be done by following algorithm.
+7. There exists a polynomial algorithm that finds a semicoloring with $4\Delta^{\log_2 3}$ colors where $\Delta$ is the maximum degree of a graph.
+8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph
 
+### Proof of theorems
+
+Theorem 6 can be done by following algorithm.
 <div class="alg">
     $\operatorname{while} \exists$ a vertex $v$ with at least degree $\sqrt{n}$<br>
     <div class="alg">
@@ -58,7 +62,7 @@ Therefore, $\sqrt{n}I$ $\le$ $n$.
 As a result, $I$ $\le$ $\sqrt{n}$.
 Notice that algorithm uses at most $4\sqrt{n}$ colors and it runs in a polynomial time.
 
-7. There exists a polynomial algorithm that finds a semicoloring with $4\Delta^{\log_2 3}$ colors where $\Delta$ is the maximum degree of a graph.
+Theorem 7 can be done by following algorithm.
 
 Consider the following vector program for given graph $G$ $=$ $(V,E)$.
 Let $n$ $=$ $\left\vert V \right\vert$
@@ -89,8 +93,6 @@ Polynomial running time of semidefinitive program/random picking will be updated
 Then, all other process will be in the polynomial time.
 Notice that this algorithm uses $2^t$ $=$ $2^{2 + \log_3 \Delta}$ $=$ $4 2^{\log_3 \Delta}$ $=$ $4 {\Delta}^{\log_3 2}$ colors.
 
-
-8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph
 
 
 {: .box-note}
