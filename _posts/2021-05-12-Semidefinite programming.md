@@ -38,7 +38,7 @@ Notice that if we think about any semidefinite matrix $A$ and $B$,
 $x^TXx \ge 0$ and $x^TYx \ge 0$ for all $x \in \mathcal{R}^{n}$.
 As a result, $x^T(\lambdaX + (1-\lambda)Y)x \ge 0$ for $0$ $\le$ $\lambda$ $\le$ $1$.
 Which means set of semidefinitive matrix is a convex.
-Therefore, we may can solve semifefinitive program in a polynomial time.
+Therefore, we may solve semifefinitive program in a polynomial time.
 
 The program above is equivalent with the program below if $X = V^TV$.
 Notice that there is such an $V$ because $X$ is positive semidefinitive.
