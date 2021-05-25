@@ -17,6 +17,9 @@ In this case, it can be considered as the assignemnts of sets like vertex 1 to s
 4. A graph is so-called $k$-colorable if it has a proper $k$-coloring.
 5. We say $g(n)$ $=$ $\tilde{O}(f(n))$ if there exists some constant $c$ $\ge$ $0$ such that $g(n)$ $=$ $O(f(n))\ln^c$.
 This is some extention that ignoring logarithmic terms.
+6. We say coloring is a semicoloring if at most $\frac{\left\vert V \right\vert}{4}$ edges have endpoints with the same color.
+Notice that semicoloring don't need to be proper.
+It allows $\frac{\left\vert V \right\vert}{4}$ edges to be collide.
 
 ### Theorems
 1. There is a polynomial time algorithm to check 2-colorable.
@@ -55,7 +58,7 @@ Therefore, $\sqrt{n}I$ $\le$ $n$.
 As a result, $I$ $\le$ $\sqrt{n}$.
 Notice that algorithm uses at most $4\sqrt{n}$ colors and it runs in a polynomial time.
 
-7. There is a polynomial algorithm that finds $\tilde{O}(n^{log_6 2})$-coloring of a given 3-colorable graph
+7. There exists a polynomial algorithm that finds a semicoloring with $4\Delta^{\log_2 3}$ colors where $\Delta$ is the maximum degree of a graph.
 
 Consider the following vector program for given graph $G$ $=$ $(V,E)$.
 Let $n$ $=$ $\left\vert V \right\vert$
@@ -72,7 +75,23 @@ Consider an equilateral triangle inscribed in the intersection of the unit hyper
 Fix a 3-coloring and assign one of the three vertices of the triangle as the vector of each vetex in $V$ so that vertices are assigned the same vector iff they are assigned the same color.
 Notice that all $v_i$ will be on this hypersphere because "$v_i \cdot v_i = 1$ for all $i \in V$".
 Now, we have $v_i \cdot v_j$ $=$ $\left\vert v_i \right\vert \left\vert v_j \right\vert \cos (\frac{2\pi}{3})$ $=$ $-\frac{1}{2}$.
-Notice that angle is \frac{2\pi}{3} because it's an equilateral triangle.
+Notice that angle is $\frac{2\pi}{3}$ because it's an equilateral triangle.
+
+Then, we can design an algorithm like follow.
+<div class="alg">
+    Solve algorithm above to obtain optimal solution $v_1, \cdots, v_n$<br>
+    Choose vector $r_1, \cdots, r_t$ independently and uniformly at random from the unit hypersphere where $t = 2 + \log_3 \Delta$.<br>
+    Divides the hyper sphere into $2^t$ different regions by half space $H_i = \{x | x \cdot r_i \ge 0\}$ for $0$ $\le$ $i$ $\le$ $t$<br>
+    Assign a distinct color for all vectices in each resign.
+</div>
+
+Polynomial running time of semidefinitive program/random picking will be updated later.
+Then, all other process will be in the polynomial time.
+Notice that this algorithm uses $2^t$ $=$ $2^{2 + \log_3 \Delta}$ $=$ $4 2^{\log_3 \Delta}$ $=$ $4 {\Delta}^{\log_3 2}$ colors.
+
+
+8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
