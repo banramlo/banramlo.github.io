@@ -110,11 +110,10 @@ $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{
 
 Then, $Pr[\text{Both } v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the same sign}]$ $=$ $\frac{\theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
 Proof is like follow.
-Let's think about three vector $v_i, v_j, r^{\star}_k$ on the plane and denote $\theta_i$ and $\theta_j$ as the angle of $v_i$ and $v_j$.
-Then, $r^{\star}_k$ should be in "$[\theta_i - \frac{\pi}{2}, \theta_i + \frac{\pi}{2}]$ and $[\theta_j - \frac{\pi}{2}, \theta_j + \frac{\pi}{2}]$" or "$[\theta_i + \frac{\pi}{2}, \theta_i + \frac{3\pi}{2}]$ and $[\theta_j + \frac{\pi}{2}, \theta_j + \frac{3\pi}{2}]$".
-Now, we can assume $\theta_i \le \theta_j$ without loosing generality.
-Then, $r^{\star}_k$ should be in $[\theta_j - \frac{\pi}{2}, \theta_i + \frac{\pi}{2}]$ or $[\theta_j + \frac{\pi}{2}, \theta_i + \frac{3\pi}{2}]$.
-
+Let's think about three vector $v_i, v_j, r^{\star}_k$ on the plane and denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$.
+Then, there are two cases for $\theta_k$.
+1. $\theta_i - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{\pi}{2}$
+2. $\theta_i + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{3\pi}{2}$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
