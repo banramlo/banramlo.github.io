@@ -110,9 +110,9 @@ $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the diff
 
 Then, $Pr[v_i \cdot r^{\star}_k \text{ and } v_j \cdot r^{\star}_k \text{ has the different sign}]$ $=$ $\frac{\theta}{\pi}$ which $\theta$ is the angle between $v_i$ and $v_j$.
 Proof is like follow.
-Let's think about the opposite case and denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$ for three vector $v_i, v_j, r^{\star}_k$ on the plane.
+Let's think about the opposite case and denote $\theta_i, \theta_j, \theta_k$ as the angle of $v_i, v_j, r^{\star}_k$.
 Then, there are two cases for $\theta_k$ which both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive or negative.
-Then, there are 2 cases for each of them from criteria "$\theta_i = \theta_j + \pi$" to choose the range of possible angle.
+With this two cases, there are 2 cases per each case for each of them from criteria "$\theta_i = \theta_j + \pi$" to choose the range of possible angle.
 
 1. $\theta_j - \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{\pi}{2}$ if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are positive.
 2. $\theta_j + \frac{\pi}{2}$ $\le$ $\theta_k$ $\le$ $\theta_i + \frac{3\pi}{2}$ if $\theta_i$ $\le$ $\theta_j$ $\le$ $\theta_i$ $+$ $\pi$ and both $v_i \cdot r^{\star}_k$ and $v_j \cdot r^{\star}_k$ are negative.
