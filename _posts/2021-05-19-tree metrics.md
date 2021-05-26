@@ -114,6 +114,7 @@ Returned tree metric can be like follow.<br>
   	ctx.beginPath();
     ctx.fillStyle = "black";
   	ctx.moveTo(175, 170);
+  	ctx.lineTo(125, 110);
   	ctx.lineTo(100, 40);
   	ctx.lineTo(75, 110);
   	ctx.lineTo(25, 170);
@@ -144,6 +145,10 @@ Returned tree metric can be like follow.<br>
     ctx.stroke();
     ctx.fill();
     ctx.beginPath();
+    ctx.arc(125, 110, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
     ctx.arc(100, 40, 20, 0, 2*Math.PI);
     ctx.stroke();
     ctx.fill();
@@ -157,11 +162,16 @@ Returned tree metric can be like follow.<br>
     ctx.fillText('2', 45, 140);
     ctx.fillText('{A,B,C,D}', 100, 40);
     ctx.fillText('{A,B,C}', 75, 110);
+    ctx.fillText('{D}', 125, 110);
     ctx.fillText('{A}', 25, 170);
     ctx.fillText('{B}', 75, 170);
     ctx.fillText('{C}', 125, 170);
     ctx.fillText('{D}', 175, 170);
 </script>
+
+Note that each node at level 0 corresponding to a singleton and every vertex in $V$ appears exactly once.
+The reason is there can't be more than center itself because $r_0$ $<$ $1$ $\ge$ $d_{uv}$ for all $u,v$ $\in$ $V$.
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
