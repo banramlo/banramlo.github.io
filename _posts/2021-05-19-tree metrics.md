@@ -7,7 +7,7 @@ comments: true
 use_math: true
 ---
 
-For a given vertices $V$ and distance $V \times V \leftarrow \mathcal{R} : d$.
+For a given vertices $V$ and distance $V \times V \rightarrow \mathcal{R} : d$.
 $(V,d)$ is so called a metric if following properties are hold.
 
 1. $d_{uv}$ $\ge$ $0$ for all $u,v$ $\in$ $V$
