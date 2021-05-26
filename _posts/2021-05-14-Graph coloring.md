@@ -34,7 +34,7 @@ Notice that if there is such an algorithm in polynomial time then running that a
 Notice that all of vertices never run out of colors in this case because even all the neighbors use seperate colors, there are still one color to use.
 6. 3-colorable graph can be $O(\sqrt{n})$-colored in polynomial time for $n$ as the number of vertices.
 7. There exists a polynomial time random algorithm that finds a semicoloring with $4\Delta^{\log_3 2}$ colors at least $\frac{1}{2}$ probability where $\Delta$ is the maximum degree of a graph with.
-8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph
+8. There is a polynomial algorithm that finds $\tilde{O}(n^{\log_6 2})$-coloring of a given 3-colorable graph at least $\frac{1}{2}$ probability.
 
 ### Proof of theorems
 
@@ -61,6 +61,8 @@ However, we can't remove more vetices than number of vertices at the beginning.
 Therefore, $\sqrt{n}I$ $\le$ $n$.
 As a result, $I$ $\le$ $\sqrt{n}$.
 Notice that algorithm uses at most $4\sqrt{n}$ colors and it runs in a polynomial time.
+
+<br>
 
 Theorem 7 can be done by following algorithm.
 
@@ -175,6 +177,32 @@ As a result, expected number of edges whose endpoints are colred the same is at 
 
 Then, $Pr[X \ge \frac{n}{4}]$ $\le$ $\frac{E[X]}{n/4}$ $=$ $\frac{4}{n}E[X]$ $\le$ $\frac{4}{n}\frac{n}{18}$ $=$ $\frac{2}{9}$ $\le$ $\frac{1}{2}$ with markov's inequality where $X$ denotes number of edges where endpoiunts are colored the same.
 Therefore claim holds.
+
+<br>
+
+Theorem 8 can be done by following algorithm.
+Let $\sigma = n^{\log_6 3}$.
+<div class="alg">
+    Let's call the below part as "part 1"
+    <div class="alg">
+        $\operatorname{while} \exists$ a vertex $v$ with degree $\ge$ $\sigma$<br>
+        <div class="alg">
+            Color $v$ and it's neighbors using three new colors<br>
+            Remove the colored vertices
+        </div>
+    </div>
+    Let's call the below part as "part 2"
+    <div class="alg">
+        $\operatorname{while}$ the graph is not empty, repeat at most $\log_2 n$ times<br>
+        <div class="alg">
+           Try running Algorithm at theorem 7 $[\log_2\log_2 n] + 1$ times to find a semicoloring<br>
+           $R \leftarrow$ endpoints of edges whose endpoints are colored the same<br>
+           Color $V - R$ according to the semicoloring, using new colors<br>
+           Remove the colored vetices
+        </div>
+    </div>
+    Color the remaining vertices with distinct new colors
+</div>
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
