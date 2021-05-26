@@ -67,5 +67,96 @@ Consider the following algorithm where $B(x, r)$ is a hypersphere with the cente
     return $(V', T)$ 
 </div>
 
+For an example, following graph's result will be like follow.
+
+If given metric is like follow.<br>
+<canvas id="canvas1" width="200" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML canvas tag.</canvas><br>
+Returned tree metric can be like follow.<br>
+<canvas id="canvas2" width="200" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML canvas tag.</canvas><br>
+<script language = "javascript">
+    let c = document.getElementById("canvas1");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(100, 100, 80, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(100, 180, 10, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(100, 20, 10, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(20, 100, 10, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(180, 100, 10, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.textAlign = "center";
+    ctx.fillStyle = "red";
+    ctx.font = "20px Arial";
+    ctx.fillText('A', 100, 180);
+    ctx.fillText('B', 100, 20);
+    ctx.fillText('C', 20, 100);
+    ctx.fillText('D', 180, 100);
+    ctx.fillText('1', 44, 44);
+    ctx.fillText('1', 156, 44);
+    ctx.fillText('1', 44, 156);
+    ctx.fillText('1', 156, 156);
+    c = document.getElementById("canvas2");
+    ctx = c.getContext("2d");
+  	ctx.beginPath();
+    ctx.fillStyle = "black";
+  	ctx.moveTo(175, 170);
+  	ctx.lineTo(100, 40);
+  	ctx.lineTo(75, 110);
+  	ctx.lineTo(25, 170);
+  	ctx.moveTo(75, 110);
+  	ctx.lineTo(75, 170);
+  	ctx.moveTo(75, 110);
+  	ctx.lineTo(125, 170);
+    ctx.stroke();
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(25, 170, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(75, 170, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(125, 170, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(175, 170, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(75, 110, 30, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(100, 40, 35, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+    ctx.textAlign = "center";
+    ctx.fillStyle = "red";
+    ctx.font = "20px Arial";
+    ctx.fillText('{A,B,C,D}', 100, 40);
+    ctx.fillText('{A,B,C}', 75, 110);
+    ctx.fillText('{A}', 25, 170);
+    ctx.fillText('{B}', 75, 170);
+    ctx.fillText('{C}', 125, 170);
+    ctx.fillText('{D}', 175, 170);
+</script>
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
