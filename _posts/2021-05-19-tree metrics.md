@@ -34,8 +34,35 @@ In fact it is known that there is no tree metric has distortion less than $\frac
 However there is a good theorem.
 
 Given a metric $d$ on $V$ such that $d_{uv}$ $\ge$ $1$ for all $u$ $\neq$ $v$, there exists a randomized algorithm that finds a tree metric $(V', T)$ such that for all $u, v$ $\in$ $V$, $d_{uv}$ $\le$ $T_{uv}$ and $E[T_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
+Notice that this randomized algorithm picks a tree metric from a given graph.
+Proof is like follow.
 
-Notice that this randomized algorithm picks a tree metric from a givn graph.
+Consider the following algorithm where $B(x, r)$ is a hypersphere with the center at $x$ and radius of $r$.
+<div class="alg">
+    Pick $r_0$ $\in$ $[\frac{1}{2}, 1)$ uniformly at random<br>
+    Let $r_i$ $=$ $2^ir_0$ for $1$ $\le$ $i$ $\le$ $\log_2 \Delta$<br>
+    Choose $\Delta$ as the smallest power of two greater than 2$\max_{u,v \in V}d_{uv}$<br>
+    Pick a permutation $\pi$ of $v$ uniformly at random<br>
+    $\mathcal{C}(\log_2 \Delta) \leftarrow \{V\}$<br>
+    Create a node corresponding to $V$ and make it the root node<br>
+    $\operatorname{for}$ $i \leftarrow \log_2 \Delta, \log_2 \Delta - 1, \cdots, 1$
+    <div class="alg">
+        $\mathcal{C}(i - 1) \leftarrow \emptyset$<br>
+        $\operatorname{for}$ $C \in \mathcal{C}(i)$
+        <div class="alg">
+            $S \leftarrow C$<br>
+            $\operatorname{for}$ $j \leftarrow 1, 2, \cdots, \left\vert V \right\vert$<br>
+            <div class="alg">
+                $\operatorname{if}$ $B(\pi(j), r_{i-1})$ $\cap$ $S$ $\neq$ $\emptyset$<br>
+                <div class="alg">
+                    Add $B(\pi(j), r_{i-1})$ $\cap$ $S$ to $\mathcal{C}(i -1)$<br>
+                    $S$ $\leftarrow$ $S$ $-$ $(B(\pi(j), r_{i-1}) \cap S)$
+                </div>
+            </div>
+            Create nodes corresponding to each set in $\mathcal{C}(i -1)$ and attach each node to the node in $\mathcal{C}(i)$ corresponding to its superset by an edge of length $2^i$
+        </div> 
+    </div> 
+</div>
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
