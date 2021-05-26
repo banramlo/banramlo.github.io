@@ -40,7 +40,7 @@ Proof is like follow.
 Consider the following algorithm where $B(x, r)$ is a hypersphere with the center at $x$ and radius of $r$.
 <div class="alg">
     Pick $r_0$ $\in$ $[\frac{1}{2}, 1)$ uniformly at random<br>
-    Choose $\Delta$ as the smallest power of two greater than 2$\max_{u,v \in V}d_{uv}$<br>
+    Choose $\Delta$ as the smallest power of two greater or equal than 2$\max_{u,v \in V}d_{uv}$<br>
     Let $r_i$ $=$ $2^ir_0$ for $1$ $\le$ $i$ $\le$ $\log_2 \Delta$<br>
     Pick a permutation $\pi$ of $v$ uniformly at random<br>
     $\mathcal{C}(\log_2 \Delta) \leftarrow \{V\}$<br>
@@ -55,13 +55,16 @@ Consider the following algorithm where $B(x, r)$ is a hypersphere with the cente
             <div class="alg">
                 $\operatorname{if}$ $B(\pi(j), r_{i-1})$ $\cap$ $S$ $\neq$ $\emptyset$<br>
                 <div class="alg">
-                    Add $B(\pi(j), r_{i-1})$ $\cap$ $S$ to $\mathcal{C}(i -1)$<br>
+                    Add $\{B(\pi(j), r_{i-1}) \cap S\}$ to $\mathcal{C}(i -1)$<br>
                     $S$ $\leftarrow$ $S$ $-$ $(B(\pi(j), r_{i-1}) \cap S)$
                 </div>
             </div>
             Create nodes corresponding to each set in $\mathcal{C}(i -1)$ and attach each node to the node in $\mathcal{C}(i)$ corresponding to its superset by an edge of length $2^i$
         </div> 
-    </div> 
+    </div>
+    $V' \leftarrow$ all nodes in $\Bigcup_{k = 0}^{\log_2 \Delta}\mathcal{C}(k)$<br>
+    $T \leftarrow$ all edges between $\mathcal{C}(k)$ and $\mathcal{C}(k - 1)$ for all $1$ $\le$ $k$ $\le$ $\log_2 \Delta$<br>
+    return $(V', T)$ 
 </div>
 
 {: .box-note}
