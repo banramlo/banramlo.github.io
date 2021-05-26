@@ -23,7 +23,6 @@ permalink: /search.html
         'Jul','Aug','Sep','Oct','Nov','Dec'
         ]
         
-
         function searchTarget(){
             document.getElementById("loadingImg").style.display = "";
             window.setTimeout(_searchTarget, 1);
@@ -33,7 +32,7 @@ permalink: /search.html
             var target = document.getElementById("searchTaget").value;
             var targetLow = document.getElementById("searchTaget").value.toLowerCase();
             searchList = [];
-            if(target == ""){
+            if(target.length < 2){
                 setContent();
                 document.getElementById("loadingImg").style.display = "none";
                 return;

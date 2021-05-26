@@ -195,7 +195,7 @@ Let $\sigma = n^{\log_6 3}$.
     <div class="alg">
         $\operatorname{while}$ the graph is not empty, repeat at most $\log_2 n$ times<br>
         <div class="alg">
-           Try running Algorithm at theorem 7 $[\log_2\log_2 n] + 1$ times to find a semicoloring<br>
+           Try running Algorithm at theorem 7 with $[\log_2(\log_2 n)] + 1$ times to find a semicoloring<br>
            $R \leftarrow$ endpoints of edges whose endpoints are colored the same<br>
            Color $V - R$ according to the semicoloring, using new colors<br>
            Remove the colored vetices
@@ -203,6 +203,70 @@ Let $\sigma = n^{\log_6 3}$.
     </div>
     Color the remaining vertices with distinct new colors
 </div>
+
+Now, it is trivial that this algorithm runs in a polynomial time.
+Therefore, it is enough to show it returns $\tilde{O}(n^{\log_6 2})$-coloring at least $\frac{1}{2}$ probability.
+Now, let's think about part 1.
+Then, maximum number of iteration is at most $[\frac{n}{\sigma}] + 1$ because it remvoes at least $\sigma$ vertices at once.
+Therefore, color used at part 1 is at most $3([\frac{n}{\sigma}] + 1)$.
+Now, let's think about part 2.
+Left part of graph has at most $\sigma$ degree because we removed every possible vertices with more than degree $\sigma$.
+Now, let's denote the maximum of degree after part 1 as $\Delta$ and the number of vertices as $n'$.
+If we see each iteration, it fails to find a semicoloring with $(\frac{1}{2})^{[\log_2(\log_2 n)] + 1}$ probability.
+Which is $(\frac{1}{2})^{[\log_2(\log_2 n)] + 1}$ $=$
+$(2)^{-[\log_2(\log_2 n)] - 1}$ $\le$
+$(2)^{-\log_2(\log_2 n) - 1}$ $=$
+$(2)^{-\log_2(\log_2 n)}\frac{1}{2}$ $=$
+$(2)^{\log_2(\log_2 n)^{-1}}\frac{1}{2}$ $=$
+$(\log_2 n)^{-1}\frac{1}{2}$ $=$
+$\frac{1}{2\log_2 n}$.
+Therefore, it fails at most $\frac{1}{2\log_2 n}$ probability.
+As a result, this algorithm success to find a semicoloring in every iteration at least $(1 - \frac{1}{2\log_2 n})^{\log_2 n}$ $\ge$ $\frac{1}{2}$ probability if $n$ $\ge$ $2$.
+
+Proof is like follow.
+Notice that if we change $log_2 x$ to $t$ then $(1 - \frac{1}{2\log_2 n})^{\log_2 n}$ $=$ $(1 - \frac{1}{2t})^{t}$.
+Now it can be derivated easily about $t$ and result will be $(1 - \frac{1}{2t})(\ln(1 - \frac{1}{2t}) + \frac{1}{2t - 1})$.
+Notice that $t \ge 1$.
+Then, $1 - \frac{1}{2t} \ge 0$ because $t \ge 1$.
+For the other part, $\ln(1 - \frac{1}{2t})$ $+$ $\frac{1}{2t - 1}$ $=$ 
+$\ln(\frac{2t - 1}{2t})$ $+$ $\frac{1}{2t - 1}$ $=$ 
+$\ln(\frac{2t - 1}{2t})$ $+$ $\frac{2t}{2t - 1}$ $-$ $\frac{2t - 1}{2t - 1}$ $=$
+$\ln(\frac{2t - 1}{2t})$ $+$ $\frac{2t}{2t - 1}$ $-$ $1$ $=$
+$\ln X$ $+$ $\frac{1}{X}$ $-$ $1$.
+for $X$ $=$ $\frac{2t -1}{2t}$.
+Notice that $0$ $<$ $X$ $<$ $1$.
+Then, $\ln X$ $+$ $\frac{1}{X}$ $-$ $1$ $\ge$ $0$.
+Proof is like follow.
+If we derivated $y$ $=$ $\ln X$ $+$ $\frac{1}{X}$ $-$ $1$, $y'$ $=$ $\frac{1}{X}$ $-$ $\frac{1}{X^2}$ $=$ $\frac{X - 1}{X^2}$.
+As a result, $y$ decreases in $0$ $<$ $X$ $<$ $1$.
+However, it's zero when $X$ $=$ $1$.
+Therefore, $\ln X$ $+$ $\frac{1}{X}$ $-$ $1$ $\ge$ $0$.
+As a result, this algorithm success to find a semicoloring in every iteration at least $\frac{1}{2}$ probability if $n$ $\ge$ $2$.
+
+Now, it doesn't have too much meaning if you think about $n$ $=$ $1$.
+Therefore, assumption isn't too tight.
+
+Now, let's see how many vertices are removed at each iteration.
+If we start with $n'$ vertices, $\left\vert R \right\vert$ $\le$ $2 \frac{n'}{4}$ $=$ $\frac{n'}{2}$.
+As a result, it will reduce to be half at least.
+Therefore, there will be at most $O(1)$ vertices after part 2.
+Notice that we will do part 2 at most $log_2 n$ time and it will be enough to be so.
+
+As a result color used in each part is like follow.
+1. Part 1 uses at most $3([\frac{n}{\sigma}] + 1)$ $=$
+$3([\frac{n}{n^{\log_6 3}}] + 1)$ $\le$
+$3(\frac{n}{n^{\log_6 3}} + 1)$ $=$
+$3(\frac{n^{\log_6 6}}{n^{\log_6 3}} + 1)$ $=$
+$3(n^{\log_6 2} + 1)$ colors.
+2. Part 2 uses at most $4\Delta^{\log_3 2}(\log_2 n)$ $\le$
+$4\sigma^{\log_3 2}(\log_2 n)$ $=$
+$4(n^{\log_6 3})^{\log_3 2}(\log_2 n)$ $=$
+$4n^{\log_6 3 \cdot \log_3 2}(\log_2 n)$ $=$
+$4n^{\log_6 2}(\log_2 n)$ colors.
+3. Left part will use at most $O(1)$ colors.
+
+As a result, algorithm uses at most $3n^{\log_6 2}$ $+$ $3$ $+$ $4n^{\log_6 2}(\log_2 n)$ $+$ $O(1)$.
+Therefore, claim holds.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
