@@ -94,7 +94,7 @@ Then, all other process will be in the polynomial time.
 Notice that this algorithm uses $2^t$ $=$ $2^{2 + \log_3 \Delta}$ $=$ $4 \times 2^{\log_3 \Delta}$ $=$ $4 {\Delta}^{\log_3 2}$ colors.
 Therefore, it's enough to show that this makes a semicoloring with $\frac{1}{2}$ probability.
 
-Now, let's think about edge $e$ $=$ $(u, v)$.
+Now, let's think about edge $e$ $=$ $(v_i, v_j)$.
 With this, consider some $H_k$ and $r^{\star}_k$.
 Which $r^{\star}_k$ is the projection of $r_k$ on to the plane defined by $v_i, v_j, 0$.
 Then, $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$ and $v_i \cdot r_k$ $=$ $v_i \cdot r^{\star}_k$.
@@ -144,7 +144,30 @@ Therefore claim holds in this case.
 Notice that $Pr[\text{Both } v_i \text{ and } v_j \text{ are in the } H_k]$ $=$
 $\frac{\pi - \theta}{\pi}$ $=$
 $1$ $-$ $\frac{\theta}{\pi}$ $=$
-$1$ $-$ $\frac{\arccos(v_i, v_j)}{\pi}$.
+$1$ $-$ $\frac{\arccos(v_i \cdot v_j)}{\pi}$ $=$
+$1$ $-$ $\frac{1}{\pi}\arccos(v_i \cdot v_j)$.
+
+Therefore, $Pr[\text{Both } i \text{ and } j \text{ assigned to the same color}]$ $=$ 
+$Pr[\text{Both } v_i \text{ and } v_j \text{ are in the same reigon for all half space}]$ $=$ 
+$(1 - \frac{1}{\pi}\arccos(v_i \cdot v_j))^t$.
+With above, there are two facts from semidefinitive program and proof above.
+1. $v_i \cdot v_j \le \lambda$ for all $(i, j) \in E$
+2. There is a feasible solution such that $v_i \cdot v_j$ $=$ $-\frac{1}{2}$ for all $(i,j) \in E$ 
+
+Now let's denote semidefinitive program optimum's $\lambda$ as ${\lambda}^{\star}$.
+Then, ${\lambda}^{\star}$ $\le$ $-\frac{1}{2}$ because semidefinitive program was minimization problem.
+
+Therefore, $Pr[\text{Both } i \text{ and } j \text{ assigned to the same color}]$ $=$
+$(1 - \frac{1}{\pi}\arccos(v_i \cdot v_j))^t$ $\le$
+$(1 - \frac{1}{\pi}\arccos({\lambda}^{\star}))^t$ $\le$
+$(1 - \frac{1}{\pi}\arccos(-\frac{1}{2}))^t$ $=$
+$(1 - \frac{1}{\pi}\frac{2\pi}{3})^t$ $=$
+$(1 - \frac{2}{3})^t$ $=$
+$(\frac{1}{3})^{2 + \log_3 \Delta}$ $=$
+$\frac{1}{9\Delta}$.
+
+Notice that $\arccos x$ is a monotonic decreasing function for $-1$ $\le$ $x$ $\le$ $1$.
+Therefore, $1$ $-$ $\frac{1}{\pi}\arccos x$ is a monotonic increasing function.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
