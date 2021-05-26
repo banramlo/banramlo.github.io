@@ -169,5 +169,12 @@ $\frac{1}{9\Delta}$.
 Notice that $\arccos x$ is a monotonic decreasing function for $-1$ $\le$ $x$ $\le$ $1$.
 Therefore, $1$ $-$ $\frac{1}{\pi}\arccos x$ is a monotonic increasing function.
 
+Now, sum of degree is $2\left\vert E \right\vert$ and possible maximum sum of degree is $n\Delta$.
+Therefore, $2\left\vert E \right\vert$ $\le$ $n\Delta$ which means $\frac{\left\vert E \right\vert}{\Delta}$ $\le$ $\frac{n}{2}$.
+As a result, expected number of edges whose endpoints are colred the same is at most $\left\vert E \right\vert \frac{1}{9\Delta}$ $\=$ $\frac{\left\vert E \right\vert}{9\Delta}$ $\le$ $\frac{n}{18}$.
+
+Then, $Pr[X \ge 4]$ $\le$ $\frac{E[X]}{n/4}$ $\le$ $\frac{2}{9}$ $\le$ $\frac{1}{2}$ with markov's inequality where $X$ denotes number of edges where endpoiunts are colored the same.
+Therefore claim holds.
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
