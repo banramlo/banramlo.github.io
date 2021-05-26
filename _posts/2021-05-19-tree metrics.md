@@ -156,7 +156,8 @@ Returned tree metric can be like follow.<br>
     ctx.fillStyle = "red";
     ctx.font = "15px Arial";
     ctx.fillText('4', 80, 80);
-    ctx.fillText('4', 140, 100);
+    ctx.fillText('4', 120, 80);
+    ctx.fillText('2', 160, 140);
     ctx.fillText('2', 110, 140);
     ctx.fillText('2', 65, 145);
     ctx.fillText('2', 45, 140);
