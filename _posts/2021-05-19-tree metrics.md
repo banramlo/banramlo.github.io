@@ -62,7 +62,7 @@ Consider the following algorithm where $B(x, r)$ is a hypersphere with the cente
             Create nodes corresponding to each set in $\mathcal{C}(i -1)$ and attach each node to the node in $\mathcal{C}(i)$ corresponding to its superset by an edge of length $2^i$
         </div> 
     </div>
-    $V' \leftarrow$ all nodes in $\Bigcup_{k = 0}^{\log_2 \Delta}\mathcal{C}(k)$<br>
+    $V' \leftarrow$ all nodes in $\bigcup_{k = 0}^{\log_2 \Delta}\mathcal{C}(k)$<br>
     $T \leftarrow$ all edges between $\mathcal{C}(k)$ and $\mathcal{C}(k - 1)$ for all $1$ $\le$ $k$ $\le$ $\log_2 \Delta$<br>
     return $(V', T)$ 
 </div>
