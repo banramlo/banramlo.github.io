@@ -173,7 +173,7 @@ Now, sum of degree is $2\left\vert E \right\vert$ and possible maximum sum of de
 Therefore, $2\left\vert E \right\vert$ $\le$ $n\Delta$ which means $\frac{\left\vert E \right\vert}{\Delta}$ $\le$ $\frac{n}{2}$.
 As a result, expected number of edges whose endpoints are colred the same is at most $\left\vert E \right\vert \frac{1}{9\Delta}$ $\=$ $\frac{\left\vert E \right\vert}{9\Delta}$ $\le$ $\frac{n}{18}$.
 
-Then, $Pr[X \ge \frac{n}{4}]$ $\le$ $\frac{E[X]}{n/4}$ $\le$ $\frac{2}{9}$ $\le$ $\frac{1}{2}$ with markov's inequality where $X$ denotes number of edges where endpoiunts are colored the same.
+Then, $Pr[X \ge \frac{n}{4}]$ $\le$ $\frac{E[X]}{n/4}$ $=$ $\frac{4}{n}E[X]$ $\le$ $\frac{4}{n}\frac{n}{18}$ $=$ $\frac{2}{9}$ $\le$ $\frac{1}{2}$ with markov's inequality where $X$ denotes number of edges where endpoiunts are colored the same.
 Therefore claim holds.
 
 {: .box-note}
