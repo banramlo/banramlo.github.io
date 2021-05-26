@@ -40,8 +40,8 @@ Proof is like follow.
 Consider the following algorithm where $B(x, r)$ is a hypersphere with the center at $x$ and radius of $r$.
 <div class="alg">
     Pick $r_0$ $\in$ $[\frac{1}{2}, 1)$ uniformly at random<br>
-    Let $r_i$ $=$ $2^ir_0$ for $1$ $\le$ $i$ $\le$ $\log_2 \Delta$<br>
     Choose $\Delta$ as the smallest power of two greater than 2$\max_{u,v \in V}d_{uv}$<br>
+    Let $r_i$ $=$ $2^ir_0$ for $1$ $\le$ $i$ $\le$ $\log_2 \Delta$<br>
     Pick a permutation $\pi$ of $v$ uniformly at random<br>
     $\mathcal{C}(\log_2 \Delta) \leftarrow \{V\}$<br>
     Create a node corresponding to $V$ and make it the root node<br>
