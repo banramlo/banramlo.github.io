@@ -203,15 +203,13 @@ To show this, there some terminologies to define.
 1. $\mathcal{A}_{uv}$ is the least common ancestor of $u$ and $v$.
 2. $\mathcal{P}\_{uvi}$ is the first vertex in permutation $\pi$ such that at least one of $u$ and $v$ is in the hypersphere $B(\mathcal{P}_{uvi}, r_i)$.
 Notice that $i$ is the level of $\mathcal{P}\_{uvi}$.
-3. We say $\mathcal{P}\_{uvi}$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(\mathcal{P}_{uvi}, r_i)$.
+3. We say $w$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(w, r_i)$.
 
 First, $T_{uv}$ $=$ 
 $2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}\_{uv}}}2^k$ $=$ 
 $2(2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 1} - 2)$ $=$ 
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $\le$ 
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$.
-
-
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
