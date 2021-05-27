@@ -68,16 +68,18 @@ Therefore, we need to remove every such vertices.
 Here is another algorithm that gives a tree from metric.
 <div class="alg">
     $\operatorname{fit}$(V, d)<br>
-    Find a tree metric $(V',T)$ that approximates $d$<br>
     <div class="alg">
-        $T' \leftarrow T$<br>
-        $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ $\in$ $V'$ and $w$ $\not\in$ $V$
+        Find a tree metric $(V',T)$ that approximates $d$<br>
         <div class="alg">
-            Merge $v$ and $w$ to $v$
+            $T' \leftarrow T$<br>
+            $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ $\in$ $V'$ and $w$ $\not\in$ $V$
+            <div class="alg">
+                Merge $v$ and $w$ to $v$
+            </div>
         </div>
+        Multiply the length of every edge of $T'$ by 4<br>
+        return $(V, T')$
     </div>
-    Multiply the length of every edge of $T'$ by 4<br>
-    return $(V, T')$
 </div>
 
 Then, this algorithm returns a tree metric on $V$ such that $T_{uv}$ $\le$ 
