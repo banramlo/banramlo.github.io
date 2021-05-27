@@ -214,9 +214,9 @@ Then, other tree metric $T'$ can be like follow.<br>
     ctx.textAlign = "center";
     ctx.fillStyle = "red";
     ctx.font = "15px Arial";
-    ctx.fillText('4', 80, 80);
-    ctx.fillText('2', 110, 140);
-    ctx.fillText('2', 45, 140);
+    ctx.fillText('16', 80, 80);
+    ctx.fillText('8', 110, 140);
+    ctx.fillText('8', 45, 140);
     ctx.fillText('{A}', 25, 170);
     ctx.fillText('{B}', 75, 110);
     ctx.fillText('{C}', 125, 170);
