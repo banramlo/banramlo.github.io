@@ -102,9 +102,9 @@ Now, let's think about the smallest possible length for $T'\_{uv}$.
 Then, $u$ and $v$ will go only to the parent and the possible most go is right below $\mathcal{A}\_{uv}$.
 One of them may be can be merged to $\mathcal{A}\_{uv}$ but not other can be that.
 Therefore, $T'\_{uv}$ $\ge$
-$4 \cdot 2^{\mathcal{L}_{\mathcal{A}\_{uv}}}$ $=$ 
-$2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2}$ $\ge$
-$2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2} - 4$ $=$
+$4 \cdot 2^{\mathcal{L}\_{\mathcal{A}\_{uv}}}$ $=$ 
+$2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$ $\ge$
+$2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $=$
 $T_{uv}$
 Therefore, claim holds.
 
