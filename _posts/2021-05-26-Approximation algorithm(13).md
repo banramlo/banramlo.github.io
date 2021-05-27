@@ -29,16 +29,20 @@ Notice that this means it's not just in polynomial time but it gives a trivial u
 Now, let's consider the following algorithm.
 
 <div class="alg">
+    $\operatorname{for}$ each pair of vertices $u,v$ in $V$
+    <div class="alg">
+        $P_{uv}$ be the shortest path from $u$ to $v$ in $E$
+    </div>
     $d_{uv}$ be the length of shortest path from $u$ to $v$.<br>
     Find a tree metric $(V',T)$ that approximates $d$<br>
     $\operatorname{for}$ each pair of vertices $u,v$ in $V$
     <div class="alg">
-        $P_{uv}$ be the shortest path from $u$ to $v$ in $T'$
+        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T'$
     </div>
     $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
     $\operatorname{for}$ each pair $s_i, t_i$
     <div class="alg">
-        $\operatorname{for}$ each edge in $P_{s_i t_i}$
+        $\operatorname{for}$ each edge in $P'_{s_i t_i}$
         <div class="alg">
             Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
         </div>
@@ -50,12 +54,12 @@ First of all, we need to show that there is a tree metric.
 Therefore we need to show that $d$ is a pseudometric.
 Notice that most of properties are trivial but only triangular inequality need to be more detial.
 Now, let's think about any path between $(x,y)$ and $(y,z)$.
-Then, $d_{xy}$ $+$ $d_{yz}$ $=$ $\sum\limits_{e \in P_{xy}}l_e$ $+$ $\sum\limits_{e \in P_{yz}}l_e$ $\le$ $\sum\limits_{e \in P_{xz}}l_e$ $=$ $d_{xz}$.
+Then, $d_{xy}$ $+$ $d_{yz}$ $=$ $\sum\limits_{e \in P_{xy}}l_e$ $+$ $\sum\limits_{e \in P_{yz}}l_e$ $\ge$ $\sum\limits_{e \in P_{xz}}l_e$ $=$ $d_{xz}$.
 Notice that concatinating path from $x$ to $y$ and path from $y$ to $z$ is a path from $x$ to $z$.
 Which means at least longer or equal than "shortest" path from $x$ to $z$.
 
 Now, problem is that we need to go through some $x$ that was not in $V$ but is in $V'$.
-Therefore, we need to remove every such an vertex.
+Therefore, we need to remove every such vertices.
 
 Here is another algorithm that change a tree to another tree.
 <div class="alg">
