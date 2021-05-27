@@ -215,10 +215,16 @@ $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$.
 
 Then, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V) 2^{i + 3}$.
 
-Notice that $\operatorname{argmax}\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V)2^{i + 3}$ is the $\mathcal{A}_{uv}$ .
+Notice that $\operatorname{argmax}\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V)2^{i + 3}$ is the $\mathcal{A}_{uv}$.
 
 Therefore, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V) 2^{i + 3}$
 $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v)) 2^{i + 3}$.
+
+Then, $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$.
+Notice that $E[T_{uv}]$ is an expectation of length from $u$ to $v$.
+Which maens it will depend on the probability of is that $w$ on $i$th iteration settles $u$ and $v$.
+In other world "$Pr[X_{iw}(u,v) \cap S_{iw}(u,v)]$" is that.
+Then, corresponding length will be $2^{i + 3}$.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
