@@ -223,7 +223,7 @@ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\
 Now if we go back to the algorithm, there are two random events at the algorithm which are "picking $r_0$" and "picking a random permutation $\pi$".
 Therefore, we can average on certain path to select $T_{uv}$.
 Then, $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$.
-Notice that existance of $X_{iw}(u,v) \cap S_{iw}(u,v)$ for $w$ $\in$ $V$ on level $i$ will be depend on random varaibles and other things are constant.
+Notice that existance of $X_{iw}(u,v) \cap S_{iw}(u,v)$ for $w$ $\in$ $V$ on level $i$ will be depend on random varaibles and other things are indepedent with the random variable.
 
 Now, let's consider followings.
 
@@ -244,14 +244,14 @@ Notice that $\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap
 Notice that $\bigcup\limits_{i=0}^{\log_2 \Delta - 1}[2^{i-1}, 2^i)$ $=$ $[2^{-1}, 2^{\log_2 \Delta - 1})$ $=$ $[2^{-1}, 2^{-1}\Delta)$ $=$ $[2^{-1}, 2^{-1}2\max_{u,v \in V}d_{uv})$ $=$ $[2^{-1}, \max_{u,v \in V}d_{uv})$ $\supseteq$ set of possible $d_{uv}$ for all $u,v$ $\in$ $V$.
 Which means it will see all possible area.
 
-Now, let's think about list $\mathbb{L}$ from $V$ such that is sorted in the order $\min(d_{ux}, d_{vx})$ for $x$ $\in$ $\mathbb{L}$.
-Now, think about 3 things.
+Now, let's think about list $\mathbb{L}$ from $V$ such that sorted in the order $\min(d_{ux}, d_{vx})$ for $x$ $\in$ $\mathbb{L}$.
+Now, think about 2 things.
 
 1. Some $w$ $\in$ $V$ such that $w$ cuts $u$ and $v$.
 2. Let's denote $w$'s level as $i$.
 3. Let's denote $w$'s index in $\mathcal{L}$ is $\mathcal{I}_w$
 
-Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has index less than $\mathcal{I}_w$.
+Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has index less than $\mathcal{I}\_w$.
 Notice that $\min(d_{uz}, d_{vz})$ $\le$ $\min(d_{uw}, d_{vw})$ $\le$ $r_i$ because it is sorted by $\min(d_{ux}, d_{vx})$ and $w$ cuts $u$ and $v$.
 Then, $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}_w}$ because $w$ need to be placed in $\pi$ more previous than all such $z$s.
 Notice that there are at least $\mathcal{I}_w$ candiadates that can cut $u$ and $v$ and $w$ need to be the first on $\pi$ to settle $u$ and $v$.
