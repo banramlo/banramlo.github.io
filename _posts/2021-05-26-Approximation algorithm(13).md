@@ -81,8 +81,8 @@ Here is another algorithm that gives a tree from metric.
 </div>
 
 Then, this algorithm returns a tree metric on $V$ such that $T_{uv}$ $\le$ 
-$T'_{uv}$ $\le$ 
-$4T_{uv}$ for all $u,v$ $\in$ $V$.
+$T'\_{uv}$ $\le$ 
+$4T\_{uv}$ for all $u,v$ $\in$ $V$.
 Notice that $T$ above is a result of original tree metric approximation algorithm.
 Proof is like follow.
 
