@@ -205,7 +205,7 @@ To show this, there some terminologies to define.
 3. We say $w$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(w, r_i)$.
 4. $X_{iw}$ be the event that $w$ cuts $(u, v)$ on level $i$.
 5. $S_{iW}$ be the event that $w$ settles $(u, v)$ on level $i$.
-6. $\mathbb{1}_X$ is an indicator fuction such that $\mathbb{1}_X(x)$ $=$ $\cases{1, x \in X \cr 0, x \not\in X}$. 
+6. $\mathbb{1}(x)$ is an indicator fuction such that $1$ if $x$ is true $0$ otherwise.
 
 First, $T_{uv}$ $=$ 
 $2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}\_{uv}}}2^k$ $=$ 
@@ -213,7 +213,7 @@ $2(2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 1} - 2)$ $=$
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $\le$ 
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$.
 
-Then, $T_{uv}$ $\le$ $max\limits_{i = 0}^{\log_2 \Delta - 1}$
+Then, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw} \cap S_{iw} \text{ for } w \in V)$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
