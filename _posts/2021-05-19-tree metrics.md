@@ -179,7 +179,9 @@ Which also means that level $\log_2 \Delta$ will contain entire $V$ because $r_{
 Now, let's denote some terminologies for a node $n$ in the $(V', T)$.
 1. $\mathcal{L}_n$ is the level of the $n$. Notice that level of root node is $\log_2 \Delta$ and level of leaf node is $0$.
 2. $\mathcal{S}_n$ is the set of vertices which the corresponding hyper sphere includes.
-3. $\mathbb{1}(X)$ is a identicator that is $1$ if X is true otherwise $0$.
+3. $\mathcal{A}_{uv}$ is the least common ancestor of $u$ and $v$.
+4. $\mathcal{P}_{uvi}$ is the first vertex in permutation $\pi$ such that at least one of $u$ and $v$ is in the ball $B(\mathcal{P}_{uvi}, r_i)$.
+5. We say $\mathcal{P}_{uvi}$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the ball $B(\mathcal{P}_{uvi}, r_i)$.
 
 Then, there are some facts.
 1. $d_{yz}$ $\le$ $2r_{\mathcal{L}_n}$ for any $y,z$ $\in$ $\mathcal{S}_n$ becuase it should be in the same hyper sphere.
@@ -193,9 +195,18 @@ Now, other cases are $d_{uv}$ $\ge$ $4$.
 Frist, $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ because RHS is bigger than a binary representation of $d_{uv}$.
 Then, $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ $=$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $1$ $\le$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $=$ $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $\le$ $T_{uv}$.
 Notice that last inequality comes from the fact 2 above.
-If we think about path from $u$ to $v$, it should go to at least $[\log_2 d_{uv}]$ because it can't belongs to untill level $[\log_2 d_{uv}] - 1$.
+If we think about path from $u$ to $v$, it should go to at least level $[\log_2 d_{uv}]$ because it can't belongs to the same node untill level $[\log_2 d_{uv}] - 1$.
 Also, $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ is a sum of length from $u$ to $v$ via level $[\log_2 d_{uv}]$.
 Therefore, claim holds.
+
+Now there are only one thing to show that $E[T_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
+
+To show this, there few tools to show.
+First, $T_{uv}$ $=$ $2\sum_{k=1}^{\mathcal{L}_{\mathcal{A}_{uv}}}2^k$
+$=$ $2(2^{\mathcal{L}_{\mathcal{A}_{uv}} + 1} - 2)$
+$=$ $2^{\mathcal{L}_{\mathcal{A}_{uv}} + 2} - 4$
+$\le$ $2^{\mathcal{L}_{\mathcal{A}_{uv}} + 2}$.
+
 
 
 {: .box-note}
