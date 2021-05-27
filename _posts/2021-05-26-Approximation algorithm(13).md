@@ -86,7 +86,7 @@ $4T\_{uv}$ for all $u,v$ $\in$ $V$.
 Notice that $T$ above is a result of original tree metric approximation algorithm.
 Proof is like follow.
 
-First, $T'\_{uv}$ $\le$ $T\_{uv}$ untill we multiply 4 until we only merge the vertices.
+First, $T'\_{uv}$ $\le$ $T\_{uv}$ untill we multiply 4 because we only merge the vertices.
 Therefore, $T'\_{uv}$ $\le$ $4T\_{uv}$ is true at the end of the algorithm.
 
 Now, let's recap some facts from the tree metric $T$.
@@ -94,14 +94,14 @@ Now, let's recap some facts from the tree metric $T$.
 1. $\mathcal{L}_n$ is the level of the $n$. Notice that level of root node is $\log_2 \Delta$ and level of leaf node is $0$.
 2. $\mathcal{A}_{uv}$ is the least common ancestor of $u$ and $v$.
 
-$T_{uv}$ $=$ 
+Then, $T_{uv}$ $=$ 
 $2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}\_{uv}}}2^k$ $=$ 
 $2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2} - 4$ is true.
 
-Now, let's think about the smallest possible length for $T'_{uv}$.
+Now, let's think about the smallest possible length for $T'\_{uv}$.
 Then, $u$ and $v$ will go only to the parent and the possible most go is right below $\mathcal{A}_{uv}$.
 One of them may be can be merged to $\mathcal{A}_{uv}$ but not other can be that.
-Therefore, $T'_{uv}$ $\ge$
+Therefore, $T'\_{uv}$ $\ge$
 $4 \cdot 2^{\mathcal{L}_{\mathcal{A}\_{uv}}}$ $=$ 
 $2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2}$ $\ge$
 $2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2} - 4$ $=$
