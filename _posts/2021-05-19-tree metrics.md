@@ -205,7 +205,7 @@ To show this, there some terminologies to define.
 3. We say $w$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(w, r_i)$.
 4. $X_{iw}$ be the event that $w$ cuts $(u, v)$ on level $i$.
 5. $S_{iW}$ be the event that $w$ settles $(u, v)$ on level $i$.
-6. $\mathfrak{1}(X)$ is an indicator that is $1$ if $X$ is true $0$ otherwise.
+6. $\mathbb{1}(X)$ is an indicator that is $1$ if $X$ is true $0$ otherwise.
 
 First, $T_{uv}$ $=$ 
 $2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}\_{uv}}}2^k$ $=$ 
