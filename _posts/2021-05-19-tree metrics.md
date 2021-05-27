@@ -242,6 +242,7 @@ $16\left\vert [d_{uw}, d_{vw}) \right\vert$ for any $w$.
 Notice that $\bigcup\limits_{i=0}^{\log_2 \Delta - 1}[2^{i-1}, 2^i)$ $=$ $[2^{-1}, 2^{\log_2 \Delta - 1})$ $=$ $[2^{-1}, 2^{-1}\Delta)$ $=$ $[2^{-1}, 2^{-1}2\max_{u,v \in V}d_{uv})$ $=$ $[2^{-1}, \max_{u,v \in V}d_{uv})$ $\supseteq$ set of possible $d_{uv}$ for all $u,v$ $\in$ $V$.
 Which means it will see all possible area.
 Notice that $d_{uv}$ $\ge$ $1$ and $Pr[X_{iw}(u,v)]$ means probability that $w$ on level $i$ will cut $u$ and $v$.
+As a result, $Pr[X_{iw}(u,v)]$ $=$ $16\left\vert [d_{uw}, d_{vw}) \right\vert$ $=$ $16(d_{vw} - d{uw})$ $\le$ $16(d_{vu} + d_{uw} - d_{uw})$ $=$ $16d_{vu}$ $=$ $16d_{uv}$ from the triangular inequality.
 
 Now, let's think about list $\mathbb{L}$ from $V$ such that sorted in the order $\min(d_{ux}, d_{vx})$ for $x$ $\in$ $\mathbb{L}$.
 Now, think about 2 things.
@@ -258,18 +259,26 @@ Moreover, $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\sum\l
 Notice that if we fix $i$, $\mathcal{I}\_w$ will be some arbitrary order of vertices.
 However that will be still fixed in some way after set-up random variables.
 Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{w \in V : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}\frac{1}{k}$ $=$ $\sum\limits_{k = 1 : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
+Finally, notice that $\mathcal{I}_w$ doesn't depend on $i$ because it only depend on $\min(d\_{ux}, d\_{vx})$.
+Infact, it doesn't even depend on any random varaible.
 
-Now, following 3 things are true for summary.
+Now, following 4 things are true for summary.
 1. $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$
-2. $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}(u,v)]2^{i + 3}$ $=$ $16\left\vert [d_{uw}, d_{vw}) \right\vert$
-3. $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$
+2. $\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)]2^{i + 3}$ $\le$ $16d_{uv}$
+3. $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}\_w}$
+4. $\sum\limits_{w \in V} \frac{1}{\mathcal{I}\_w}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$
 
 As a result, $E[T_{uv}]$ $\le$
 $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$ $=$
 $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]Pr[X_{iw}(u,v)] 2^{i + 3}$ $=$
-$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]Pr[X_{iw}(u,v)] 2^{i + 3}$ $\le$
-$\sum\limits_{w \in V}b_w\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)] 2^{i + 3}$ $=$
-$16d_{uw}\sum\limits_{w \in V}b_w$ $=$ $O(\log n)d_{uv}$
+$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)]2^{i + 3} Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$
+$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)]2^{i + 3}\frac{1}{\mathcal{I}\_w}$ $=$
+$\sum\limits_{w \in V}\frac{1}{\mathcal{I}\_w}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)]2^{i + 3}$ $\le$
+$\sum\limits_{w \in V}\frac{1}{\mathcal{I}\_w}16d_{uv}$ $=$
+$16d_{uv}\sum\limits_{w \in V} \frac{1}{\mathcal{I}\_w}$ $\le$
+$16d{uv}(\ln \left\vert V \right\vert + 1)$ $=$ $O(\ln \left\vert V \right\vert)d_{uv}$.
+
+Therefore, claim holds.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
