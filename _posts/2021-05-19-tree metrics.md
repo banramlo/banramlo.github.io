@@ -223,7 +223,7 @@ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\
 Now if we go back to the algorithm, there are two random events at the algorithm which are "picking $r_0$" and "picking a random permutation $\pi$".
 Therefore, we can average on certain path to select $T_{uv}$.
 Then, $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$.
-Notice that existance of such an $w$ will be depend on random varaibles and other things are constant.
+Notice that existance of $X_{iw}(u,v) \cap S_{iw}(u,v)$ for $w$ $\in$ $V$ on level $i$ will be depend on random varaibles and other things are constant.
 
 Now, let's consider followings.
 
