@@ -61,12 +61,13 @@ Which means at least longer or equal than "shortest" path from $x$ to $z$ in oth
 Now, problem is that we need to go through some $x$ that was not in $V$ but is in $V'$.
 Therefore, we need to remove every such vertices.
 
-Here is another algorithm that change a tree to another tree.
+Here is another algorithm that gives a tree from metric.
 <div class="alg">
-    $\operatorname{fit}$(V, V',T)
+    $\operatorname{fit}$(V, d)<br>
+    Find a tree metric $(V',T)$ that approximates $d$<br>
     <div class="alg">
         $T' \leftarrow T$<br>
-        $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ $\in$ $T'$ and $w$ $\not\in$ $V$
+        $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ $\in$ $V'$ and $w$ $\not\in$ $V$
         <div class="alg">
             Merge $v$ and $w$ to $v$
         </div>
