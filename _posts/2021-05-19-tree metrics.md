@@ -253,7 +253,7 @@ Now, think about 2 things.
 
 Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has index less than $\mathcal{I}\_w$.
 Notice that $\min(d_{uz}, d_{vz})$ $\le$ $\min(d_{uw}, d_{vw})$ $\le$ $r_i$ because it is sorted by $\min(d_{ux}, d_{vx})$ and $w$ cuts $u$ and $v$.
-Then, $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}_w}$ because $w$ need to be placed in $\pi$ more previous than all such $z$s.
+Then, $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}\_w}$ because $w$ need to be placed in $\pi$ more previous than all such $z$s.
 Notice that there are at least $\mathcal{I}_w$ candiadates that can cut $u$ and $v$ and $w$ need to be the first on $\pi$ to settle $u$ and $v$.
 Moreover, $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\sum\limits_{w \in V}\frac{1}{\mathcal{I}_w}$ for a fixed $i$.
 Notice that if we fix $i$, $\mathcal{I}_w$ will be some arbitrary order of vertices.
