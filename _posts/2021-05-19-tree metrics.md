@@ -40,7 +40,7 @@ Proof is like follow.
 Consider the following algorithm where $B(x, r)$ is a hypersphere with the center at $x$ and radius of $r$.
 <div class="alg">
     Pick $r_0$ $\in$ $[\frac{1}{2}, 1)$ uniformly at random<br>
-    Choose $\Delta$ as the smallest power of two greater or equal than 2$\max_{u,v \in V}d_{uv}$<br>
+    Choose $\Delta$ as the smallest power of two greater or equal than $2\max_{u,v \in V}d_{uv}$<br>
     Let $r_i$ $=$ $2^ir_0$ for $1$ $\le$ $i$ $\le$ $\log_2 \Delta$<br>
     Pick a permutation $\pi$ of $v$ uniformly at random<br>
     $\mathcal{C}(\log_2 \Delta) \leftarrow \{V\}$<br>
@@ -172,6 +172,16 @@ Returned tree metric can be like follow.<br>
 
 Note that each node at level 0 corresponding to a singleton and every vertex in $V$ appears exactly once.
 The reason is there can't be more than center itself because $r_0$ $<$ $1$ $\ge$ $d_{uv}$ for all $u,v$ $\in$ $V$.
+Notice that every vertex at level $i$, they are belongs to a hyper sphere of radius $r_i$ centered one of vertex in side of the set.
+Which is also true for root node because $r_{\log_2 \Delta}$ $=$ $2^{\log_2 \Delta} r_0$ $\ge$ $2^{\log_2 \Delta} \frac{1}{2}$ $=$ $\Delta \frac{1}{2}$ $\ge$ $2\max_{u,v \in V}d_{uv}\frac{1}{2}$ $=$ $\max_{u,v \in V}d_{uv}$.
+
+Now, let's denote some terminologies for a ndoe $n$ in the $(V', T)$.
+1. $\mathcal{L}_n$ is the level of the $n$. Notice that level of root node is $\log_2 \Delta$ and level of leaf node is $0$.
+2. $\mathcal{S}_n$ is the set of vertices which the corresponding hyper sphere includes.
+
+Then, there are some facts.
+1. $d_{yz}$ $\le$ $2r_{\mathcal{L}_n}$ for any $y,z$ $\in$ $\mathcal{S}_n$ becuase it should be in the same hyper sphere.
+2. For any $u,v$ $\in$ $V$, they can't belongs to the same node at level $[\log_2 d_{uv}] - 1$ because otherwise $d_{uv}$ $\le$ $2r_{[\log_2 d_{uv}] - 1}$ $=$ $2 \cdot 2^{[\log_2 d_{uv}] - 1}r_0$ $\le$ $2 \cdot 2^{\log_2 d_{uv} + 1 - 1}r_0$ $=$ $2^{\log_2 d_{uv}}r_0$ $=$ $d_{uv}r_0$ $<$ $d_{uv}$ which is a contradiction.
 
 
 {: .box-note}
