@@ -17,7 +17,7 @@ One thing that makes this problem interesting is that there is a cost function $
 3. $f$ is subadditive which means $f(x + y)$ $\le$ $f(x)$ $+$ $f(y)$ for all $x, y$ $\in$ $\mathbb{N}$
 
 Now problem asks to find $k$ pahts from $s_i$ to $t_i$ with capacity $c:E \rightarrow \mathbb{N}$
-to minimize $\sum\limits_{e \in E}f(e)l_e$
+to minimize $\sum\limits_{e \in E}f(c_e)l_e$
 such that for any edge we can send $d_i$ units of commodity from $s_i$ to $t_i$ at the same time without violating $c$.
 
 Notice that this algorithm can be solved in polynomial time if $G$ is tree.
