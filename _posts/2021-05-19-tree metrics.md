@@ -249,16 +249,16 @@ Now, think about 2 things.
 
 1. Some $w$ $\in$ $V$ such that $w$ cuts $u$ and $v$.
 2. Let's denote $w$'s level as $i$.
-3. Let's denote $w$'s index in $\mathcal{L}$ is $\mathcal{I}_w$
+3. Let's denote $w$'s index in $\mathbb{L}$ is $\mathcal{I}_w$
 
-Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has index less than $\mathcal{I}\_w$.
+Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has less index than $\mathcal{I}\_w$.
 Notice that $\min(d_{uz}, d_{vz})$ $\le$ $\min(d_{uw}, d_{vw})$ $\le$ $r_i$ because it is sorted by $\min(d_{ux}, d_{vx})$ and $w$ cuts $u$ and $v$.
 Then, $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}\_w}$ because $w$ need to be placed in $\pi$ more previous than all such $z$s.
 Notice that there are at least $\mathcal{I}\_w$ candiadates that can cut $u$ and $v$ and $w$ need to be the first on $\pi$ to settle $u$ and $v$.
 Moreover, $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\sum\limits_{w \in V}\frac{1}{\mathcal{I}\_w}$ for a fixed $i$.
 Notice that if we fix $i$, $\mathcal{I}\_w$ will be some arbitrary order of vertices.
 However that will be still fixed in some way after set-up random variables.
-Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{k = 1 : \mathcal{I}\_w = k, w \text{ cuts } $u$ \text{ and } $v$}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
+Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{k = 1 : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
 
 Now, following 3 things are true for summary.
 1. $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$
