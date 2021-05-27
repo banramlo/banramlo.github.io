@@ -187,7 +187,8 @@ Then, there are some facts.
 
 Then, $T_{uv}$ $\ge$ $d_{uv}$ is true.
 Proof is like follow.
-If $d_{uv}$ $<$ $4$ then, $T_{uv}$ $\ge$ $d_{uv}$ because $T_{uv}$ $\ge$ $4$ because all edges in the $T$ is bigger or equal than $2$ and there should be at least one parent to go $v$ from $u$.
+If $d_{uv}$ $<$ $4$ then, $T_{uv}$ $\ge$ $d_{uv}$ because $T_{uv}$ $\ge$ $4$.
+Notice that $T_{uv}$ $\ge$ $4$ is true because all edges in the $T$ is bigger or equal than $2$ and there should be at least one parent to go $v$ from $u$.
 Now, other cases are $d_{uv}$ $\ge$ $4$ since all $d_{uv}$ $\ge$ $1$.
 Frist, $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ because RHS is bigger than a binary representation of $d_{uv}$.
 Then, $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ $=$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $1$ $\le$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $=$ $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $\le$ $T_{uv}$.
