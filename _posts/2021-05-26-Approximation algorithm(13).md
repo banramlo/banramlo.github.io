@@ -82,7 +82,6 @@ Here is another algorithm that gives a tree from metric.
     </div>
 </div>
 
-
 If given metric is like follow.<br>
 <canvas id="canvas1" width="200" height="200" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML canvas tag.</canvas><br>
@@ -223,7 +222,6 @@ Then, other tree metric $T'$ can be like follow.<br>
     ctx.fillText('{C}', 125, 170);
     ctx.fillText('{D}', 100, 40);
 </script>
-
 
 Then, this algorithm returns a tree metric on $V$ such that $T_{uv}$ $\le$ 
 $T'\_{uv}$ $\le$ 
