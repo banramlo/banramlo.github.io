@@ -179,11 +179,14 @@ Which also means that level $\log_2 \Delta$ will contain entire $V$ because $r_{
 Now, let's denote some terminologies for a node $n$ in the $(V', T)$.
 1. $\mathcal{L}_n$ is the level of the $n$. Notice that level of root node is $\log_2 \Delta$ and level of leaf node is $0$.
 2. $\mathcal{S}_n$ is the set of vertices which the corresponding hyper sphere includes.
+3. $\mathbb{1}(X)$ is a identicator that is $1$ if X is true otherwise $0$.
 
 Then, there are some facts.
 1. $d_{yz}$ $\le$ $2r_{\mathcal{L}_n}$ for any $y,z$ $\in$ $\mathcal{S}_n$ becuase it should be in the same hyper sphere.
-2. For any $u,v$ $\in$ $V$, they can't belongs to the same node at level $[\log_2 d_{uv}] - 1$ because otherwise $d_{uv}$ $\le$ $2r_{[\log_2 d_{uv}] - 1}$ $=$ $2 \cdot 2^{[\log_2 d_{uv}] - 1}r_0$ $\le$ $2^{[\log_2 d_{uv}]}r_0$ $=$ $2^{\log_2 d_{uv}}r_0$ $=$ $d_{uv}r_0$ $<$ $d_{uv}$ which is a contradiction.
+2. For any $u,v$ $\in$ $V$, they can't belongs to the same node at level $[\log_2 d_{uv}] - 1$ because otherwise $d_{uv}$ $\le$ $2r_{[\log_2 d_{uv}] - 1}$ $=$ $2 \cdot 2^{[\log_2 d_{uv}] - 1}r_0$ $=$ $2^{[\log_2 d_{uv}]}r_0$ $\le$ $2^{\log_2 d_{uv}}r_0$ $=$ $d_{uv}r_0$ $<$ $d_{uv}$ which is a contradiction.
 
+Then, $T_{uv}$ $\ge$ $2\sum\limits_{k = 0}^{[\log_2 d_{uv}]}2^{k + 1}$ $=$ $4\sum\limits_{k = 0}^{[\log_2 d_{uv}]}2^k$ $\ge$ $d_{uv}$ from the fact 2.
+Notice that $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]}2^k$ because RHS is bigger than a binary representation of LHS.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
