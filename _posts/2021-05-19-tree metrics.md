@@ -201,8 +201,10 @@ Now there are only one thing to show that $E[T_{uv}]$ $\le$ $O(\ln \left\vert V 
 To show this, there some terminologies to define.
 
 1. $\mathcal{A}_{uv}$ is the least common ancestor of $u$ and $v$.
-2. $\mathcal{P}_{uvi}$ is the first vertex in permutation $\pi$ such that at least one of $u$ and $v$ is in the hypersphere $B(\mathcal{P}_{uvi}, r_i)$.
-3. We say $\mathcal{P}_{uvi}$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(\mathcal{P}_{uvi}, r_i)$.
+2. $\mathcal{P}_{uvi}$ is the first vertex in permutation $\pi$ such that at least one of $u$ and $v$ is in the hypersphere
+$B(\mathcal{P}_{uvi}, r_i)$.
+3. We say $\mathcal{P}_{uvi}$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere
+$B(\mathcal{P}_{uvi}, r_i)$.
 
 First, $T_{uv}$ $=$
 $2\sum_{k=1}^{\mathcal{L}_{\mathcal{A}_{uv}}}2^k$ $=$
