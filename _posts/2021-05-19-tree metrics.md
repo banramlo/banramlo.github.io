@@ -170,10 +170,11 @@ Returned tree metric can be like follow.<br>
     ctx.fillText('{D}', 175, 170);
 </script>
 
+Now, following is true if we call the deepest nodes as level 0 and level $i$'s parent as level $i + 1$.
 Note that each node at level 0 corresponding to a singleton and every vertex in $V$ appears exactly once.
-The reason is there can't be more than center itself because $r_0$ $<$ $1$ $\ge$ $d_{uv}$ for all $u,v$ $\in$ $V$.
-Notice that every vertex at level $i$, they are belongs to a hyper sphere of radius $r_i$ centered one of vertex in side of the set.
-Which is also true for root node because $r_{\log_2 \Delta}$ $=$ $2^{\log_2 \Delta} r_0$ $\ge$ $2^{\log_2 \Delta} \frac{1}{2}$ $=$ $\Delta \frac{1}{2}$ $\ge$ $2\max_{u,v \in V}d_{uv}\frac{1}{2}$ $=$ $\max_{u,v \in V}d_{uv}$.
+The reason is that there can't be more than center itself because $r_0$ $<$ $1$ $\le$ $d_{uv}$ for all $u,v$ $\in$ $V$.
+Notice that every vertex at level $i$ are belong to a hyper sphere of radius $r_i$ centered one of vertex in side of the set.
+Which also means that level $\log_2 \Delta$ will contain entire $V$ because $r_{\log_2 \Delta}$ $=$ $2^{\log_2 \Delta} r_0$ $\ge$ $2^{\log_2 \Delta} \frac{1}{2}$ $=$ $\Delta \frac{1}{2}$ $\ge$ $2\max_{u,v \in V}d_{uv}\frac{1}{2}$ $=$ $\max_{u,v \in V}d_{uv}$.
 
 Now, let's denote some terminologies for a ndoe $n$ in the $(V', T)$.
 1. $\mathcal{L}_n$ is the level of the $n$. Notice that level of root node is $\log_2 \Delta$ and level of leaf node is $0$.
