@@ -231,18 +231,18 @@ With out loosing generality, let's assume that $d_{uw}$ $\le$ $d_{vw}$ for $w$ t
 Then, $d_{uw}$ $\le$ $r_i$ $<$ $d_{vw}$ because $u$ should be in $B(w, r_i)$ and $v$ shouldn't.
 With above, we need to select $r_i$ uniformly at random with $2^ir_0$.
 Then we will pick $r_i$ in $[2^{i-1},2^i)$ because we will pick $r_0$ in $[\frac{1}{2}, 1)$. 
-Now, let's think about the $Pr[X_{iw}]$.
-Then, $Pr[X_{iw}]$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{\left\vert [2^{i-1}, 2^i \right\vert}$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{2^{i-1}}$.
-As a result, $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}]2^{i + 3}$ $=$ 
-$\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{\left\vert [2^{i-1}, 2^i \right\vert}2^{i + 3}$ $=$
+Now, let's think about the $Pr[X_{iw}(u,v)]$.
+Then, $Pr[X_{iw}(u,v)]$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{\left\vert [2^{i-1}, 2^i \right\vert}$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{2^{i-1}}$.
+As a result, $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}(u,v)]2^{i + 3}$ $=$ 
 $\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{2^{i-1}}2^{i + 3}$ $=$
+$\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{2^{i + 3}}{2^{i-1}}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
 $2^4\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
-$16\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
 $16\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
 $16\left\vert [d_{uw}, d_{vw}) \right\vert$ for any $w$.
 Notice that $\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$ $\left\vert [d_{uw}, d_{vw}) \right\vert$.
 Notice that $\bigcup\limits_{i=0}^{\log_2 \Delta - 1}[2^{i-1}, 2^i)$ $=$ $[2^{-1}, 2^{\log_2 \Delta - 1})$ $=$ $[2^{-1}, 2^{-1}\Delta)$ $=$ $[2^{-1}, 2^{-1}2\max_{u,v \in V}d_{uv})$ $=$ $[2^{-1}, \max_{u,v \in V}d_{uv})$ $\supseteq$ set of possible $d_{uv}$ for all $u,v$ $\in$ $V$.
 Which means it will see all possible area.
+Notice that $d_{uv}$ $\ge$ $1$ and $Pr[X_{iw}(u,v)]$ means probability that $w$ on level $i$ will cut $u$ and $v$.
 
 Now, let's think about list $\mathbb{L}$ from $V$ such that sorted in the order $\min(d_{ux}, d_{vx})$ for $x$ $\in$ $\mathbb{L}$.
 Now, think about 2 things.
@@ -262,7 +262,7 @@ Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\l
 
 Now, following 3 things are true for summary.
 1. $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$
-2. $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}]2^{i + 3}$ $=$ $16\left\vert [d_{uw}, d_{vw}) \right\vert$
+2. $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}(u,v)]2^{i + 3}$ $=$ $16\left\vert [d_{uw}, d_{vw}) \right\vert$
 3. $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$
 
 As a result, $E[T_{uv}]$ $\le$
