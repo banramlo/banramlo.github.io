@@ -183,16 +183,18 @@ Now, let's denote some terminologies for a node $n$ in the $(V', T)$.
 
 Then, there are some facts.
 1. $d_{yz}$ $\le$ $2r_{\mathcal{L}_n}$ for any $y,z$ $\in$ $\mathcal{S}_n$ becuase it should be in the same hyper sphere.
-2. For any $u,v$ $\in$ $V$, they can't belongs to the same node at level $[\log_2 d_{uv}]$ because otherwise $d_{uv}$ $\le$ $2r_{[\log_2 d_{uv}] - 1}$ $=$ $2 \cdot 2^{[\log_2 d_{uv}] - 1}r_0$ $=$ $2^{[\log_2 d_{uv}]}r_0$ $\le$ $2^{\log_2 d_{uv}}r_0$ $=$ $d_{uv}r_0$ $<$ $d_{uv}$ which is a contradiction.
+2. For any $u,v$ $\in$ $V$, they can't belongs to the same node at level $[\log_2 d_{uv}] - 1$ because otherwise $d_{uv}$ $\le$ $2r_{[\log_2 d_{uv}] - 1}$ $=$ $2 \cdot 2^{[\log_2 d_{uv}] - 1}r_0$ $=$ $2^{[\log_2 d_{uv}]}r_0$ $\le$ $2^{\log_2 d_{uv}}r_0$ $=$ $d_{uv}r_0$ $<$ $d_{uv}$ which is a contradiction.
 
 Then, $T_{uv}$ $\ge$ $d_{uv}$ is true.
 Proof is like follow.
 If $d_{uv}$ $<$ $4$ then, $T_{uv}$ $\ge$ $d_{uv}$ because $T_{uv}$ $\ge$ $4$.
 Notice that $T_{uv}$ $\ge$ $4$ is true because all edges in the $T$ is bigger or equal than $2$ and there should be at least one parent to go $v$ from $u$.
-Now, other cases are $d_{uv}$ $\ge$ $4$ since all $d_{uv}$ $\ge$ $1$.
+Now, other cases are $d_{uv}$ $\ge$ $4$.
 Frist, $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ because RHS is bigger than a binary representation of $d_{uv}$.
-Then, $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ $=$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $1$ $\le$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $=$ $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $\le$ $T_{uv}$.
-Notice that last equation comes from the fact 2 above.
+Then, $d_{uv}$ $\le$ $\sum\limits_{k = 0}^{[\log_2 d_{uv}]} 2^k$ $=$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $1$ $\le$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $+$ $\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $=$ $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ $\le$ $T_{uv}$.
+Notice that last inequality comes from the fact 2 above.
+If we think about path from $u$ to $v$, it should go to at least $[\log_2 d_{uv}]$ because it can't belongs to untill level $[\log_2 d_{uv}] - 1$.
+Also, $2\sum\limits_{k = 1}^{[\log_2 d_{uv}]} 2^k$ is a sum of length from $u$ to $v$ via level $[\log_2 d_{uv}]$.
 Therefore, claim holds.
 
 
