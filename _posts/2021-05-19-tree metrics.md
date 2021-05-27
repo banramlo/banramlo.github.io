@@ -239,7 +239,6 @@ $\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{2^{i + 3}}{2^{i-1}}\left\vert [2^{i-
 $2^4\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
 $16\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
 $16\left\vert [d_{uw}, d_{vw}) \right\vert$ for any $w$.
-With above, $\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$ $\left\vert [d_{uw}, d_{vw}) \right\vert$.
 Notice that $\bigcup\limits_{i=0}^{\log_2 \Delta - 1}[2^{i-1}, 2^i)$ $=$ $[2^{-1}, 2^{\log_2 \Delta - 1})$ $=$ $[2^{-1}, 2^{-1}\Delta)$ $=$ $[2^{-1}, 2^{-1}2\max_{u,v \in V}d_{uv})$ $=$ $[2^{-1}, \max_{u,v \in V}d_{uv})$ $\supseteq$ set of possible $d_{uv}$ for all $u,v$ $\in$ $V$.
 Which means it will see all possible area.
 Notice that $d_{uv}$ $\ge$ $1$ and $Pr[X_{iw}(u,v)]$ means probability that $w$ on level $i$ will cut $u$ and $v$.
