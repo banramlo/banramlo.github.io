@@ -258,7 +258,7 @@ Notice that there are at least $\mathcal{I}\_w$ candiadates that can cut $u$ and
 Moreover, $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\sum\limits_{w \in V}\frac{1}{\mathcal{I}\_w}$ for a fixed $i$.
 Notice that if we fix $i$, $\mathcal{I}\_w$ will be some arbitrary order of vertices.
 However that will be still fixed in some way after set-up random variables.
-Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{k = 1 : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
+Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{w \in V : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}\frac{1}{k}$ $=$ $\sum\limits_{k = 1 : \mathcal{I}\_w = k, w \text{ cuts } u \text{ and } v}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
 
 Now, following 3 things are true for summary.
 1. $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$
