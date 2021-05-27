@@ -205,10 +205,10 @@ To show this, there some terminologies to define.
 3. We say $\mathcal{P}\_{uvi}$ cut $u$ and $v$ on level $i$ if exactly one of $u$ and $v$ is in the hypersphere $B(\mathcal{P}\_{uvi}, r_i)$.
 
 First, $T_{uv}$ $=$
-$2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}_{uv}}}2^k$ $=$
-$2(2^{\mathcal{L}\_{\mathcal{A}_{uv}} + 1} - 2)$ $=$ 
-$2^{\mathcal{L}\_{\mathcal{A}_{uv}} + 2} - 4$ $\le$ 
-$2^{\mathcal{L}\_{\mathcal{A}_{uv}} + 2}$.
+$2\sum_{k=1}^{\mathcal{L}\_{\mathcal{A}\_{uv}}}2^k$ $=$
+$2(2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 1} - 2)$ $=$ 
+$2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $\le$ 
+$2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$.
 
 
 
