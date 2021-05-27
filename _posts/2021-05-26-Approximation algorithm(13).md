@@ -54,7 +54,7 @@ First of all, we need to show that there is a tree metric.
 Therefore we need to show that $d$ is a pseudometric.
 Notice that most of properties are trivial but only triangular inequality need to be more detial.
 Now, let's think about any path between $(x,y)$ and $(y,z)$.
-Then, $d_{xy}$ $+$ $d_{yz}$ $=$ $\sum\limits_{e \in P_{xy}}l_e$ $+$ $\sum\limits_{e \in P_{yz}}l_e$ $=$ \sum\limits_{e \in P_{xy} \cup P_{yz}}l_e$ $\ge$ $\sum\limits_{e \in P_{xz}}l_e$ $=$ $d_{xz}$.
+Then, $d_{xy}$ $+$ $d_{yz}$ $=$ $\sum\limits_{e \in P_{xy}}l_e$ $+$ $\sum\limits_{e \in P_{yz}}l_e$ $=$ \sum\limits_{e \in P\_{xy} \cup P\_{yz}}l_e$ $\ge$ $\sum\limits_{e \in P_{xz}}l_e$ $=$ $d_{xz}$.
 Notice that concatinating path from $x$ to $y$ and path from $y$ to $z$ is a path from $x$ to $z$.
 Which means at least longer or equal than "shortest" path from $x$ to $z$ in other world $P_{xy} \cup P_{yz}$ $\supseteq$ $P_{xz}$.
 
