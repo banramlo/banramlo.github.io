@@ -56,7 +56,7 @@ Notice that most of properties are trivial but only triangular inequality need t
 Now, let's think about any path between $(x,y)$ and $(y,z)$.
 Then, $d_{xy}$ $+$ $d_{yz}$ $=$
 $\sum\limits_{e \in P_{xy}}l_e$ $+$ $\sum\limits_{e \in P_{yz}}l_e$ $=$
-\sum\limits_{e \in P_{xy} \cup P_{yz}}l\_e$ $\ge$ 
+$\sum\limits_{e \in P_{xy} \cup P_{yz}}l\_e$ $\ge$ 
 $\sum\limits_{e \in P_{xz}}l_e$ $=$ 
 $d_{xz}$.
 Notice that concatinating path from $x$ to $y$ and path from $y$ to $z$ is a path from $x$ to $z$.
@@ -76,6 +76,7 @@ Here is another algorithm that gives a tree from metric.
             Merge $v$ and $w$ to $v$
         </div>
     </div>
+    Multiply the length of every edge of $T'$ by 4<br>
     return $(V, T')$
 </div>
 
