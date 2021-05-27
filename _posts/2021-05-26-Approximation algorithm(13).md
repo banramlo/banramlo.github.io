@@ -102,7 +102,8 @@ $2^{\mathcal{L}_{\mathcal{A}\_{uv}} + 2} - 4$ is true.
 
 Now, let's think about the smallest possible length for $T'\_{uv}$.
 Then, $u$ and $v$ will go only to the parent and the possible most go is right below $\mathcal{A}\_{uv}$.
-One of them may be can be merged to $\mathcal{A}\_{uv}$ but not other can be that.
+One of $u$ and $v$ may be can be merged to $\mathcal{A}\_{uv}$ but not other one of $u$ and $v$ can be $\mathcal{A}\_{uv}$.
+As a result, one of edge from $\mathcal{A}\_{uv}$ to child will still left to exist.
 Therefore, $T'\_{uv}$ $\ge$
 $4 \cdot 2^{\mathcal{L}\_{\mathcal{A}\_{uv}}}$ $=$ 
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$ $\ge$
