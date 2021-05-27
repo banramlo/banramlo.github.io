@@ -214,8 +214,9 @@ $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $\le$
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$.
 
 Then, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V) 2^{i + 3}$.
-Notice that $\operatorname{argmax}\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V)2^{i + 3}$
-is the $\mathcal{A}_{uv}$.
+
+Notice that $\operatorname{argmax}\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V)2^{i + 3}$ is the $\mathcal{A}_{uv}$ .
+
 Therefore, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V) 2^{i + 3}$
 $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v)) 2^{i + 3}$.
 
