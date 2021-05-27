@@ -220,11 +220,57 @@ Notice that $\operatorname{argmax}\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}
 Therefore, $T_{uv}$ $\le$ $\max\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v) \text{ for } w \in V) 2^{i + 3}$
 $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} \mathbb{1}(\exists X_{iw}(u,v) \cap S_{iw}(u,v)) 2^{i + 3}$.
 
+Now if we go back to the algorithm, there are two random events at the algorithm which are "picking $r_0$" and "picking a random permutation $\pi$".
+Therefore, we can average on certain path to select $T_{uv}$.
 Then, $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$.
-Notice that $E[T_{uv}]$ is an expectation of length from $u$ to $v$.
-Which maens it will depend on the probability of is that $w$ on $i$th iteration settles $u$ and $v$.
-In other world "$Pr[X_{iw}(u,v) \cap S_{iw}(u,v)]$" is that.
-Then, corresponding length will be $2^{i + 3}$.
+Notice that existance of such an $w$ will be depend on random varaibles and other things are constant.
+
+Now, let's consider followings.
+
+With out loosing generality, let's assume that $d_{uw}$ $\le$ $d_{vw}$ for $w$ that cuts $u$ and $v$ on level $i$.
+Then, $d_{uw}$ $\le$ $r_i$ $<$ $d_{vw}$ because $u$ should be in $B(w, r_i)$ and $v$ shouldn't.
+With above, we need to select $r_i$ uniformly at random with $2^ir_0$.
+Then we will pick $r_i$ in $[2^{i-1},2^i)$ because we will pick $r_0$ in $[\frac{1}{2}, 1)$. 
+Now, let's think about the $Pr[X_{iw}]$.
+Then, $Pr[X_{iw}]$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{\left\vert [2^{i-1}, 2^i \right\vert}$ $=$ $\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{2^{i-1}}$.
+As a result, $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}]2^{i + 3}$ $=$ 
+$\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{\left\vert [2^{i-1}, 2^i \right\vert}2^{i + 3}$ $=$
+$\sum\limits_{i=0}^{\log_2 \Delta - 1}\frac{\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert}{2^{i-1}}2^{i + 3}$ $=$
+$2^4\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
+$16\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
+$16\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$
+$16\left\vert [d_{uw}, d_{vw}) \right\vert$ for any $w$.
+Notice that $\sum\limits_{i=0}^{\log_2 \Delta - 1}\left\vert [2^{i-1}, 2^i) \cap [d_{uw}, d_{vw}) \right\vert$ $=$ $\left\vert [d_{uw}, d_{vw}) \right\vert$.
+Notice that $\bigcup\limits_{i=0}^{\log_2 \Delta - 1}[2^{i-1}, 2^i)$ $=$ $[2^{-1}, 2^{\log_2 \Delta - 1})$ $=$ $[2^{-1}, 2^{-1}\Delta)$ $=$ $[2^{-1}, 2^{-1}2\max_{u,v \in V}d_{uv})$ $=$ $[2^{-1}, \max_{u,v \in V}d_{uv})$ $\supseteq$ set of possible $d_{uv}$ for all $u,v$ $\in$ $V$.
+Which means it will see all possible area.
+
+Now, let's think about list $\mathbb{L}$ from $V$ such that is sorted in the order $\min(d_{ux}, d_{vx})$ for $x$ $\in$ $\mathbb{L}$.
+Now, think about 3 things.
+
+1. Some $w$ $\in$ $V$ such that $w$ cuts $u$ and $v$.
+2. Let's denote $w$'s level as $i$.
+3. Let's denote $w$'s index in $\mathcal{L}$ is $\mathcal{I}_w$
+
+Then, one of $u$ or $v$ should be in $B(z, r_i)$ for any $z$ that has index less than $\mathcal{I}_w$.
+Notice that $\min(d_{uz}, d_{vz})$ $\le$ $\min(d_{uw}, d_{vw})$ $\le$ $r_i$ because it is sorted by $\min(d_{ux}, d_{vx})$ and $w$ cuts $u$ and $v$.
+Then, $Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\frac{1}{\mathcal{I}_w}$ because $w$ need to be placed in $\pi$ more previous than all such $z$s.
+Notice that there are at least $\mathcal{I}_w$ candiadates that can cut $u$ and $v$ and $w$ need to be the first on $\pi$ to settle $u$ and $v$.
+Moreover, $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\sum\limits_{w \in V}\frac{1}{\mathcal{I}_w}$ for a fixed $i$.
+Notice that if we fix $i$, $\mathcal{I}_w$ will be some arbitrary order of vertices.
+However that will be still fixed in some way after set-up random variables.
+Which means $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $=$ $\sum\limits_{k = 1 : \mathcal{I}_w = k, w \text{ cuts } $u$ \text{ and } $v$}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\sum\limits\_{k = 1}^{\left\vert V \right\vert}\frac{1}{k}$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$.
+
+Now, following 3 things are true for summary.
+1. $E[T_{uv}]$ $\le$ $\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$
+2. $\sum\limits_{i=0}^{\log_2 \Delta - 1}Pr[X_{iw}]2^{i + 3}$ $=$ $16\left\vert [d_{uw}, d_{vw}) \right\vert$
+3. $\sum\limits_{w \in V}Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]$ $\le$ $\ln \left\vert V \right\vert$ $+$ $1$
+
+As a result, $E[T_{uv}]$ $\le$
+$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v) \cap S_{iw}(u,v)] 2^{i + 3}$ $=$
+$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]Pr[X_{iw}(u,v)] 2^{i + 3}$ $=$
+$\sum\limits_{w \in V}\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[S_{iw}(u,v) \vert X_{iw}(u,v)]Pr[X_{iw}(u,v)] 2^{i + 3}$ $\le$
+$\sum\limits_{w \in V}b_w\sum\limits_{i = 0}^{\log_2 \Delta - 1} Pr[X_{iw}(u,v)] 2^{i + 3}$ $=$
+$16d_{uw}\sum\limits_{w \in V}b_w$ $=$ $O(\log n)d_{uv}$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
