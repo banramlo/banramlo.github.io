@@ -264,7 +264,7 @@ $\sum\limits_{e \in T'}f(\sum\limits_{i = 1 : e \in P^{S}\_{s_i t_i}}^{k} d_i)l\
 $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}$.
 
 Notice that $P^{S}\_{s_i t_i}$ may not be simple.
-Then, $E[OPT']$ $=$
+Then, $E[\operatorname{OPT'}]$ $=$
 $E[\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $\le$
 $E[\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
 $E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
@@ -294,7 +294,27 @@ $\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} 
 $\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))d\_{uv}$ $=$
 $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}}d\_{uv}$ $=$
 $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) d\_{xy}$ $\le$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ 
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ $\le$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}$ $=$
+$\operatorname{OPT'}$.
+
+All eqaulities and inequalities except last ineuqality are the same with above.
+Proof for "$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ $\le$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}$" is like follow.
+
+Let's think about "$\mathbb{1}((x,y) \in P'\_{s_i t_i})$" and 
+"$\sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v})$" for some $x, y, i$.
+
+Then first one is $1$ if $(x,y) \in P'\_{s_i t_i}$ and $0$ otherwise.
+Therefore, there is nothing to show if $(x,y) \not\in P'\_{s_i t_i}$.
+Now, let's assume that $(x,y) \in P'\_{s_i t_i}$.
+Then, $P^{\star}\_{s_i t_i}$ should in clude at least $(s_i,t_i)$ or longer path from $s_i$ to $t_i$ for any $i$.
+Which means the cardinarity of $\\{(u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}\\}$ should be bigger or equal than 1.
+Therefore, claim holds.
+
+As a result, $\operatorname{ALG}$ $\le$ $\operatorname{OPT'}$ $\le$ $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
+Therefore claim holds.
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
