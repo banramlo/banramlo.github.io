@@ -65,7 +65,7 @@ Which means at least longer or equal than "shortest" path from $x$ to $z$ in oth
 Now, problem is that we need to go through some $x$ that was not in $V$ but is in $V'$.
 Therefore, we need to remove every such vertices.
 
-Here is another algorithm that gives a tree from metric.
+Here is another algorithm that gives a tree metric from a tree metric.
 <div class="alg">
     $\operatorname{fit}$(V, V', T)<br>
     <div class="alg">
@@ -222,10 +222,10 @@ Now, think about the algorithm follow.
     </div>
     $d_{uv}$ be the length of shortest path from $u$ to $v$.<br>
     Find a tree metric $(V',T)$ that approximates $d$<br>
-    $(V,T)$ $\leftarrow$ $\operatorname{fit}$(V, V', T)<br>
+    $(V,T')$ $\leftarrow$ $\operatorname{fit}(V, V', T)$<br>
     $\operatorname{for}$ each pair of vertices $u,v$ in $V$
     <div class="alg">
-        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T$
+        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T'$
     </div>
     $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
     $\operatorname{for}$ each pair $s_i, t_i$
@@ -240,6 +240,18 @@ Now, think about the algorithm follow.
 
 Then this algorithm is a $O(\log n)$-approximation algorithm.
 Proof is like follow.
+
+Let's denote some terminologies.
+1. $\operatorname{OPT}$ is the optimal solution.
+2. $P^{\star}\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is the shortest path between $s_i$ and $t_i$ from the optimal solution.
+3. $c^{\star}_e$ for $e$ $\in$ $E$ is the capacity of $e$ from the optimal solution.
+4. $P'\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is the unique shortest path between $s_i$ and $t_i$ from the $T'$.
+5. $P^{S}\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is a path that changes $P^{\star}\_{s_i t_i}$'s each edge $(x,y)$ to $P'\_{x, y}$.
+6. $\operatorname{OPT'}$ is the solution from $P^{S}\_{s_i t_i}$.
+
+Notice that $P^{S}\_{s_i t_i}$ may not be simple.
+Then, $E[OPT']$ $=$
+$E[\sum\limits_{(x,y) \in T'}  \sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'_{u v})]$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
