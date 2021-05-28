@@ -254,19 +254,19 @@ $\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^
 4. $P'\_{u v}$ is the unique shortest path between $u$ and $b$ from the $T'$.
 5. $P^{S}\_{u v}$ is a path that changes each edge $(x,y)$ in $P^{\star}\_{u v}$ to $P'\_{x, y}$.
 6. $\operatorname{OPT'}$ is the solution from $P^{S}\_{s_i t_i}$; $\operatorname{OPT'}$ $=$
-$\sum\limits_{e \in T'}f(\sum\limits_{i = 1 : e \in P^{S}\_{s_i t_i}}^{k} d_i)l_e$ $=$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'_{xy}$.
+$\sum\limits_{e \in T'}f(\sum\limits_{i = 1 : e \in P^{S}\_{s_i t_i}}^{k} d_i)l\_e$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}$.
 
 Notice that $P^{S}\_{s_i t_i}$ may not be simple.
 Then, $E[OPT']$ $=$
-$E[\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'_{xy}]$ $\le$
-$E[\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'_{xy}]$ $=$
-$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'_{xy}]$ $=$
-$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} E[ \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} E[ f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) \sum\limits_{(x,y) \in P'\_{u v}}T'_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[ \sum\limits_{(x,y) \in P'\_{u v}}T'_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[T'_{uv}]$ $\le$
+$E[\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $\le$
+$E[\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
+$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
+$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} E[ \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} E[ f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[ \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[T'\_{uv}]$ $\le$
 $\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) O(\ln \left\vert V \right\vert)d_{uv}$ $=$
 $O(\ln \left\vert V \right\vert) \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) d_{uv}$ $=$
 $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
