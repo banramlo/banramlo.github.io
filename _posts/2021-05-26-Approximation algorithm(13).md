@@ -213,8 +213,8 @@ $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $=$
 $T_{uv}$
 Therefore, claim holds.
 
-Notice that this means $d_{uv}$ $\le$ $T_{uv}$ $\le$ $T'\_{uv}$ and $E[T'_{uv}]$ $\le$ $E[4T_{uv}]$ $=$ $4E[T_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
-Therefore, $d_{uv}$ $\le$ $T'\_{uv}$ and $E[T'_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
+Notice that this means $d_{uv}$ $\le$ $T_{uv}$ $\le$ $T'\_{uv}$ and $E[T'\_{uv}]$ $\le$ $E[4T_{uv}]$ $=$ $4E[T_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
+Therefore, $d_{uv}$ $\le$ $T'\_{uv}$ and $E[T'\_{uv}]$ $\le$ $O(\ln \left\vert V \right\vert)d_{uv}$.
 
 Now, think about the algorithm follow.
 
@@ -286,9 +286,9 @@ $\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(x,y) \in 
 $\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $\le$
 $\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
 $\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))T'_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}} T'_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'_{xy}$ $=$
+$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))T'\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}} T'\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ $=$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
