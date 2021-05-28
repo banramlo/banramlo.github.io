@@ -8,7 +8,7 @@ use_math: true
 ---
 
 To show what is semidefinite programming, we need to know what is semidefinite matrix.
-Notice that $x$ $=$ $R^{n}$ $=$ $\begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$.
+Notice that $x$ $=$ $\mathcal{R}^{n}$ $=$ $\begin{pmatrix} x_1 \\\ x_2 \\\ \vdots \\\ x_n \end{pmatrix}$.
 
 1. $\mathcal{S}_n$ is the set of $n$ by $n$ symmetric matrix.
 2. We call symmetric matrix $X$ $\in$ $\mathcal{S}_n$ is positive semidefinite if for all $x \in \mathcal{R}^{n}$, $x^TXx \ge 0$.
@@ -36,7 +36,7 @@ $X$ $=$ $\begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1n} \\\ x_{21} = x_{21} &
 
 Notice that if we think about any semidefinite matrix $A$ and $B$,
 $x^TXx \ge 0$ and $x^TYx \ge 0$ for all $x \in \mathcal{R}^{n}$.
-As a result, $x^T(\lambdaX + (1-\lambda)Y)x \ge 0$ for $0$ $\le$ $\lambda$ $\le$ $1$.
+As a result, $x^T(\lambda X + (1-\lambda)Y)x \ge 0$ for $0$ $\le$ $\lambda$ $\le$ $1$.
 Which means set of semidefinitive matrix is a convex.
 Therefore, we may solve semifefinitive program in a polynomial time.
 

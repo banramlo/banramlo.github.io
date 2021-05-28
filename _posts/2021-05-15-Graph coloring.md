@@ -10,7 +10,7 @@ use_math: true
 We need some definitions and theorems to discuss about the coloring.
 
 ### Definitions
-1. A coloring of grapg $G$ is an assignment of colors to the vertices of $G$.
+1. A coloring of graph $G$ is an assignment of colors to the vertices of $G$.
 In this case, it can be considered as the assignemnts of sets like vertex 1 to set 1 and vetex 2 to set 3 and so-on.
 2. A graph is is $k$-coloring if each vertex is assigned to exactly one of $k$ colors.
 3. A coloring is proper if no two adjacent vertices are assigned to the same color.

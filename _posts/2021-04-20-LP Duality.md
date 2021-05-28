@@ -135,7 +135,7 @@ As a result all of following is true.
 3. $x_1 - 3x_2$ $\le$ $2$
 4. $2x_1 - x_2 + x_3$ $=$ $7$
 
-Now, let's define $X = \begin{pmatrix}y_1 \\\ y_2 \\\ y_3 \\\ y_4 \end{pmatrix}$ and multiply it to all of them.
+Now, let's define $Y = \begin{pmatrix}y_1 \\\ y_2 \\\ y_3 \\\ y_4 \end{pmatrix}$ and multiply it to all of them.
 Then all of following is true.
 Notice that each $y_i$ has positive or negative values to match direction of inequality.
 
@@ -148,7 +148,7 @@ Now, let's sum up all the constraints.
 $(x_2 + 2x_3)y_1$ $+$ $(x_1 - x_2 + x_3)y_2$ $+$ $(x_1 - 3x_2)y_3$ $+$ $(2x_1 - x_2 + x_3)y_4$ $\ge$ $6y_1 + 4y_2 + 2y_3 + 7y_4$.
 Now, just reorder the formula with the $x_1, x_2, x_3$.
 Then, $(y_2 + y_3 + 2y_4)x_1$ $+$ $(y_1 - y_2 - 3y_3 - y_4)x_2$ $+$ $(2y_1 + y_2 + y_4)x_3$ $\ge$ $6y_1 + 4y_2 + 2y_3 + 7y_4$.
-Now, if each of factor of $x_1, x_2, x_3$ is less or greater than original problem then it should be bigger than before.
+Now, if each of factor of $x_1, x_2, x_3$ is less or equal than original problem then it should be less or equal than before.
 
 Therefore, $-x_1 + 3x_2 + x_3$ $\ge$ $(y_2 + y_3 + 2y_4)x_1$ $+$ $(y_1 - y_2 - 3y_3 - y_4)x_2$ $+$ $(2y_1 + y_2 + y_4)x_3$ should hold if followings are true.
 

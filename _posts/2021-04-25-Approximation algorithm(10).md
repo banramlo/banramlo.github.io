@@ -10,7 +10,7 @@ use_math: true
 The uncapacitated facility location problem is a problem to decide which facility to open and how to handle clients for it.
 Notice that every client will just go to the closest facility because there is no capacity limits.
 
-Now, for a given set of facility $F$, clients $D$.
+Now, let's denote a given set of facility as $F$, clients as $D$.
 There are some costs for opening facility $f_i \ge 0$ $\forall i \in F$.
 With this costs, there are some assignment costs $c_{ij} \ge 0$ $\forall i \in F, j \in D$ such that triangular inequality holds.
 Which means $C_{ij}$ $\le$ $C_{il} + C_{kl} + C_{kj}$.
@@ -60,7 +60,7 @@ $v_j \le c_{ij} + w_{ij} $ $\forall i \in F, j \in D$.
 
 Now, we can think it as like follow.
 For each clients, they need to pay some portion of opening cost for a facility they want to go.
-Therefore, let $w_{ij}$ as client $j$'s payment for the portion of opening cost.
+Therefore, let $w_{ij}$ as client $j$'s payment for the portion of opening cost for facility $i$.
 With them, they need to pay costs for assigning them to a facility.
 As a result, $v_j$ is a payment which client $j$ wii do.
 Now, problem is like finding the maximum payment for clients.
