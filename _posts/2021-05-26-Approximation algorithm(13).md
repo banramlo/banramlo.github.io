@@ -67,15 +67,12 @@ Therefore, we need to remove every such vertices.
 
 Here is another algorithm that gives a tree from metric.
 <div class="alg">
-    $\operatorname{fit}$(V, d)<br>
+    $\operatorname{fit}$(V, V', T)<br>
     <div class="alg">
-        Find a tree metric $(V',T)$ that approximates $d$<br>
+        $T' \leftarrow T$<br>
+        $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ was not a left node of $T$
         <div class="alg">
-            $T' \leftarrow T$<br>
-            $\operatorname{while}$ $\exists v \in V$ and $v$'s parent $w$ such that $w$ was not a left node of $T$
-            <div class="alg">
-                Merge $v$ and $w$ to $v$
-            </div>
+            Merge $v$ and $w$ to $v$
         </div>
         Multiply the length of every edge of $T'$ by 4<br>
         return $(V, T')$
@@ -260,7 +257,8 @@ Now, think about the algorithm follow.
         $P_{uv}$ be the shortest path from $u$ to $v$ in $E$
     </div>
     $d_{uv}$ be the length of shortest path from $u$ to $v$.<br>
-    $(V,T)$ $\leftarrow$ $\operatorname{fit}(V, d)$<br>
+    Find a tree metric $(V',T)$ that approximates $d$<br>
+    $(V,T)$ $\leftarrow$ $\operatorname{fit}$(V, V', T)<br>
     $\operatorname{for}$ each pair of vertices $u,v$ in $V$
     <div class="alg">
         $P'_{uv}$ be the shortest path from $u$ to $v$ in $T$
