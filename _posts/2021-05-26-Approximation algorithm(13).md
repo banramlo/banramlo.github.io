@@ -271,9 +271,24 @@ $\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^
 $O(\ln \left\vert V \right\vert) \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) d_{uv}$ $=$
 $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
 
+Notice that following facts.
+First inequality holds because $f$ is subadditive.
+Third equality holds because $P'_{uv}$ $\in$ $T'$.
+Sixth equality holds because $f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i}))$ is independent from $u,v$.
+Seventh equality holds because $\sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}$ is the distance from $u$ to $v$.
+Therefore claim holds.
+
+Simiallary, following is true.
+
 Now let's denote $\operatorname{ALG}$ as the value of the output solution.
 Then, $\operatorname{ALG}$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(x,y) \in T'} \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P_{xy}))d_{uv}$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(x,y) \in T'} \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $\le$
+$\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $\le$
+$\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))T'_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}} T'_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'_{xy}$ $=$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
