@@ -259,16 +259,16 @@ $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in
 
 Notice that $P^{S}\_{s_i t_i}$ may not be simple.
 Then, $E[OPT']$ $=$
-$E[\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $\le$
-$E[\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
-$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
-$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'\_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} E[ \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i}))T'\_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} E[ f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[ \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) E[T'\_{uv}]$ $\le$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) O(\ln \left\vert V \right\vert)d_{uv}$ $=$
-$O(\ln \left\vert V \right\vert) \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) d_{uv}$ $=$
+$E[\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $\le$
+$E[\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
+$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}]$ $=$
+$E[\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i}))T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} E[ \sum\limits_{(x,y) \in P'\_{u v}} f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i}))T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} E[ f(\sum\limits_{i = 1}^{k}d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) E[ \sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}]$ $=$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) E[T'\_{uv}]$ $\le$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) O(\ln \left\vert V \right\vert)d_{uv}$ $=$
+$O(\ln \left\vert V \right\vert) \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i})) d_{uv}$ $=$
 $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
 
 Now let's denote $\operatorname{ALG}$ as the value of the output solution.
