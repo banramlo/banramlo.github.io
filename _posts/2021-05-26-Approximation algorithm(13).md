@@ -249,8 +249,8 @@ Let's denote some terminologies.
 2. $c^{\star}_e$ for $e$ $\in$ $E$ is the capacity of $e$ from the optimal solution.
 3. $\operatorname{OPT}$ is the optimal solution; $\operatorname{OPT}$ $=$ 
 $\sum\limits_{e \in E}f(\sum\limits_{i = 1 : e \in P^{\star}\_{s_i t_i}}^{k} d_i)l_e$ $=$ 
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1 : (u,v) \in P^{\star}\_{s_i t_i}}^{k} d_i)d_{uv}$ $=$
-$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) d_{uv}$.
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1 : (u,v) \in P^{\star}\_{s_i t_i}}^{k} d_i)d\_{uv}$ $=$
+$\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}_{s_i t_i})) d\_{uv}$.
 4. $P'\_{u v}$ is the unique shortest path between $u$ and $b$ from the $T'$.
 5. $P^{S}\_{u v}$ is a path that changes each edge $(x,y)$ in $P^{\star}\_{u v}$ to $P'\_{x, y}$.
 6. $\operatorname{OPT'}$ is the solution from $P^{S}\_{s_i t_i}$; $\operatorname{OPT'}$ $=$
