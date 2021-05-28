@@ -37,7 +37,7 @@ Now, let's consider the following algorithm.
     Find a tree metric $(V',T)$ that approximates $d$<br>
     $\operatorname{for}$ each pair of vertices $u,v$ in $V$
     <div class="alg">
-        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T'$
+        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T$
     </div>
     $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
     $\operatorname{for}$ each pair $s_i, t_i$
@@ -251,6 +251,33 @@ $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2}$ $\ge$
 $2^{\mathcal{L}\_{\mathcal{A}\_{uv}} + 2} - 4$ $=$
 $T_{uv}$
 Therefore, claim holds.
+
+Now, think about the algorithm follow.
+
+<div class="alg">
+    $\operatorname{for}$ each pair of vertices $u,v$ in $V$
+    <div class="alg">
+        $P_{uv}$ be the shortest path from $u$ to $v$ in $E$
+    </div>
+    $d_{uv}$ be the length of shortest path from $u$ to $v$.<br>
+    $(V,T)$ $\leftarrow$ $\operatorname{fit}(V, d)$<br>
+    $\operatorname{for}$ each pair of vertices $u,v$ in $V$
+    <div class="alg">
+        $P'_{uv}$ be the shortest path from $u$ to $v$ in $T$
+    </div>
+    $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
+    $\operatorname{for}$ each pair $s_i, t_i$
+    <div class="alg">
+        $\operatorname{for}$ each edge in $P'_{s_i t_i}$
+        <div class="alg">
+            Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
+        </div>
+    </div>
+    return $c$
+</div>
+
+Then this algorithm is a $O(\log n)$-approximation algorithm.
+Proof is like follow.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
