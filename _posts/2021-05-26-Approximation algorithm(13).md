@@ -310,13 +310,14 @@ Let's think about "$\mathbb{1}((x,y) \in P'\_{s_i t_i})$" and
 Then first one is $1$ if $(x,y) \in P'\_{s_i t_i}$ and $0$ otherwise.
 Therefore, there is nothing to show if $(x,y) \not\in P'\_{s_i t_i}$.
 Now, let's assume that $(x,y) \in P'\_{s_i t_i}$.
-Then, $P^{\star}\_{s_i t_i}$ should in clude at least $(s_i,t_i)$ or longer path from $s_i$ to $t_i$ for any $i$.
-Which means the cardinarity of $\\{(u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}\\}$ should be bigger or equal than 1.
+Then, $P^{\star}\_{s_i t_i}$ should include at least $(s_i,t_i)$ or longer path from $s_i$ to $t_i$ for any $i$.
+Which means the cardinarity of $\\{(u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}\\}$ should be bigger or equal than $1$.
 Therefore, claim holds.
+Notice that concatinating $(u,v) \in P^{\star}\_{s_i t_i}$ in $T'$ will be a valid path from $u$ to $v$.
+Therefore, $(x,y)$ should be in some where in there.
 
 As a result, $\operatorname{ALG}$ $\le$ $\operatorname{OPT'}$ $\le$ $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
 Therefore claim holds.
-
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
