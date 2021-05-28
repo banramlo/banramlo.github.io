@@ -243,15 +243,15 @@ Proof is like follow.
 
 Let's denote some terminologies.
 1. $\operatorname{OPT}$ is the optimal solution.
-2. $P^{\star}\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is the shortest path between $s_i$ and $t_i$ from the optimal solution.
+2. $P^{\star}\_{u v}$ is the shortest path between $u$ and $v$ from the optimal solution.
 3. $c^{\star}_e$ for $e$ $\in$ $E$ is the capacity of $e$ from the optimal solution.
-4. $P'\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is the unique shortest path between $s_i$ and $t_i$ from the $T'$.
-5. $P^{S}\_{s_i t_i}$ for $i$ $=$ $1, 2, \cdots, k$ is a path that changes $P^{\star}\_{s_i t_i}$'s each edge $(x,y)$ to $P'\_{x, y}$.
+4. $P'\_{u v}$ is the unique shortest path between $u$ and $b$ from the $T'$.
+5. $P^{S}\_{u v}$ is a path that changes each edge $(x,y)$ in $P^{\star}\_{u v}$ to $P'\_{x, y}$.
 6. $\operatorname{OPT'}$ is the solution from $P^{S}\_{s_i t_i}$.
 
 Notice that $P^{S}\_{s_i t_i}$ may not be simple.
 Then, $E[OPT']$ $=$
-$E[\sum\limits_{(x,y) \in T'}  \sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'_{u v})]$
+$E[\sum\limits_{(x,y) \in T'}  \sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}_{s_i t_i} \text{ and } (x,y) \in P'\_{u v})]$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
