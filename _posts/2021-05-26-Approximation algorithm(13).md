@@ -79,50 +79,14 @@ Here is another algorithm that gives a tree from metric.
     </div>
 </div>
 
-If given metric is like follow.<br>
+If given a tree metric $T$ can be like follow.<br>
 <canvas id="canvas1" width="200" height="200" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML canvas tag.</canvas><br>
-Tree metric $T$ can be like follow.<br>
+Then, other tree metric $T'$ can be like follow.<br>
 <canvas id="canvas2" width="200" height="200" style="border:1px solid #d3d3d3;">
     Your browser does not support the HTML canvas tag.</canvas><br>
-Then, other tree metric $T'$ can be like follow.<br>
-<canvas id="canvas3" width="200" height="200" style="border:1px solid #d3d3d3;">
-    Your browser does not support the HTML canvas tag.</canvas><br>
 <script language = "javascript">
-    let c = document.getElementById("canvas1");
-    let ctx = c.getContext("2d");
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-    ctx.arc(100, 100, 80, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(100, 180, 10, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(100, 20, 10, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(20, 100, 10, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(180, 100, 10, 0, 2*Math.PI);
-    ctx.stroke();
-    ctx.fill();
-    ctx.textAlign = "center";
-    ctx.fillStyle = "red";
-    ctx.font = "20px Arial";
-    ctx.fillText('A', 100, 180);
-    ctx.fillText('B', 100, 20);
-    ctx.fillText('C', 20, 100);
-    ctx.fillText('D', 180, 100);
-    ctx.fillText('1', 44, 44);
-    ctx.fillText('1', 156, 44);
-    ctx.fillText('1', 44, 156);
-    ctx.fillText('1', 156, 156);
-    c = document.getElementById("canvas2");
+    c = document.getElementById("canvas1");
     ctx = c.getContext("2d");
   	ctx.beginPath();
     ctx.fillStyle = "black";
@@ -181,7 +145,7 @@ Then, other tree metric $T'$ can be like follow.<br>
     ctx.fillText('{B}', 75, 170);
     ctx.fillText('{C}', 125, 170);
     ctx.fillText('{D}', 175, 170);
-    c = document.getElementById("canvas3");
+    c = document.getElementById("canvas2");
     ctx = c.getContext("2d");
   	ctx.beginPath();
     ctx.fillStyle = "black";
