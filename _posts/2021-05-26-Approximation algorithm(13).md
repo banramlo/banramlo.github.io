@@ -289,12 +289,12 @@ Simiallary, following is true.
 Now let's denote $\operatorname{ALG}$ as the value of the output solution.
 Then, $\operatorname{ALG}$ $=$
 $\sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(x,y) \in T'} \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $\le$
-$\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $\le$
-$\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))T'\_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))T'\_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}} T'\_{uv}$ $=$
-$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ $=$
+$\sum\limits_{(u,v) \in E} \sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in E} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i} \text{ and } (u,v) \in P\_{xy}))d\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} \sum\limits_{(u,v) \in P_{xy}} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i}))d\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) \sum\limits_{(u,v) \in P_{xy}}d\_{uv}$ $=$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) d\_{xy}$ $\le$
+$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ 
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
