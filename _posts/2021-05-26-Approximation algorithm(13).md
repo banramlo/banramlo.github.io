@@ -273,8 +273,8 @@ $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
 
 Notice that following facts.
 First inequality holds because $f$ is subadditive.
-Third equality holds because $P'_{uv}$ $\in$ $T'$.
-Sixth equality holds because $f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i}))$ is independent from $u,v$.
+Third equality holds because $P'\_{uv}$ $\in$ $T'$.
+Sixth equality holds because $f(\sum\limits_{i = 1}^{k} d\_i \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i}))$ is independent from $u,v$.
 Seventh equality holds because $\sum\limits_{(x,y) \in P'\_{u v}}T'\_{xy}$ is the distance from $u$ to $v$.
 Therefore claim holds.
 
