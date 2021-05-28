@@ -42,9 +42,12 @@ Now, let's consider the following algorithm.
     $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
     $\operatorname{for}$ each pair $s_i, t_i$
     <div class="alg">
-        $\operatorname{for}$ each edge in $P'_{s_i t_i}$
+        $\operatorname{for}$ each edge $(u,v)$ in $P'_{s_i t_i}$
         <div class="alg">
-            Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
+            $\operatorname{for}$ each edge $e$ in $P_{u v}$
+            <div class="alg">
+                Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
+            </div>
         </div>
     </div>
     return $c$
@@ -233,9 +236,12 @@ Now, think about the algorithm follow.
     $c_e \leftarrow 0$ for all $e$ $\in$ $E$<br>
     $\operatorname{for}$ each pair $s_i, t_i$
     <div class="alg">
-        $\operatorname{for}$ each edge in $P'_{s_i t_i}$
+        $\operatorname{for}$ each edge $(u,v)$ in $P'_{s_i t_i}$
         <div class="alg">
-            Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
+            $\operatorname{for}$ each edge $e$ in $P_{u v}$
+            <div class="alg">
+                Increase $c_e$ $\leftarrow$ $c_e$ $+$ $d_i$ 
+            </div>
         </div>
     </div>
     return $c$
