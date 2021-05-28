@@ -319,5 +319,7 @@ Therefore, $(x,y)$ should be in some where in there.
 As a result, $\operatorname{ALG}$ $\le$ $\operatorname{OPT'}$ $\le$ $O(\ln \left\vert V \right\vert) \operatorname{OPT}$.
 Therefore claim holds.
 
+Notice that algorithm runs in a polynomial time.
+
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
