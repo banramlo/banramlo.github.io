@@ -298,7 +298,7 @@ $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P
 $\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \sum\limits_{(u,v) \in E} \mathbb{1}((u,v) \in P^{\star}\_{s_i t_i} \text{ and } (x,y) \in P'\_{u v}))T'\_{xy}$ $=$
 $\operatorname{OPT'}$.
 
-All eqaulities and inequalities except last ineuqality are the same with above.
+All eqaulities and inequalities except last ineuqality can be proven in the same way with above.
 Therefore, we need to show only last inequality holds.
 
 Proof for "$\sum\limits_{(x,y) \in T'} f(\sum\limits_{i = 1}^{k} d_i \mathbb{1}((x,y) \in P'\_{s_i t_i})) T'\_{xy}$ $\le$
