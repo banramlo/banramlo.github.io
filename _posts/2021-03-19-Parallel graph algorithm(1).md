@@ -120,6 +120,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
             $\operatorname{if} d[u] = -1$<br>
             <div class="alg">
                 $d[u] = d[v] + 1$<br>
+                $Q.insert(v)$
             </div>
         </div>
         $Q.pop()$
@@ -138,13 +139,14 @@ Now, it can be parallelized per vetices at the same depth.
     $d[0] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
-        $\operatorname{for} v \in Q \operatorname{in} \operatorname{parellel}$<br>
+        $\operatorname{for} v \in Q \text{ untill } Q \text{ is empty } \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
             $\operatorname{for} u \in \delta(v)$<br>
             <div class="alg">
                 $\operatorname{if} d[u] = -1$<br>
                 <div class="alg">
-                    $\operatorname{atomic}(d[u] = d[v] + 1)$<br>
+                    $\operatorname{atomic}[d[u] = d[v] + 1]$<br>
+                    $\operatorname{atomic}[Q.insert(v)]$
                 </div>
             </div>
         </div>
