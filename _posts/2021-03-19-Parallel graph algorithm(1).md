@@ -44,10 +44,6 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="alg">
-            $s^{old}[v] \leftarrow s[v]$<br>
-        </div>
-        $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
-        <div class="alg">
             $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v)$<br>
             <div class="alg">
@@ -73,10 +69,6 @@ As a result, page rank can be parallelized like below.
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
             $o[v] \leftarrow s[v]$<br>
-        </div>
-        $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
-        <div class="alg">
-            $s^{old}[v] \leftarrow s[v]$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
