@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Parallel graph algorithm(1) - parallel page rank/BFS
+title: Parallel Page rank/BFS
 gh-repo: daattali/beautiful-jekyll
 tags: [algorithm, concurrency, graph]
 comments: true
