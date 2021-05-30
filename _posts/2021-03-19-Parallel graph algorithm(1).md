@@ -145,7 +145,7 @@ Now, it can be parallelized per vetices at the same depth.
             <div class="alg">
                 $\operatorname{if} d[u] = -1$<br>
                 <div class="alg">
-                    $Critical sectionn$<br>
+                    Critical section<br>
                     <div class="alg">
                         $d[u] = d[v] + 1$<br>
                         $Q.insert(u)$
@@ -186,7 +186,7 @@ To do this, let's define $\delta(v)$ as incoming edges.
                     $\operatorname{if} u \in Q$<br>
                     <div class="alg">
                         $d[v] = d[u] + 1$<br>
-                        $Critical sectionn$<br>
+                        Critical section<br>
                         <div class="alg">
                             $Q^n.insert(v)$
                         </div>
