@@ -16,15 +16,8 @@ author: Hyunmo Sung
 navbar-links:
   Home: "https://banramlo.github.io/"
   CV: "https://banramlo.github.io/1995-08-29-WhoAmI/"
-  Category: 
-    - Algorithm: "https://banramlo.github.io/tags_Select?algorithm"
-    - Genetic algorithm: "https://banramlo.github.io/tags_Select?GA"
-    - Concurrency: "https://banramlo.github.io/tags_Select?concurrency"
-    - Programming launge: "https://banramlo.github.io/tags_Select?PL"
-    - Simulation: "https://banramlo.github.io/tags_Select?simulation"
-    - Game Programming: "https://banramlo.github.io/tags_Select?game"
+  Series: "https://banramlo.github.io/series"
   Collection:
-    - Series: "https://banramlo.github.io/series"
     - Tags: "https://banramlo.github.io/tags"
     - Archive: "https://banramlo.github.io/archive?0"
 
