@@ -175,9 +175,9 @@ To do this, let's define $\delta(v)$ as incoming edges.
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
     $d[0] = 0$<br>
-    $\operaotorname{while} everything done$<br>
+    $\operatorname{while} everything done$<br>
     <div class="alg">
-        $\operaotorname{for} v \in V \operatorname{in} \operatorname{parellel}$<br>
+        $\operatorname{for} v \in V \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
             $\operatorname{if} d[v] = -1$<br>
             <div class="alg">
