@@ -120,7 +120,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
             $\operatorname{if} d[u] = -1$<br>
             <div class="alg">
                 $d[u] = d[v] + 1$<br>
-                $Q.insert(v)$
+                $Q.insert(u)$
             </div>
         </div>
         $Q.pop()$
@@ -145,10 +145,55 @@ Now, it can be parallelized per vetices at the same depth.
             <div class="alg">
                 $\operatorname{if} d[u] = -1$<br>
                 <div class="alg">
-                    $\operatorname{atomic}[d[u] = d[v] + 1]$<br>
-                    $\operatorname{atomic}[Q.insert(v)]$
+                    $Critical sectionn$<br>
+                    <div class="alg">
+                        $d[u] = d[v] + 1$<br>
+                        $Q.insert(u)$
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+However, there are two problems at this approach.
+One is that we need a critical section to handle every thing.
+Therefore, it's not good for many cases.
+We may can avoid critical section for $Q$ by using a local queue.
+However, we need critical section for $u$ anyway.
+Also, there could be potentially many collision for $\delta(v)$.
+Therefore many of them is actually waste of performance.
+
+Therefore, there is another approach for BFS known as bottom-up-approach.
+To do this, let's define $\delta(v)$ as incoming edges.
+
+<div class="alg">
+    $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1 \operatorname{in} \operatorname{parellel}$<br>
+    <div class="alg">
+        $d[i] = -1$<br>
+    </div>
+    $Q \leftarrow \text{Empty queue}$<br>
+    $Q.push(s)$<br>
+    $d[0] = 0$<br>
+    $\operaotorname{while} everything done$<br>
+    <div class="alg">
+        $\operaotorname{for} v \in V \operatorname{in} \operatorname{parellel}$<br>
+        <div class="alg">
+            $\operatorname{if} d[v] = -1$<br>
+            <div class="alg">
+                $\operatorname{for} u \in \delta(v)$<br>
+                <div class="alg">
+                    $\operatorname{if} u \in Q$<br>
+                    <div class="alg">
+                        $d[v] = d[u] + 1$<br>
+                        $Critical sectionn$<br>
+                        <div class="alg">
+                            $Q^n.insert(v)$
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        $Q \leftarrow Q^n$
     </div>
 </div>
