@@ -197,3 +197,12 @@ To do this, let's define $\delta(v)$ as incoming edges.
         $Q \leftarrow Q^n$
     </div>
 </div>
+
+In this case, we can utilize full computing unit because it can pass many collisons.
+Also, this can be parallelized better because there is no critical section to update each node's depth at the moment.
+Therefore, this works well than before some times.
+However, it is known to be better to use both with some criteria.
+Therefore, there is a finite automaton to switching between these two.
+It starts with top-down approach first.
+If it has lower number of edges to expored then it switches to bottom-up approach.
+If it has few frontiers then it switchs back to top-down approach.
