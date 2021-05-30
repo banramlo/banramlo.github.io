@@ -138,14 +138,15 @@ Now, it can be parallelized per vetices at the same depth.
     $d[0] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
-        $v \leftarrow Q_{top}$<br>
-        $\operatorname{for} u \in \delta(v)$<br>
+        $\operatorname{for} v \in Q \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
-            $\operatorname{if} d[u] = -1$<br>
+            $\operatorname{for} u \in \delta(v)$<br>
             <div class="alg">
-                $d[u] = d[v] + 1$<br>
+                $\operatorname{if} d[u] = -1$<br>
+                <div class="alg">
+                    $\operatorname{atomic}(d[u] = d[v] + 1)$<br>
+                </div>
             </div>
         </div>
-        $Q.pop()$
     </div>
 </div>
