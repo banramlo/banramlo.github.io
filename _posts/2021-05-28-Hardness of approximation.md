@@ -46,7 +46,7 @@ If $l1 \lor l2 \lor l3$ is not satisfied, we can choose the value of $\bar{y}$ a
 
 Notice that we can have following table with number of satisfied clawes if $y$ is true.
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10          | # true claws in Total       |
-| :------           | :---                  | :---                  | :---                          | :---                        |
+| :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 4                             | 7                           |
 | 2                 | 2                     | 2                     | 3                             | 7                           |
 | 1                 | 1                     | 3                     | 2                             | 6                           |
@@ -54,7 +54,7 @@ Notice that we can have following table with number of satisfied clawes if $y$ i
 
 If $y$ is false then number of satisfied clawes is like below.
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10 (best)   | # true claws in Total(best) |
-| :------           | :---                  | :---                  | :---                          | :---                        |
+| :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 3                             | 6                           |
 | 2                 | 2                     | 2                     | 3                             | 7                           |
 | 1                 | 1                     | 3                     | 3                             | 7                           |
@@ -62,7 +62,7 @@ If $y$ is false then number of satisfied clawes is like below.
 
 As a result, maximum is follow.
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10 (best)   | # true claws in Total(best) |
-| :------           | :---                  | :---                  | :---                          | :---                        |
+| :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 4 ($y$ as true)               | 7                           |
 | 2                 | 2                     | 2                     | 3 ($y$ as true/false)         | 7                           |
 | 1                 | 1                     | 3                     | 3 ($y$ as false)              | 7                           |
@@ -112,7 +112,9 @@ Now, let $\bar{k}$ be the number of clawes of the MAX 2SAT instance satisfied by
 Nocie that $\alpha < 1$ because this is maximization problem.
 Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\ge$ $\bar{k}$ $\ge$ $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$.
 
+Notice that we can't set more than $7$ clawes to be true for varaibles that becomes true and more than $6$ clawes to be true for clawes to be false.
 
+Therefore, $7k^{\star}$ $+$ $6(m - k^{\star})$ $\le$ $\alpha[7k^{\star} + 6(m - k^{\star})]$
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
