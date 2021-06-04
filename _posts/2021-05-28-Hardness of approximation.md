@@ -45,6 +45,7 @@ If $l1 \lor l2 \lor l3$ is satisfied, we can choose the value of $y$ so that exa
 If $l1 \lor l2 \lor l3$ is not satisfied, we can choose the value of $y$ so that exactly six of the ten clawes are satisfied and it is impossible to satisfy more than that.
 
 Notice that we can have following table with number of satisfied clawes if $y$ is true.
+
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10          | # true claws in Total       |
 | :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 4                             | 7                           |
@@ -53,6 +54,7 @@ Notice that we can have following table with number of satisfied clawes if $y$ i
 | 0                 | 0                     | 3                     | 1                             | 4                           |
 
 If $y$ is false then number of satisfied clawes is like below.
+
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10 (best)   | # true claws in Total(best) |
 | :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 3                             | 6                           |
@@ -61,6 +63,7 @@ If $y$ is false then number of satisfied clawes is like below.
 | 0                 | 0                     | 3                     | 3                             | 6                           |
 
 As a result, maximum is follow.
+
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10 (best)   | # true claws in Total(best) |
 | :------           | :------               | :------               | :------                       | :------                     |
 | 3                 | 3                     | 0                     | 4 ($y$ as true)               | 7                           |
@@ -116,6 +119,9 @@ Notice that we can't set more than $7$ clawes to be true for varaibles that beco
 
 Therefore, $7k^{\star}$ $+$ $6(m - k^{\star})$ $\le$ $\alpha[7k^{\star} + 6(m - k^{\star})]$
 
+We show that such $\alpha$-approximation for MAX 2SAT can be used to give $(\frac{7}{8} + \epsilon)$-approximation algorithm for MAX-E3SAT problem for some constant $\epsilon > 0$.
+Which is a contradiction.
+Therefore, there is no such an approximation algorithm.
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
