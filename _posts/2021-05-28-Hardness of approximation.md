@@ -41,8 +41,8 @@ For three literals $l1$, $l2$ and $l3$, consider the follwing set of ten clawes 
 9.  $l2\lor\bar{y}$
 10. $l3\lor\bar{y}$
 
-If $l1 \lor l2 \lor l3$ is satisfied, we can choose the value of $y$ as true so that exactly seven of the ten clawes are satisfied and it is impossible to satisfy more than that.
-If $l1 \lor l2 \lor l3$ is not satisfied, we can choose the value of $\bar{y}$ as ture so that exactly six of the ten clawes are satisfied and it is impossible to satisfy more than that.
+If $l1 \lor l2 \lor l3$ is satisfied, we can choose the value of $y$ so that exactly seven of the ten clawes are satisfied and it is impossible to satisfy more than that.
+If $l1 \lor l2 \lor l3$ is not satisfied, we can choose the value of $y$ so that exactly six of the ten clawes are satisfied and it is impossible to satisfy more than that.
 
 Notice that we can have following table with number of satisfied clawes if $y$ is true.
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10          | # true claws in Total       |
@@ -115,6 +115,7 @@ Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\ge$ $\bar{k}$ $\ge$ $
 Notice that we can't set more than $7$ clawes to be true for varaibles that becomes true and more than $6$ clawes to be true for clawes to be false.
 
 Therefore, $7k^{\star}$ $+$ $6(m - k^{\star})$ $\le$ $\alpha[7k^{\star} + 6(m - k^{\star})]$
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
