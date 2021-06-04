@@ -99,7 +99,7 @@ Then, following is corresponding MAX 2SAT problem.
 13. $x_5$
 14. $x_2\lor\overline{x_4}$
 15. $\overline{x_4}\lor\overline{x_5}$
-16. $x2\lor\overline{x_5}$
+16. $x_2\lor\overline{x_5}$
 17. $y_2$
 18. $\overline{x_2}\lor\overline{y_2}$
 19. $x_4\lor\overline{y_2}$
