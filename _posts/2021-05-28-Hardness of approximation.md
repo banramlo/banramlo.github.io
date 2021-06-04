@@ -33,16 +33,16 @@ For three literals $l1$, $l2$ and $l3$, consider the follwing set of ten clawes 
 1.  $l1$
 2.  $l2$
 3.  $l3$
-4.  $\bar{l1}\or\bar{l2}$
-5.  $\bar{l2}\or\bar{l3}$
-6.  $\bar{l1}\or\bar{l3}$
+4.  $\bar{l1}\lor\bar{l2}$
+5.  $\bar{l2}\lor\bar{l3}$
+6.  $\bar{l1}\lor\bar{l3}$
 7.  $y$
-8.  $l1\or\bar{y}$
-9.  $l2\or\bar{y}$
-10. $l3\or\bar{y}$
+8.  $l1\lor\bar{y}$
+9.  $l2\lor\bar{y}$
+10. $l3\lor\bar{y}$
 
-If $l1 \or l2 \or l3$ is satisfied, we can choose the value of $y$ as true so that exactly seven of the ten clawes are satisfied and it is impossible to satisfy more than that.
-If $l1 \or l2 \or l3$ is not satisfied, we can choose the value of $\bar{y}$ as ture so that exactly six of the ten clawes are satisfied and it is impossible to satisfy more than that.
+If $l1 \lor l2 \lor l3$ is satisfied, we can choose the value of $y$ as true so that exactly seven of the ten clawes are satisfied and it is impossible to satisfy more than that.
+If $l1 \lor l2 \lor l3$ is not satisfied, we can choose the value of $\bar{y}$ as ture so that exactly six of the ten clawes are satisfied and it is impossible to satisfy more than that.
 
 Notice that we can have following table with number of satisfied clawes if $y$ is true.
 | # true literals   | # true claws in 1~3   | # true claws in 4~6   | # true claws in 7~10          | # true claws in Total       |
@@ -76,31 +76,31 @@ Then, set $l1$, $l2$, $l3$ as each literals used in $j$th claw.
 
 For example, follow MAX E3SAT was given.
 
-1. $x_1 \or x_2 \or x_3$
-2. $\bar{x_2} \or x_4 \or x_5$
+1. $x_1 \lor x_2 \lor x_3$
+2. $\bar{x_2} \lor x_4 \lor x_5$
 
 Then, following is corresponding MAX 2SAT problem.
 
 1.  $x_1$
 2.  $x_2$
 3.  $x_3$
-4.  $\bar{x_1}\or\bar{x_2}$
-5.  $\bar{x_2}\or\bar{x_3}$
-6.  $\bar{x_1}\or\bar{x_3}$
+4.  $\bar{x_1}\lor\bar{x_2}$
+5.  $\bar{x_2}\lor\bar{x_3}$
+6.  $\bar{x_1}\lor\bar{x_3}$
 7.  $y_1$
-8.  $x_1\or\bar{y_1}$
-9.  $x_2\or\bar{y_1}$
-10. $x_3\or\bar{y_1}$
-11. $bar{x_2}$
+8.  $x_1\lor\bar{y_1}$
+9.  $x_2\lor\bar{y_1}$
+10. $x_3\lor\bar{y_1}$
+11. $\bar{x_2}$
 12. $x_4$
 13. $x_5$
-14. $x_2\or\bar{x_4}$
-15. $\bar{x_4}\or\bar{x_5}$
-16. $x2\or\bar{x_5}$
+14. $x_2\lor\bar{x_4}$
+15. $\bar{x_4}\lor\bar{x_5}$
+16. $x2\lor\bar{x_5}$
 17. $y_2$
-18. $bar{x_2}\or\bar{y_2}$
-19. $x_4\or\bar{y_2}$
-20. $x_5\or\bar{y_2}$
+18. $\bar{x_2}\lor\bar{y_2}$
+19. $x_4\lor\bar{y_2}$
+20. $x_5\lor\bar{y_2}$
 
 Now, run the $\alpha$-approximation algorithm for MAX 2SAT on this instance.
 
@@ -111,6 +111,8 @@ Then, corresponding MAX 2SAT instance's optimal soltuion gets $7k^{\star}$ $+$ $
 Now, let $\bar{k}$ be the number of clawes of the MAX 2SAT instance satisfied by the $\alpha$-approximation algorithm's output.
 Nocie that $\alpha < 1$ because this is maximization problem.
 Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\ge$ $\bar{k}$ $\ge$ $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$.
+
+
 
 {: .box-note}
 **Reference** David P. Williamson and David B. Shmoys, The Design of Approximation Algorithms.
