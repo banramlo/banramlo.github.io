@@ -140,8 +140,8 @@ $(\alpha - 6(1 - \alpha)\frac{8}{7})k^{\star}$ $=$
 $(\frac{55}{7}\alpha - \frac{48}{7})k^{\star}$.
 
 Notice that $m$ $\le$ $\frac{8}{7}k^{\star}$ $\leftrightarrow$
-$-$ $\frac{8}{7}k^{\star}$ $\ge$ $-$ $m$ $\leftrightarrow$
-$-$ $6(1 - \alpha)\frac{8}{7}k^{\star}$ $\ge$ $-$ $6(1 - \alpha)m$.
+$-$ $\frac{8}{7}k^{\star}$ $\le$ $-$ $m$ $\leftrightarrow$
+$-$ $6(1 - \alpha)\frac{8}{7}k^{\star}$ $\le$ $-$ $6(1 - \alpha)m$.
 
 If there is $\alpha > \frac{433}{440}$,
 $\overline{k}$ $\ge$
