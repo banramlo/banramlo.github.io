@@ -148,11 +148,12 @@ Now, it can be parallelized per vetices at the same depth.
                     Critical section<br>
                     <div class="alg">
                         $d[u] = d[v] + 1$<br>
-                        $Q.insert(u)$
+                        $Q^n.insert(u)$
                     </div>
                 </div>
             </div>
         </div>
+        $Q \leftarrow Q^n$
     </div>
 </div>
 
@@ -160,12 +161,12 @@ However, there are two problems at this approach.
 One is that we need a critical section to handle every thing.
 Therefore, it's not good for many cases.
 We may can avoid critical section for $Q$ by using a local queue.
-However, we need critical section for $u$ anyway.
+However, we need critical section for $d[u]$ anyway.
 Also, there could be potentially many collision for $\delta(v)$.
 Therefore many of them is actually waste of performance.
 
 Therefore, there is another approach for BFS known as bottom-up-approach.
-To do this, let's define $\delta(v)$ as incoming edges.
+To do this, let's define $\delta(v)$ as incoming edges in this case.
 
 <div class="alg">
     $\operatorname{for} i \leftarrow 0, \cdots, |V| - 1 \operatorname{in} \operatorname{parellel}$<br>
@@ -204,5 +205,5 @@ Therefore, this works well than before some times.
 However, it is known to be better to use both with some criteria.
 Therefore, there is a finite automaton to switching between these two.
 It starts with top-down approach first.
-If it has lower number of edges to expored then it switches to bottom-up approach.
-If it has few frontiers then it switchs back to top-down approach.
+If it has lower number of edges to explor then it switches to bottom-up approach.
+If it has few vertices to work then it switchs back to top-down approach.
