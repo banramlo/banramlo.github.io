@@ -133,8 +133,7 @@ $\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\le$ $\overline{k}$.
 Now, we already have $\frac{7}{8}$-approximation algorithm.
 Therefore, $k^{\star}$ $\ge$ $\frac{7}{8}m$ and $\frac{8}{7}k^{\star}$ $\ge$ $m$.
 
-As a result, $\overline{k}$ $\ge$ $\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\leftrightarrow$
-$\overline{k}$ $\ge$
+As a result, $\overline{k}$ $\ge$
 $\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\ge$
 $\alpha k^{\star}$ $-$ $6(1 - \alpha)\frac{8}{7}k^{\star}$ $=$
 $(\alpha - 6(1 - \alpha)\frac{8}{7})k^{\star}$ $=$
