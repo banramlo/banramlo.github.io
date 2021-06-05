@@ -14,7 +14,7 @@ MAX-2SAT is a problem that finds a truth value assignment that satisfies the max
 Then there exists a $\frac{7}{8}$-approximation algorithm for MAX-E3SAT problem.
 
 Proof is like follow.
-If you see all of the clawes and count the existance of each literals and copelement of literals.
+If you see all of the clawes and count the existance of each literals and complement of literals.
 Then, we can pick at least half of them to be satisfied by pick $x_i$ or $\overline{x_i}$.
 Then, we can cover at least $\frac{7}{8}$ of them because we have three literals for one clawes.
 
