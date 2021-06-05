@@ -30,7 +30,7 @@ This post will be updated later.
     cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
     cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
 
-With the function above, it can need some kernel function to be used.
+With the function above, it needs some kernel function to be used.
 Example code is like below.
 
 ```cpp
