@@ -13,14 +13,14 @@ It supports multiple abstractions to handle NVIDIA GPU.
 
 This post will be updated later.
 
-1. ​cudaError_t cudaMalloc ( void** devPtr, size_t size )
+1. ​cudaError_t cudaMalloc ( void** devPtr, size_t size )<br>
     This instruction allocates some memory space to GPU with size.
     It will return address of memory space to devPtr.
     If it fails, it will return some values as the return of function.
-2. cudaError_t cudaFree ( void* devPtr )
+2. cudaError_t cudaFree ( void* devPtr )<br>
     This instruction deallocates memory in devPtr on GPU.
     If it fails, it will return some values as the return of function.
-3. cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind )
+3. cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind )<br>
     This instruction copies memory from CPU memory to GPU memory or between them.
     It copies memory from src to dst with size of count.
     It has 5 kinds of data transfer and following is that.
