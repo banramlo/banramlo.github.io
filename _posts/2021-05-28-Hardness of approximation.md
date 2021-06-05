@@ -7,7 +7,7 @@ comments: true
 use_math: true
 ---
 
-MAX-E3SAT is a problem that finds a truth value assignment that satisfies the maximum number of clawes for a given a set of clawe which contains exactly three literals.
+MAX-E3SAT is a problem that finds a truth value assignment that satisfies the maximum number of clawes for a given a set of claw which contains exactly three literals.
 
 MAX-2SAT is a problem that finds a truth value assignment that satisfies the maximum number of clawes for a given a set of clawes which contains at most two literals.
 
