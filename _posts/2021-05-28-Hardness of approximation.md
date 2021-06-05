@@ -77,7 +77,7 @@ We construct a MAX 2SAT instance by follow.
 For each $j$th claw in MAX E3SAT problem, make 10 clawes with distinct auxiliary varaible in the algorithm above.
 Then, set $l1$, $l2$, $l3$ as each literals used in $j$th claw.
 
-For example, follow MAX E3SAT was given.
+For example, following MAX E3SAT was given.
 
 1. $x_1 \lor x_2 \lor x_3$
 2. $\overline{x_2} \lor x_4 \lor x_5$
@@ -113,11 +113,11 @@ Now, run the $\alpha$-approximation algorithm for MAX 2SAT on this instance.
 Let's defnine some terminologies.
 
 1. $k^{\star}$ be the number of satisfing clawes of MAX E3SAT instance from the optimal solution.
-2. $\overline{k}$ be the number of satisfing clawes of MAX E3SAT instance from the $\alpha$-approximation algorithm's output.
+2. $\overline{k}$ be the number of satisfing clawes of MAX E3SAT instance from the $\alpha$-approximation algorithm's output of MAX 2SAT problem.
 
 Notice that we may have some auxiliary variables $y$ but we will just ignore it for $\overline{k}$.
 
-Then, corresponding MAX 2SAT instance's optimal soltuion gets $7k^{\star}$ $+$ $6(m - k^{\star})$ clawes satisfied with this.
+Then, MAX 2SAT instance's optimal soltuion satisfies $7k^{\star}$ $+$ $6(m - k^{\star})$ clawes.
 Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\le$ $7\overline{k}$ $+$ $6(m - \overline{k})$.
 Nocie that $0$ $<$ $\alpha$ $\le$ $1$ because this is maximization problem.
 
