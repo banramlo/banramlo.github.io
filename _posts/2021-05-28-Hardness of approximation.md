@@ -105,21 +105,48 @@ Then, following is corresponding MAX 2SAT problem.
 19. $x_4\lor\overline{y_2}$
 20. $x_5\lor\overline{y_2}$
 
+Notice that if we make it so then, it shares the optimal solution because MAX 2SAT problem can satisfies 7 of clawes iff corresponding MAX E3SAT problem's claw satisfies and MAX 2SAT problem can satisfies 6 of clawes otherwise which is less than 7. 
+For example, if $x_1$ is true and $x_4$ is true then, we can set some $y_1$ and $y_2$ to 14 of 20 becomes true.
+
 Now, run the $\alpha$-approximation algorithm for MAX 2SAT on this instance.
 
-Let $k$ be the number of clawes of the MAX E3SAT instance satisfied by the output of this algorithm.
-Suppose that an optimal assignment satisfies $k^{\star}$ out of $m$ clawes in the MAX E3SAT instance.
+Let's defnine some terminologies.
+
+1. $k^{\star}$ be the number of satisfing clawes of MAX E3SAT instance from the optimal solution.
+2. $\overline{k}$ be the number of satisfing clawes of MAX E3SAT instance from the $\alpha$-approximation algorithm's output.
+
+Notice that we may have some auxiliary variables $y$ but we will just ignore it for $\overline{k}$.
+
 Then, corresponding MAX 2SAT instance's optimal soltuion gets $7k^{\star}$ $+$ $6(m - k^{\star})$ clawes satisfied with this.
+Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\le$ $7\overline{k}$ $+$ $6(m - \overline{k})$.
+Nocie that $0$ $<$ $\alpha$ $\le$ $1$ because this is maximization problem.
 
-Now, let $\overline{k}$ be the number of clawes of the MAX 2SAT instance satisfied by the $\alpha$-approximation algorithm's output.
-Nocie that $\alpha < 1$ because this is maximization problem.
-Which means, $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\ge$ $\overline{k}$ $\ge$ $\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$.
+As a result, following inequality is true.
 
-Notice that we can't set more than $7$ clawes to be true for varaibles that becomes true and more than $6$ clawes to be true for clawes to be false.
+$\alpha(7k^{\star}$ $+$ $6(m - k^{\star}))$ $\le$ $7\overline{k}$ $+$ $6(m - \overline{k})$ $\leftrightarrow$
+$\alpha(k^{\star}$ $+$ $6m)$ $\le$ $\overline{k}$ $+$ $6m$ $\leftrightarrow$
+$\alpha k^{\star}$ $+$ $\alpha 6m$ $\le$ $\overline{k}$ $+$ $6m$ $\leftrightarrow$
+$\alpha k^{\star}$ $+$ $\alpha 6m$ $-$ $6m$ $\le$ $\overline{k}$ $\leftrightarrow$
+$\alpha k^{\star}$ $+$ $6(\alpha  - 1)m$ $\le$ $\overline{k}$ $\leftrightarrow$
+$\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\le$ $\overline{k}$.
 
-Therefore, $7k^{\star}$ $+$ $6(m - k^{\star})$ $\le$ $\alpha[7k^{\star} + 6(m - k^{\star})]$
+Now, we already have $\frac{7}{8}$-approximation algorithm.
+Therefore, $k^{\star}$ $\ge$ $\frac{7}{8}m$ and $\frac{8}{7}k^{\star}$ $\ge$ $m$.
 
-We show that such $\alpha$-approximation for MAX 2SAT can be used to give $(\frac{7}{8} + \epsilon)$-approximation algorithm for MAX-E3SAT problem for some constant $\epsilon > 0$.
+As a result, $\overline{k}$ $\ge$ $\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\leftrightarrow$
+$\overline{k}$ $\ge$
+$\alpha k^{\star}$ $-$ $6(1 - \alpha)m$ $\ge$
+$\alpha k^{\star}$ $-$ $6(1 - \alpha)\frac{8}{7}k^{\star}$ $=$
+$(\alpha - 6(1 - \alpha)\frac{8}{7})k^{\star}$ $=$
+$(\frac{55}{7}\alpha - \frac{48}{7})k^{\star}$.
+
+If there is $\alpha > \frac{433}{440}$,
+$\overline{k}$ $\ge$
+$(\frac{55}{7}\alpha - \frac{48}{7})k^{\star}$ $>$
+$(\frac{55}{7}\frac{433}{440} - \frac{48}{7})k^{\star}$ $=$
+$(\frac{7}{8})k^{\star}$.
+
+Now, we show that such $\alpha$-approximation for MAX 2SAT can be used to give $(\frac{7}{8} + \epsilon)$-approximation algorithm for MAX-E3SAT problem for some constant $\epsilon > 0$ and $\alpha > \frac{433}{440}$.
 Which is a contradiction.
 Therefore, there is no such an approximation algorithm.
 
