@@ -10,7 +10,7 @@ use_math: true
 An optimization problem is a problem to find minimum/maximum possible soltuion.
 For example, $\operatorname{SET COVER}$ is a well-known optimization problem.
 For a universe set $U = \\{e_1,e_2,e_3,\cdots,e_n$} and subsets of $U$, $S_j(1 \le j \le n)$. 
-$\operatorname{SET COVER}$ is a problem to find a collection of subsets which minimize the sum of costs of subset $W_j$ and it contains every element is $U$.
+$\operatorname{SET COVER}$ is a problem to find a collection of subsets which minimize the sum of costs of subset $W_j$ and it contains every element in $U$.
 For example, if $U = \\{e_1,e_2,e_3,e_4,e_5$}, $S_1 = \\{e_1,e_2$}, $S_2 = \\{e_3,e_4$}, $S_3 = \\{e_5$}, $S_4 = \\{e_2,e_3$}, $S_5 = \\{e_1$}, $S_6 = \\{e_4$}, $W_1=10$, $W_2=10$, $W_3=1$, $W_4=15$, $W_5=1$, $W_6=1$.
 Optimal solution would be $W_3 + W_4 + W_5 + W_6 = 1 + 15 + 1 + 1 = 18$.
 Notice that $S_3 \cup S_4 \cup S_5 \cup S_6 = U$.
