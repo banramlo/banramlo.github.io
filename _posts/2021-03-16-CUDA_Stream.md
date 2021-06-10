@@ -14,23 +14,26 @@ It supports multiple abstractions to handle NVIDIA GPU.
 This post will be updated later.
 
 ### ​cudaError_t cudaMalloc ( void** devPtr, size_t size ) ###
-    This instruction allocates some memory space to GPU with size.
-    It will return address of memory space to devPtr.
-    If it fails, it will return some values as the return of function.
-    
+
+This instruction allocates some memory space to GPU with size.
+It will return address of memory space to devPtr.
+If it fails, it will return some values as the return of function.
+
 ### cudaError_t cudaFree ( void* devPtr ) ###
-    This instruction deallocates memory in devPtr on GPU.
-    If it fails, it will return some values as the return of function.
+
+This instruction deallocates memory in devPtr on GPU.
+If it fails, it will return some values as the return of function.
     
 ### cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind ) ###
-    This instruction copies memory from CPU memory to GPU memory or between them.
-    It copies memory from src to dst with size of count.
-    It has 5 kinds of data transfer and following is that.
-    cudaMemcpyHostToHost : Copy memory between CPU memory space.
-    cudaMemcpyHostToDevice : Copy CPU memory space to GPU memory space.
-    cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
-    cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
-    cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
+
+This instruction copies memory from CPU memory to GPU memory or between them.
+It copies memory from src to dst with size of count.
+It has 5 kinds of data transfer and following is that.
+cudaMemcpyHostToHost : Copy memory between CPU memory space.
+cudaMemcpyHostToDevice : Copy CPU memory space to GPU memory space.
+cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
+cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
+cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
 
 
 
