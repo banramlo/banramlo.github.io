@@ -29,11 +29,11 @@ If it fails, it will return some values as the return of function.
 This instruction copies memory from CPU memory to GPU memory or between them.
 It copies memory from src to dst with size of count.
 It has 5 kinds of data transfer and following is that.
-cudaMemcpyHostToHost : Copy memory between CPU memory space.
-cudaMemcpyHostToDevice : Copy CPU memory space to GPU memory space.
-cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
-cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
-cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
+1. cudaMemcpyHostToHost : Copy memory between CPU memory space.
+2. cudaMemcpyHostToDevice : Copy CPU memory space to GPU memory space.
+3. cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
+4. cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
+5. cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
 
 
 
