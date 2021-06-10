@@ -13,14 +13,16 @@ It supports multiple abstractions to handle NVIDIA GPU.
 
 This post will be updated later.
 
-1. ​cudaError_t cudaMalloc ( void** devPtr, size_t size )<br>
+### ​cudaError_t cudaMalloc ( void** devPtr, size_t size ) ###
     This instruction allocates some memory space to GPU with size.
     It will return address of memory space to devPtr.
     If it fails, it will return some values as the return of function.
-2. cudaError_t cudaFree ( void* devPtr )<br>
+    
+### cudaError_t cudaFree ( void* devPtr ) ###
     This instruction deallocates memory in devPtr on GPU.
     If it fails, it will return some values as the return of function.
-3. cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind )<br>
+    
+### cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind ) ###
     This instruction copies memory from CPU memory to GPU memory or between them.
     It copies memory from src to dst with size of count.
     It has 5 kinds of data transfer and following is that.
@@ -29,6 +31,19 @@ This post will be updated later.
     cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
     cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
     cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
+
+
+
+### kernel call ###
+
+To run the kernel of GPU, you need to use it like below.
+Notice that kernel call passes three parameters.
+
+```cpp
+nameOfKernelCall<<<Number of Block, Number of Thread>>>(parameters);
+```
+
+### Example ###
 
 With the function above, it needs some kernel function to be used.
 Example code is like below.
@@ -91,10 +106,5 @@ int main(){
 }
 ```
 
-Kernel call passes three parameters.
-
-```cpp
-nameOfKernelCall<<<Number of Block, Number of Thread>>>(parameters);
-```
 
 Notice that this can be run in parallel with CPU at the same time.
