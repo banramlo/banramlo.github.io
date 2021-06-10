@@ -8,9 +8,7 @@ use_math: true
 ---
 
 CUDA is a parallel computing model, architectural API model for GPU.
-
 It supports multiple abstractions to handle NVIDIA GPU.
-
 This post will be updated later.
 
 ### ​cudaError_t cudaMalloc ( void** devPtr, size_t size ) ###
