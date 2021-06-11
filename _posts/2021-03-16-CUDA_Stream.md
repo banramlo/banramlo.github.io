@@ -9,21 +9,29 @@ use_math: true
 
 CUDA is a parallel computing model, architectural API model for GPU.
 It supports multiple abstractions to handle NVIDIA GPU.
-This post will be updated later.
 
-### ​cudaError_t cudaMalloc ( void** devPtr, size_t size ) ###
+Following functions can be used for CUDA programming.
+This post will be updated later with more information.
 
+### Memory allocation ###
+```cpp
+​cudaError_t cudaMalloc ( void** devPtr, size_t size ) 
+```
 This instruction allocates some memory space to GPU with size.
 It will return address of memory space to devPtr.
 If it fails, it will return some values as the return of function.
 
-### cudaError_t cudaFree ( void* devPtr ) ###
-
+### Memory deallocation ###
+```cpp
+cudaError_t cudaFree ( void* devPtr )
+```
 This instruction deallocates memory in devPtr on GPU.
 If it fails, it will return some values as the return of function.
     
-### cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind ) ###
-
+### Memory copy ###
+```cpp
+cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind )
+```
 This instruction copies memory from CPU memory to GPU memory or between them.
 It copies memory from src to dst with size of count.
 It has 5 kinds of data transfer and following is that.
@@ -32,8 +40,6 @@ It has 5 kinds of data transfer and following is that.
 3. cudaMemcpyDeviceToHost : Copy GPU memory space to CPU memory space.
 4. cudaMemcpyDeviceToDevice : Copy memory between GPU memory space.
 5. cudaMemcpyDefault : Automatically transfer the data. It requires to be unified memory.
-
-
 
 ### kernel call ###
 

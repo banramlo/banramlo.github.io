@@ -68,7 +68,7 @@ int __coutArgs__(T t, Args... args){
 
 std::mutex __print_sync_mutex__;
 
-//Synchronized printing for cpp
+//Synchronous printing for cpp
 template<typename ... Args>
 int printSync(Args... args){
     __print_sync_mutex__.lock();
