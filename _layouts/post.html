@@ -4,45 +4,6 @@ layout: base
 
 {% include header.html type="post" %}
 
-<script>
-  var lang = "eng";
-  function setButton(){
-    kors = document.getElementsByClassName("kor");
-    engs = document.getElementsByClassName("eng");
-    if(kors.length + engs.length == 0){
-      document.getElementById("langChangeButton_banramlo").style.display = "none";
-    }
-    
-  }
-  setButton();
-  function langChange(){
-    if(lang == "kor"){
-      lang = "eng";
-      document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/KOR.svg";
-
-      kors = document.getElementsByClassName("kor");
-      for(var i = 0; i < kors.length; ++i)
-        kors[i].style.display = "none";
-        
-      engs = document.getElementsByClassName("eng");
-      for(var i = 0; i < engs.length; ++i)
-        engs[i].style.display = "block";
-    }
-    else if(lang == "eng"){
-      lang = "kor";
-      document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/USA.svg";
-
-      engs = document.getElementsByClassName("eng");
-      for(var i = 0; i < engs.length; ++i)
-        engs[i].style.display = "none";
-
-      kors = document.getElementsByClassName("kor");
-      for(var i = 0; i < kors.length; ++i)
-        kors[i].style.display = "block";
-    }
-  }
-</script>
-
 <div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
@@ -123,3 +84,43 @@ layout: base
     </div>
   </div>
 </div>
+
+<script>
+  var lang = "eng";
+  function setButton(){
+    kors = document.getElementsByClassName("kor");
+    engs = document.getElementsByClassName("eng");
+    if(kors.length + engs.length == 0){
+      document.getElementById("langChangeButton_banramlo").style.display = "none";
+    }
+  }
+  setButton();
+
+  function langChange(){
+    if(lang == "kor"){
+      lang = "eng";
+      document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/KOR.svg";
+
+      kors = document.getElementsByClassName("kor");
+      for(var i = 0; i < kors.length; ++i)
+        kors[i].style.display = "none";
+        
+      engs = document.getElementsByClassName("eng");
+      for(var i = 0; i < engs.length; ++i)
+        engs[i].style.display = "block";
+    }
+    else if(lang == "eng"){
+      lang = "kor";
+      document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/USA.svg";
+
+      engs = document.getElementsByClassName("eng");
+      for(var i = 0; i < engs.length; ++i)
+        engs[i].style.display = "none";
+
+      kors = document.getElementsByClassName("kor");
+      for(var i = 0; i < kors.length; ++i)
+        kors[i].style.display = "block";
+    }
+  }
+</script>
+
