@@ -5,6 +5,7 @@ gh-repo: daattali/beautiful-jekyll
 tags: [algorithm]
 comments: true
 use_math: true
+krenable: true
 ---
 
 <div class="eng">
