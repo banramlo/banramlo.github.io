@@ -60,7 +60,7 @@ layout: base
             {% endfor %}
           {% endif %}
           {% if page.krenable %}
-            <button onclick="langChange()" style="border: none;background: none;"><img id="langChangeButton_banramlo" src="assets/img/KOR.svg" width="30px" geigh="30px"/></button>
+            <button onclick="langChange()" style="border: none;background: none;"><img id="langChangeButton_banramlo" src="/assets/img/KOR.svg" width="30px" geigh="30px"/></button>
           {% endif %}
           <a href="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/'  | replace: '/', '-' }}" target="_blank">
             <img src="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
