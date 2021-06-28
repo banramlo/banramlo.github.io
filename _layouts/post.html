@@ -11,18 +11,6 @@ layout: base
       lang = "eng";
       document.getElementById("langChangeButton_banramlo").src = "/assets/img/KOR.svg";
 
-      engs = document.getElementsByClassName("eng");
-      for(var i = 0; i < engs.length; ++i)
-        engs[i].style.display = "none";
-
-      kors = document.getElementsByClassName("kor");
-      for(var i = 0; i < kors.length; ++i)
-        kors[i].style.display = "block";
-    }
-    else if(lang == "eng"){
-      lang = "kor";
-      document.getElementById("langChangeButton_banramlo").src = "/assets/img/USA.svg";
-
       kors = document.getElementsByClassName("kor");
       for(var i = 0; i < kors.length; ++i)
         kors[i].style.display = "none";
@@ -30,7 +18,18 @@ layout: base
       engs = document.getElementsByClassName("eng");
       for(var i = 0; i < engs.length; ++i)
         engs[i].style.display = "block";
+    }
+    else if(lang == "eng"){
+      lang = "kor";
+      document.getElementById("langChangeButton_banramlo").src = "/assets/img/USA.svg";
 
+      engs = document.getElementsByClassName("eng");
+      for(var i = 0; i < engs.length; ++i)
+        engs[i].style.display = "none";
+
+      kors = document.getElementsByClassName("kor");
+      for(var i = 0; i < kors.length; ++i)
+        kors[i].style.display = "block";
     }
   }
 </script>
