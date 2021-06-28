@@ -999,4 +999,5 @@ pre {
        padding-left: 20px;
       }
 
-.kor{ display: none;}
+.kor{ display: none;
+  markdown: 1;}
