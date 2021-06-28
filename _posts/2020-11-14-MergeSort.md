@@ -7,9 +7,16 @@ comments: true
 use_math: true
 ---
 
+<div class="eng">
 Merge sort is a naive way to sort with divide and conquer methodology.
-It needs $O(n)$ memory space unlike qsort.
-However, it can has only $O(nlogn)$ time complexity even at the worst-case.
+It needs $O(n)$ memory space unlike quick sort.
+However, it can has only $O(n \log n)$ time complexity even at the worst-case.
+</div>
+<div class="kor">
+Merge sort는 divide and conquer 방법론을 이용한 직관적인 정렬방법입니다.
+이 알고리즘은 $O(n)$의 quick sort와는 다르게 메모리 공간을 요구합니다.
+하지만, 이 알고리즘은 최악의 경우라도 $O(n \log n)$의 시간 복잡도를 가집니다.
+</div>
 
 ```python
 def _mergeSort(lst, fromIdx, toIdx):
