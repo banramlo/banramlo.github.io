@@ -78,15 +78,9 @@ permalink: /search.html
                     }
                 }
                 if(matched == -1 && checkContent){
-                    matched = htmlCached[i][0].indexOf(targetLow);
+                    matched = htmlCached[i].indexOf(targetLow);
                     if(matched != -1){
                         matchedWith = 'context';
-                    }
-                    else if(htmlCached[i].length == 2){
-                        matched = htmlCached[i][1].indexOf(targetLow);
-                        if(matched != -1){
-                            matchedWith = 'contextKR';
-                        }
                     }
                 }
                 if(matched != -1){
@@ -110,10 +104,7 @@ permalink: /search.html
                         findedTarget = urlOfPost;
                     }
                     else if(matchedWith == 'context'){
-                        findedTarget = htmlCached[i][0];
-                    }
-                    else if(matchedWith == 'contextKR'){
-                        findedTarget = htmlCached[i][1];
+                        findedTarget = htmlCached[i];
                     }
                     var preMatch = matched - 5 > 0 ? matched - 5 : 0;
                     var postMatch = preMatch + 50;
@@ -200,20 +191,7 @@ permalink: /search.html
                     var parser = new DOMParser();
                     var htmlDoc = parser.parseFromString(body, 'text/html');
                     body = htmlDoc.getElementById("content").textContent.toLowerCase();
-                    //KR
-                    htmlCached.push([body]);
-                    if(String(listUp.children[i].children[4].innerHTML.trim()) == 'Y'){
-                        var thisText = new XMLHttpRequest();
-                        thisText.open("GET", String("https://banramlo.github.io/kr/" + listUp.children[i].children[1].innerHTML.slice(27)), false);
-                        thisText.onerror = function(){if(thisText.status == 404) return;};
-                        thisText.setRequestHeader("Content-Type", "text");
-                        thisText.send(null);
-                        var body = thisText.responseText;
-                        var parser = new DOMParser();
-                        var htmlDoc = parser.parseFromString(body, 'text/html');
-                        body = htmlDoc.getElementById("content").textContent.toLowerCase();
-                        htmlCached[htmlCached.length - 1].push(body);
-                    }
+                    htmlCached.push(body);
                 }
             }
         }

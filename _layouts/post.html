@@ -28,19 +28,11 @@ layout: base
               {% endcase %}
             {% endfor %}
           {% endif %}
-          {% if page.url contains 'kr/' %}
-            <a href="https://banramlo.github.io/{{ page.url | remove_first: '/kr/'}}">
-              <img src = "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" width = "30px" height = "30px">
-            </a>
-          {% else %}
-            {% if page.krenable %}
-              <a href="https://banramlo.github.io/kr/{{ page.url | remove_first: '/'}}">
-                <img src = "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" width = "30px" height = "30px">
-              </a>
-            {% endif %}
+          {% if page.krenable %}
+            <button style="background: https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg">
           {% endif %}
-          <a href="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | remove_first: 'kr/' | replace: '/', '-' }}" target="_blank">
-            <img src="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | remove_first: 'kr/' | replace: '/', '-' }}.svg" />
+          <a href="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/'  | replace: '/', '-' }}" target="_blank">
+            <img src="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
           </a>
         </div>
       {% endif %}
