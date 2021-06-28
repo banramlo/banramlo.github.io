@@ -2,7 +2,7 @@
 layout: post
 title: Posts about approximation algorithm
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, approximation]
+tags: [algorithm, approximation, summary]
 comments: true
 use_math: true
 ---
