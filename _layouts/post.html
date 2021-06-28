@@ -29,7 +29,7 @@ layout: base
             {% endfor %}
           {% endif %}
           {% if page.krenable %}
-            <button style="background: https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg">
+            <button><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg"/></button>
           {% endif %}
           <a href="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/'  | replace: '/', '-' }}" target="_blank">
             <img src="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
