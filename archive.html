@@ -10,30 +10,6 @@ title: 'archive'
 </p>
 
 <script language = "javascript">
-    function decodeParm(){
-        let param = {}
-        let paramLst = decodeURI(window.location.href).split("?");
-        if(paramLst.length > 1){
-            paramLst = paramLst.split("&");
-            for(let i = 0; i < paramLst.length; ++i){
-                let pair = paramLst.split('=');
-                paramLst[pair[0]] = pair[1];
-            }
-        }
-        if (!("lang" in paramLst)){
-            paramLst["lang"] = "eng";
-        }
-        return paramLst;
-    }
-
-    function encodeParm(param){
-        let str = "";
-        for(key in param){
-            if(str != '')
-                str += '&';
-            str += key.toString() + '=' + param[key].toString();
-        }
-    }
     var toWrite = document.getElementById("lists");
     var updateString = "";
     var months = [
@@ -41,9 +17,7 @@ title: 'archive'
         'Jul','Aug','Sep','Oct','Nov','Dec'
         ];
 
-    parm = decodeParm();
-
-    var page = parseInt(parm['page']);
+    var page = parseInt(document.URL.split("?")[1]);
     var pageUnit = 30;
     var pageMax = 10;
     var Connect = new XMLHttpRequest();
@@ -80,14 +54,11 @@ title: 'archive'
     startFrom = endAt - pageMax > 0? endAt - pageMax : 0;
     updateString = "";
     for(var i = startFrom; i < page; ++i){
-        parm['page'] = i;
-        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + encodeParm(parm) + "\">" + (i + 1) + "</a>  ";
+        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + i + "\">" + (i + 1) + "</a>  ";
     }
-    parm['page'] = page;
-    updateString += "<U><a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + encodeParm(parm) + "\">" + (page + 1) + "</a></U>  ";
+    updateString += "<U><a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + page + "\">" + (page + 1) + "</a></U>  ";
     for(var i = page + 1; i < endAt; ++i){
-        parm['page'] = i;
-        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + encodeParm(parm) + "\">" + (i + 1) + "</a>  ";
+        updateString += "<a style=\"color:black\" href = \"https://banramlo.github.io/archive/?" + i + "\">" + (i + 1) + "</a>  ";
     }
     toWrite.innerHTML = updateString;
 </script>

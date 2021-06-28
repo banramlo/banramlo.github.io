@@ -11,32 +11,6 @@ permalink: /tags_Select.html
 <p id="pages" style="text-align:center;"></p>
 
 <script language = "javascript">
-    
-    function decodeParm(){
-        let param = {}
-        let paramLst = decodeURI(window.location.href).split("?");
-        if(paramLst.length > 1){
-            paramLst = paramLst.split("&");
-            for(let i = 0; i < paramLst.length; ++i){
-                let pair = paramLst.split('=');
-                paramLst[pair[0]] = pair[1];
-            }
-        }
-        if (!("lang" in paramLst)){
-            paramLst["lang"] = "eng";
-        }
-        return paramLst;
-    }
-
-    function encodeParm(param){
-        let str = "";
-        for(key in param){
-            if(str != '')
-                str += '&';
-            str += key.toString() + '=' + param[key].toString();
-        }
-    }
-    
     var page = 0;
     var searchList = [];
 
@@ -44,19 +18,19 @@ permalink: /tags_Select.html
     'Jan','Feb','Mar','Apr','May','Jun',
     'Jul','Aug','Sep','Oct','Nov','Dec'
     ]
-    
+        
     var toWrite = document.getElementById("search");
-    var params = decodeParm();
+    var url = decodeURI(window.location.href);
+    var params = url.split('?');
     page = 0;
     searchList = [];
     
-    if(not ('tag' in params)){
+    if((params.length) != 2){
         updateString += "Invalid tag request<br>\n";
         toWrite.innerHTML = updateString;
     }
     else{
-        var target = params['key'];
-        params['key'] = '';
+        var target = params[1];
         if(target != ""){
             var cnt = 1;
             var Connect = new XMLHttpRequest();
@@ -75,7 +49,7 @@ permalink: /tags_Select.html
                     }
                     searchList[parseInt((cnt - 1)/10)] += "<tr>\n";
                     searchList[parseInt((cnt - 1)/10)] += "<td>" + cnt.toString() + "</td>"; 
-                    searchList[parseInt((cnt - 1)/10)] +=  "<td> <a target=\"_parent\" href = " + listUp.children[i].children[1].innerHTML + "?" + encodeParm(params) + " style=\"color:black\">" + listUp.children[i].children[0].innerHTML + "</a></td>\n";
+                    searchList[parseInt((cnt - 1)/10)] +=  "<td> <a target=\"_parent\" href = " + listUp.children[i].children[1].innerHTML + " style=\"color:black\">" + listUp.children[i].children[0].innerHTML + "</a></td>\n";
                     var date = listUp.children[i].children[2].innerHTML;
                     var year = date.slice(0,4);
                     var month  = months[parseInt(date.slice(5,7))];

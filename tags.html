@@ -8,31 +8,6 @@ permalink: /tags.html
 </p>
 
 <script language = "javascript">
-    function decodeParm(){
-        let param = {}
-        let paramLst = decodeURI(window.location.href).split("?");
-        if(paramLst.length > 1){
-            paramLst = paramLst.split("&");
-            for(let i = 0; i < paramLst.length; ++i){
-                let pair = paramLst.split('=');
-                paramLst[pair[0]] = pair[1];
-            }
-        }
-        if (!("lang" in paramLst)){
-            paramLst["lang"] = "eng";
-        }
-        return paramLst;
-    }
-
-    function encodeParm(param){
-        let str = "";
-        for(key in param){
-            if(str != '')
-                str += '&';
-            str += key.toString() + '=' + param[key].toString();
-        }
-    }
-
     var toWrite = document.getElementById("tags");
     var updateString = "";
     var cnt = 0;
@@ -80,10 +55,9 @@ permalink: /tags.html
         }
     }
 
-    parms = decodeParm();
+
     for(var key in tagCount){
-        parms['tag'] = key;
-        updateString +=  "<a style=\"font-size:" + tagCount[key] + "px; padding-right:1em; color:" + tagColor[key] + "\" href = https://banramlo.github.io/tags_Select?" + encodeParm(parms) + "><u>" + key + "</u></a>\t";
+        updateString +=  "<a style=\"font-size:" + tagCount[key] + "px; padding-right:1em; color:" + tagColor[key] + "\" href = https://banramlo.github.io/tags_Select?" + key + "><u>" + key + "</u></a>\t";
     }
     toWrite.innerHTML = updateString;
 </script>
