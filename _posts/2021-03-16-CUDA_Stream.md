@@ -2,7 +2,7 @@
 layout: post
 title: CUDA
 gh-repo: daattali/beautiful-jekyll
-tags: [algorithm, concurrency, graph]
+tags: [concurrency, gpu]
 comments: true
 use_math: true
 ---
