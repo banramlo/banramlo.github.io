@@ -16,10 +16,8 @@ author: Hyunmo Sung
 navbar-links:
   Home: "https://banramlo.github.io/"
   CV: "https://banramlo.github.io/1995-08-29-WhoAmI/"
-  Series: "https://banramlo.github.io/series"
-  Collection:
-    - Tags: "https://banramlo.github.io/tags"
-    - Archive: "https://banramlo.github.io/archive?0"
+  Tags: "https://banramlo.github.io/tags"
+  Archive: "https://banramlo.github.io/archive?0"
 
 # --- Logo --- #
 
