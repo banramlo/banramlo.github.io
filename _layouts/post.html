@@ -9,7 +9,7 @@ layout: base
   function langChange(){
     if(lang == "kor"){
       lang = "eng";
-      document.getElementById("langChangeButton_banramlo").src = "USA.svg";
+      document.getElementById("langChangeButton_banramlo").src = "assets/img/KOR.svg";
 
       engs = document.getElementsByClassName("eng");
       for(var i = 0; i < engs.length; ++i)
@@ -21,7 +21,7 @@ layout: base
     }
     else if(lang == "eng"){
       lang = "kor";
-      document.getElementById("langChangeButton_banramlo").src = "KOR.svg";
+      document.getElementById("langChangeButton_banramlo").src = "assets/img/USA.svg";
 
       kors = document.getElementsByClassName("kor");
       for(var i = 0; i < kors.length; ++i)
@@ -60,7 +60,7 @@ layout: base
             {% endfor %}
           {% endif %}
           {% if page.krenable %}
-            <button onclick="langChange()" style="background: none;"><img id="langChangeButton_banramlo" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" width="30px" geigh="30px"/></button>
+            <button onclick="langChange()" style="background: none;"><img id="langChangeButton_banramlo" src="assets/img/KOR.svg" width="30px" geigh="30px"/></button>
           {% endif %}
           <a href="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/'  | replace: '/', '-' }}" target="_blank">
             <img src="https://views.whatilearened.today/views/github/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg" />
