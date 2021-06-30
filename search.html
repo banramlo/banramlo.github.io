@@ -5,15 +5,6 @@ permalink: /search.html
 ---
 
 <body>
-    <style>
-        img.loadingImg {
-            position: -webkit-sticky;
-            position: sticky;
-            top: 200px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
     <script language = "javascript">
         var page = 0;
         var searchList = [];
@@ -26,6 +17,7 @@ permalink: /search.html
         function searchTarget(){
             document.getElementById("loadingImg").style.display = "";
             document.getElementById("search").innerHTML = "";
+            document.getElementById("pages").innerHTML = "";
             window.setTimeout(_searchTarget, 1);
         }
         function _searchTarget(){
@@ -204,7 +196,7 @@ permalink: /search.html
     <label><input type="checkbox" id="checkURL" onchange="searchTarget()"> URL</label>
     <label><input type="checkbox" id="checkContent" onchange="searchTarget()"> Content</label>
     <button style="float: right;" class="nav-link" onclick="setSearchBox()">Close</button><br>
-    <img class="loadingImg" id="loadingImg" src = "https://banramlo.github.io/assets/img/loader.gif" style="display: none;">
+    <img id="loadingImg" src = "https://banramlo.github.io/assets/img/loader.gif" style="display: none;">
     <p id="search">
     </p>
     <p id="pages" style="text-align:center;"></p>
