@@ -109,7 +109,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
     <div class="alg">
         $d[i] = -1$<br>
     </div>
-    $Q \leftarrow \text{Empty queue}$<br>
+    $Q \leftarrow \emptyset$<br>
     $Q.push(s)$<br>
     $d[s] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
@@ -134,7 +134,7 @@ Now, it can be parallelized per vetices at the same depth.
     <div class="alg">
         $d[i] = -1$<br>
     </div>
-    $Q \leftarrow \text{Empty queue}$<br>
+    $Q \leftarrow \emptyset$<br>
     $Q.push(s)$<br>
     $d[s] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
@@ -174,7 +174,7 @@ To do this, let's define $\delta(v)$ as incoming edges in this case.
     <div class="alg">
         $d[i] = -1$<br>
     </div>
-    $Q \leftarrow \text{Empty queue}$<br>
+    $Q \leftarrow \emptyset$<br>
     $Q.push(s)$<br>
     $d[s] = 0$<br>
     $\operatorname{while} \text{everything done}$<br>
