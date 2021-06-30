@@ -115,6 +115,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
         $v \leftarrow Q_{top}$<br>
+        $Q.pop()$
         $\operatorname{for} u \in \delta(v)$<br>
         <div class="alg">
             $\operatorname{if} d[u] = -1$<br>
@@ -123,7 +124,6 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
                 $Q.insert(u)$
             </div>
         </div>
-        $Q.pop()$
     </div>
 </div>
 
@@ -139,7 +139,8 @@ Now, it can be parallelized per vetices at the same depth.
     $d[s] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
-        $\operatorname{for} v \in Q \text{ untill } Q \text{ is empty } \operatorname{in} \operatorname{parellel}$<br>
+        $Q^n \leftarrow \emptyset$
+        $\operatorname{for} v \in Q \text{ with the same depth } \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
             $\operatorname{for} u \in \delta(v)$<br>
             <div class="alg">
