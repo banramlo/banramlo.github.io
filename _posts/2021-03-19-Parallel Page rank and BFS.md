@@ -41,16 +41,16 @@ $=$ $\beta$ $+$ $(1 - \beta)$ $=$ $1$.
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="alg">
             $o[v] \leftarrow s[v]$<br>
+            $s[v] \leftarrow 0$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1$<br>
         <div class="alg">
-            $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v)$<br>
             <div class="alg">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
             </div>
             $s[v] \leftarrow s[v] + (1 - \beta) \frac{1}{|V|}$<br>
-            $error \leftarrow error + |s^{old}[v] - s[v]|$<br>
+            $error \leftarrow error + |o[v] - s[v]|$<br>
         </div>
     </div>
 </div>
@@ -69,10 +69,10 @@ As a result, page rank can be parallelized like below.
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
             $o[v] \leftarrow s[v]$<br>
+            $s[v] \leftarrow 0$<br>
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{parellel}$<br>
         <div class="alg">
-            $s[v] \leftarrow 0$<br>
             $\operatorname{for} u \in \delta(v) \operatorname{in} \operatorname{parellel}$<br>
             <div class="alg">
                 $s[v] \leftarrow s[v] + \beta \frac{o[u]}{|\delta(u)|}$<br>
@@ -81,7 +81,7 @@ As a result, page rank can be parallelized like below.
         </div>
         $\operatorname{for} v \leftarrow 0,\cdots,|V| - 1 \operatorname{in} \operatorname{reduction}$<br>
         <div class="alg">
-            $error \leftarrow error + |s^{old}[v] - s[v]|$<br>
+            $error \leftarrow error + |o[v] - s[v]|$<br>
         </div>
     </div>
 </div>
