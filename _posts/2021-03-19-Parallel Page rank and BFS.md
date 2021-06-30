@@ -111,7 +111,7 @@ For do this, let's define $\delta(v)$ as the set of neighbor of $v$.
     </div>
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
-    $d[0] = 0$<br>
+    $d[s] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
         $v \leftarrow Q_{top}$<br>
@@ -136,7 +136,7 @@ Now, it can be parallelized per vetices at the same depth.
     </div>
     $Q \leftarrow \text{Empty queue}$<br>
     $Q.push(s)$<br>
-    $d[0] = 0$<br>
+    $d[s] = 0$<br>
     $\operatorname{while} Q \neq \emptyset$<br>
     <div class="alg">
         $\operatorname{for} v \in Q \text{ untill } Q \text{ is empty } \operatorname{in} \operatorname{parellel}$<br>
