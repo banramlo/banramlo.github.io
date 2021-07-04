@@ -19,7 +19,11 @@ permalink: /search.html
             document.getElementById("search").innerHTML = "";
             document.getElementById("pages").innerHTML = "";
             window.setTimeout(_searchTarget, 1);
+            window.setTimeout(function(){
+                document.getElementById("loadingImg").style.display = "none";
+            }, 1);
         }
+
         function _searchTarget(){
             page = 0;
             var target = document.getElementById("searchTaget").value;
@@ -112,7 +116,6 @@ permalink: /search.html
                 }
             }
             setContent();
-            document.getElementById("loadingImg").style.display = "none";
         }
 
         function setContent(){
