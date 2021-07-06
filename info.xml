@@ -21,13 +21,6 @@ sitemap:
         {% for tag in post.tags %}
         {{tag}} ,
         {% endfor %}</tags>
-        <kr_default>
-        {% if post.kr_default %}
-        true
-        {% else %}
-        false
-        {% endif %}
-        </kr_default>
     </url>
     {% endunless %}
     {% endfor %}
