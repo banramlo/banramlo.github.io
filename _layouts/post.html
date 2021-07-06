@@ -85,20 +85,34 @@ layout: base
   </div>
 </div>
 
+{% if post.kr_default %}
 <script>
-  var lang = "eng";
-  function setButton(){
-    kors = document.getElementsByClassName("kor");
-    engs = document.getElementsByClassName("eng");
+  function setDefaultLang_banramlo(){
+    return "kor";
+  }
+</script>
+{% else %}
+<script>
+  function setDefaultLang_banramlo(){
+    return "eng";
+  }
+</script>
+{% endif %}
+
+<script>
+  var postLang = setDefaultLang_banramlo();
+  
+  {
+    let kors = document.getElementsByClassName("kor");
+    let engs = document.getElementsByClassName("eng");
     if(kors.length + engs.length == 0){
       document.getElementById("langChangeButton_banramlo").style.display = "none";
     }
   }
-  setButton();
 
   function langChange(){
-    if(lang == "kor"){
-      lang = "eng";
+    if(postLang == "kor"){
+      postLang = "eng";
       document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/KOR.svg";
 
       kors = document.getElementsByClassName("kor");
@@ -109,8 +123,8 @@ layout: base
       for(var i = 0; i < engs.length; ++i)
         engs[i].style.display = "block";
     }
-    else if(lang == "eng"){
-      lang = "kor";
+    else if(postLang == "eng"){
+      postLang = "kor";
       document.getElementById("langChangeButtonImg_banramlo").src = "/assets/img/USA.svg";
 
       engs = document.getElementsByClassName("eng");

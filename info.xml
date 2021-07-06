@@ -21,6 +21,13 @@ sitemap:
         {% for tag in post.tags %}
         {{tag}} ,
         {% endfor %}</tags>
+        <default_lang>
+        {% if post.kr_default %}
+        true
+        {% else %}
+        false
+        {% endif %}
+        </default_lang>
     </url>
     {% endunless %}
     {% endfor %}
