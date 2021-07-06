@@ -85,7 +85,7 @@ layout: base
   </div>
 </div>
 
-{% if post.kr_default %}
+{% if page.kr_default %}
 <script>
   function setDefaultLang_banramlo(){
     return "kor";
@@ -101,7 +101,7 @@ layout: base
 
 <script>
   var postLang = setDefaultLang_banramlo();
-  
+
   {
     let kors = document.getElementsByClassName("kor");
     let engs = document.getElementsByClassName("eng");
