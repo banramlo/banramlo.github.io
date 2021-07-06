@@ -100,7 +100,7 @@ layout: base
 {% endif %}
 
 <script>
-  var postLang = setDefaultLang_banramlo();
+  var postLang = "eng";
 
   {
     let kors = document.getElementsByClassName("kor");
@@ -108,7 +108,7 @@ layout: base
     if(kors.length + engs.length == 0){
       document.getElementById("langChangeButton_banramlo").style.display = "none";
     }  
-    if(postLang == "kor"){
+    if(setDefaultLang_banramlo() == "kor"){
       langChange(); 
     }
   }
