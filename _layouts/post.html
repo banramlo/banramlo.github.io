@@ -107,6 +107,9 @@ layout: base
     let engs = document.getElementsByClassName("eng");
     if(kors.length + engs.length == 0){
       document.getElementById("langChangeButton_banramlo").style.display = "none";
+    }  
+    if(postLang == "kor"){
+      langChange(); 
     }
   }
 
